@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * A simple OAuth 2.0 handler.
  *
@@ -27,8 +29,8 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/OAuth2Handler.php';
-require_once 'Google/Api/Ads/Common/Util/CurlUtils.php';
+use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Util\OAuth2Handler ;
+use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Util\CurlUtils ;
 
 /**
  * A simple OAuth 2.0 handler.
@@ -131,3 +133,4 @@ class SimpleOAuth2Handler extends OAuth2Handler
       return json_decode($response, true);
   }
 }
+

@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * A collection of utility methods for reading API property files.
  *
@@ -42,3 +44,4 @@ class ApiPropertiesUtils
       return parse_ini_file($propsFilePath);
   }
 }
+

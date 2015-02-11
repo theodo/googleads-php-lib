@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Dfp\Util ;
+
 /**
  * A builder that allows for PQL statements to be constructed in parts.
  *
@@ -26,8 +28,8 @@
  *             Version 2.0
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Lib/ValidationException.php';
-require_once 'Google/Api/Ads/Dfp/Util/Pql.php';
+use  \Google\Api\Ads\Dfp\UtilGoogle\Api\Ads\Common\Lib\ValidationException ;
+use  \Google\Api\Ads\Dfp\UtilGoogle\Api\Ads\Dfp\Util\Pql ;
 
 /**
  * {@code StatementBuilder} allows for statements to be constructed in parts.
@@ -319,3 +321,4 @@ class StatementBuilder
       return trim($statement);
   }
 }
+

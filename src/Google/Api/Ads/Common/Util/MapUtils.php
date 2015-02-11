@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * A collection of utility methods for working with maps (associative arrays).
  *
@@ -120,3 +122,4 @@ class MapUtils
       return $result;
   }
 }
+

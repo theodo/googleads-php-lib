@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * A collection of utility methods for working with OGNL paths.
  *
@@ -110,3 +112,4 @@ class OgnlUtils
       }
   }
 }
+

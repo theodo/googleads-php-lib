@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Dfp\Util ;
+
 /**
  * Retrieves reports using a {@link ReportService}.
  *
@@ -26,7 +28,7 @@
  *             Version 2.0
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/CurlUtils.php';
+use  \Google\Api\Ads\Dfp\UtilGoogle\Api\Ads\Common\Util\CurlUtils ;
 
 /**
  * Retrieves reports using a {@link ReportService}.
@@ -145,3 +147,4 @@ class ReportDownloader
         $exportFormat);
   }
 }
+

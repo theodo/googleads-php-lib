@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * A collection of utility methods for working with cURL.
  *
@@ -157,3 +159,4 @@ class CurlUtils
       curl_close($ch);
   }
 }
+

@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * A collection of utility methods for working with XML.
  *
@@ -28,7 +30,7 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/MapUtils.php';
+use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Util\MapUtils ;
 
 /**
  * A collection of utility methods for working with XML.
@@ -39,15 +41,15 @@ class XmlUtils
 {
 
   /**
-   * Gets the DOMDocument of the <var>$xml</var>.
-   * @param string $xml the XML to create a DOMDocument from
-   * @return DOMDocument the DOMDocument of the XML
-   * @throws DOMException if the DOM could not be loaded
+   * Gets the \DOMDocument of the <var>$xml</var>.
+   * @param string $xml the XML to create a \DOMDocument from
+   * @return \DOMDocument the \DOMDocument of the XML
+   * @throws \DOMException if the DOM could not be loaded
    */
   public static function GetDomFromXml($xml)
   {
-      set_error_handler(array('XmlUtils', 'HandleXmlError'));
-      $dom = new DOMDocument();
+      set_error_handler(array('\Google\Api\Ads\Common\Util\XmlUtils', 'HandleXmlError'));
+      $dom = new \DOMDocument();
       $dom->loadXML($xml,
         LIBXML_DTDLOAD | LIBXML_DTDATTR | LIBXML_NOENT | LIBXML_XINCLUDE);
       restore_error_handler();
@@ -57,7 +59,7 @@ class XmlUtils
 
   /**
    * Gets the XML represenation of the document.
-   * @param DOMDocument $document the document to convert
+   * @param \DOMDocument $document the document to convert
    * @return string the XML represenation of the document
    */
   public static function GetXmlFromDom($document)
@@ -78,7 +80,7 @@ class XmlUtils
           $dom->formatOutput = true;
 
           return self::GetXmlFromDom($dom);
-      } catch (DOMException $e) {
+      } catch (\DOMException $e) {
           restore_error_handler();
 
           return str_replace(array("\r\n", "\n", "\r"), '', $xml);
@@ -86,9 +88,9 @@ class XmlUtils
   }
 
   /**
-   * Converts a DOMDocument to a stdClass object, where each element under
+   * Converts a \DOMDocument to a stdClass object, where each element under
    * the root node is a field. Atribute values are ignored.
-   * @param DOMDocument $document the document to convert
+   * @param \DOMDocument $document the document to convert
    * @returns Object the converted object
    */
   public static function ConvertDocumentToObject($document)
@@ -97,9 +99,9 @@ class XmlUtils
   }
 
   /**
-   * Converts a DOMElement to a stdClass object, where each child element is
+   * Converts a \DOMElement to a stdClass object, where each child element is
    * a field. Attribute values are ignored.
-   * @param DOMElement $element the element to convert
+   * @param \DOMElement $element the element to convert
    * @returns Object the converted object
    */
   private static function ConvertElementToObject($element)
@@ -109,7 +111,7 @@ class XmlUtils
           $numChildNodes = $element->childNodes->length;
           for ($i = 0; $i < $numChildNodes; $i++) {
               $childNode = $element->childNodes->item($i);
-              if ($childNode instanceof DOMElement) {
+              if ($childNode instanceof \DOMElement) {
                   $name = $childNode->tagName;
                   $value = self::ConvertElementToObject($childNode);
                   if (isset($result[$name])) {
@@ -153,17 +155,17 @@ class XmlUtils
   }
 
   /**
-   * Converts an object to a DOMDocument. The root element name is passed in as
+   * Converts an object to a \DOMDocument. The root element name is passed in as
    * a parameter, and each field of the object becomes a child element. Array
    * values are represented by multiples instances of that element. Methods on
    * the object are ignored. There is no support for XML attributes.
    * @param Object $object the object to serialize
    * @param string $rootElementName the name of the root element
-   * @return DOMDocument the document representing the object
+   * @return \DOMDocument the document representing the object
    */
   public static function ConvertObjectToDocument($object, $rootElementName)
   {
-      $document = new DOMDocument();
+      $document = new \DOMDocument();
       $document->appendChild(
         self::ConvertObjectToElement($object, $rootElementName, $document));
 
@@ -171,11 +173,11 @@ class XmlUtils
   }
 
   /**
-   * Converts an object to an DOMElement.
+   * Converts an object to an \DOMElement.
    * @param Object $object the object to serialize
    * @param string $elementName the name of the element to serialize
-   * @param DOMDocument $document the document that the element will be added to
-   * @return DOMElement the element representing the object
+   * @param \DOMDocument $document the document that the element will be added to
+   * @return \DOMElement the element representing the object
    */
   private static function ConvertObjectToElement($object, $elementName,
       $document)
@@ -234,7 +236,7 @@ class XmlUtils
 
   /**
    * Caputures the warnings thrown by the loadXML function to create a proper
-   * DOMException.
+   * \DOMException.
    * @param string $errno contains the level of the error raised, as an integer
    * @param string $errstr contains the error message, as a string
    * @param string $errfile contains the filename that the error was raised in,
@@ -248,9 +250,10 @@ class XmlUtils
   {
       if ($errno == E_WARNING
         && substr_count($errstr, 'DOMDocument::loadXML()') > 0) {
-          throw new DOMException($errstr);
+          throw new \DOMException($errstr);
       } else {
           return false;
       }
   }
 }
+

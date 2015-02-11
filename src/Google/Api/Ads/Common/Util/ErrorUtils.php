@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * A collection of utility methods for working with errors.
  *
@@ -49,11 +51,11 @@ class ErrorUtils
 
   /**
    * Gets the ApiErrors in the SOAP fault, if any.
-   * @param SoapFault $fault the SOAP fault to extract errors from
+   * @param \SoapFault $fault the SOAP fault to extract errors from
    * @return array the ApiErrors in the SOAP fault, or an empty array if there
    *     were none
    */
-  public static function GetApiErrors(SoapFault $fault)
+  public static function GetApiErrors(\SoapFault $fault)
   {
       $results = array();
       if (isset($fault->detail)) {
@@ -64,7 +66,7 @@ class ErrorUtils
                       $errors = array($errors);
                   }
                   foreach ($errors as $error) {
-                      if ($error instanceof SoapVar) {
+                      if ($error instanceof \SoapVar) {
                           $error = $error->enc_value;
                       }
                       $results[] = $error;
@@ -94,3 +96,4 @@ class ErrorUtils
       }
   }
 }
+

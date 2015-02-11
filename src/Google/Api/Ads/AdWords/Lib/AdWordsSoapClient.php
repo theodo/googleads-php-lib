@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\AdWords\Lib ;
+
 /**
  * An extension of the {@link AdsSoapClient} for the AdWords API.
  *
@@ -27,7 +29,7 @@
  * @author     Adam Rogal
  * @see        AdsSoapClient
  */
-require_once dirname(__FILE__).'/../../Common/Lib/AdsSoapClient.php';
+use  \Google\Api\Ads\Common\Lib\AdsSoapClient ;
 
 /**
  * An extension of the {@link AdsSoapClient} for the AdWords API.
@@ -86,7 +88,7 @@ class AdWordsSoapClient extends AdsSoapClient
 
   /**
    * Generates the SOAP header for the client.
-   * @return SoapHeader the instantiated SoapHeader ready to set
+   * @return \SoapHeader the instantiated \SoapHeader ready to set
    * @access protected
    */
   protected function GenerateSoapHeader()
@@ -100,7 +102,7 @@ class AdWordsSoapClient extends AdsSoapClient
           $headerObject->$var = $this->GetHeaderValue($var);
       }
 
-      return new SoapHeader($this->serviceNamespace, 'RequestHeader',
+      return new \SoapHeader($this->serviceNamespace, 'RequestHeader',
         $headerObject, false);
   }
 
@@ -157,7 +159,7 @@ class AdWordsSoapClient extends AdsSoapClient
           }
 
           return $operatorString.'}';
-      } catch (DOMException $e) {
+      } catch (\DOMException $e) {
           // TODO(api.arogal): Log failures to retrieve headers.
       return 'null';
       }
@@ -175,7 +177,7 @@ class AdWordsSoapClient extends AdsSoapClient
           foreach ($operationsElements as $operationsElement) {
               return $operationsElement->nodeValue;
           }
-      } catch (DOMException $e) {
+      } catch (\DOMException $e) {
           // TODO(api.arogal): Log failures to retrieve headers.
       return 'null';
       }
@@ -193,7 +195,7 @@ class AdWordsSoapClient extends AdsSoapClient
           foreach ($unitsElements as $unitsElement) {
               return $unitsElement->nodeValue;
           }
-      } catch (DOMException $e) {
+      } catch (\DOMException $e) {
           // TODO(api.arogal): Log failures to retrieve headers.
       return 'null';
       }
@@ -231,3 +233,4 @@ class AdWordsSoapClient extends AdsSoapClient
         .' faultMessage='.$this->GetLastFaultMessage();
   }
 }
+

@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Lib ;
+
 /**
  * User class for all API modules using the Ads API.
  *
@@ -28,10 +30,10 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/Logger.php';
-require_once 'Google/Api/Ads/Common/Util/SimpleOAuth2Handler.php';
-require_once 'Google/Api/Ads/Common/Lib/SoapClientFactory.php';
-require_once 'Google/Api/Ads/Common/Lib/ValidationException.php';
+use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Util\Logger ;
+use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Util\SimpleOAuth2Handler ;
+use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Lib\SoapClientFactory ;
+use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Lib\ValidationException ;
 
 /**
  * User class for all API modules using the Ads API.
@@ -133,11 +135,11 @@ abstract class AdsUser
   /**
    * Gets the service by its service name.
    * @param string $serviceName the service name
-   * @param SoapClientFactory $serviceFactory the service factory
-   * @return SoapClient the instantiated service
+   * @param \SoapClientFactory $serviceFactory the service factory
+   * @return \SoapClient the instantiated service
    */
   public function GetServiceSoapClient($serviceName,
-      SoapClientFactory $serviceFactory)
+      \SoapClientFactory $serviceFactory)
   {
       return $serviceFactory->GenerateSoapClient($serviceName);
   }
@@ -564,3 +566,4 @@ abstract class AdsUser
       }
   }
 }
+

@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * A collection of utility methods for logging or throwing errors related to the
  * usage of deprecated features.
@@ -28,8 +30,8 @@
  * @author     Paul Matthews
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Lib/AdsUser.php';
-require_once 'Google/Api/Ads/Common/Lib/ServiceException.php';
+use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Lib\AdsUser ;
+use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Lib\ServiceException ;
 
 /**
  * A collection of utility methods for logging or throwing errors related to the
@@ -139,3 +141,4 @@ abstract class DeprecationUtils
       Logger::log(Logger::$REQUEST_INFO_LOG, $message, $level);
   }
 }
+

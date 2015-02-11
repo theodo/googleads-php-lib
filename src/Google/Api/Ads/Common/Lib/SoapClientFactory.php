@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Lib ;
+
 /**
  * Base class for all SOAP client factories of Ads client libraries.
  *
@@ -28,14 +30,14 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Lib/AdsUser.php';
+use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Lib\AdsUser ;
 
 /**
  * Base class for all SOAP client factories of Ads client libraries.
  * @package GoogleApiAdsCommon
  * @subpackage Lib
  */
-abstract class SoapClientFactory
+abstract class \SoapClientFactory
 {
 
   /**
@@ -198,7 +200,7 @@ abstract class SoapClientFactory
       $classVars = get_class_vars($serviceName);
       $endpoint = $classVars['endpoint'];
 
-      return preg_replace(SoapClientFactory::$SERVER_REGEX, $this->GetServer(),
+      return preg_replace(self::$SERVER_REGEX, $this->GetServer(),
         $endpoint);
   }
 
@@ -257,3 +259,4 @@ abstract class SoapClientFactory
       return self::$COMPRESSION_KIND;
   }
 }
+

@@ -1,6 +1,8 @@
 <?php
+namespace Google\Api\Ads\Common\Lib ;
+
 /**
- * An extension of the {@link SoapClient} class intended to prepare
+ * An extension of the {@link \SoapClient} class intended to prepare
  * the XML before making a request as well as perform any book-keeping on
  * the response.
  *
@@ -30,24 +32,24 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Lib/AdsUser.php';
-require_once 'Google/Api/Ads/Common/Util/Logger.php';
-require_once 'Google/Api/Ads/Common/Util/MapUtils.php';
-require_once 'Google/Api/Ads/Common/Util/SoapRequestXmlFixer.php';
-require_once 'Google/Api/Ads/Common/Util/XmlUtils.php';
-require_once 'Google/Api/Ads/Common/Util/DeprecationUtils.php';
+use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Lib\AdsUser ;
+use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Util\Logger ;
+use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Util\MapUtils ;
+use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Util\SoapRequestXmlFixer ;
+use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Util\XmlUtils ;
+use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Util\DeprecationUtils ;
 
 /**
- * An extension of the {@link SoapClient} class intended to prepare
+ * An extension of the {@link \SoapClient} class intended to prepare
  * the XML before making a request as well as perform any book-keeping on
  * the response.
  * @package GoogleApiAdsCommon
  * @subpackage Lib
  */
-abstract class AdsSoapClient extends SoapClient
+abstract class AdsSoapClient extends \SoapClient
 {
   /**
-   * The SoapClient options used to construct this class.
+   * The \SoapClient options used to construct this class.
    * @var array
    * @access protected
    */
@@ -92,9 +94,9 @@ abstract class AdsSoapClient extends SoapClient
   protected $lastRequest;
 
   /**
-   * The last SOAP XML DOMDocument request made to the server after
+   * The last SOAP XML \DOMDocument request made to the server after
    * PrepareRequest() and RemoveSensitiveInfo() have been called on it.
-   * @var DOMDocument the last SOAP XML request made to the server. Can be
+   * @var \DOMDocument the last SOAP XML request made to the server. Can be
    *     <var>NULL</var> if the last request was not proper XML
    * @see PrepareRequest()
    * @see RemoveSensitiveInfo()
@@ -110,8 +112,8 @@ abstract class AdsSoapClient extends SoapClient
   protected $lastResponse;
 
   /**
-   * The last SOAP XML DOMDocument response from the server.
-   * @var DOMDocument the last SOAP XML response from the server. Can be
+   * The last SOAP XML \DOMDocument response from the server.
+   * @var \DOMDocument the last SOAP XML response from the server. Can be
    *     <var>NULL</var> if the last request was not proper XML
    * @access private
    */
@@ -172,7 +174,7 @@ abstract class AdsSoapClient extends SoapClient
   }
 
   /**
-   * Overrides the method SoapClient.__doRequest() to
+   * Overrides the method \SoapClient.__doRequest() to
    * perform a clean up of the request XML before marshalling.
    * @param string $request the request XML
    * @param string $location the URL to request
@@ -197,7 +199,7 @@ abstract class AdsSoapClient extends SoapClient
   }
 
   /**
-   * Overrides the method SoapClient.__soapCall() to process the
+   * Overrides the method \SoapClient.__soapCall() to process the
    * response from the SOAP call.
    * @param string $function_name the name of the function being called
    * @param array $arguments the arguments to that function
@@ -238,7 +240,7 @@ abstract class AdsSoapClient extends SoapClient
           $this->__getLastResponse(), $function_name);
 
           return $response;
-      } catch (SoapFault $e) {
+      } catch (\SoapFault $e) {
           $this->ProcessResponse($this->lastRequest,
           $this->__getLastResponse(), $function_name, $e);
           throw $e;
@@ -255,11 +257,11 @@ abstract class AdsSoapClient extends SoapClient
    * @param string $request the request to the server
    * @param string $response the response from the server
    * @param string $method the method called
-   * @param SoapFault $e the SOAP fault thrown if any
+   * @param \SoapFault $e the SOAP fault thrown if any
    * @access private
    */
   private function ProcessResponse($request, $response, $method,
-      SoapFault $e = null)
+      \SoapFault $e = null)
   {
       $this->lastSoapFault = $e;
       $this->lastRequestDom = null;
@@ -270,14 +272,14 @@ abstract class AdsSoapClient extends SoapClient
 
       try {
           $this->GetLastResponseDom();
-      } catch (DOMException $domException) {
+      } catch (\DOMException $domException) {
           trigger_error('Failed to load response into DOM: '
           .$domException->getMessage(), E_USER_NOTICE);
       }
 
       try {
           $this->GetLastRequestDom();
-      } catch (DOMException $domException) {
+      } catch (\DOMException $domException) {
           trigger_error('Failed to load request into DOM: '
           .$domException->getMessage(), E_USER_NOTICE);
       }
@@ -385,7 +387,7 @@ abstract class AdsSoapClient extends SoapClient
           foreach ($responseTimeElements as $responseTimeElement) {
               return $responseTimeElement->nodeValue;
           }
-      } catch (DOMException $e) {
+      } catch (\DOMException $e) {
           trigger_error('Failed to load response into DOM: '
           .$e->getMessage(), E_USER_NOTICE);
 
@@ -405,7 +407,7 @@ abstract class AdsSoapClient extends SoapClient
           foreach ($requestIdElements as $requestIdElement) {
               return $requestIdElement->nodeValue;
           }
-      } catch (DOMException $e) {
+      } catch (\DOMException $e) {
           trigger_error('Failed to load response into DOM: '
           .$e->getMessage(), E_USER_NOTICE);
 
@@ -517,7 +519,7 @@ abstract class AdsSoapClient extends SoapClient
 
   /**
    * Generates the SOAP header for the client.
-   * @return SoapHeader the instantiated SoapHeader ready to set
+   * @return \SoapHeader the instantiated \SoapHeader ready to set
    * @access protected
    */
   abstract protected function GenerateSoapHeader();
@@ -567,9 +569,9 @@ abstract class AdsSoapClient extends SoapClient
   abstract protected function GenerateRequestInfoMessage();
 
   /**
-   * Gets the DOMDocument representing the last response from this client.
-   * @return DOMDocument the DOMDocument representing the last response
-   * @throws DOMException if the DOMDocument could not be loaded
+   * Gets the \DOMDocument representing the last response from this client.
+   * @return \DOMDocument the \DOMDocument representing the last response
+   * @throws \DOMException if the \DOMDocument could not be loaded
    */
   public function GetLastResponseDom()
   {
@@ -581,9 +583,9 @@ abstract class AdsSoapClient extends SoapClient
   }
 
   /**
-   * Get the DOMDocument representing the last request from this client.
-   * @return DOMDocument the DOMDocument representing the last request
-   * @throws DOMException if the DOMDocument could not be loaded
+   * Get the \DOMDocument representing the last request from this client.
+   * @return \DOMDocument the \DOMDocument representing the last request
+   * @throws \DOMException if the \DOMDocument could not be loaded
    */
   public function GetLastRequestDom()
   {
@@ -644,7 +646,7 @@ abstract class AdsSoapClient extends SoapClient
       if (is_float($value)) {
           $value = sprintf('%.0f', $value);
       }
-    // Any outer XML tag can be used here, as it is later removed by SoapClient.
+    // Any outer XML tag can be used here, as it is later removed by \SoapClient.
     return sprintf('<value>%s</value>', $value);
   }
 
@@ -663,7 +665,7 @@ abstract class AdsSoapClient extends SoapClient
   {
       if (array_key_exists($type, $this->options['classmap'])) {
           $class = $this->options['classmap'][$type];
-          $reflectionClass = new ReflectionClass($class);
+          $reflectionClass = new \ReflectionClass($class);
           if (isset($params)) {
               if (MapUtils::IsMap($params)) {
                   $params = MapUtils::MapToMethodParameters($params,
@@ -684,7 +686,7 @@ abstract class AdsSoapClient extends SoapClient
    *
    * WARNING: to be used for testing purposes only.
    *
-   * @param SoapClient $client the soap client to use.
+   * @param \SoapClient $client the soap client to use.
    * @return AdsSoapClient this prepared client.
    */
   public function __SetTransportLayer(SoapClient $client)
@@ -692,3 +694,4 @@ abstract class AdsSoapClient extends SoapClient
       $this->transportLayer = $client;
   }
 }
+

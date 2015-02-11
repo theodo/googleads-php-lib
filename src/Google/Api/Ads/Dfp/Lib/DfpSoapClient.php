@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Dfp\Lib ;
+
 /**
  * An extension of the {@link AdsSoapClient} for Google's DoubleClick for
  * Publishers API.
@@ -31,7 +33,7 @@
  * @author     Vincent Tsao
  * @see        AdsSoapClient
  */
-require_once 'Google/Api/Ads/Common/Lib/AdsSoapClient.php';
+use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Lib\AdsSoapClient ;
 
 /**
  * An extension of the {@link AdsSoapClient} for Google's DoubleClick for
@@ -76,7 +78,7 @@ class DfpSoapClient extends AdsSoapClient
           }
       }
 
-      return new SoapHeader($this->serviceNamespace, 'RequestHeader',
+      return new \SoapHeader($this->serviceNamespace, 'RequestHeader',
         $headerObject, false);
   }
 
@@ -109,3 +111,4 @@ class DfpSoapClient extends AdsSoapClient
         .$this->GetLastFaultMessage();
   }
 }
+

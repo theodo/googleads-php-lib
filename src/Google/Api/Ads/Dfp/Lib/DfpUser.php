@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Dfp\Lib ;
+
 /**
  * User class for the DoubleClick for Publishers API to create SOAP clients to
  * the available API services.
@@ -29,12 +31,12 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Lib/AdsUser.php';
-require_once 'Google/Api/Ads/Common/Util/ApiPropertiesUtils.php';
-require_once 'Google/Api/Ads/Common/Util/AuthToken.php';
-require_once 'Google/Api/Ads/Common/Util/DeprecationUtils.php';
-require_once 'Google/Api/Ads/Common/Util/Logger.php';
-require_once 'Google/Api/Ads/Dfp/Lib/DfpSoapClientFactory.php';
+use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Lib\AdsUser ;
+use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Util\ApiPropertiesUtils ;
+use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Util\AuthToken ;
+use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Util\DeprecationUtils ;
+use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Util\Logger ;
+use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Dfp\Lib\DfpSoapClientFactory ;
 
 /**
  * User class for the DoubleClick for Publishers API to create SOAP clients to
@@ -46,7 +48,7 @@ class DfpUser extends AdsUser
 {
 
   const OAUTH2_SCOPE = 'https://www.googleapis.com/auth/dfp';
-    const OAUTH2_HANDLER_CLASS = 'SimpleOAuth2Handler';
+    const OAUTH2_HANDLER_CLASS = '\Google\Api\Ads\Common\Util\SimpleOAuth2Handler';
     const FINAL_CLIENT_LOGIN_VERSION = "v201311";
 
   /**
@@ -166,13 +168,13 @@ class DfpUser extends AdsUser
    *     <var>NULL</var>, then the default version will be used
    * @param string $server the server to make the request to. If
    *     <var>NULL</var>, then the default server will be used
-   * @param SoapClientFactory $serviceFactory the factory to create the client.
+   * @param \SoapClientFactory $serviceFactory the factory to create the client.
    *     If <var>NULL</var>, then the built-in SOAP client factory will be used
-   * @return SoapClient the instantiated service
+   * @return \SoapClient the instantiated service
    * @throws ServiceException if an error occurred when getting the service
    */
   public function GetService($serviceName, $version = null, $server = null,
-      SoapClientFactory $serviceFactory = null)
+      \SoapClientFactory $serviceFactory = null)
   {
       $this->ValidateUser();
       if (!isset($serviceFactory)) {
@@ -385,3 +387,4 @@ class DfpUser extends AdsUser
     }
   }
 }
+

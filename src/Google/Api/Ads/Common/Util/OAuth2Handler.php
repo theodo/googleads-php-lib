@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * An abstract class for Google OAuth 2.0 flow.
  *
@@ -27,7 +29,7 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/UrlUtils.php';
+use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Util\UrlUtils ;
 
 /**
  * An abstract class for Google OAuth2 flow.
@@ -288,15 +290,3 @@ abstract class OAuth2Handler
   }
 }
 
-/**
- * Exception thrown when OAuth2 flow fails.
- * @package GoogleApiAdsCommon
- * @subpackage Util
- */
-class OAuth2Exception extends Exception
-{
-  public function __construct($message, $code = null)
-  {
-      parent::__construct($message, $code);
-  }
-}

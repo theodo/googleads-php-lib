@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Dfp\Lib ;
+
 /**
  * Factory class for SOAP clients for Google's DoubleClick for Publishers API.
  *
@@ -28,15 +30,15 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Lib/AdsUser.php';
-require_once 'Google/Api/Ads/Common/Lib/SoapClientFactory.php';
+use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Lib\AdsUser ;
+use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Lib\SoapClientFactory ;
 
 /**
  * Factory class for SOAP clients for Google's DoubleClick for Publishers API.
  * @package GoogleApiAdsDfp
  * @subpackage Lib
  */
-class DfpSoapClientFactory extends SoapClientFactory
+class DfpSoapClientFactory extends \SoapClientFactory
 {
 
   /**
@@ -62,3 +64,4 @@ class DfpSoapClientFactory extends SoapClientFactory
         $this->GetVersion(), $serviceName.'.php', ));
   }
 }
+

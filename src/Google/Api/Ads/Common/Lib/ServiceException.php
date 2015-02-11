@@ -1,6 +1,8 @@
 <?php
+namespace Google\Api\Ads\Common\Lib ;
+
 /**
- * Exception class for any client library error related to obtaining a service.
+ * \Exception class for any client library error related to obtaining a service.
  *
  * PHP version 5
  *
@@ -28,21 +30,22 @@
  */
 
 /**
- * Exception class for any client library error related to obtaining a service.
+ * \Exception class for any client library error related to obtaining a service.
  * @package GoogleApiAdsCommon
  * @subpackage Lib
  */
-class ServiceException extends Exception
+class ServiceException extends \Exception
 {
 
   /**
    * Creates a new instance of this service exception.
    * @param string $message the exception message
    * @param int $code user defined exception code
-   * @param Exception $previous previous exception if nested exception
+   * @param \Exception $previous previous exception if nested exception
    */
-  public function __construct($message, $code = 0, Exception $previous = null)
+  public function __construct($message, $code = 0, \Exception $previous = null)
   {
       parent::__construct($message, $code, $previous);
   }
 }
+

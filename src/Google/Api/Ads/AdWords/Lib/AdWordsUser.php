@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\AdWords\Lib ;
+
 /**
  * User class for the AdWords API to create SOAP clients to the available API
  * services.
@@ -31,13 +33,13 @@
  * @author     Paul Matthews
  * @see        AdsUser
  */
-require_once dirname(__FILE__).'/../../Common/Lib/AdsUser.php';
-require_once dirname(__FILE__).'/../../Common/Util/ApiPropertiesUtils.php';
-require_once dirname(__FILE__).'/../../Common/Util/AuthToken.php';
-require_once dirname(__FILE__).'/../../Common/Util/DeprecationUtils.php';
-require_once dirname(__FILE__).'/../Util/ReportUtils.php';
-require_once 'AdWordsSoapClientFactory.php';
-require_once 'AdWordsConstants.php';
+use  \Google\Api\Ads\Common\Lib\AdsUser ;
+use  \Google\Api\Ads\Common\Util\ApiPropertiesUtils ;
+use  \Google\Api\Ads\Common\Util\AuthToken ;
+use  \Google\Api\Ads\Common\Util\DeprecationUtils ;
+use  \Google\Api\Ads\AdWords\Util\ReportUtils ;
+use  \Google\Api\Ads\AdWords\LibAdWordsSoapClientFactory ;
+use  \Google\Api\Ads\AdWords\LibAdWordsConstants ;
 
 /**
  * User class for the AdWords API to create SOAP clients to the available API
@@ -49,7 +51,7 @@ class AdWordsUser extends AdsUser
 {
 
   const OAUTH2_SCOPE = 'https://www.googleapis.com/auth/adwords';
-    const OAUTH2_HANDLER_CLASS = 'SimpleOAuth2Handler';
+    const OAUTH2_HANDLER_CLASS = '\Google\Api\Ads\Common\Util\SimpleOAuth2Handler';
 
   /**
    * The name of the SOAP header that represents the user agent making API
@@ -210,17 +212,17 @@ class AdWordsUser extends AdsUser
    *     <var>NULL</var>, then the default version will be used
    * @param string $server the server to make the request to. If
    *     <var>NULL</var>, then the default server will be used
-   * @param SoapClientFactory $serviceFactory the factory to create the client.
+   * @param \SoapClientFactory $serviceFactory the factory to create the client.
    *     If <var>NULL</var>, then the built-in SOAP client factory will be used
    * @param bool $validateOnly if the service should be created in validateOnly
    *     mode
    * @param bool $partialFailure if the service should be created in
    *     partialFailure mode
-   * @return SoapClient the instantiated service
+   * @return \SoapClient the instantiated service
    * @throws ServiceException if an error occurred when getting the service
    */
   public function GetService($serviceName, $version = null, $server = null,
-      SoapClientFactory $serviceFactory = null, $validateOnly = null,
+      \SoapClientFactory $serviceFactory = null, $validateOnly = null,
       $partialFailure = null)
   {
       $this->ValidateUser();
@@ -441,3 +443,4 @@ class AdWordsUser extends AdsUser
     }
   }
 }
+

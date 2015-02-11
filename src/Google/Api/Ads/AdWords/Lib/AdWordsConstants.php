@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\AdWords\Lib ;
+
 /**
  * Useful constants for the AdWords API.
  *
@@ -53,3 +55,4 @@ class AdWordsConstants
    */
   const MICRO_DEGREES_PER_DEGREE = 1000000;
 }
+

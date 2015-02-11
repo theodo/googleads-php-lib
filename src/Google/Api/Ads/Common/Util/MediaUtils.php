@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * A utility class to handle data of media assets (such as image, SWF,
  * or video files).
@@ -66,3 +68,4 @@ class MediaUtils
       }
   }
 }
+

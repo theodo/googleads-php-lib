@@ -1,7 +1,9 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * The SOAP XML request fixer used to fix some inconsistencies among the
- * different versions of the PHP SoapClient.
+ * different versions of the PHP \SoapClient.
  *
  * PHP version 5
  *
@@ -29,11 +31,11 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/XmlUtils.php';
+use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Util\XmlUtils ;
 
 /**
  * The SOAP XML request fixer used to fix some inconsistencies among the
- * different versions of the PHP SoapClient.
+ * different versions of the PHP \SoapClient.
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
@@ -73,7 +75,7 @@ class SoapRequestXmlFixer
   public function FixXml($request, array $arguments, array $headers)
   {
       $requestDom = XmlUtils::GetDomFromXml($request);
-      $xpath = new DOMXPath($requestDom);
+      $xpath = new \DOMXPath($requestDom);
 
     // Fix headers.
     $headersDomNodes = $xpath->query(
@@ -100,12 +102,12 @@ class SoapRequestXmlFixer
 
   /**
    * Fix a list of nodes corresponding to an array of objects.
-   * @param DOMNodeList $nodeList the node list matching <var>$objects</var>
+   * @param \DOMNodeList $nodeList the node list matching <var>$objects</var>
    * @param array $objects the objects array matching <var>$nodeList</var>
-   * @param DOMXPath $xpath the xpath object representing the DOM
+   * @param \DOMXPath $xpath the xpath object representing the DOM
    */
-  private function FixXmlNodes(DOMNodeList $nodeList, array $objects,
-      DOMXPath $xpath)
+  private function FixXmlNodes(\DOMNodeList $nodeList, array $objects,
+      \DOMXPath $xpath)
   {
       if ($nodeList->length == sizeof($objects)) {
           $i = 0;
@@ -118,15 +120,15 @@ class SoapRequestXmlFixer
 
   /**
    * Fix a node corresponding to an objects.
-   * @param DOMNode $node the node matching <var>$object</var>
+   * @param \DOMNode $node the node matching <var>$object</var>
    * @param mixed $object the object matching <var>$node</var>
-   * @param DOMXPath $xpath the xpath object representing the DOM
+   * @param \DOMXPath $xpath the xpath object representing the DOM
    */
-  private function FixXmlNode(DOMNode $node, $object, DOMXPath $xpath)
+  private function FixXmlNode(\DOMNode $node, $object, \DOMXPath $xpath)
   {
-      if ($object instanceof SoapHeader) {
+      if ($object instanceof \SoapHeader) {
           $this->FixXmlNode($node, $object->data, $xpath);
-      } elseif ($object instanceof SoapVar) {
+      } elseif ($object instanceof \SoapVar) {
           $this->FixXmlNode($node, $object->enc_value, $xpath);
       } else {
           if ($this->addXsiTypes && is_object($object)) {
@@ -159,12 +161,12 @@ class SoapRequestXmlFixer
   }
 
   /**
-   * Adds the xsi:type to the DOMNode generated from the corresponding object.
-   * @param DOMNode $domNode the DOM node corresponding to the object
+   * Adds the xsi:type to the \DOMNode generated from the corresponding object.
+   * @param \DOMNode $domNode the DOM node corresponding to the object
    * @param $object the object used to determine the xsi:type
    * @access private
    */
-  private function AddXsiType(DOMNode $domNode, $object)
+  private function AddXsiType(\DOMNode $domNode, $object)
   {
       $xsiType = $domNode->getAttributeNS(self::$XSI_NAMESPACE, 'xsi:type');
       if (method_exists($object, 'getXsiTypeName')
@@ -181,12 +183,12 @@ class SoapRequestXmlFixer
 
   /**
    * Replaces an element reference with a copy of the element it references.
-   * @param DOMElement $elementReference the element reference to replace
-   * @param DOMXPath $xpath the xpath object representing the DOM
+   * @param \DOMElement $elementReference the element reference to replace
+   * @param \DOMXPath $xpath the xpath object representing the DOM
    * @access private
    */
-  private function ReplaceElementReference(DOMElement $elementReference,
-      DOMXPath $xpath)
+  private function ReplaceElementReference(\DOMElement $elementReference,
+      \DOMXPath $xpath)
   {
       $href = $elementReference->getAttribute('href');
       if (version_compare(PHP_VERSION, '5.2.2', '>=')
@@ -208,10 +210,10 @@ class SoapRequestXmlFixer
 
   /**
    * Removed id attributes leftover after reference replacement.
-   * @param DOMXPath $xpath the xpath object representing the DOM
+   * @param \DOMXPath $xpath the xpath object representing the DOM
    * @access private
    */
-  private function RemoveIdAttributes(DOMXPath $xpath)
+  private function RemoveIdAttributes(\DOMXPath $xpath)
   {
       $elements = $xpath->query('//*[@id]');
       for ($i = 0; $i < $elements->length; $i++) {
@@ -222,10 +224,10 @@ class SoapRequestXmlFixer
 
   /**
    * Removes empty header elements from the request.
-   * @param DOMXPath $xpath the xpath object representing the DOM
+   * @param \DOMXPath $xpath the xpath object representing the DOM
    * @access private
    */
-  private function RemoveEmptyHeaderElements(DOMXPath $xpath)
+  private function RemoveEmptyHeaderElements(\DOMXPath $xpath)
   {
       $requestHeaderDom = $xpath->query(
         "//*[local-name()='Envelope']/*[local-name()='Header']"
@@ -240,3 +242,4 @@ class SoapRequestXmlFixer
       }
   }
 }
+

@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Dfp\Util ;
+
 /**
  * A utility class for handling PQL objects.
  *
@@ -26,7 +28,7 @@
  *             Version 2.0
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Dfp/Util/DateTimeUtils.php';
+use  \Google\Api\Ads\Dfp\UtilGoogle\Api\Ads\Dfp\Util\DateTimeUtils ;
 
 /**
  * A utility class for handling PQL objects.
@@ -183,3 +185,4 @@ class Pql
       return new ResultSet($first->columnTypes, $combinedRows);
   }
 }
+

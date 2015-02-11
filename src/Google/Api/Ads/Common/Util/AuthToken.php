@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Common\Util ;
+
 /**
  * Client used to retrieve authentication tokens from the Client Login API.
  * @link http://code.google.com/apis/accounts/docs/AuthForInstalledApps.html
@@ -29,8 +31,8 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/AuthTokenException.php';
-require_once 'Google/Api/Ads/Common/Util/CurlUtils.php';
+use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Util\AuthTokenException ;
+use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Util\CurlUtils ;
 
 /**
  * Client used to retrieve authentication tokens from the Client Login API.
@@ -185,3 +187,4 @@ class AuthToken
       return $this->server;
   }
 }
+

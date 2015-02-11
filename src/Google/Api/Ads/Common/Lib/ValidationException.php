@@ -1,6 +1,8 @@
 <?php
+namespace Google\Api\Ads\Common\Lib ;
+
 /**
- * Exception class for any client library validation error.
+ * \Exception class for any client library validation error.
  *
  * PHP version 5
  *
@@ -30,11 +32,11 @@
  */
 
 /**
- * Exception class for any client library validation error.
+ * \Exception class for any client library validation error.
  * @package GoogleApiAdsCommon
  * @subpackage Lib
  */
-class ValidationException extends Exception
+class ValidationException extends \Exception
 {
 
     const EXCEPTION_FORMAT = 'Validation failed for [%s] with value [%s]: %s';
@@ -68,3 +70,4 @@ class ValidationException extends Exception
         return $this->trigger;
     }
 }
+

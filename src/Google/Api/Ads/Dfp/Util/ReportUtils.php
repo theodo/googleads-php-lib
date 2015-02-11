@@ -1,4 +1,6 @@
 <?php
+namespace Google\Api\Ads\Dfp\Util ;
+
 /**
  * This class is now deprecated. Please use ReportDownloader.php instead.
  *
@@ -29,8 +31,8 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once 'Google/Api/Ads/Common/Util/CurlUtils.php';
-require_once 'Google/Api/Ads/Common/Util/DeprecationUtils.php';
+use  \Google\Api\Ads\Dfp\UtilGoogle\Api\Ads\Common\Util\CurlUtils ;
+use  \Google\Api\Ads\Dfp\UtilGoogle\Api\Ads\Common\Util\DeprecationUtils ;
 
 /**
  * A collection of utility methods for working with reports.
@@ -98,3 +100,4 @@ class ReportUtils
       }
   }
 }
+
