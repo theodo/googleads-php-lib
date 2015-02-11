@@ -41,7 +41,8 @@ require_once 'Google/Api/Ads/Common/Util/DeprecationUtils.php';
  *     https://github.com/googleads/googleads-php-lib/wiki/Migrating-off-of-DFP-ServiceUtils-functions
  *     for more information
  */
-class ServiceUtils {
+class ServiceUtils
+{
 
   /**
    * The size of each page of results, as controlled by the LIMIT clause.
@@ -67,7 +68,9 @@ class ServiceUtils {
   /**
    * The ServiceUtils class is not meant to have any instances.
    */
-  private function __construct() {}
+  private function __construct()
+  {
+  }
 
   /**
    * Returns all the objects from an account, using the service and method
@@ -82,41 +85,42 @@ class ServiceUtils {
    *     OFFSET options
    */
   public static function GetAllObjects(DfpSoapClient $service,
-      $methodName, $filterText = NULL) {
-    DeprecationUtils::LogDeprecatedMethodUsage('GetAllObjects',
+      $methodName, $filterText = null)
+  {
+      DeprecationUtils::LogDeprecatedMethodUsage('GetAllObjects',
         'https://github.com/googleads/googleads-php-lib/wiki/Migrating-off-of-DFP-ServiceUtils-functions');
-    if (!isset($filterText)) {
-      $filterText = '';
-    }
-    if (!preg_match(self::GET_BY_STATEMENT_METHOD_NAME_REGEX, $methodName)) {
-      throw new InvalidArgumentException(
-          'The method name must be in the format a "get*ByStatement".');
-    }
-    $matches = array();
-    if (preg_match(self::INCOMPATIBLE_FILTER_TEXT_REGEX, $filterText,
-        $matches)) {
-      throw new InvalidArgumentException(
-          'The filter text contains an option that is incompatible with this '
-          .'method: ' . $matches[0]);
-    }
-
-    $allObjects = array();
-    $filterStatement = new Statement();
-    $offset = 0;
-    $page = NULL;
-
-    do {
-      $filterStatement->query = $filterText . ' LIMIT ' . self::PAGE_SIZE
-          . ' OFFSET ' . $offset;
-      $page = $service->$methodName($filterStatement);
-      if (isset($page->results)) {
-        $allObjects = array_merge($allObjects, $page->results);
+      if (!isset($filterText)) {
+          $filterText = '';
       }
-      $offset += self::PAGE_SIZE;
-    } while (isset($page->results)
+      if (!preg_match(self::GET_BY_STATEMENT_METHOD_NAME_REGEX, $methodName)) {
+          throw new InvalidArgumentException(
+          'The method name must be in the format a "get*ByStatement".');
+      }
+      $matches = array();
+      if (preg_match(self::INCOMPATIBLE_FILTER_TEXT_REGEX, $filterText,
+        $matches)) {
+          throw new InvalidArgumentException(
+          'The filter text contains an option that is incompatible with this '
+          .'method: '.$matches[0]);
+      }
+
+      $allObjects = array();
+      $filterStatement = new Statement();
+      $offset = 0;
+      $page = null;
+
+      do {
+          $filterStatement->query = $filterText.' LIMIT '.self::PAGE_SIZE
+          .' OFFSET '.$offset;
+          $page = $service->$methodName($filterStatement);
+          if (isset($page->results)) {
+              $allObjects = array_merge($allObjects, $page->results);
+          }
+          $offset += self::PAGE_SIZE;
+      } while (isset($page->results)
           && sizeof($page->results) == self::PAGE_SIZE);
 
-    return $allObjects;
+      return $allObjects;
   }
 
   /**
@@ -131,17 +135,18 @@ class ServiceUtils {
    *     OFFSET options
    */
   public static function GetSomeObjects(DfpSoapClient $service,
-      $methodName, $filterText) {
-    DeprecationUtils::LogDeprecatedMethodUsage('GetSomeObjects',
+      $methodName, $filterText)
+  {
+      DeprecationUtils::LogDeprecatedMethodUsage('GetSomeObjects',
         'https://github.com/googleads/googleads-php-lib/wiki/Migrating-off-of-DFP-ServiceUtils-functions');
-    if (!preg_match(self::GET_BY_STATEMENT_METHOD_NAME_REGEX, $methodName)) {
-      throw new InvalidArgumentException(
+      if (!preg_match(self::GET_BY_STATEMENT_METHOD_NAME_REGEX, $methodName)) {
+          throw new InvalidArgumentException(
           'The method name must be in the format a "get*ByStatement".');
-    }
-    $filterStatement = new Statement();
-    $filterStatement->query = $filterText;
-    $page = $service->$methodName($filterStatement);
-    return $page->results;
+      }
+      $filterStatement = new Statement();
+      $filterStatement->query = $filterText;
+      $page = $service->$methodName($filterStatement);
+
+      return $page->results;
   }
 }
-

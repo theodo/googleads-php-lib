@@ -33,7 +33,8 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-class OgnlUtils {
+class OgnlUtils
+{
 
   /**
    * Matches either a field or an index, and ensures the required punctionation
@@ -51,7 +52,9 @@ class OgnlUtils {
    * The OgnlUtils class is not meant to have any instances.
    * @access private
    */
-  private function __construct() {}
+  private function __construct()
+  {
+  }
 
   /**
    * Gets the value of an OGNL expression in the given context.
@@ -59,33 +62,35 @@ class OgnlUtils {
    * @param $context the context in which to evaluate the expression
    * @return the value of the expression or NULL if the expression is invalid
    */
-  public static function GetValue($expression, $context) {
-    if (!isset($expression) || !isset($context)) {
-      return NULL;
-    }
-    while(strlen($expression) > 0) {
-      $matches = array();
-      if (preg_match(self::$OGNL_TOKEN_REGEX, $expression, $matches)) {
-        $token = array_shift($matches);
-        $expression = substr($expression, strlen($token));
+  public static function GetValue($expression, $context)
+  {
+      if (!isset($expression) || !isset($context)) {
+          return;
+      }
+      while (strlen($expression) > 0) {
+          $matches = array();
+          if (preg_match(self::$OGNL_TOKEN_REGEX, $expression, $matches)) {
+              $token = array_shift($matches);
+              $expression = substr($expression, strlen($token));
         // Remove empty matches.
         $matches = array_filter($matches, 'strlen');
-        foreach ($matches as $field) {
-          if (is_object($context) && property_exists($context, $field)) {
-            $context = $context->$field;
-          } else if (is_array($context) && array_key_exists($field, $context)) {
-            $context = $context[$field];
+              foreach ($matches as $field) {
+                  if (is_object($context) && property_exists($context, $field)) {
+                      $context = $context->$field;
+                  } elseif (is_array($context) && array_key_exists($field, $context)) {
+                      $context = $context[$field];
+                  } else {
+                      // Field doesn't evaluate in the context.
+            return;
+                  }
+              }
           } else {
-            // Field doesn't evaluate in the context.
-            return NULL;
+              // Invalid expression.
+        return;
           }
-        }
-      } else {
-        // Invalid expression.
-        return NULL;
       }
-    }
-    return $context;
+
+      return $context;
   }
 
   /**
@@ -95,13 +100,13 @@ class OgnlUtils {
    * @return int the operation index referenced, or NULL if no operation was
    *     references
    */
-  public static function GetOperationIndex($expression) {
-    $matches = array();
-    if (preg_match(self::$OPERATION_INDEX_REGEX, $expression, $matches)) {
-      return $matches[1];
-    } else {
-      return NULL;
-    }
+  public static function GetOperationIndex($expression)
+  {
+      $matches = array();
+      if (preg_match(self::$OPERATION_INDEX_REGEX, $expression, $matches)) {
+          return $matches[1];
+      } else {
+          return;
+      }
   }
 }
-

@@ -34,12 +34,15 @@ require_once 'Google/Api/Ads/Dfp/Util/DateTimeUtils.php';
  * @package GoogleApiAdsDfp
  * @subpackage Util
  */
-class Pql {
+class Pql
+{
 
   /**
    * {@link Pql} is meant to be used statically.
    */
-  private function __construct() {}
+  private function __construct()
+  {
+  }
 
   /**
    * Creates a {@link Value} from the value i.e., a {@link TextValue} for a
@@ -54,72 +57,76 @@ class Pql {
    * @return Value the constructed value of the appropriate type
    * @throws InvalidArgumentException if value cannot be converted
    */
-  public static function CreateValue($value) {
-    if ($value instanceof Value) {
-      return $value;
-    } else if ($value === null) {
-      return new TextValue();
-    } else {
-      if (is_bool($value)) {
-        return new BooleanValue($value);
-      } else if (is_float($value) || is_int($value)) {
-        return new NumberValue($value);
-      } else if (is_string($value)) {
-        return new TextValue($value);
-      } else if ($value instanceof DfpDateTime) {
-        return new DateTimeValue($value);
-      } else if ($value instanceof Date) {
-        return new DateValue($value);
-      } else if (is_array($value)) {
-        $setValue = new SetValue();
-        $values = array();
-        foreach ($value as $pqlValue) {
-          $values[] = self::CreateValue($pqlValue);
-        }
-        $setValue->values = $values;
-        return $setValue;
-      } else if (class_exists('TargetingValue', false) &&
-          $value instanceof Targeting) {
-        return new TargetingValue($value);
+  public static function CreateValue($value)
+  {
+      if ($value instanceof Value) {
+          return $value;
+      } elseif ($value === null) {
+          return new TextValue();
       } else {
-        throw new InvalidArgumentException(sprintf("Unsupported value type "
-            . "[%s]", get_class($value)));
+          if (is_bool($value)) {
+              return new BooleanValue($value);
+          } elseif (is_float($value) || is_int($value)) {
+              return new NumberValue($value);
+          } elseif (is_string($value)) {
+              return new TextValue($value);
+          } elseif ($value instanceof DfpDateTime) {
+              return new DateTimeValue($value);
+          } elseif ($value instanceof Date) {
+              return new DateValue($value);
+          } elseif (is_array($value)) {
+              $setValue = new SetValue();
+              $values = array();
+              foreach ($value as $pqlValue) {
+                  $values[] = self::CreateValue($pqlValue);
+              }
+              $setValue->values = $values;
+
+              return $setValue;
+          } elseif (class_exists('TargetingValue', false) &&
+          $value instanceof Targeting) {
+              return new TargetingValue($value);
+          } else {
+              throw new InvalidArgumentException(sprintf("Unsupported value type "
+            ."[%s]", get_class($value)));
+          }
       }
-    }
   }
 
- /**
+  /**
    * Creates a String from the Value.
    *
    * @param Value $value the value to convert
    * @return string the string representation of the value
    * @throws InvalidArgumentException if value cannot be converted
    */
-  public static function ToString(Value $value) {
-    if ($value instanceof BooleanValue) {
-      return ($value->value) ? 'true' : 'false';
-    } else if ($value instanceof NumberValue || $value instanceof TextValue) {
-      return strval($value->value);
-    } else if ($value instanceof DateTimeValue) {
-      return (isset($value->value))
+  public static function ToString(Value $value)
+  {
+      if ($value instanceof BooleanValue) {
+          return ($value->value) ? 'true' : 'false';
+      } elseif ($value instanceof NumberValue || $value instanceof TextValue) {
+          return strval($value->value);
+      } elseif ($value instanceof DateTimeValue) {
+          return (isset($value->value))
           ? DateTimeUtils::ToStringWithTimeZone($value->value) : '';
-    } else if ($value instanceof DateValue) {
-      return DateTimeUtils::ToString($value->value);
-    } else if ($value instanceof SetValue) {
-      $pqlValues = $value->values;
-      if (!isset($pqlValues)) {
-        return '';
+      } elseif ($value instanceof DateValue) {
+          return DateTimeUtils::ToString($value->value);
+      } elseif ($value instanceof SetValue) {
+          $pqlValues = $value->values;
+          if (!isset($pqlValues)) {
+              return '';
+          } else {
+              $valuesAsStrings = array();
+              foreach ($pqlValues as $pqlValue) {
+                  $valuesAsStrings[] = self::ToString($pqlValue);
+              }
+
+              return implode(',', $valuesAsStrings);
+          }
       } else {
-        $valuesAsStrings = array();
-        foreach ($pqlValues as $pqlValue) {
-          $valuesAsStrings[] = self::ToString($pqlValue);
-        }
-        return implode(',', $valuesAsStrings);
-      }
-    } else {
-      throw new InvalidArgumentException(sprintf("Unsupported Value type [%s]",
+          throw new InvalidArgumentException(sprintf("Unsupported Value type [%s]",
           get_class($value)));
-    }
+      }
   }
 
   /**
@@ -128,12 +135,14 @@ class Pql {
    * @param ResultSet $resultSet the result set to get the column labels for
    * @return array the string list of column labels
    */
-  public static function GetColumnLabels(ResultSet $resultSet) {
-    $columnLabels = array();
-    foreach ($resultSet->columnTypes as $columnType) {
-      $columnLabels[] = $columnType->labelName;
-    }
-    return $columnLabels;
+  public static function GetColumnLabels(ResultSet $resultSet)
+  {
+      $columnLabels = array();
+      foreach ($resultSet->columnTypes as $columnType) {
+          $columnLabels[] = $columnType->labelName;
+      }
+
+      return $columnLabels;
   }
 
   /**
@@ -142,8 +151,9 @@ class Pql {
    * @param Row $row the row to get the values for
    * @return array the string list of row labels
    */
-  public static function GetRowStringValues(Row $row) {
-    return array_map(array('Pql', 'ToString'), $row->values);
+  public static function GetRowStringValues(Row $row)
+  {
+      return array_map(array('Pql', 'ToString'), $row->values);
   }
 
   /**
@@ -154,22 +164,22 @@ class Pql {
    *     identical column headers
    */
   public static function CombineResultSets(ResultSet $first,
-      ResultSet $second) {
-    $firstColumns = self::GetColumnLabels($first);
-    $secondColumns = self::GetColumnLabels($second);
+      ResultSet $second)
+  {
+      $firstColumns = self::GetColumnLabels($first);
+      $secondColumns = self::GetColumnLabels($second);
 
-    if ($firstColumns !== $secondColumns) {
-      throw new InvalidArgumentException(sprintf("First result set columns "
-          . "[%s] do not match second result set columns [%s]", implode(', ',
+      if ($firstColumns !== $secondColumns) {
+          throw new InvalidArgumentException(sprintf("First result set columns "
+          ."[%s] do not match second result set columns [%s]", implode(', ',
           $firstColumns), implode(', ', $secondColumns)));
-    }
+      }
 
-    $combinedRows = $first->rows;
-    if (isset($second->rows)) {
-      $combinedRows = array_merge($combinedRows, $second->rows);
-    }
+      $combinedRows = $first->rows;
+      if (isset($second->rows)) {
+          $combinedRows = array_merge($combinedRows, $second->rows);
+      }
 
-    return new ResultSet($first->columnTypes, $combinedRows);
+      return new ResultSet($first->columnTypes, $combinedRows);
   }
 }
-

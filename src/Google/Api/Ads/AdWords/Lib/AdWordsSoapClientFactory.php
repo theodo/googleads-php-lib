@@ -27,15 +27,16 @@
  * @author     Adam Rogal
  * @see        SoapClientFactory
  */
-require_once dirname(__FILE__) . '/../../Common/Lib/AdsUser.php';
-require_once dirname(__FILE__) . '/../../Common/Lib/SoapClientFactory.php';
+require_once dirname(__FILE__).'/../../Common/Lib/AdsUser.php';
+require_once dirname(__FILE__).'/../../Common/Lib/SoapClientFactory.php';
 
 /**
  * Factory class for SOAP clients for the AdWords API.
  * @package GoogleApiAdsAdWords
  * @subpackage Lib
  */
-class AdWordsSoapClientFactory extends SoapClientFactory {
+class AdWordsSoapClientFactory extends SoapClientFactory
+{
 
   /**
    * The constructor for the AdWords API SOAP client factory.
@@ -48,26 +49,27 @@ class AdWordsSoapClientFactory extends SoapClientFactory {
    *     partialFailure mode
    */
   public function __construct(AdsUser $user, $version, $server, $validateOnly,
-      $partialFailure) {
-    if ($version >= 'v201109' && $user->GetHeaderValue('clientEmail') != NULL) {
-      throw new Exception('The header "clientEmail" is not compatible with '
-          . 'versions v201109 and later. Use clientCustomerId instead.');
-    }
-    $headerOverrides = array();
-    if (isset($validateOnly) || isset($partialFailure)) {
-      $headerOverrides['validateOnly'] = $validateOnly;
-      $headerOverrides['partialFailure'] = $partialFailure;
-    }
-    parent::__construct($user, $version, $server, 'adwords', $headerOverrides);
+      $partialFailure)
+  {
+      if ($version >= 'v201109' && $user->GetHeaderValue('clientEmail') != null) {
+          throw new Exception('The header "clientEmail" is not compatible with '
+          .'versions v201109 and later. Use clientCustomerId instead.');
+      }
+      $headerOverrides = array();
+      if (isset($validateOnly) || isset($partialFailure)) {
+          $headerOverrides['validateOnly'] = $validateOnly;
+          $headerOverrides['partialFailure'] = $partialFailure;
+      }
+      parent::__construct($user, $version, $server, 'adwords', $headerOverrides);
   }
 
   /**
    * Initiates a require_once for the service.
    * @param string $serviceName the service to instantiate
    */
-  public function DoRequireOnce($serviceName) {
-    require_once implode("/", array(dirname(__FILE__), '..',
-        $this->GetVersion(), $serviceName . '.php'));
+  public function DoRequireOnce($serviceName)
+  {
+      require_once implode("/", array(dirname(__FILE__), '..',
+        $this->GetVersion(), $serviceName.'.php', ));
   }
 }
-

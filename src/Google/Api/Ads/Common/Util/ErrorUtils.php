@@ -33,16 +33,19 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-class ErrorUtils {
+class ErrorUtils
+{
 
   private static $API_EXCEPTION_FIELD_NAME = 'ApiExceptionFault';
-  private static $OPERATION_INDEX_OGNL_REGEX = '/^operations\[(\d+)\]/';
+    private static $OPERATION_INDEX_OGNL_REGEX = '/^operations\[(\d+)\]/';
 
   /**
    * The ErrorUtils class is not meant to have any instances.
    * @access private
    */
-  private function __construct() {}
+  private function __construct()
+  {
+  }
 
   /**
    * Gets the ApiErrors in the SOAP fault, if any.
@@ -50,25 +53,27 @@ class ErrorUtils {
    * @return array the ApiErrors in the SOAP fault, or an empty array if there
    *     were none
    */
-  public static function GetApiErrors(SoapFault $fault) {
-    $results = array();
-    if (isset($fault->detail)) {
-      foreach (get_object_vars($fault->detail) as $fieldName => $fieldValue) {
-        if ($fieldName == ErrorUtils::$API_EXCEPTION_FIELD_NAME) {
-          $errors = $fieldValue->errors;
-          if (!is_array($errors)) {
-            $errors = array($errors);
+  public static function GetApiErrors(SoapFault $fault)
+  {
+      $results = array();
+      if (isset($fault->detail)) {
+          foreach (get_object_vars($fault->detail) as $fieldName => $fieldValue) {
+              if ($fieldName == ErrorUtils::$API_EXCEPTION_FIELD_NAME) {
+                  $errors = $fieldValue->errors;
+                  if (!is_array($errors)) {
+                      $errors = array($errors);
+                  }
+                  foreach ($errors as $error) {
+                      if ($error instanceof SoapVar) {
+                          $error = $error->enc_value;
+                      }
+                      $results[] = $error;
+                  }
+              }
           }
-          foreach ($errors as $error) {
-            if ($error instanceof SoapVar) {
-              $error = $error->enc_value;
-            }
-            $results[] = $error;
-          }
-        }
       }
-    }
-    return $results;
+
+      return $results;
   }
 
   /**
@@ -77,15 +82,15 @@ class ErrorUtils {
    * @return int the index of the operation that caused the error, or NULL if
    *     no operation was referenced by the error
    */
-  public static function GetSourceOperationIndex($error) {
-    $matches = array();
-    if (preg_match(ErrorUtils::$OPERATION_INDEX_OGNL_REGEX, $error->fieldPath,
+  public static function GetSourceOperationIndex($error)
+  {
+      $matches = array();
+      if (preg_match(ErrorUtils::$OPERATION_INDEX_OGNL_REGEX, $error->fieldPath,
         $matches)) {
-      return $matches[1];
-    } else {
-      // Invalid fieldPath.
-      return NULL;
-    }
+          return $matches[1];
+      } else {
+          // Invalid fieldPath.
+      return;
+      }
   }
 }
-

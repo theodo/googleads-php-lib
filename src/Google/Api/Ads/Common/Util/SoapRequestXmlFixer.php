@@ -37,13 +37,14 @@ require_once 'Google/Api/Ads/Common/Util/XmlUtils.php';
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-class SoapRequestXmlFixer {
+class SoapRequestXmlFixer
+{
 
   private static $XSI_NAMESPACE = 'http://www.w3.org/2001/XMLSchema-instance';
 
-  private $addXsiTypes;
-  private $removeEmptyElements;
-  private $replaceReferences;
+    private $addXsiTypes;
+    private $removeEmptyElements;
+    private $replaceReferences;
 
   /**
    * Constructor to determine how the XML should be fixed.
@@ -55,10 +56,11 @@ class SoapRequestXmlFixer {
    *     should be replaced with a copy of the element.
    */
   public function __construct($addXsiTypes, $removeEmptyElements,
-      $replaceReferences) {
-    $this->addXsiTypes = $addXsiTypes;
-    $this->removeEmptyElements = $removeEmptyElements;
-    $this->replaceReferences = $replaceReferences;
+      $replaceReferences)
+  {
+      $this->addXsiTypes = $addXsiTypes;
+      $this->removeEmptyElements = $removeEmptyElements;
+      $this->replaceReferences = $replaceReferences;
   }
 
   /**
@@ -68,31 +70,32 @@ class SoapRequestXmlFixer {
    * @param array $headers the headers used in the request
    * @return string the prepared request ready to be sent to the server
    */
-  public function FixXml($request, array $arguments, array $headers) {
-    $requestDom = XmlUtils::GetDomFromXml($request);
-    $xpath = new DOMXPath($requestDom);
+  public function FixXml($request, array $arguments, array $headers)
+  {
+      $requestDom = XmlUtils::GetDomFromXml($request);
+      $xpath = new DOMXPath($requestDom);
 
     // Fix headers.
     $headersDomNodes = $xpath->query(
         "//*[local-name()='Envelope']/*[local-name()='Header']/*");
-    $this->FixXmlNodes($headersDomNodes, $headers, $xpath);
+      $this->FixXmlNodes($headersDomNodes, $headers, $xpath);
 
     // Fix body.
     $argumentsDomNodes = $xpath->query(
         "//*[local-name()='Envelope']/*[local-name()='Body']/*");
-    $this->FixXmlNodes($argumentsDomNodes, $arguments, $xpath);
+      $this->FixXmlNodes($argumentsDomNodes, $arguments, $xpath);
 
     // Remove empty headers.
     if ($this->removeEmptyElements) {
-      $this->RemoveEmptyHeaderElements($xpath);
+        $this->RemoveEmptyHeaderElements($xpath);
     }
 
     // Remove id attributes.
     if ($this->replaceReferences) {
-      $this->RemoveIdAttributes($xpath);
+        $this->RemoveIdAttributes($xpath);
     }
 
-    return $requestDom->saveXML();
+      return $requestDom->saveXML();
   }
 
   /**
@@ -102,14 +105,15 @@ class SoapRequestXmlFixer {
    * @param DOMXPath $xpath the xpath object representing the DOM
    */
   private function FixXmlNodes(DOMNodeList $nodeList, array $objects,
-      DOMXPath $xpath) {
-    if ($nodeList->length == sizeof($objects)) {
-      $i = 0;
-      foreach ($objects as $object) {
-        $this->FixXmlNode($nodeList->item($i), $object, $xpath);
-        $i++;
+      DOMXPath $xpath)
+  {
+      if ($nodeList->length == sizeof($objects)) {
+          $i = 0;
+          foreach ($objects as $object) {
+              $this->FixXmlNode($nodeList->item($i), $object, $xpath);
+              $i++;
+          }
       }
-    }
   }
 
   /**
@@ -118,39 +122,40 @@ class SoapRequestXmlFixer {
    * @param mixed $object the object matching <var>$node</var>
    * @param DOMXPath $xpath the xpath object representing the DOM
    */
-  private function FixXmlNode(DOMNode $node, $object, DOMXPath $xpath) {
-    if ($object instanceof SoapHeader) {
-      $this->FixXmlNode($node, $object->data, $xpath);
-    } elseif ($object instanceof SoapVar) {
-      $this->FixXmlNode($node, $object->enc_value, $xpath);
-    } else {
-      if ($this->addXsiTypes && is_object($object)) {
-        $this->AddXsiType($node, $object);
-      }
+  private function FixXmlNode(DOMNode $node, $object, DOMXPath $xpath)
+  {
+      if ($object instanceof SoapHeader) {
+          $this->FixXmlNode($node, $object->data, $xpath);
+      } elseif ($object instanceof SoapVar) {
+          $this->FixXmlNode($node, $object->enc_value, $xpath);
+      } else {
+          if ($this->addXsiTypes && is_object($object)) {
+              $this->AddXsiType($node, $object);
+          }
 
       // Remove empty elements.
       if ($this->removeEmptyElements && !isset($object)) {
-        $node->parentNode->removeChild($node);
+          $node->parentNode->removeChild($node);
       }
 
       // Replace element references.
       if ($this->replaceReferences && $node->hasAttribute('href')) {
-        $this->ReplaceElementReference($node, $xpath);
+          $this->ReplaceElementReference($node, $xpath);
       }
 
-      if (is_object($object)) {
-        foreach (get_object_vars($object) as $varName => $varValue) {
-          $nodeList =
-              $xpath->query("*[local-name() = '" . $varName . "']", $node);
+          if (is_object($object)) {
+              foreach (get_object_vars($object) as $varName => $varValue) {
+                  $nodeList =
+              $xpath->query("*[local-name() = '".$varName."']", $node);
 
-          if (is_array($varValue)) {
-            $this->FixXmlNodes($nodeList, $varValue, $xpath);
-          } else if ($nodeList->length == 1) {
-            $this->FixXmlNode($nodeList->item(0), $varValue, $xpath);
+                  if (is_array($varValue)) {
+                      $this->FixXmlNodes($nodeList, $varValue, $xpath);
+                  } elseif ($nodeList->length == 1) {
+                      $this->FixXmlNode($nodeList->item(0), $varValue, $xpath);
+                  }
+              }
           }
-        }
       }
-    }
   }
 
   /**
@@ -159,18 +164,19 @@ class SoapRequestXmlFixer {
    * @param $object the object used to determine the xsi:type
    * @access private
    */
-  private function AddXsiType(DOMNode $domNode, $object) {
-    $xsiType = $domNode->getAttributeNS(self::$XSI_NAMESPACE, 'xsi:type');
-    if (method_exists($object, 'getXsiTypeName')
+  private function AddXsiType(DOMNode $domNode, $object)
+  {
+      $xsiType = $domNode->getAttributeNS(self::$XSI_NAMESPACE, 'xsi:type');
+      if (method_exists($object, 'getXsiTypeName')
         && method_exists($object, 'getNamespace')
         && empty($xsiType)) {
-      $xsiTypeName = $object->getXsiTypeName();
-      if (isset($xsiTypeName) && $xsiTypeName != '') {
-        $prefix = $domNode->lookupPrefix($object->getNamespace());
-        $domNode->setAttributeNS(self::$XSI_NAMESPACE, 'xsi:type',
-            (isset($prefix) ? $prefix . ':' : '') . $xsiTypeName);
+          $xsiTypeName = $object->getXsiTypeName();
+          if (isset($xsiTypeName) && $xsiTypeName != '') {
+              $prefix = $domNode->lookupPrefix($object->getNamespace());
+              $domNode->setAttributeNS(self::$XSI_NAMESPACE, 'xsi:type',
+            (isset($prefix) ? $prefix.':' : '').$xsiTypeName);
+          }
       }
-    }
   }
 
   /**
@@ -180,23 +186,24 @@ class SoapRequestXmlFixer {
    * @access private
    */
   private function ReplaceElementReference(DOMElement $elementReference,
-      DOMXPath $xpath) {
-    $href = $elementReference->getAttribute('href');
-    if (version_compare(PHP_VERSION, '5.2.2', '>=')
+      DOMXPath $xpath)
+  {
+      $href = $elementReference->getAttribute('href');
+      if (version_compare(PHP_VERSION, '5.2.2', '>=')
         && version_compare(PHP_VERSION, '5.2.4', '<')) {
-      // These versions have a bug where href is generated without the # symbol.
-      $href = '#' . $href;
-    }
-    $id = substr($href, 1);
-    $referencedElements = $xpath->query('//*[@id="' . $id . '"]');
-    if ($referencedElements->length > 0) {
-      $referencedElement = $referencedElements->item(0);
-      for ($i = 0; $i < $referencedElement->childNodes->length; $i++) {
-        $childNode = $referencedElement->childNodes->item($i);
-        $elementReference->appendChild($childNode->cloneNode(true));
+          // These versions have a bug where href is generated without the # symbol.
+      $href = '#'.$href;
       }
-      $elementReference->removeAttribute('href');
-    }
+      $id = substr($href, 1);
+      $referencedElements = $xpath->query('//*[@id="'.$id.'"]');
+      if ($referencedElements->length > 0) {
+          $referencedElement = $referencedElements->item(0);
+          for ($i = 0; $i < $referencedElement->childNodes->length; $i++) {
+              $childNode = $referencedElement->childNodes->item($i);
+              $elementReference->appendChild($childNode->cloneNode(true));
+          }
+          $elementReference->removeAttribute('href');
+      }
   }
 
   /**
@@ -204,12 +211,13 @@ class SoapRequestXmlFixer {
    * @param DOMXPath $xpath the xpath object representing the DOM
    * @access private
    */
-  private function RemoveIdAttributes(DOMXPath $xpath) {
-    $elements = $xpath->query('//*[@id]');
-    for ($i = 0; $i < $elements->length; $i++) {
-      $element = $elements->item($i);
-      $element->removeAttribute('id');
-    }
+  private function RemoveIdAttributes(DOMXPath $xpath)
+  {
+      $elements = $xpath->query('//*[@id]');
+      for ($i = 0; $i < $elements->length; $i++) {
+          $element = $elements->item($i);
+          $element->removeAttribute('id');
+      }
   }
 
   /**
@@ -217,18 +225,18 @@ class SoapRequestXmlFixer {
    * @param DOMXPath $xpath the xpath object representing the DOM
    * @access private
    */
-  private function RemoveEmptyHeaderElements(DOMXPath $xpath) {
-    $requestHeaderDom = $xpath->query(
+  private function RemoveEmptyHeaderElements(DOMXPath $xpath)
+  {
+      $requestHeaderDom = $xpath->query(
         "//*[local-name()='Envelope']/*[local-name()='Header']"
-            . "/*[local-name()='RequestHeader']")->item(0);
+            ."/*[local-name()='RequestHeader']")->item(0);
 
-    $childNodes = $requestHeaderDom->childNodes;
+      $childNodes = $requestHeaderDom->childNodes;
 
-    foreach ($childNodes as $childNode) {
-      if ($childNode->nodeValue == NULL) {
-        $requestHeaderDom->removeChild($childNode);
+      foreach ($childNodes as $childNode) {
+          if ($childNode->nodeValue == null) {
+              $requestHeaderDom->removeChild($childNode);
+          }
       }
-    }
   }
 }
-

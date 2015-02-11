@@ -32,7 +32,8 @@
  * @package GoogleApiAdsAdWords
  * @subpackage Lib
  */
-class AdWordsConstants {
+class AdWordsConstants
+{
 
   /**
    * Recommended page size for most services.
@@ -52,4 +53,3 @@ class AdWordsConstants {
    */
   const MICRO_DEGREES_PER_DEGREE = 1000000;
 }
-

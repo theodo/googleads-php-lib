@@ -36,7 +36,8 @@ require_once 'Google/Api/Ads/Common/Lib/SoapClientFactory.php';
  * @package GoogleApiAdsDfp
  * @subpackage Lib
  */
-class DfpSoapClientFactory extends SoapClientFactory {
+class DfpSoapClientFactory extends SoapClientFactory
+{
 
   /**
    * The constructor for Google's DoubleClick for Publishers API SOAP client
@@ -45,8 +46,9 @@ class DfpSoapClientFactory extends SoapClientFactory {
    * @param string $version the version to generate clients for
    * @param string $server the server to generate clients for
    */
-  public function __construct(AdsUser $user, $version, $server) {
-    parent::__construct($user, $version, $server, 'publisher');
+  public function __construct(AdsUser $user, $version, $server)
+  {
+      parent::__construct($user, $version, $server, 'publisher');
   }
 
   /**
@@ -54,9 +56,9 @@ class DfpSoapClientFactory extends SoapClientFactory {
    * @param string $serviceName the service to instantiate
    * @access protected
    */
-  public function DoRequireOnce($serviceName) {
-    require_once implode("/", array(dirname(__FILE__), '..',
-        $this->GetVersion(), $serviceName . '.php'));
+  public function DoRequireOnce($serviceName)
+  {
+      require_once implode("/", array(dirname(__FILE__), '..',
+        $this->GetVersion(), $serviceName.'.php', ));
   }
 }
-

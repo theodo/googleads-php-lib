@@ -53,31 +53,33 @@ require_once 'Google/Api/Ads/Dfp/Util/Pql.php';
  * @package GoogleApiAdsDfp
  * @subpackage Util
  */
-class StatementBuilder {
+class StatementBuilder
+{
 
   const SUGGESTED_PAGE_LIMIT = 500;
 
-  const SELECT = "SELECT";
-  const FROM = "FROM";
-  const WHERE = "WHERE";
-  const LIMIT = "LIMIT";
-  const OFFSET = "OFFSET";
-  const ORDER_BY = "ORDER BY";
+    const SELECT = "SELECT";
+    const FROM = "FROM";
+    const WHERE = "WHERE";
+    const LIMIT = "LIMIT";
+    const OFFSET = "OFFSET";
+    const ORDER_BY = "ORDER BY";
 
-  private $select;
-  private $from;
-  private $where;
-  private $limit;
-  private $offset;
-  private $orderBy;
+    private $select;
+    private $from;
+    private $where;
+    private $limit;
+    private $offset;
+    private $orderBy;
 
-  private $valueMap;
+    private $valueMap;
 
   /**
    * Constructs a new instance of this statement builder.
    */
-  public function __construct() {
-    $this->valueMap = array();
+  public function __construct()
+  {
+      $this->valueMap = array();
   }
 
   /**
@@ -88,9 +90,11 @@ class StatementBuilder {
    *     converted to a PQL Value object, or a PQL Value object
    * @return StatementBuilder a reference to this object
    */
-  public function WithBindVariableValue($key, $value) {
-    $this->valueMap[$key] = Pql::CreateValue($value);
-    return $this;
+  public function WithBindVariableValue($key, $value)
+  {
+      $this->valueMap[$key] = Pql::CreateValue($value);
+
+      return $this;
   }
 
   /**
@@ -99,11 +103,13 @@ class StatementBuilder {
    *
    * @return Statement the {@link Statement}
    */
-  public function ToStatement() {
-    $statement = new Statement();
-    $statement->query = $this->buildQuery();
-    $statement->values = MapUtils::GetMapEntries($this->GetBindVariableMap());
-    return $statement;
+  public function ToStatement()
+  {
+      $statement = new Statement();
+      $statement->query = $this->buildQuery();
+      $statement->values = MapUtils::GetMapEntries($this->GetBindVariableMap());
+
+      return $statement;
   }
 
   /**
@@ -114,12 +120,14 @@ class StatementBuilder {
    * @param string $keyword the keyword to remove
    * @return string a new string with the keyword + " " removed
    */
-  private static function removeKeyword($clause, $keyword) {
-    $keyword .= ' ';
-    if (stristr(substr($clause, 0, strlen($keyword)), $keyword) !== false) {
-      return substr($clause, strlen($keyword));
-    }
-    return $clause;
+  private static function removeKeyword($clause, $keyword)
+  {
+      $keyword .= ' ';
+      if (stristr(substr($clause, 0, strlen($keyword)), $keyword) !== false) {
+          return substr($clause, strlen($keyword));
+      }
+
+      return $clause;
   }
 
   /**
@@ -131,10 +139,12 @@ class StatementBuilder {
    * @param string $columns the statement select clause without "SELECT"
    * @return StatementBuilder a reference to this object
    */
-  public function Select($columns) {
-    $columns = self::removeKeyword($columns, self::SELECT);
-    $this->select = $columns;
-    return $this;
+  public function Select($columns)
+  {
+      $columns = self::removeKeyword($columns, self::SELECT);
+      $this->select = $columns;
+
+      return $this;
   }
 
   /**
@@ -146,10 +156,12 @@ class StatementBuilder {
    * @param string $table the statement from clause without "FROM"
    * @return StatementBuilder a reference to this object
    */
-  public function From($table) {
-    $table = self::removeKeyword($table, self::FROM);
-    $this->from = $table;
-    return $this;
+  public function From($table)
+  {
+      $table = self::removeKeyword($table, self::FROM);
+      $this->from = $table;
+
+      return $this;
   }
 
   /**
@@ -161,10 +173,12 @@ class StatementBuilder {
    * @param string $conditions the statement query without "WHERE"
    * @return StatementBuilder a reference to this object
    */
-  public function Where($conditions) {
-    $conditions = self::removeKeyword($conditions, self::WHERE);
-    $this->where = $conditions;
-    return $this;
+  public function Where($conditions)
+  {
+      $conditions = self::removeKeyword($conditions, self::WHERE);
+      $this->where = $conditions;
+
+      return $this;
   }
 
   /**
@@ -176,9 +190,11 @@ class StatementBuilder {
    * @param int $count the statement limit
    * @return StatementBuilder a reference to this object
    */
-  public function Limit($count) {
-    $this->limit = $count;
-    return $this;
+  public function Limit($count)
+  {
+      $this->limit = $count;
+
+      return $this;
   }
 
   /**
@@ -190,9 +206,11 @@ class StatementBuilder {
    * @param int $count the statement offset
    * @return StatementBuilder a reference to this object
    */
-  public function Offset($count) {
-    $this->offset = $count;
-    return $this;
+  public function Offset($count)
+  {
+      $this->offset = $count;
+
+      return $this;
   }
 
   /**
@@ -201,30 +219,35 @@ class StatementBuilder {
    * @param int $amount the amount to increase the offset
    * @return StatementBuilder a reference to this object
    */
-  public function IncreaseOffsetBy($amount) {
-    if (!isset($this->offset)) {
-      $this->offset = 0;
-    }
-    $this->offset += $amount;
-    return $this;
+  public function IncreaseOffsetBy($amount)
+  {
+      if (!isset($this->offset)) {
+          $this->offset = 0;
+      }
+      $this->offset += $amount;
+
+      return $this;
   }
 
   /**
    * Gets the current offset.
    * @return int the current offset
    */
-  public function GetOffset() {
-    return $this->offset;
+  public function GetOffset()
+  {
+      return $this->offset;
   }
 
   /**
    * Removes the limit and offset from the query.
    * @return StatementBuilder a reference to this object
    */
-  public function RemoveLimitAndOffset() {
-    $this->offset = null;
-    $this->limit = null;
-    return $this;
+  public function RemoveLimitAndOffset()
+  {
+      $this->offset = null;
+      $this->limit = null;
+
+      return $this;
   }
 
   /**
@@ -237,58 +260,62 @@ class StatementBuilder {
    * @param string $orderBy the statement order by without "ORDER BY"
    * @return StatementBuilder a reference to this object
    */
-  public function OrderBy($orderBy) {
-    $orderBy = self::removeKeyword($orderBy, self::ORDER_BY);
-    $this->orderBy = $orderBy;
-    return $this;
+  public function OrderBy($orderBy)
+  {
+      $orderBy = self::removeKeyword($orderBy, self::ORDER_BY);
+      $this->orderBy = $orderBy;
+
+      return $this;
   }
 
   /**
    * Returns the key to value map.
    */
-  public function GetBindVariableMap() {
-    return $this->valueMap;
+  public function GetBindVariableMap()
+  {
+      return $this->valueMap;
   }
 
   /**
    * Checks that the query is valid.
    * @throws ValidationException if the query is invalid
    */
-  private function validateQuery() {
-    if (isset($this->offset) && !isset($this->limit)) {
-      throw new ValidationException(self::OFFSET, $this->offset,
+  private function validateQuery()
+  {
+      if (isset($this->offset) && !isset($this->limit)) {
+          throw new ValidationException(self::OFFSET, $this->offset,
           'OFFSET cannot be set if LIMIT is not set.');
-    }
+      }
   }
 
   /**
    * Builds the query from the clauses.
    * @return string the query
    */
-  private function buildQuery() {
-    $this->validateQuery();
+  private function buildQuery()
+  {
+      $this->validateQuery();
 
-    $statement = "";
-    if (isset($this->select)) {
-      $statement .= sprintf("%s %s ", self::SELECT, $this->select);
-    }
-    if (isset($this->from)) {
-      $statement .= sprintf("%s %s ", self::FROM, $this->from);
-    }
-    if (isset($this->where)) {
-      $statement .= sprintf("%s %s ", self::WHERE, $this->where);
-    }
-    if (isset($this->orderBy)) {
-      $statement .= sprintf("%s %s ", self::ORDER_BY, $this->orderBy);
-    }
-    if (isset($this->limit)) {
-      $statement .= sprintf("%s %s ", self::LIMIT, $this->limit);
-    }
-    if (isset($this->offset)) {
-      $statement .= sprintf("%s %s ", self::OFFSET, $this->offset);
-    }
+      $statement = "";
+      if (isset($this->select)) {
+          $statement .= sprintf("%s %s ", self::SELECT, $this->select);
+      }
+      if (isset($this->from)) {
+          $statement .= sprintf("%s %s ", self::FROM, $this->from);
+      }
+      if (isset($this->where)) {
+          $statement .= sprintf("%s %s ", self::WHERE, $this->where);
+      }
+      if (isset($this->orderBy)) {
+          $statement .= sprintf("%s %s ", self::ORDER_BY, $this->orderBy);
+      }
+      if (isset($this->limit)) {
+          $statement .= sprintf("%s %s ", self::LIMIT, $this->limit);
+      }
+      if (isset($this->offset)) {
+          $statement .= sprintf("%s %s ", self::OFFSET, $this->offset);
+      }
 
-    return trim($statement);
+      return trim($statement);
   }
 }
-

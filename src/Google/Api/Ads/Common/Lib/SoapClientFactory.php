@@ -35,7 +35,8 @@ require_once 'Google/Api/Ads/Common/Lib/AdsUser.php';
  * @package GoogleApiAdsCommon
  * @subpackage Lib
  */
-abstract class SoapClientFactory {
+abstract class SoapClientFactory
+{
 
   /**
    * The minimum PHP version that can properly decode HTTP 1.1 chunked
@@ -44,14 +45,14 @@ abstract class SoapClientFactory {
    */
   const MIN_VER_CHUNKED_HTTP11 = '5.4.0';
 
-  private $user;
-  private $version;
-  private $server;
-  private $productName;
-  private $headerOverrides;
+    private $user;
+    private $version;
+    private $server;
+    private $productName;
+    private $headerOverrides;
 
-  private static $SERVER_REGEX = '/^\w*:\/\/[^\/]*/';
-  protected static $COMPRESSION_KIND;
+    private static $SERVER_REGEX = '/^\w*:\/\/[^\/]*/';
+    protected static $COMPRESSION_KIND;
 
   /**
    * The constructor called by any sub-class.
@@ -62,12 +63,13 @@ abstract class SoapClientFactory {
    * @access protected
    */
   protected function __construct(AdsUser $user, $version, $server,
-      $productName, $headerOverrides = NULL) {
-    $this->user = $user;
-    $this->version = $version;
-    $this->server = $server;
-    $this->productName = $productName;
-    $this->headerOverrides = $headerOverrides;
+      $productName, $headerOverrides = null)
+  {
+      $this->user = $user;
+      $this->version = $version;
+      $this->server = $server;
+      $this->productName = $productName;
+      $this->headerOverrides = $headerOverrides;
   }
 
   /**
@@ -83,16 +85,18 @@ abstract class SoapClientFactory {
    * @param string $serviceName the name of the service to generate a client for
    * @return AdsSoapClient an instantiated SOAP client
    */
-  public function GenerateSoapClient($serviceName) {
-    if (extension_loaded('soap')) {
-      $this->DoRequireOnce($serviceName);
-      $soapClient = $this->GenerateServiceClient($serviceName);
-      return $soapClient;
-    } else {
-      trigger_error('This client library requires the SOAP extension to be'
-          . ' activated. See http://php.net/manual/en/soap.installation.php for'
-          . ' details.', E_USER_ERROR);
-    }
+  public function GenerateSoapClient($serviceName)
+  {
+      if (extension_loaded('soap')) {
+          $this->DoRequireOnce($serviceName);
+          $soapClient = $this->GenerateServiceClient($serviceName);
+
+          return $soapClient;
+      } else {
+          trigger_error('This client library requires the SOAP extension to be'
+          .' activated. See http://php.net/manual/en/soap.installation.php for'
+          .' details.', E_USER_ERROR);
+      }
   }
 
   /**
@@ -101,23 +105,24 @@ abstract class SoapClientFactory {
    * @return AdsSoapClient the SOAP service client
    * @access protected
    */
-  protected function GenerateServiceClient($serviceName) {
-    $location = $this->GetServiceLocation($serviceName);
-    $wsdl = $location . '?wsdl';
-    $options = array(
-        'trace' => TRUE,
+  protected function GenerateServiceClient($serviceName)
+  {
+      $location = $this->GetServiceLocation($serviceName);
+      $wsdl = $location.'?wsdl';
+      $options = array(
+        'trace' => true,
         'encoding' => 'utf-8',
         'connection_timeout' => 0,
-        'features' => SOAP_SINGLE_ELEMENT_ARRAYS);
-    $contextOptions = array();
+        'features' => SOAP_SINGLE_ELEMENT_ARRAYS, );
+      $contextOptions = array();
 
     // Compression settings.
     if ($this->GetAdsUser()->IsSoapCompressionEnabled()) {
-      $options['compression'] = SOAP_COMPRESSION_ACCEPT |
+        $options['compression'] = SOAP_COMPRESSION_ACCEPT |
           self::GetCompressionKind() |
           $this->GetAdsUser()->GetSoapCompressionLevel();
       // The User-Agent HTTP header must contain the string 'gzip'.
-      $options['user_agent'] = 'PHP-SOAP/'. phpversion() . ', gzip';
+      $options['user_agent'] = 'PHP-SOAP/'.phpversion().', gzip';
     }
 
     // WSDL caching settings.
@@ -126,60 +131,60 @@ abstract class SoapClientFactory {
     // Check to see if the default version of the HTTP protocol to use should be
     // overriden depending on the user's environment.
     if ($this->GetAdsUser()->GetForceHttpVersion() !== null) {
-      $contextOptions['http']['protocol_version'] =
+        $contextOptions['http']['protocol_version'] =
           $this->GetAdsUser()->GetForceHttpVersion();
-    } else if (version_compare(PHP_VERSION, self::MIN_VER_CHUNKED_HTTP11) <
+    } elseif (version_compare(PHP_VERSION, self::MIN_VER_CHUNKED_HTTP11) <
         '<') {
-      $contextOptions['http']['protocol_version'] = 1.0;
+        $contextOptions['http']['protocol_version'] = 1.0;
     }
 
     // Proxy settings.
     if (defined('HTTP_PROXY_HOST') && HTTP_PROXY_HOST != '') {
-      $options['proxy_host'] = HTTP_PROXY_HOST;
+        $options['proxy_host'] = HTTP_PROXY_HOST;
     }
-    if (defined('HTTP_PROXY_PORT') && HTTP_PROXY_PORT != '') {
-      $options['proxy_port'] = HTTP_PROXY_PORT;
-    }
-    if (defined('HTTP_PROXY_USER') && HTTP_PROXY_USER != '') {
-      $options['proxy_login'] = HTTP_PROXY_USER;
-    }
-    if (defined('HTTP_PROXY_PASSWORD') && HTTP_PROXY_PASSWORD != '') {
-      $options['proxy_password'] = HTTP_PROXY_PASSWORD;
-    }
+      if (defined('HTTP_PROXY_PORT') && HTTP_PROXY_PORT != '') {
+          $options['proxy_port'] = HTTP_PROXY_PORT;
+      }
+      if (defined('HTTP_PROXY_USER') && HTTP_PROXY_USER != '') {
+          $options['proxy_login'] = HTTP_PROXY_USER;
+      }
+      if (defined('HTTP_PROXY_PASSWORD') && HTTP_PROXY_PASSWORD != '') {
+          $options['proxy_password'] = HTTP_PROXY_PASSWORD;
+      }
 
     // SSL settings.
     if (defined('SSL_VERIFY_PEER') && SSL_VERIFY_PEER != '') {
-      $contextOptions['ssl']['verify_peer'] = SSL_VERIFY_PEER;
+        $contextOptions['ssl']['verify_peer'] = SSL_VERIFY_PEER;
     }
-    if (defined('SSL_VERIFY_HOST') && SSL_VERIFY_HOST) {
-      $contextOptions['ssl']['CN_match'] = parse_url($location, PHP_URL_HOST);
-    }
-    if (defined('SSL_CA_PATH') && SSL_CA_PATH != '') {
-      $contextOptions['ssl']['capath'] = SSL_CA_PATH;
-    }
-    if (defined('SSL_CA_FILE') && SSL_CA_FILE != '') {
-      $contextOptions['ssl']['cafile'] = SSL_CA_FILE;
-    }
+      if (defined('SSL_VERIFY_HOST') && SSL_VERIFY_HOST) {
+          $contextOptions['ssl']['CN_match'] = parse_url($location, PHP_URL_HOST);
+      }
+      if (defined('SSL_CA_PATH') && SSL_CA_PATH != '') {
+          $contextOptions['ssl']['capath'] = SSL_CA_PATH;
+      }
+      if (defined('SSL_CA_FILE') && SSL_CA_FILE != '') {
+          $contextOptions['ssl']['cafile'] = SSL_CA_FILE;
+      }
 
-    $options['stream_context'] = stream_context_create($contextOptions);
+      $options['stream_context'] = stream_context_create($contextOptions);
 
-    $soapClient = new $serviceName($wsdl, $options, $this->GetAdsUser());
-    $soapClient->__setLocation($location);
+      $soapClient = new $serviceName($wsdl, $options, $this->GetAdsUser());
+      $soapClient->__setLocation($location);
 
     // Copy headers from user.
-    foreach($this->GetAdsUser()->GetHeaderNames() as $key) {
-      $soapClient->SetHeaderValue(
+    foreach ($this->GetAdsUser()->GetHeaderNames() as $key) {
+        $soapClient->SetHeaderValue(
           $key, $this->GetAdsUser()->GetHeaderValue($key));
     }
 
     // Copy headers from overrides.
     if (isset($this->headerOverrides)) {
-      foreach($this->headerOverrides as $key => $value) {
-        $soapClient->SetHeaderValue($key, $value);
-      }
+        foreach ($this->headerOverrides as $key => $value) {
+            $soapClient->SetHeaderValue($key, $value);
+        }
     }
 
-    return $soapClient;
+      return $soapClient;
   }
 
   /**
@@ -188,10 +193,12 @@ abstract class SoapClientFactory {
    * @return string the end-point location of the service.
    * @access protected
    */
-  protected function GetServiceLocation($serviceName) {
-    $classVars = get_class_vars($serviceName);
-    $endpoint = $classVars['endpoint'];
-    return preg_replace(SoapClientFactory::$SERVER_REGEX, $this->GetServer(),
+  protected function GetServiceLocation($serviceName)
+  {
+      $classVars = get_class_vars($serviceName);
+      $endpoint = $classVars['endpoint'];
+
+      return preg_replace(SoapClientFactory::$SERVER_REGEX, $this->GetServer(),
         $endpoint);
   }
 
@@ -199,50 +206,54 @@ abstract class SoapClientFactory {
    * Gets the user associated with this factory.
    * @return AdsUser the user associated with this factory
    */
-  public function GetAdsUser() {
-    return $this->user;
+  public function GetAdsUser()
+  {
+      return $this->user;
   }
 
   /**
    * Gets the version associated with this factory.
    * @return string the version associated with this factory
    */
-  public function GetVersion() {
-    return $this->version;
+  public function GetVersion()
+  {
+      return $this->version;
   }
 
   /**
    * Gets the server associated with this factory.
    * @return string the server associated with this factory
    */
-  public function GetServer() {
-    return $this->server;
+  public function GetServer()
+  {
+      return $this->server;
   }
 
   /**
    * Gets the product name associated with this factory.
    * @return string the product name associated with this factory
    */
-  public function GetProductName() {
-    return $this->productName;
+  public function GetProductName()
+  {
+      return $this->productName;
   }
 
   /**
    * Get the compression flag
    * @return int Get the compression flag value
    */
-  protected static function GetCompressionKind() {
-    if (!isset(self::$COMPRESSION_KIND)) {
-      if (version_compare(PHP_VERSION, '5.4.0', '>=') 
+  protected static function GetCompressionKind()
+  {
+      if (!isset(self::$COMPRESSION_KIND)) {
+          if (version_compare(PHP_VERSION, '5.4.0', '>=')
         && version_compare(PHP_VERSION, '5.4.4', '<')
       ) {
-        self::$COMPRESSION_KIND = SOAP_COMPRESSION_DEFLATE;
-      } else {
-        self::$COMPRESSION_KIND = SOAP_COMPRESSION_GZIP;
+              self::$COMPRESSION_KIND = SOAP_COMPRESSION_DEFLATE;
+          } else {
+              self::$COMPRESSION_KIND = SOAP_COMPRESSION_GZIP;
+          }
       }
-    }
 
-    return self::$COMPRESSION_KIND;
+      return self::$COMPRESSION_KIND;
   }
 }
-

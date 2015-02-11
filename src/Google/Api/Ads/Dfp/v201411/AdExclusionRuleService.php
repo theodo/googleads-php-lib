@@ -29,22 +29,23 @@
 require_once "Google/Api/Ads/Dfp/Lib/DfpSoapClient.php";
 
 if (!class_exists("AdExclusionRuleAction", false)) {
-  /**
+    /**
    * Represents the actions that can be performed on {@link AdExclusionRule} objects.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class AdExclusionRuleAction {
+  class AdExclusionRuleAction
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "AdExclusionRuleAction";
+      const XSI_TYPE = "AdExclusionRuleAction";
 
     /**
      * @access public
      * @var string
      */
     public $AdExclusionRuleActionType;
-    private $_parameterMap = array(
+      private $_parameterMap = array(
       "AdExclusionRuleAction.Type" => "AdExclusionRuleActionType",
     );
 
@@ -53,8 +54,9 @@ if (!class_exists("AdExclusionRuleAction", false)) {
      * @param $var Variable name to set
      * @param $value Value to set
      */
-    public function __set($var, $value) {
-      $this->{$this->_parameterMap[$var]} = $value;
+    public function __set($var, $value)
+    {
+        $this->{$this->_parameterMap[$var]} = $value;
     }
 
     /**
@@ -62,55 +64,61 @@ if (!class_exists("AdExclusionRuleAction", false)) {
      * @param $var Variable name to get
      * @return mixed Variable value
      */
-    public function __get($var) {
-      if (!isset($this->_parameterMap[$var])) {
-        return null;
-      }
-      return $this->{$this->_parameterMap[$var]};
+    public function __get($var)
+    {
+        if (!isset($this->_parameterMap[$var])) {
+            return;
+        }
+
+        return $this->{$this->_parameterMap[$var]};
     }
 
     /**
      * Provided for getting non-php-standard named variables
      * @return array parameter map
      */
-    protected function getParameterMap() {
-      return $this->_parameterMap;
+    protected function getParameterMap()
+    {
+        return $this->_parameterMap;
     }
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($AdExclusionRuleActionType = null) {
-      $this->AdExclusionRuleActionType = $AdExclusionRuleActionType;
-    }
-
+      public function __construct($AdExclusionRuleActionType = null)
+      {
+          $this->AdExclusionRuleActionType = $AdExclusionRuleActionType;
+      }
   }
 }
 
 if (!class_exists("AdExclusionRule", false)) {
-  /**
+    /**
    * Represents an inventory blocking rule, which prevents certain ads from being
    * served to specified ad units.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class AdExclusionRule {
+  class AdExclusionRule
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "AdExclusionRule";
+      const XSI_TYPE = "AdExclusionRule";
 
     /**
      * @access public
@@ -164,42 +172,45 @@ if (!class_exists("AdExclusionRule", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($id = null, $name = null, $isActive = null, $inventoryTargeting = null, $isBlockAll = null, $blockedLabelIds = null, $allowedLabelIds = null, $type = null) {
-      $this->id = $id;
-      $this->name = $name;
-      $this->isActive = $isActive;
-      $this->inventoryTargeting = $inventoryTargeting;
-      $this->isBlockAll = $isBlockAll;
-      $this->blockedLabelIds = $blockedLabelIds;
-      $this->allowedLabelIds = $allowedLabelIds;
-      $this->type = $type;
-    }
-
+      public function __construct($id = null, $name = null, $isActive = null, $inventoryTargeting = null, $isBlockAll = null, $blockedLabelIds = null, $allowedLabelIds = null, $type = null)
+      {
+          $this->id = $id;
+          $this->name = $name;
+          $this->isActive = $isActive;
+          $this->inventoryTargeting = $inventoryTargeting;
+          $this->isBlockAll = $isBlockAll;
+          $this->blockedLabelIds = $blockedLabelIds;
+          $this->allowedLabelIds = $allowedLabelIds;
+          $this->type = $type;
+      }
   }
 }
 
 if (!class_exists("AdExclusionRulePage", false)) {
-  /**
+    /**
    * Represents a page of {@link AdExclusionRule} objects.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class AdExclusionRulePage {
+  class AdExclusionRulePage
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "AdExclusionRulePage";
+      const XSI_TYPE = "AdExclusionRulePage";
 
     /**
      * @access public
@@ -223,37 +234,40 @@ if (!class_exists("AdExclusionRulePage", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($totalResultSetSize = null, $startIndex = null, $results = null) {
-      $this->totalResultSetSize = $totalResultSetSize;
-      $this->startIndex = $startIndex;
-      $this->results = $results;
-    }
-
+      public function __construct($totalResultSetSize = null, $startIndex = null, $results = null)
+      {
+          $this->totalResultSetSize = $totalResultSetSize;
+          $this->startIndex = $startIndex;
+          $this->results = $results;
+      }
   }
 }
 
 if (!class_exists("AdUnitTargeting", false)) {
-  /**
+    /**
    * Represents targeted or excluded ad units.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class AdUnitTargeting {
+  class AdUnitTargeting
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "AdUnitTargeting";
+      const XSI_TYPE = "AdUnitTargeting";
 
     /**
      * @access public
@@ -271,40 +285,43 @@ if (!class_exists("AdUnitTargeting", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($adUnitId = null, $includeDescendants = null) {
-      $this->adUnitId = $adUnitId;
-      $this->includeDescendants = $includeDescendants;
-    }
-
+      public function __construct($adUnitId = null, $includeDescendants = null)
+      {
+          $this->adUnitId = $adUnitId;
+          $this->includeDescendants = $includeDescendants;
+      }
   }
 }
 
 if (!class_exists("ApiError", false)) {
-  /**
+    /**
    * The API error base class that provides details about an error that occurred
    * while processing a service request.
-   * 
+   *
    * <p>The OGNL field path is provided for parsers to identify the request data
    * element that may have caused the error.</p>
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class ApiError {
+  class ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "ApiError";
+      const XSI_TYPE = "ApiError";
 
     /**
      * @access public
@@ -329,7 +346,7 @@ if (!class_exists("ApiError", false)) {
      * @var string
      */
     public $ApiErrorType;
-    private $_parameterMap = array(
+      private $_parameterMap = array(
       "ApiError.Type" => "ApiErrorType",
     );
 
@@ -338,8 +355,9 @@ if (!class_exists("ApiError", false)) {
      * @param $var Variable name to set
      * @param $value Value to set
      */
-    public function __set($var, $value) {
-      $this->{$this->_parameterMap[$var]} = $value;
+    public function __set($var, $value)
+    {
+        $this->{$this->_parameterMap[$var]} = $value;
     }
 
     /**
@@ -347,57 +365,63 @@ if (!class_exists("ApiError", false)) {
      * @param $var Variable name to get
      * @return mixed Variable value
      */
-    public function __get($var) {
-      if (!isset($this->_parameterMap[$var])) {
-        return null;
-      }
-      return $this->{$this->_parameterMap[$var]};
+    public function __get($var)
+    {
+        if (!isset($this->_parameterMap[$var])) {
+            return;
+        }
+
+        return $this->{$this->_parameterMap[$var]};
     }
 
     /**
      * Provided for getting non-php-standard named variables
      * @return array parameter map
      */
-    protected function getParameterMap() {
-      return $this->_parameterMap;
+    protected function getParameterMap()
+    {
+        return $this->_parameterMap;
     }
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("ApiVersionError", false)) {
-  /**
+    /**
    * Errors related to the usage of API versions.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class ApiVersionError extends ApiError {
+  class ApiVersionError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "ApiVersionError";
+      const XSI_TYPE = "ApiVersionError";
 
     /**
      * @access public
@@ -409,40 +433,43 @@ if (!class_exists("ApiVersionError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("ApplicationException", false)) {
-  /**
+    /**
    * Base class for exceptions.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class ApplicationException {
+  class ApplicationException
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "ApplicationException";
+      const XSI_TYPE = "ApplicationException";
 
     /**
      * @access public
@@ -455,7 +482,7 @@ if (!class_exists("ApplicationException", false)) {
      * @var string
      */
     public $ApplicationExceptionType;
-    private $_parameterMap = array(
+      private $_parameterMap = array(
       "ApplicationException.Type" => "ApplicationExceptionType",
     );
 
@@ -464,8 +491,9 @@ if (!class_exists("ApplicationException", false)) {
      * @param $var Variable name to set
      * @param $value Value to set
      */
-    public function __set($var, $value) {
-      $this->{$this->_parameterMap[$var]} = $value;
+    public function __set($var, $value)
+    {
+        $this->{$this->_parameterMap[$var]} = $value;
     }
 
     /**
@@ -473,55 +501,61 @@ if (!class_exists("ApplicationException", false)) {
      * @param $var Variable name to get
      * @return mixed Variable value
      */
-    public function __get($var) {
-      if (!isset($this->_parameterMap[$var])) {
-        return null;
-      }
-      return $this->{$this->_parameterMap[$var]};
+    public function __get($var)
+    {
+        if (!isset($this->_parameterMap[$var])) {
+            return;
+        }
+
+        return $this->{$this->_parameterMap[$var]};
     }
 
     /**
      * Provided for getting non-php-standard named variables
      * @return array parameter map
      */
-    protected function getParameterMap() {
-      return $this->_parameterMap;
+    protected function getParameterMap()
+    {
+        return $this->_parameterMap;
     }
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($message = null, $ApplicationExceptionType = null) {
-      $this->message = $message;
-      $this->ApplicationExceptionType = $ApplicationExceptionType;
-    }
-
+      public function __construct($message = null, $ApplicationExceptionType = null)
+      {
+          $this->message = $message;
+          $this->ApplicationExceptionType = $ApplicationExceptionType;
+      }
   }
 }
 
 if (!class_exists("AuthenticationError", false)) {
-  /**
+    /**
    * An error for an exception that occurred when authenticating.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class AuthenticationError extends ApiError {
+  class AuthenticationError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "AuthenticationError";
+      const XSI_TYPE = "AuthenticationError";
 
     /**
      * @access public
@@ -533,40 +567,43 @@ if (!class_exists("AuthenticationError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("CommonError", false)) {
-  /**
+    /**
    * A place for common errors that can be used across services.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class CommonError extends ApiError {
+  class CommonError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "CommonError";
+      const XSI_TYPE = "CommonError";
 
     /**
      * @access public
@@ -578,40 +615,43 @@ if (!class_exists("CommonError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("Date", false)) {
-  /**
+    /**
    * Represents a date.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class Date {
+  class Date
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "Date";
+      const XSI_TYPE = "Date";
 
     /**
      * @access public
@@ -635,37 +675,40 @@ if (!class_exists("Date", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($year = null, $month = null, $day = null) {
-      $this->year = $year;
-      $this->month = $month;
-      $this->day = $day;
-    }
-
+      public function __construct($year = null, $month = null, $day = null)
+      {
+          $this->year = $year;
+          $this->month = $month;
+          $this->day = $day;
+      }
   }
 }
 
 if (!class_exists("DfpDateTime", false)) {
-  /**
+    /**
    * Represents a date combined with the time of day.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class DfpDateTime {
+  class DfpDateTime
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "DateTime";
+      const XSI_TYPE = "DateTime";
 
     /**
      * @access public
@@ -701,75 +744,81 @@ if (!class_exists("DfpDateTime", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($date = null, $hour = null, $minute = null, $second = null, $timeZoneID = null) {
-      $this->date = $date;
-      $this->hour = $hour;
-      $this->minute = $minute;
-      $this->second = $second;
-      $this->timeZoneID = $timeZoneID;
-    }
-
+      public function __construct($date = null, $hour = null, $minute = null, $second = null, $timeZoneID = null)
+      {
+          $this->date = $date;
+          $this->hour = $hour;
+          $this->minute = $minute;
+          $this->second = $second;
+          $this->timeZoneID = $timeZoneID;
+      }
   }
 }
 
 if (!class_exists("DeactivateAdExclusionRules", false)) {
-  /**
+    /**
    * Deactivate action.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class DeactivateAdExclusionRules extends AdExclusionRuleAction {
+  class DeactivateAdExclusionRules extends AdExclusionRuleAction
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "DeactivateAdExclusionRules";
+      const XSI_TYPE = "DeactivateAdExclusionRules";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($AdExclusionRuleActionType = null) {
-      parent::__construct();
-      $this->AdExclusionRuleActionType = $AdExclusionRuleActionType;
-    }
-
+      public function __construct($AdExclusionRuleActionType = null)
+      {
+          parent::__construct();
+          $this->AdExclusionRuleActionType = $AdExclusionRuleActionType;
+      }
   }
 }
 
 if (!class_exists("FeatureError", false)) {
-  /**
+    /**
    * Errors related to feature management.  If you attempt using a feature that is not available to
    * the current network you'll receive a FeatureError with the missing feature as the trigger.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class FeatureError extends ApiError {
+  class FeatureError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "FeatureError";
+      const XSI_TYPE = "FeatureError";
 
     /**
      * @access public
@@ -781,42 +830,45 @@ if (!class_exists("FeatureError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("InternalApiError", false)) {
-  /**
+    /**
    * Indicates that a server-side error has occured. {@code InternalApiError}s
    * are generally not the result of an invalid request or message sent by the
    * client.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class InternalApiError extends ApiError {
+  class InternalApiError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "InternalApiError";
+      const XSI_TYPE = "InternalApiError";
 
     /**
      * @access public
@@ -828,40 +880,43 @@ if (!class_exists("InternalApiError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("InventoryTargeting", false)) {
-  /**
+    /**
    * A collection of targeted and excluded ad units and placements.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class InventoryTargeting {
+  class InventoryTargeting
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "InventoryTargeting";
+      const XSI_TYPE = "InventoryTargeting";
 
     /**
      * @access public
@@ -885,37 +940,40 @@ if (!class_exists("InventoryTargeting", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($targetedAdUnits = null, $excludedAdUnits = null, $targetedPlacementIds = null) {
-      $this->targetedAdUnits = $targetedAdUnits;
-      $this->excludedAdUnits = $excludedAdUnits;
-      $this->targetedPlacementIds = $targetedPlacementIds;
-    }
-
+      public function __construct($targetedAdUnits = null, $excludedAdUnits = null, $targetedPlacementIds = null)
+      {
+          $this->targetedAdUnits = $targetedAdUnits;
+          $this->excludedAdUnits = $excludedAdUnits;
+          $this->targetedPlacementIds = $targetedPlacementIds;
+      }
   }
 }
 
 if (!class_exists("NotNullError", false)) {
-  /**
+    /**
    * Caused by supplying a null value for an attribute that cannot be null.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class NotNullError extends ApiError {
+  class NotNullError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "NotNullError";
+      const XSI_TYPE = "NotNullError";
 
     /**
      * @access public
@@ -927,40 +985,43 @@ if (!class_exists("NotNullError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("PermissionError", false)) {
-  /**
+    /**
    * Errors related to incorrect permission.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class PermissionError extends ApiError {
+  class PermissionError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "PermissionError";
+      const XSI_TYPE = "PermissionError";
 
     /**
      * @access public
@@ -972,41 +1033,44 @@ if (!class_exists("PermissionError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("PublisherQueryLanguageContextError", false)) {
-  /**
+    /**
    * An error that occurs while executing a PQL query contained in
    * a {@link Statement} object.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class PublisherQueryLanguageContextError extends ApiError {
+  class PublisherQueryLanguageContextError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "PublisherQueryLanguageContextError";
+      const XSI_TYPE = "PublisherQueryLanguageContextError";
 
     /**
      * @access public
@@ -1018,41 +1082,44 @@ if (!class_exists("PublisherQueryLanguageContextError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("PublisherQueryLanguageSyntaxError", false)) {
-  /**
+    /**
    * An error that occurs while parsing a PQL query contained in a
    * {@link Statement} object.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class PublisherQueryLanguageSyntaxError extends ApiError {
+  class PublisherQueryLanguageSyntaxError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "PublisherQueryLanguageSyntaxError";
+      const XSI_TYPE = "PublisherQueryLanguageSyntaxError";
 
     /**
      * @access public
@@ -1064,41 +1131,44 @@ if (!class_exists("PublisherQueryLanguageSyntaxError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("QuotaError", false)) {
-  /**
+    /**
    * Describes a client-side error on which a user is attempting
    * to perform an action to which they have no quota remaining.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class QuotaError extends ApiError {
+  class QuotaError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "QuotaError";
+      const XSI_TYPE = "QuotaError";
 
     /**
      * @access public
@@ -1110,40 +1180,43 @@ if (!class_exists("QuotaError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("RequiredCollectionError", false)) {
-  /**
+    /**
    * A list of all errors to be used for validating sizes of collections.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class RequiredCollectionError extends ApiError {
+  class RequiredCollectionError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "RequiredCollectionError";
+      const XSI_TYPE = "RequiredCollectionError";
 
     /**
      * @access public
@@ -1155,40 +1228,43 @@ if (!class_exists("RequiredCollectionError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("RequiredError", false)) {
-  /**
+    /**
    * Errors due to missing required field.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class RequiredError extends ApiError {
+  class RequiredError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "RequiredError";
+      const XSI_TYPE = "RequiredError";
 
     /**
      * @access public
@@ -1200,40 +1276,43 @@ if (!class_exists("RequiredError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("ServerError", false)) {
-  /**
+    /**
    * Errors related to the server.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class ServerError extends ApiError {
+  class ServerError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "ServerError";
+      const XSI_TYPE = "ServerError";
 
     /**
      * @access public
@@ -1245,40 +1324,43 @@ if (!class_exists("ServerError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("SoapRequestHeader", false)) {
-  /**
+    /**
    * Represents the SOAP request header used by API requests.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class SoapRequestHeader {
+  class SoapRequestHeader
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "SoapRequestHeader";
+      const XSI_TYPE = "SoapRequestHeader";
 
     /**
      * @access public
@@ -1296,36 +1378,39 @@ if (!class_exists("SoapRequestHeader", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($networkCode = null, $applicationName = null) {
-      $this->networkCode = $networkCode;
-      $this->applicationName = $applicationName;
-    }
-
+      public function __construct($networkCode = null, $applicationName = null)
+      {
+          $this->networkCode = $networkCode;
+          $this->applicationName = $applicationName;
+      }
   }
 }
 
 if (!class_exists("SoapResponseHeader", false)) {
-  /**
+    /**
    * Represents the SOAP request header used by API responses.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class SoapResponseHeader {
+  class SoapResponseHeader
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "SoapResponseHeader";
+      const XSI_TYPE = "SoapResponseHeader";
 
     /**
      * @access public
@@ -1343,28 +1428,30 @@ if (!class_exists("SoapResponseHeader", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($requestId = null, $responseTime = null) {
-      $this->requestId = $requestId;
-      $this->responseTime = $responseTime;
-    }
-
+      public function __construct($requestId = null, $responseTime = null)
+      {
+          $this->requestId = $requestId;
+          $this->responseTime = $responseTime;
+      }
   }
 }
 
 if (!class_exists("Statement", false)) {
-  /**
+    /**
    * Captures the {@code WHERE}, {@code ORDER BY} and {@code LIMIT} clauses of a
    * PQL query. Statements are typically used to retrieve objects of a predefined
    * domain type, which makes SELECT clause unnecessary.
@@ -1397,10 +1484,11 @@ if (!class_exists("Statement", false)) {
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class Statement {
+  class Statement
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "Statement";
+      const XSI_TYPE = "Statement";
 
     /**
      * @access public
@@ -1418,36 +1506,39 @@ if (!class_exists("Statement", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($query = null, $values = null) {
-      $this->query = $query;
-      $this->values = $values;
-    }
-
+      public function __construct($query = null, $values = null)
+      {
+          $this->query = $query;
+          $this->values = $values;
+      }
   }
 }
 
 if (!class_exists("StatementError", false)) {
-  /**
+    /**
    * An error that occurs while parsing {@link Statement} objects.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class StatementError extends ApiError {
+  class StatementError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "StatementError";
+      const XSI_TYPE = "StatementError";
 
     /**
      * @access public
@@ -1459,40 +1550,43 @@ if (!class_exists("StatementError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("StringLengthError", false)) {
-  /**
+    /**
    * Errors for Strings which do not meet given length constraints.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class StringLengthError extends ApiError {
+  class StringLengthError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "StringLengthError";
+      const XSI_TYPE = "StringLengthError";
 
     /**
      * @access public
@@ -1504,41 +1598,44 @@ if (!class_exists("StringLengthError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("String_ValueMapEntry", false)) {
-  /**
+    /**
    * This represents an entry in a map with a key of type String
    * and value of type Value.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class String_ValueMapEntry {
+  class String_ValueMapEntry
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "String_ValueMapEntry";
+      const XSI_TYPE = "String_ValueMapEntry";
 
     /**
      * @access public
@@ -1556,74 +1653,80 @@ if (!class_exists("String_ValueMapEntry", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($key = null, $value = null) {
-      $this->key = $key;
-      $this->value = $value;
-    }
-
+      public function __construct($key = null, $value = null)
+      {
+          $this->key = $key;
+          $this->value = $value;
+      }
   }
 }
 
 if (!class_exists("UniqueError", false)) {
-  /**
+    /**
    * An error for a field which must satisfy a uniqueness constraint
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class UniqueError extends ApiError {
+  class UniqueError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "UniqueError";
+      const XSI_TYPE = "UniqueError";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("UpdateResult", false)) {
-  /**
+    /**
    * Represents the result of performing an action on objects.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class UpdateResult {
+  class UpdateResult
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "UpdateResult";
+      const XSI_TYPE = "UpdateResult";
 
     /**
      * @access public
@@ -1635,42 +1738,45 @@ if (!class_exists("UpdateResult", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($numChanges = null) {
-      $this->numChanges = $numChanges;
-    }
-
+      public function __construct($numChanges = null)
+      {
+          $this->numChanges = $numChanges;
+      }
   }
 }
 
 if (!class_exists("Value", false)) {
-  /**
+    /**
    * {@code Value} represents a value.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class Value {
+  class Value
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "Value";
+      const XSI_TYPE = "Value";
 
     /**
      * @access public
      * @var string
      */
     public $ValueType;
-    private $_parameterMap = array(
+      private $_parameterMap = array(
       "Value.Type" => "ValueType",
     );
 
@@ -1679,8 +1785,9 @@ if (!class_exists("Value", false)) {
      * @param $var Variable name to set
      * @param $value Value to set
      */
-    public function __set($var, $value) {
-      $this->{$this->_parameterMap[$var]} = $value;
+    public function __set($var, $value)
+    {
+        $this->{$this->_parameterMap[$var]} = $value;
     }
 
     /**
@@ -1688,147 +1795,161 @@ if (!class_exists("Value", false)) {
      * @param $var Variable name to get
      * @return mixed Variable value
      */
-    public function __get($var) {
-      if (!isset($this->_parameterMap[$var])) {
-        return null;
-      }
-      return $this->{$this->_parameterMap[$var]};
+    public function __get($var)
+    {
+        if (!isset($this->_parameterMap[$var])) {
+            return;
+        }
+
+        return $this->{$this->_parameterMap[$var]};
     }
 
     /**
      * Provided for getting non-php-standard named variables
      * @return array parameter map
      */
-    protected function getParameterMap() {
-      return $this->_parameterMap;
+    protected function getParameterMap()
+    {
+        return $this->_parameterMap;
     }
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($ValueType = null) {
-      $this->ValueType = $ValueType;
-    }
-
+      public function __construct($ValueType = null)
+      {
+          $this->ValueType = $ValueType;
+      }
   }
 }
 
 if (!class_exists("AdExclusionRuleErrorReason", false)) {
-  /**
+    /**
    * The reasons for the ad exclusion rule error.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class AdExclusionRuleErrorReason {
+  class AdExclusionRuleErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "AdExclusionRuleError.Reason";
+      const XSI_TYPE = "AdExclusionRuleError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("AdExclusionRuleType", false)) {
-  /**
+    /**
    * The derived type of this rule: whether it is associated with labels, unified entities,
    * or competitive groups.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class AdExclusionRuleType {
+  class AdExclusionRuleType
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "AdExclusionRuleType";
+      const XSI_TYPE = "AdExclusionRuleType";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("ApiVersionErrorReason", false)) {
-  /**
+    /**
    * Indicates that the operation is not allowed in the version the request
    * was made in.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class ApiVersionErrorReason {
+  class ApiVersionErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "ApiVersionError.Reason";
+      const XSI_TYPE = "ApiVersionError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("AuthenticationErrorReason", false)) {
-  /**
+    /**
    * The SOAP message contains a request header with an ambiguous definition
    * of the authentication header fields. This means either the {@code
    * authToken} and {@code oAuthToken} fields were both null or both were
@@ -1836,266 +1957,290 @@ if (!class_exists("AuthenticationErrorReason", false)) {
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class AuthenticationErrorReason {
+  class AuthenticationErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "AuthenticationError.Reason";
+      const XSI_TYPE = "AuthenticationError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("CommonErrorReason", false)) {
-  /**
+    /**
    * Describes reasons for common errors
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class CommonErrorReason {
+  class CommonErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "CommonError.Reason";
+      const XSI_TYPE = "CommonError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("FeatureErrorReason", false)) {
-  /**
+    /**
    * A feature is being used that is not enabled on the current network.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class FeatureErrorReason {
+  class FeatureErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "FeatureError.Reason";
+      const XSI_TYPE = "FeatureError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("InternalApiErrorReason", false)) {
-  /**
+    /**
    * The single reason for the internal API error.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class InternalApiErrorReason {
+  class InternalApiErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "InternalApiError.Reason";
+      const XSI_TYPE = "InternalApiError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("NotNullErrorReason", false)) {
-  /**
+    /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class NotNullErrorReason {
+  class NotNullErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "NotNullError.Reason";
+      const XSI_TYPE = "NotNullError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("PermissionErrorReason", false)) {
-  /**
+    /**
    * Describes reasons for permission errors.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class PermissionErrorReason {
+  class PermissionErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "PermissionError.Reason";
+      const XSI_TYPE = "PermissionError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("PublisherQueryLanguageContextErrorReason", false)) {
-  /**
+    /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class PublisherQueryLanguageContextErrorReason {
+  class PublisherQueryLanguageContextErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "PublisherQueryLanguageContextError.Reason";
+      const XSI_TYPE = "PublisherQueryLanguageContextError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("PublisherQueryLanguageSyntaxErrorReason", false)) {
-  /**
+    /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class PublisherQueryLanguageSyntaxErrorReason {
+  class PublisherQueryLanguageSyntaxErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "PublisherQueryLanguageSyntaxError.Reason";
+      const XSI_TYPE = "PublisherQueryLanguageSyntaxError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("QuotaErrorReason", false)) {
-  /**
+    /**
    * The number of requests made per second is too high and has exceeded the
    * allowable limit. The recommended approach to handle this error is to wait
    * about 5 seconds and then retry the request. Note that this does not
@@ -2110,210 +2255,229 @@ if (!class_exists("QuotaErrorReason", false)) {
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class QuotaErrorReason {
+  class QuotaErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "QuotaError.Reason";
+      const XSI_TYPE = "QuotaError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("RequiredCollectionErrorReason", false)) {
-  /**
+    /**
    * A required collection is missing.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class RequiredCollectionErrorReason {
+  class RequiredCollectionErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "RequiredCollectionError.Reason";
+      const XSI_TYPE = "RequiredCollectionError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("RequiredErrorReason", false)) {
-  /**
+    /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class RequiredErrorReason {
+  class RequiredErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "RequiredError.Reason";
+      const XSI_TYPE = "RequiredError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("ServerErrorReason", false)) {
-  /**
+    /**
    * Describes reasons for server errors
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class ServerErrorReason {
+  class ServerErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "ServerError.Reason";
+      const XSI_TYPE = "ServerError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("StatementErrorReason", false)) {
-  /**
+    /**
    * A bind variable has not been bound to a value.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class StatementErrorReason {
+  class StatementErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "StatementError.Reason";
+      const XSI_TYPE = "StatementError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("StringLengthErrorReason", false)) {
-  /**
+    /**
    * The value returned if the actual value is not exposed by the requested API version.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class StringLengthErrorReason {
+  class StringLengthErrorReason
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "StringLengthError.Reason";
+      const XSI_TYPE = "StringLengthError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct() {
-    }
-
+      public function __construct()
+      {
+      }
   }
 }
 
 if (!class_exists("CreateAdExclusionRules", false)) {
-  /**
+    /**
    * Creates new {@link AdExclusionRule} objects.
    * @param adExclusionRules the ad exclusion rules to create
    * @return the created rules with their IDs filled in
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class CreateAdExclusionRules {
+  class CreateAdExclusionRules
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "";
+      const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2325,35 +2489,38 @@ if (!class_exists("CreateAdExclusionRules", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($adExclusionRules = null) {
-      $this->adExclusionRules = $adExclusionRules;
-    }
-
+      public function __construct($adExclusionRules = null)
+      {
+          $this->adExclusionRules = $adExclusionRules;
+      }
   }
 }
 
 if (!class_exists("CreateAdExclusionRulesResponse", false)) {
-  /**
-   * 
+    /**
+   *
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class CreateAdExclusionRulesResponse {
+  class CreateAdExclusionRulesResponse
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "";
+      const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2365,31 +2532,33 @@ if (!class_exists("CreateAdExclusionRulesResponse", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($rval = null) {
-      $this->rval = $rval;
-    }
-
+      public function __construct($rval = null)
+      {
+          $this->rval = $rval;
+      }
   }
 }
 
 if (!class_exists("GetAdExclusionRulesByStatement", false)) {
-  /**
+    /**
    * Gets a {@link AdExclusionRulePage} of {@link AdExclusionRule} objects that satisfy the
    * given {@link Statement#query}.  The following fields are supported for
    * filtering:
-   * 
+   *
    * <table>
    * <tr>
    * <th scope="col">PQL Property</th> <th scope="col">Object Property</th>
@@ -2407,17 +2576,18 @@ if (!class_exists("GetAdExclusionRulesByStatement", false)) {
    * <td>{@link AdExclusionRule#status}</td>
    * </tr>
    * </table>
-   * 
+   *
    * @param filterStatement a Publisher Query Language statement used to filter
    * a set of rules
    * @return the rules that match the given filter
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class GetAdExclusionRulesByStatement {
+  class GetAdExclusionRulesByStatement
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "";
+      const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2429,35 +2599,38 @@ if (!class_exists("GetAdExclusionRulesByStatement", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($filterStatement = null) {
-      $this->filterStatement = $filterStatement;
-    }
-
+      public function __construct($filterStatement = null)
+      {
+          $this->filterStatement = $filterStatement;
+      }
   }
 }
 
 if (!class_exists("GetAdExclusionRulesByStatementResponse", false)) {
-  /**
-   * 
+    /**
+   *
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class GetAdExclusionRulesByStatementResponse {
+  class GetAdExclusionRulesByStatementResponse
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "";
+      const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2469,30 +2642,32 @@ if (!class_exists("GetAdExclusionRulesByStatementResponse", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($rval = null) {
-      $this->rval = $rval;
-    }
-
+      public function __construct($rval = null)
+      {
+          $this->rval = $rval;
+      }
   }
 }
 
 if (!class_exists("PerformAdExclusionRuleAction", false)) {
-  /**
+    /**
    * Performs action on {@link AdExclusionRule} objects that satisfy the
    * given {@link Statement#query}.
-   * 
+   *
    * @param adExclusionRuleAction the action to perform
    * @param filterStatement a Publisher Query Language statement used to filter
    * a set of ad exclusion rules
@@ -2500,10 +2675,11 @@ if (!class_exists("PerformAdExclusionRuleAction", false)) {
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class PerformAdExclusionRuleAction {
+  class PerformAdExclusionRuleAction
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "";
+      const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2521,36 +2697,39 @@ if (!class_exists("PerformAdExclusionRuleAction", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($adExclusionRuleAction = null, $filterStatement = null) {
-      $this->adExclusionRuleAction = $adExclusionRuleAction;
-      $this->filterStatement = $filterStatement;
-    }
-
+      public function __construct($adExclusionRuleAction = null, $filterStatement = null)
+      {
+          $this->adExclusionRuleAction = $adExclusionRuleAction;
+          $this->filterStatement = $filterStatement;
+      }
   }
 }
 
 if (!class_exists("PerformAdExclusionRuleActionResponse", false)) {
-  /**
-   * 
+    /**
+   *
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class PerformAdExclusionRuleActionResponse {
+  class PerformAdExclusionRuleActionResponse
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "";
+      const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2562,38 +2741,41 @@ if (!class_exists("PerformAdExclusionRuleActionResponse", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($rval = null) {
-      $this->rval = $rval;
-    }
-
+      public function __construct($rval = null)
+      {
+          $this->rval = $rval;
+      }
   }
 }
 
 if (!class_exists("UpdateAdExclusionRules", false)) {
-  /**
+    /**
    * Updates the specified {@link AdExclusionRule} objects.
-   * 
+   *
    * @param adExclusionRules the ad exclusion rules to update
    * @return the updated rules
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class UpdateAdExclusionRules {
+  class UpdateAdExclusionRules
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "";
+      const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2605,35 +2787,38 @@ if (!class_exists("UpdateAdExclusionRules", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($adExclusionRules = null) {
-      $this->adExclusionRules = $adExclusionRules;
-    }
-
+      public function __construct($adExclusionRules = null)
+      {
+          $this->adExclusionRules = $adExclusionRules;
+      }
   }
 }
 
 if (!class_exists("UpdateAdExclusionRulesResponse", false)) {
-  /**
-   * 
+    /**
+   *
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class UpdateAdExclusionRulesResponse {
+  class UpdateAdExclusionRulesResponse
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "";
+      const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2645,27 +2830,29 @@ if (!class_exists("UpdateAdExclusionRulesResponse", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($rval = null) {
-      $this->rval = $rval;
-    }
-
+      public function __construct($rval = null)
+      {
+          $this->rval = $rval;
+      }
   }
 }
 
 if (!class_exists("ObjectValue", false)) {
-  /**
+    /**
    * Contains an object value.
    * <p>
    * <b>This object is experimental!
@@ -2677,80 +2864,87 @@ if (!class_exists("ObjectValue", false)) {
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class ObjectValue extends Value {
+  class ObjectValue extends Value
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "ObjectValue";
+      const XSI_TYPE = "ObjectValue";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($ValueType = null) {
-      parent::__construct();
-      $this->ValueType = $ValueType;
-    }
-
+      public function __construct($ValueType = null)
+      {
+          parent::__construct();
+          $this->ValueType = $ValueType;
+      }
   }
 }
 
 if (!class_exists("ActivateAdExclusionRules", false)) {
-  /**
+    /**
    * Activate action.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class ActivateAdExclusionRules extends AdExclusionRuleAction {
+  class ActivateAdExclusionRules extends AdExclusionRuleAction
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "ActivateAdExclusionRules";
+      const XSI_TYPE = "ActivateAdExclusionRules";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($AdExclusionRuleActionType = null) {
-      parent::__construct();
-      $this->AdExclusionRuleActionType = $AdExclusionRuleActionType;
-    }
-
+      public function __construct($AdExclusionRuleActionType = null)
+      {
+          parent::__construct();
+          $this->AdExclusionRuleActionType = $AdExclusionRuleActionType;
+      }
   }
 }
 
 if (!class_exists("AdExclusionRuleError", false)) {
-  /**
+    /**
    * Ad exclusion rule specific errors.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class AdExclusionRuleError extends ApiError {
+  class AdExclusionRuleError extends ApiError
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "AdExclusionRuleError";
+      const XSI_TYPE = "AdExclusionRuleError";
 
     /**
      * @access public
@@ -2762,40 +2956,43 @@ if (!class_exists("AdExclusionRuleError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
-      parent::__construct();
-      $this->reason = $reason;
-      $this->fieldPath = $fieldPath;
-      $this->trigger = $trigger;
-      $this->errorString = $errorString;
-      $this->ApiErrorType = $ApiErrorType;
-    }
-
+      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
+      {
+          parent::__construct();
+          $this->reason = $reason;
+          $this->fieldPath = $fieldPath;
+          $this->trigger = $trigger;
+          $this->errorString = $errorString;
+          $this->ApiErrorType = $ApiErrorType;
+      }
   }
 }
 
 if (!class_exists("ApiException", false)) {
-  /**
+    /**
    * Exception class for holding a list of service errors.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class ApiException extends ApplicationException {
+  class ApiException extends ApplicationException
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "ApiException";
+      const XSI_TYPE = "ApiException";
 
     /**
      * @access public
@@ -2807,38 +3004,41 @@ if (!class_exists("ApiException", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($errors = null, $message = null, $ApplicationExceptionType = null) {
-      parent::__construct();
-      $this->errors = $errors;
-      $this->message = $message;
-      $this->ApplicationExceptionType = $ApplicationExceptionType;
-    }
-
+      public function __construct($errors = null, $message = null, $ApplicationExceptionType = null)
+      {
+          parent::__construct();
+          $this->errors = $errors;
+          $this->message = $message;
+          $this->ApplicationExceptionType = $ApplicationExceptionType;
+      }
   }
 }
 
 if (!class_exists("BooleanValue", false)) {
-  /**
+    /**
    * Contains a boolean value.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class BooleanValue extends Value {
+  class BooleanValue extends Value
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "BooleanValue";
+      const XSI_TYPE = "BooleanValue";
 
     /**
      * @access public
@@ -2850,37 +3050,40 @@ if (!class_exists("BooleanValue", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($value = null, $ValueType = null) {
-      parent::__construct();
-      $this->value = $value;
-      $this->ValueType = $ValueType;
-    }
-
+      public function __construct($value = null, $ValueType = null)
+      {
+          parent::__construct();
+          $this->value = $value;
+          $this->ValueType = $ValueType;
+      }
   }
 }
 
 if (!class_exists("DateTimeValue", false)) {
-  /**
+    /**
    * Contains a date-time value.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class DateTimeValue extends Value {
+  class DateTimeValue extends Value
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "DateTimeValue";
+      const XSI_TYPE = "DateTimeValue";
 
     /**
      * @access public
@@ -2892,37 +3095,40 @@ if (!class_exists("DateTimeValue", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($value = null, $ValueType = null) {
-      parent::__construct();
-      $this->value = $value;
-      $this->ValueType = $ValueType;
-    }
-
+      public function __construct($value = null, $ValueType = null)
+      {
+          parent::__construct();
+          $this->value = $value;
+          $this->ValueType = $ValueType;
+      }
   }
 }
 
 if (!class_exists("DateValue", false)) {
-  /**
+    /**
    * Contains a date value.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class DateValue extends Value {
+  class DateValue extends Value
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "DateValue";
+      const XSI_TYPE = "DateValue";
 
     /**
      * @access public
@@ -2934,37 +3140,40 @@ if (!class_exists("DateValue", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($value = null, $ValueType = null) {
-      parent::__construct();
-      $this->value = $value;
-      $this->ValueType = $ValueType;
-    }
-
+      public function __construct($value = null, $ValueType = null)
+      {
+          parent::__construct();
+          $this->value = $value;
+          $this->ValueType = $ValueType;
+      }
   }
 }
 
 if (!class_exists("NumberValue", false)) {
-  /**
+    /**
    * Contains a numeric value.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class NumberValue extends Value {
+  class NumberValue extends Value
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "NumberValue";
+      const XSI_TYPE = "NumberValue";
 
     /**
      * @access public
@@ -2976,37 +3185,40 @@ if (!class_exists("NumberValue", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($value = null, $ValueType = null) {
-      parent::__construct();
-      $this->value = $value;
-      $this->ValueType = $ValueType;
-    }
-
+      public function __construct($value = null, $ValueType = null)
+      {
+          parent::__construct();
+          $this->value = $value;
+          $this->ValueType = $ValueType;
+      }
   }
 }
 
 if (!class_exists("SetValue", false)) {
-  /**
+    /**
    * Contains a set of {@link Value Values}. May not contain duplicates.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class SetValue extends Value {
+  class SetValue extends Value
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "SetValue";
+      const XSI_TYPE = "SetValue";
 
     /**
      * @access public
@@ -3018,37 +3230,40 @@ if (!class_exists("SetValue", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($values = null, $ValueType = null) {
-      parent::__construct();
-      $this->values = $values;
-      $this->ValueType = $ValueType;
-    }
-
+      public function __construct($values = null, $ValueType = null)
+      {
+          parent::__construct();
+          $this->values = $values;
+          $this->ValueType = $ValueType;
+      }
   }
 }
 
 if (!class_exists("TextValue", false)) {
-  /**
+    /**
    * Contains a string value.
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class TextValue extends Value {
+  class TextValue extends Value
+  {
 
     const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const XSI_TYPE = "TextValue";
+      const XSI_TYPE = "TextValue";
 
     /**
      * @access public
@@ -3060,38 +3275,41 @@ if (!class_exists("TextValue", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return self::WSDL_NAMESPACE;
+    public function getNamespace()
+    {
+        return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return self::XSI_TYPE;
+    public function getXsiTypeName()
+    {
+        return self::XSI_TYPE;
     }
 
-    public function __construct($value = null, $ValueType = null) {
-      parent::__construct();
-      $this->value = $value;
-      $this->ValueType = $ValueType;
-    }
-
+      public function __construct($value = null, $ValueType = null)
+      {
+          parent::__construct();
+          $this->value = $value;
+          $this->ValueType = $ValueType;
+      }
   }
 }
 
 if (!class_exists("AdExclusionRuleService", false)) {
-  /**
+    /**
    * AdExclusionRuleService
    * @package GoogleApiAdsDfp
    * @subpackage v201411
    */
-  class AdExclusionRuleService extends DfpSoapClient {
+  class AdExclusionRuleService extends DfpSoapClient
+  {
 
     const SERVICE_NAME = "AdExclusionRuleService";
-    const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
-    const ENDPOINT = "https://ads.google.com/apis/ads/publisher/v201411/AdExclusionRuleService";
+      const WSDL_NAMESPACE = "https://www.google.com/apis/ads/publisher/v201411";
+      const ENDPOINT = "https://ads.google.com/apis/ads/publisher/v201411/AdExclusionRuleService";
 
     /**
      * The endpoint of the service
@@ -3173,15 +3391,15 @@ if (!class_exists("AdExclusionRuleService", false)) {
       "updateAdExclusionRulesResponse" => "UpdateAdExclusionRulesResponse",
     );
 
-
     /**
      * Constructor using wsdl location and options array
-     * @param string $wsdl WSDL location for this service
-     * @param array $options Options for the SoapClient
+     * @param string $wsdl    WSDL location for this service
+     * @param array  $options Options for the SoapClient
      */
-    public function __construct($wsdl, $options, $user) {
-      $options["classmap"] = self::$classmap;
-      parent::__construct($wsdl, $options, $user, self::SERVICE_NAME,
+    public function __construct($wsdl, $options, $user)
+    {
+        $options["classmap"] = self::$classmap;
+        parent::__construct($wsdl, $options, $user, self::SERVICE_NAME,
           self::WSDL_NAMESPACE);
     }
     /**
@@ -3189,16 +3407,18 @@ if (!class_exists("AdExclusionRuleService", false)) {
      * @param adExclusionRules the ad exclusion rules to create
      * @return the created rules with their IDs filled in
      */
-    public function createAdExclusionRules($adExclusionRules) {
-      $args = new CreateAdExclusionRules($adExclusionRules);
-      $result = $this->__soapCall("createAdExclusionRules", array($args));
-      return $result->rval;
+    public function createAdExclusionRules($adExclusionRules)
+    {
+        $args = new CreateAdExclusionRules($adExclusionRules);
+        $result = $this->__soapCall("createAdExclusionRules", array($args));
+
+        return $result->rval;
     }
     /**
      * Gets a {@link AdExclusionRulePage} of {@link AdExclusionRule} objects that satisfy the
      * given {@link Statement#query}.  The following fields are supported for
      * filtering:
-     * 
+     *
      * <table>
      * <tr>
      * <th scope="col">PQL Property</th> <th scope="col">Object Property</th>
@@ -3216,41 +3436,46 @@ if (!class_exists("AdExclusionRuleService", false)) {
      * <td>{@link AdExclusionRule#status}</td>
      * </tr>
      * </table>
-     * 
+     *
      * @param filterStatement a Publisher Query Language statement used to filter
      * a set of rules
      * @return the rules that match the given filter
      */
-    public function getAdExclusionRulesByStatement($filterStatement) {
-      $args = new GetAdExclusionRulesByStatement($filterStatement);
-      $result = $this->__soapCall("getAdExclusionRulesByStatement", array($args));
-      return $result->rval;
+    public function getAdExclusionRulesByStatement($filterStatement)
+    {
+        $args = new GetAdExclusionRulesByStatement($filterStatement);
+        $result = $this->__soapCall("getAdExclusionRulesByStatement", array($args));
+
+        return $result->rval;
     }
     /**
      * Performs action on {@link AdExclusionRule} objects that satisfy the
      * given {@link Statement#query}.
-     * 
+     *
      * @param adExclusionRuleAction the action to perform
      * @param filterStatement a Publisher Query Language statement used to filter
      * a set of ad exclusion rules
      * @return the result of the action performed
      */
-    public function performAdExclusionRuleAction($adExclusionRuleAction, $filterStatement) {
-      $args = new PerformAdExclusionRuleAction($adExclusionRuleAction, $filterStatement);
-      $result = $this->__soapCall("performAdExclusionRuleAction", array($args));
-      return $result->rval;
+    public function performAdExclusionRuleAction($adExclusionRuleAction, $filterStatement)
+    {
+        $args = new PerformAdExclusionRuleAction($adExclusionRuleAction, $filterStatement);
+        $result = $this->__soapCall("performAdExclusionRuleAction", array($args));
+
+        return $result->rval;
     }
     /**
      * Updates the specified {@link AdExclusionRule} objects.
-     * 
+     *
      * @param adExclusionRules the ad exclusion rules to update
      * @return the updated rules
      */
-    public function updateAdExclusionRules($adExclusionRules) {
-      $args = new UpdateAdExclusionRules($adExclusionRules);
-      $result = $this->__soapCall("updateAdExclusionRules", array($args));
-      return $result->rval;
+    public function updateAdExclusionRules($adExclusionRules)
+    {
+        $args = new UpdateAdExclusionRules($adExclusionRules);
+        $result = $this->__soapCall("updateAdExclusionRules", array($args));
+
+        return $result->rval;
     }
   }
 }
-

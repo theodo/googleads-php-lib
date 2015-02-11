@@ -27,18 +27,19 @@
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-require_once dirname(__FILE__) . '/../Lib/AdWordsUser.php';
-require_once dirname(__FILE__) . '/../../Common/Util/CurlUtils.php';
-require_once dirname(__FILE__) . '/../../Common/Util/DeprecationUtils.php';
-require_once dirname(__FILE__) . '/../../Common/Util/Logger.php';
-require_once dirname(__FILE__) . '/../../Common/Util/XmlUtils.php';
+require_once dirname(__FILE__).'/../Lib/AdWordsUser.php';
+require_once dirname(__FILE__).'/../../Common/Util/CurlUtils.php';
+require_once dirname(__FILE__).'/../../Common/Util/DeprecationUtils.php';
+require_once dirname(__FILE__).'/../../Common/Util/Logger.php';
+require_once dirname(__FILE__).'/../../Common/Util/XmlUtils.php';
 
 /**
  * A collection of utility methods for working with reports.
  * @package GoogleApiAdsAdWords
  * @subpackage Util
  */
-class ReportUtils {
+class ReportUtils
+{
 
   const MINIMUM_SKIP_HEADER_VERSION = "v201409";
 
@@ -71,7 +72,9 @@ class ReportUtils {
    * The ReportUtils class is not meant to have any instances.
    * @access private
    */
-  private function __construct() {}
+  private function __construct()
+  {
+  }
 
   /**
    * Downloads a new instance of an existing report definition. If the path
@@ -93,12 +96,14 @@ class ReportUtils {
    * @return mixed if path isn't specified the contents of the report,
    *     otherwise the size in bytes of the downloaded report
    */
-  public static function DownloadReport($reportDefinition, $path = NULL,
-      AdWordsUser $user, array $options = NULL) {
-    $url = self::GetUrl($user, $options);
-    $headers = self::GetHeaders($user, $url, $options);
-    $params = self::GetParams($reportDefinition);
-    return self::DownloadReportFromUrl($url, $headers, $params, $path);
+  public static function DownloadReport($reportDefinition, $path = null,
+      AdWordsUser $user, array $options = null)
+  {
+      $url = self::GetUrl($user, $options);
+      $headers = self::GetHeaders($user, $url, $options);
+      $params = self::GetParams($reportDefinition);
+
+      return self::DownloadReportFromUrl($url, $headers, $params, $path);
   }
 
   /**
@@ -117,12 +122,14 @@ class ReportUtils {
    * @return mixed if path isn't specified the contents of the report,
    *     otherwise the size in bytes of the downloaded report
    */
-  public static function DownloadReportWithAwql($reportQuery, $path = NULL,
-      AdWordsUser $user, $reportFormat, array $options = NULL) {
-    $url = self::GetUrl($user, $options);
-    $headers = self::GetHeaders($user, $url, $options);
-    $params = self::GetQueryParams($reportQuery, $reportFormat);
-    return self::DownloadReportFromUrl($url, $headers, $params, $path);
+  public static function DownloadReportWithAwql($reportQuery, $path = null,
+      AdWordsUser $user, $reportFormat, array $options = null)
+  {
+      $url = self::GetUrl($user, $options);
+      $headers = self::GetHeaders($user, $url, $options);
+      $params = self::GetQueryParams($reportQuery, $reportFormat);
+
+      return self::DownloadReportFromUrl($url, $headers, $params, $path);
   }
 
   /**
@@ -135,84 +142,85 @@ class ReportUtils {
    *     otherwise the size in bytes of the downloaded report
    */
   private static function DownloadReportFromUrl($url, $headers, $params,
-      $path = NULL) {
-    /*
+      $path = null)
+  {
+      /*
      * This method should not be static and instantiation of this class should
      * be allowed so we can "inject" CurlUtils, but would break too many things
      * that rely on this method being static.
      */
     $curlUtils = new CurlUtils();
-    $ch = $curlUtils->CreateSession($url);
+      $ch = $curlUtils->CreateSession($url);
 
-    $curlUtils->SetOpt($ch, CURLOPT_POST, TRUE);
-    $curlUtils->SetOpt($ch, CURLINFO_HEADER_OUT, TRUE);
+      $curlUtils->SetOpt($ch, CURLOPT_POST, true);
+      $curlUtils->SetOpt($ch, CURLINFO_HEADER_OUT, true);
 
-    $flatHeaders = array();
-    foreach($headers as $name => $value) {
-      $flatHeaders[] = sprintf('%s: %s', $name, $value);
-    }
-    $curlUtils->SetOpt($ch, CURLOPT_HTTPHEADER, $flatHeaders);
+      $flatHeaders = array();
+      foreach ($headers as $name => $value) {
+          $flatHeaders[] = sprintf('%s: %s', $name, $value);
+      }
+      $curlUtils->SetOpt($ch, CURLOPT_HTTPHEADER, $flatHeaders);
 
-    if (isset($params)) {
-      $curlUtils->SetOpt($ch, CURLOPT_POSTFIELDS, $params);
-    }
+      if (isset($params)) {
+          $curlUtils->SetOpt($ch, CURLOPT_POSTFIELDS, $params);
+      }
 
-    if (isset($path)) {
-      $file = fopen($path, 'w');
-      $curlUtils->SetOpt($ch, CURLOPT_RETURNTRANSFER, FALSE);
-      $curlUtils->SetOpt($ch, CURLOPT_FILE, $file);
-    }
-
-    $response = $curlUtils->Exec($ch);
-    $error = $curlUtils->Error($ch);
-    $code = $curlUtils->GetInfo($ch, CURLINFO_HTTP_CODE);
-    $downloadSize = $curlUtils->GetInfo($ch, CURLINFO_SIZE_DOWNLOAD);
-    $request = $curlUtils->GetInfo($ch, CURLINFO_HEADER_OUT);
-
-    $curlUtils->Close($ch);
-    if (isset($file)) {
-      fclose($file);
-    }
-
-    $exception = null;
-    if ($code != 200) {
-      // Get the beginning of the response.
       if (isset($path)) {
-        $file = fopen($path, 'r');
-        $snippet = fread($file, self::$SNIPPET_LENGTH);
-        fclose($file);
+          $file = fopen($path, 'w');
+          $curlUtils->SetOpt($ch, CURLOPT_RETURNTRANSFER, false);
+          $curlUtils->SetOpt($ch, CURLOPT_FILE, $file);
+      }
+
+      $response = $curlUtils->Exec($ch);
+      $error = $curlUtils->Error($ch);
+      $code = $curlUtils->GetInfo($ch, CURLINFO_HTTP_CODE);
+      $downloadSize = $curlUtils->GetInfo($ch, CURLINFO_SIZE_DOWNLOAD);
+      $request = $curlUtils->GetInfo($ch, CURLINFO_HEADER_OUT);
+
+      $curlUtils->Close($ch);
+      if (isset($file)) {
+          fclose($file);
+      }
+
+      $exception = null;
+      if ($code != 200) {
+          // Get the beginning of the response.
+      if (isset($path)) {
+          $file = fopen($path, 'r');
+          $snippet = fread($file, self::$SNIPPET_LENGTH);
+          fclose($file);
       } else {
-        $snippet = substr($response, 0, self::$SNIPPET_LENGTH);
+          $snippet = substr($response, 0, self::$SNIPPET_LENGTH);
       }
       // Create exception.
       $error = self::ParseApiErrorXml($snippet);
-      if ($error) {
-        $errorMessage = "Report download failed. Underlying errors are \n";
-        foreach ($error->ApiError as $apiError) {
-          $errorMessage .= sprintf("Type = '%s', Trigger = '%s', FieldPath = " .
+          if ($error) {
+              $errorMessage = "Report download failed. Underlying errors are \n";
+              foreach ($error->ApiError as $apiError) {
+                  $errorMessage .= sprintf("Type = '%s', Trigger = '%s', FieldPath = ".
              "'%s'. ", $apiError->type, $apiError->trigger,
               $apiError->fieldPath);
-        }
-        $exception = new ReportDownloadException($errorMessage, $code);
-      } else if (preg_match(self::$ERROR_MESSAGE_REGEX, $snippet, $matches)) {
-        $exception = new ReportDownloadException($matches[2], $code);
-      } else if (!empty($error)) {
-        $exception = new ReportDownloadException($error);
-      } else if (isset($code)) {
-        $exception =
+              }
+              $exception = new ReportDownloadException($errorMessage, $code);
+          } elseif (preg_match(self::$ERROR_MESSAGE_REGEX, $snippet, $matches)) {
+              $exception = new ReportDownloadException($matches[2], $code);
+          } elseif (!empty($error)) {
+              $exception = new ReportDownloadException($error);
+          } elseif (isset($code)) {
+              $exception =
             new ReportDownloadException('Report download failed.', $code);
+          }
       }
-    }
 
-    self::LogRequest($request, $code, $params, $exception);
+      self::LogRequest($request, $code, $params, $exception);
 
-    if (isset($exception)) {
-      throw $exception;
-    } else if (isset($path)) {
-      return $downloadSize;
-    } else {
-      return $response;
-    }
+      if (isset($exception)) {
+          throw $exception;
+      } elseif (isset($path)) {
+          return $downloadSize;
+      } else {
+          return $response;
+      }
   }
 
   /**
@@ -225,19 +233,21 @@ class ReportUtils {
    * @return Object the parsed error object, or null if the response cannot
    * be parsed.
    */
-  private static function ParseApiErrorXml($responseXml) {
-    $retval = null;
-    try {
-      $doc = XmlUtils::GetDomFromXml($responseXml);
-      $retval = XmlUtils::ConvertDocumentToObject($doc);
-      if (!is_array($retval->ApiError)) {
-        $retval->ApiError = array($retval->ApiError);
-      }
-    } catch (Exception $e) {
-      // There was a parse exception and hence this response cannot be
+  private static function ParseApiErrorXml($responseXml)
+  {
+      $retval = null;
+      try {
+          $doc = XmlUtils::GetDomFromXml($responseXml);
+          $retval = XmlUtils::ConvertDocumentToObject($doc);
+          if (!is_array($retval->ApiError)) {
+              $retval->ApiError = array($retval->ApiError);
+          }
+      } catch (Exception $e) {
+          // There was a parse exception and hence this response cannot be
       // interpreted as an xml.
-    }
-    return $retval;
+      }
+
+      return $retval;
   }
 
   /**
@@ -246,17 +256,19 @@ class ReportUtils {
    * @param array $options the options configured for the download
    * @return string the download URL
    */
-  private static function GetUrl($user, array $options = NULL) {
-    $server = !empty($options['server']) ? $options['server'] :
+  private static function GetUrl($user, array $options = null)
+  {
+      $server = !empty($options['server']) ? $options['server'] :
         $user->GetDefaultServer();
-    $version = !empty($options['version']) ? $options['version'] : NULL;
-    if (!isset($version) && $user->GetDefaultVersion() >= 'v201109') {
-      $version = $user->GetDefaultVersion();
-    }
-    if (isset($server) && strpos($server, 'http') !== 0) {
-      throw new ReportDownloadException('Invalid server: ' . $server);
-    }
-    return sprintf(self::$DOWNLOAD_URL_FORMAT, $server, $version);
+      $version = !empty($options['version']) ? $options['version'] : null;
+      if (!isset($version) && $user->GetDefaultVersion() >= 'v201109') {
+          $version = $user->GetDefaultVersion();
+      }
+      if (isset($server) && strpos($server, 'http') !== 0) {
+          throw new ReportDownloadException('Invalid server: '.$server);
+      }
+
+      return sprintf(self::$DOWNLOAD_URL_FORMAT, $server, $version);
   }
 
   /**
@@ -264,20 +276,22 @@ class ReportUtils {
    * @param mixed $reportDefinition the report definition, as an ID or object
    * @return array the parameters
    */
-  private static function GetParams($reportDefinition) {
-    $params = array();
-    if (is_numeric($reportDefinition)) {
-      $params['__rd'] = $reportDefinition;
-    } else if (is_object($reportDefinition) || is_array($reportDefinition)) {
-      $document = XmlUtils::ConvertObjectToDocument($reportDefinition,
+  private static function GetParams($reportDefinition)
+  {
+      $params = array();
+      if (is_numeric($reportDefinition)) {
+          $params['__rd'] = $reportDefinition;
+      } elseif (is_object($reportDefinition) || is_array($reportDefinition)) {
+          $document = XmlUtils::ConvertObjectToDocument($reportDefinition,
           'reportDefinition');
-      $document->formatOutput = TRUE;
-      $params['__rdxml'] = XmlUtils::GetXmlFromDom($document);
-    } else {
-      throw new ReportDownloadException('Invalid report definition type: '
-          . $reportDefinition);
-    }
-    return $params;
+          $document->formatOutput = true;
+          $params['__rdxml'] = XmlUtils::GetXmlFromDom($document);
+      } else {
+          throw new ReportDownloadException('Invalid report definition type: '
+          .$reportDefinition);
+      }
+
+      return $params;
   }
 
   /**
@@ -286,13 +300,15 @@ class ReportUtils {
    * @param string $reportFormat the format to request report in, as string
    * @return array the parameters
    */
-  private static function GetQueryParams($reportQuery, $reportFormat) {
-    if (!is_string($reportQuery) or !is_string($reportFormat)) {
-      throw new ReportDownloadException(
+  private static function GetQueryParams($reportQuery, $reportFormat)
+  {
+      if (!is_string($reportQuery) or !is_string($reportFormat)) {
+          throw new ReportDownloadException(
           'Invalid parameter supplied, string is expected'
       );
-    }
-    return array('__rdquery' => $reportQuery, '__fmt' => $reportFormat);
+      }
+
+      return array('__rdquery' => $reportQuery, '__fmt' => $reportFormat);
   }
 
   /**
@@ -302,48 +318,49 @@ class ReportUtils {
    * @param array $options the options for the download
    * @return array and array of strings, which are header names and values
    */
-  private static function GetHeaders($user, $url, array $options = NULL) {
-    $headers = array();
-    $version = !empty($options['version']) ? $options['version'] :
+  private static function GetHeaders($user, $url, array $options = null)
+  {
+      $headers = array();
+      $version = !empty($options['version']) ? $options['version'] :
         $user->GetDefaultVersion();
     // Authorization.
-    $authHeader = NULL;
-    $oAuth2Info = $user->GetOAuth2Info();
-    $oAuth2Handler = $user->GetOAuth2Handler();
-    if (!empty($oAuth2Info)) {
-      $oAuth2Info = $oAuth2Handler->GetOrRefreshAccessToken($oAuth2Info);
-      $user->SetOAuth2Info($oAuth2Info);
-      $authHeader = $oAuth2Handler->FormatCredentialsForHeader($oAuth2Info);
-    } else {
-      throw new ServiceException('OAuth 2.0 authentication is required.');
-    }
-    $headers['Authorization'] = $authHeader;
+    $authHeader = null;
+      $oAuth2Info = $user->GetOAuth2Info();
+      $oAuth2Handler = $user->GetOAuth2Handler();
+      if (!empty($oAuth2Info)) {
+          $oAuth2Info = $oAuth2Handler->GetOrRefreshAccessToken($oAuth2Info);
+          $user->SetOAuth2Info($oAuth2Info);
+          $authHeader = $oAuth2Handler->FormatCredentialsForHeader($oAuth2Info);
+      } else {
+          throw new ServiceException('OAuth 2.0 authentication is required.');
+      }
+      $headers['Authorization'] = $authHeader;
 
     // Developer token.
     $headers['developerToken'] = $user->GetDeveloperToken();
     // Target client.
     $clientCustomerId = $user->GetClientCustomerId();
-    if (isset($clientCustomerId)) {
-      $headers['clientCustomerId'] = $clientCustomerId;
-    } else {
-      throw new ReportDownloadException('The client customer ID must be '
-          . 'specified for report downloads.');
-    }
+      if (isset($clientCustomerId)) {
+          $headers['clientCustomerId'] = $clientCustomerId;
+      } else {
+          throw new ReportDownloadException('The client customer ID must be '
+          .'specified for report downloads.');
+      }
     // Flags.
     if (isset($options['skipReportHeader'])) {
-      DeprecationUtils::CheckUsingSkipReportHeaderWithUnsupportedVersion(
+        DeprecationUtils::CheckUsingSkipReportHeaderWithUnsupportedVersion(
           'skipReportHeader', self::MINIMUM_SKIP_HEADER_VERSION, $version);
-      $headers['skipReportHeader'] =
+        $headers['skipReportHeader'] =
           $options['skipReportHeader'] ? 'true' : 'false';
     }
-    if (isset($options['skipReportSummary'])) {
-      DeprecationUtils::CheckUsingSkipReportHeaderWithUnsupportedVersion(
+      if (isset($options['skipReportSummary'])) {
+          DeprecationUtils::CheckUsingSkipReportHeaderWithUnsupportedVersion(
           'skipReportSummary', self::MINIMUM_SKIP_HEADER_VERSION, $version);
-      $headers['skipReportSummary'] =
+          $headers['skipReportSummary'] =
           $options['skipReportSummary'] ? 'true' : 'false';
-    }
+      }
 
-    return $headers;
+      return $headers;
   }
 
   /**
@@ -354,23 +371,24 @@ class ReportUtils {
    * @param Exception $exception the exception that will be thrown, if any
    */
   private static function LogRequest($requestHeaders, $responseCode,
-      $params = NULL, $exception = NULL) {
-    $level = isset($exception) ? Logger::$ERROR : Logger::$INFO;
-    $messageParts = array();
-    $messageParts[] = trim($requestHeaders);
-    $messageParts[] = ''; // Blank line for readability.
+      $params = null, $exception = null)
+  {
+      $level = isset($exception) ? Logger::$ERROR : Logger::$INFO;
+      $messageParts = array();
+      $messageParts[] = trim($requestHeaders);
+      $messageParts[] = ''; // Blank line for readability.
     $messageParts[] = "Parameters:";
-    foreach ($params as $name => $value) {
-      $messageParts[] = sprintf('%s: %s', $name, $value);
-    }
-    $messageParts[] = ''; // Blank line for readability.
+      foreach ($params as $name => $value) {
+          $messageParts[] = sprintf('%s: %s', $name, $value);
+      }
+      $messageParts[] = ''; // Blank line for readability.
     $messageParts[] = sprintf('Response Code: %s', $responseCode);
-    if (isset($exception)) {
-      $messageParts[] = sprintf('Error Message: %s', $exception->GetMessage());
-    }
-    $messageParts[] = ''; // Blank line for readability.
+      if (isset($exception)) {
+          $messageParts[] = sprintf('Error Message: %s', $exception->GetMessage());
+      }
+      $messageParts[] = ''; // Blank line for readability.
     $message = implode("\n", $messageParts);
-    Logger::Log(self::$LOG_NAME, $message, $level);
+      Logger::Log(self::$LOG_NAME, $message, $level);
   }
 }
 
@@ -379,27 +397,30 @@ class ReportUtils {
  * @package GoogleApiAdsAdWords
  * @subpackage Util
  */
-class ReportDownloadException extends Exception {
+class ReportDownloadException extends Exception
+{
   /**
    * Constructor for ReportDownloadException.
    * @param string $error an optional error message
    * @param string $httpCode an optional HTTP status code of the response
    */
-  public function __construct($error = NULL, $httpCode = NULL) {
-    if (empty($error)) {
-      $error = 'Report download failed with status code: ' . $httpCode;
-    }
-    parent::__construct($error, $httpCode);
+  public function __construct($error = null, $httpCode = null)
+  {
+      if (empty($error)) {
+          $error = 'Report download failed with status code: '.$httpCode;
+      }
+      parent::__construct($error, $httpCode);
   }
 }
 
-if (!class_exists("ReportDefinition", FALSE)) {
-  /**
+if (!class_exists("ReportDefinition", false)) {
+    /**
    * Represents a report definition.
    * @package GoogleApiAdsAdWords
    * @subpackage Util
    */
-  class ReportDefinition {
+  class ReportDefinition
+  {
     /**
      * @access public
      * @var integer
@@ -458,39 +479,43 @@ if (!class_exists("ReportDefinition", FALSE)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return "";
+    public function getNamespace()
+    {
+        return "";
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return "ReportDefinition";
+    public function getXsiTypeName()
+    {
+        return "ReportDefinition";
     }
 
-    public function __construct($id = NULL, $selector = NULL, $reportName = NULL, $reportType = NULL, $hasAttachment = NULL, $dateRangeType = NULL, $downloadFormat = NULL, $creationTime = NULL, $includeZeroImpressions = NULL) {
-      $this->id = $id;
-      $this->selector = $selector;
-      $this->reportName = $reportName;
-      $this->reportType = $reportType;
-      $this->hasAttachment = $hasAttachment;
-      $this->dateRangeType = $dateRangeType;
-      $this->downloadFormat = $downloadFormat;
-      $this->creationTime = $creationTime;
-      $this->includeZeroImpressions = $includeZeroImpressions;
-    }
+      public function __construct($id = null, $selector = null, $reportName = null, $reportType = null, $hasAttachment = null, $dateRangeType = null, $downloadFormat = null, $creationTime = null, $includeZeroImpressions = null)
+      {
+          $this->id = $id;
+          $this->selector = $selector;
+          $this->reportName = $reportName;
+          $this->reportType = $reportType;
+          $this->hasAttachment = $hasAttachment;
+          $this->dateRangeType = $dateRangeType;
+          $this->downloadFormat = $downloadFormat;
+          $this->creationTime = $creationTime;
+          $this->includeZeroImpressions = $includeZeroImpressions;
+      }
   }
 }
 
-if (!class_exists("Selector", FALSE)) {
-  /**
+if (!class_exists("Selector", false)) {
+    /**
    * A generic selector to specify the type of information to return.
    * @package GoogleApiAdsAdWords
    * @subpackage Util
    */
-  class Selector {
+  class Selector
+  {
     /**
      * @access public
      * @var string[]
@@ -525,35 +550,39 @@ if (!class_exists("Selector", FALSE)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return "";
+    public function getNamespace()
+    {
+        return "";
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return "Selector";
+    public function getXsiTypeName()
+    {
+        return "Selector";
     }
 
-    public function __construct($fields = NULL, $predicates = NULL, $dateRange = NULL, $ordering = NULL, $paging = NULL) {
-      $this->fields = $fields;
-      $this->predicates = $predicates;
-      $this->dateRange = $dateRange;
-      $this->ordering = $ordering;
-      $this->paging = $paging;
-    }
+      public function __construct($fields = null, $predicates = null, $dateRange = null, $ordering = null, $paging = null)
+      {
+          $this->fields = $fields;
+          $this->predicates = $predicates;
+          $this->dateRange = $dateRange;
+          $this->ordering = $ordering;
+          $this->paging = $paging;
+      }
   }
 }
 
-if (!class_exists("Predicate", FALSE)) {
-  /**
+if (!class_exists("Predicate", false)) {
+    /**
    * Specifies how an entity (eg. adgroup, campaign, criterion, ad) should be filtered.
    * @package GoogleApiAdsAdWords
    * @subpackage Util
    */
-  class Predicate {
+  class Predicate
+  {
     /**
      * @access public
      * @var string
@@ -576,61 +605,70 @@ if (!class_exists("Predicate", FALSE)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return "";
+    public function getNamespace()
+    {
+        return "";
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return "Predicate";
+    public function getXsiTypeName()
+    {
+        return "Predicate";
     }
 
-    public function __construct($field = NULL, $operator = NULL, $values = NULL) {
-      $this->field = $field;
-      $this->operator = $operator;
-      $this->values = $values;
-    }
+      public function __construct($field = null, $operator = null, $values = null)
+      {
+          $this->field = $field;
+          $this->operator = $operator;
+          $this->values = $values;
+      }
   }
 }
 
-if (!class_exists("PredicateOperator", FALSE)) {
-  /**
+if (!class_exists("PredicateOperator", false)) {
+    /**
    * Defines the valid set of operators.
    * @package GoogleApiAdsAdWords
    * @subpackage Util
    */
-  class PredicateOperator {
+  class PredicateOperator
+  {
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace() {
-      return "";
+    public function getNamespace()
+    {
+        return "";
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName() {
-      return "Predicate.Operator";
+    public function getXsiTypeName()
+    {
+        return "Predicate.Operator";
     }
 
-    public function __construct() {}
+      public function __construct()
+      {
+      }
   }
 }
 
-if (!class_exists("DateRange", FALSE)) {
-/**
+if (!class_exists("DateRange", false)) {
+    /**
  * Represents a range of dates that has either an upper or a lower bound.
  * The format for the date is YYYYMMDD.
  * @package GoogleApiAdsAdWords
  * @subpackage Util
  */
-class DateRange {
+class DateRange
+{
   /**
    * @access public
    * @var string
@@ -647,31 +685,36 @@ class DateRange {
    * Gets the namesapce of this class
    * @return the namespace of this class
    */
-  public function getNamespace() {
-    return "";
+  public function getNamespace()
+  {
+      return "";
   }
 
   /**
    * Gets the xsi:type name of this class
    * @return the xsi:type name of this class
    */
-  public function getXsiTypeName() {
-    return "DateRange";
+  public function getXsiTypeName()
+  {
+      return "DateRange";
   }
 
-  public function __construct($min = NULL, $max = NULL) {
-    $this->min = $min;
-    $this->max = $max;
-  }
-}}
+    public function __construct($min = null, $max = null)
+    {
+        $this->min = $min;
+        $this->max = $max;
+    }
+}
+}
 
-if (!class_exists("OrderBy", FALSE)) {
-/**
+if (!class_exists("OrderBy", false)) {
+    /**
  * Specifies how the resulting information should be sorted.
  * @package GoogleApiAdsAdWords
  * @subpackage Util
  */
-class OrderBy {
+class OrderBy
+{
   /**
    * @access public
    * @var string
@@ -688,33 +731,38 @@ class OrderBy {
    * Gets the namesapce of this class
    * @return the namespace of this class
    */
-  public function getNamespace() {
-    return "";
+  public function getNamespace()
+  {
+      return "";
   }
 
   /**
    * Gets the xsi:type name of this class
    * @return the xsi:type name of this class
    */
-  public function getXsiTypeName() {
-    return "OrderBy";
+  public function getXsiTypeName()
+  {
+      return "OrderBy";
   }
 
-  public function __construct($field = NULL, $sortOrder = NULL) {
-    $this->field = $field;
-    $this->sortOrder = $sortOrder;
-  }
-}}
+    public function __construct($field = null, $sortOrder = null)
+    {
+        $this->field = $field;
+        $this->sortOrder = $sortOrder;
+    }
+}
+}
 
-if (!class_exists("Paging", FALSE)) {
-/**
+if (!class_exists("Paging", false)) {
+    /**
  * Specifies the page of results to return in the response. A page is specified
  * by the result position to start at and the maximum number of results to
  * return.
  * @package GoogleApiAdsAdWords
  * @subpackage Util
  */
-class Paging {
+class Paging
+{
   /**
    * @access public
    * @var integer
@@ -731,129 +779,157 @@ class Paging {
    * Gets the namesapce of this class
    * @return the namespace of this class
    */
-  public function getNamespace() {
-    return "";
+  public function getNamespace()
+  {
+      return "";
   }
 
   /**
    * Gets the xsi:type name of this class
    * @return the xsi:type name of this class
    */
-  public function getXsiTypeName() {
-    return "Paging";
+  public function getXsiTypeName()
+  {
+      return "Paging";
   }
 
-  public function __construct($startIndex = NULL, $numberResults = NULL) {
-    $this->startIndex = $startIndex;
-    $this->numberResults = $numberResults;
-  }
-}}
+    public function __construct($startIndex = null, $numberResults = null)
+    {
+        $this->startIndex = $startIndex;
+        $this->numberResults = $numberResults;
+    }
+}
+}
 
-if (!class_exists("SortOrder", FALSE)) {
-/**
+if (!class_exists("SortOrder", false)) {
+    /**
  * Possible orders of sorting.
  * @package GoogleApiAdsAdWords
  * @subpackage Util
  */
-class SortOrder {
+class SortOrder
+{
   /**
    * Gets the namesapce of this class
    * @return the namespace of this class
    */
-  public function getNamespace() {
-    return "";
+  public function getNamespace()
+  {
+      return "";
   }
 
   /**
    * Gets the xsi:type name of this class
    * @return the xsi:type name of this class
    */
-  public function getXsiTypeName() {
-    return "SortOrder";
+  public function getXsiTypeName()
+  {
+      return "SortOrder";
   }
 
-  public function __construct() {}
-}}
+    public function __construct()
+    {
+    }
+}
+}
 
-if (!class_exists("ReportDefinitionReportType", FALSE)) {
-/**
+if (!class_exists("ReportDefinitionReportType", false)) {
+    /**
  * Enums for report types.
  * @package GoogleApiAdsAdWords
  * @subpackage Util
  */
-class ReportDefinitionReportType {
+class ReportDefinitionReportType
+{
   /**
    * Gets the namesapce of this class
    * @return the namespace of this class
    */
-  public function getNamespace() {
-    return "";
+  public function getNamespace()
+  {
+      return "";
   }
 
   /**
    * Gets the xsi:type name of this class
    * @return the xsi:type name of this class
    */
-  public function getXsiTypeName() {
-    return "ReportDefinition.ReportType";
+  public function getXsiTypeName()
+  {
+      return "ReportDefinition.ReportType";
   }
 
-  public function __construct() {}
-}}
+    public function __construct()
+    {
+    }
+}
+}
 
-if (!class_exists("ReportDefinitionDateRangeType", FALSE)) {
-/**
+if (!class_exists("ReportDefinitionDateRangeType", false)) {
+    /**
  * Enums for date range of report.
  * @package GoogleApiAdsAdWords
  * @subpackage Util
  */
-class ReportDefinitionDateRangeType {
+class ReportDefinitionDateRangeType
+{
   /**
    * Gets the namesapce of this class
    * @return the namespace of this class
    */
-  public function getNamespace() {
-    return "";
+  public function getNamespace()
+  {
+      return "";
   }
 
   /**
    * Gets the xsi:type name of this class
    * @return the xsi:type name of this class
    */
-  public function getXsiTypeName() {
-    return "ReportDefinition.DateRangeType";
+  public function getXsiTypeName()
+  {
+      return "ReportDefinition.DateRangeType";
   }
 
-  public function __construct() {}
-}}
+    public function __construct()
+    {
+    }
+}
+}
 
-if (!class_exists("DownloadFormat", FALSE)) {
-/**
+if (!class_exists("DownloadFormat", false)) {
+    /**
  * Enum class that describes the supported formats for content downloads.
  * The order mimics the order in which download options are presented in the
  * legacy report center.
  * @package GoogleApiAdsAdWords
  * @subpackage Util
  */
-class DownloadFormat {
+class DownloadFormat
+{
   /**
    * Gets the namesapce of this class
    * @return the namespace of this class
    */
-  public function getNamespace() {
-    return "";
+  public function getNamespace()
+  {
+      return "";
   }
 
   /**
    * Gets the xsi:type name of this class
    * @return the xsi:type name of this class
    */
-  public function getXsiTypeName() {
-    return "DownloadFormat";
+  public function getXsiTypeName()
+  {
+      return "DownloadFormat";
   }
 
-  public function __construct() {
-    if(get_parent_class('DownloadFormat')) parent::__construct();
-  }
-}}
-
+    public function __construct()
+    {
+        if (get_parent_class('DownloadFormat')) {
+            parent::__construct();
+        }
+    }
+}
+}

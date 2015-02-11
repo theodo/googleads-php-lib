@@ -37,20 +37,22 @@ require_once 'Google/Api/Ads/Common/Lib/ServiceException.php';
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-abstract class DeprecationUtils {
+abstract class DeprecationUtils
+{
 
   /**
    * Determines if a ClientLogin deprecation warning should be logged or not.
    *
    * @param AdsUser $user the AdsUser to test
    */
-  public static function CheckUsingClientLogin(AdsUser $user) {
-    if (!self::IsUsingOAuth2($user)) {
-      self::Log("Current authentication method DEPRECATED. Please switch to"
-          . " OAuth2 as authentication method. For more information, see:\n"
-          . " https://developers.google.com/accounts/docs/"
-          . "AuthForInstalledApps", Logger::$ERROR);
-    }
+  public static function CheckUsingClientLogin(AdsUser $user)
+  {
+      if (!self::IsUsingOAuth2($user)) {
+          self::Log("Current authentication method DEPRECATED. Please switch to"
+          ." OAuth2 as authentication method. For more information, see:\n"
+          ." https://developers.google.com/accounts/docs/"
+          ."AuthForInstalledApps", Logger::$ERROR);
+      }
   }
 
   /**
@@ -59,10 +61,11 @@ abstract class DeprecationUtils {
    * @param AdsUser $user the AdsUser to test
    * @return boolean true if using OAuth 2, false otherwise
    */
-  public static function IsUsingOAuth2(AdsUser $user) {
-    // AdsUser doesn't have ClientLogin information on it, only the subclasses
+  public static function IsUsingOAuth2(AdsUser $user)
+  {
+      // AdsUser doesn't have ClientLogin information on it, only the subclasses
     // do, so we can only check for absence of OAuth 2 here.
-    return $user->GetOAuth2Info() !== NULL;
+    return $user->GetOAuth2Info() !== null;
   }
 
   /**
@@ -78,12 +81,13 @@ abstract class DeprecationUtils {
    *     ClientLogin
    */
   public static function CheckUsingClientLoginWithUnsupportedVersion(
-      AdsUser $user, $finalClientLoginVersion, $requestedVersion) {
-    if (!self::IsUsingOAuth2($user) &&
+      AdsUser $user, $finalClientLoginVersion, $requestedVersion)
+  {
+      if (!self::IsUsingOAuth2($user) &&
         $requestedVersion > $finalClientLoginVersion) {
-      throw new ServiceException(sprintf("ClientLogin is not supported in "
-          . "version %s. Please upgrade to OAuth 2.", $requestedVersion));
-    }
+          throw new ServiceException(sprintf("ClientLogin is not supported in "
+          ."version %s. Please upgrade to OAuth 2.", $requestedVersion));
+      }
   }
 
   /**
@@ -98,11 +102,12 @@ abstract class DeprecationUtils {
    *     skipReportHeader or skipReportSummary
    */
   public static function CheckUsingSkipReportHeaderWithUnsupportedVersion(
-      $header, $minimumVersion, $requestedVersion) {
-    if ($requestedVersion < $minimumVersion) {
-      throw new ServiceException(sprintf("%s is not supported "
-          . "in version %s.", $header, $requestedVersion));
-    }
+      $header, $minimumVersion, $requestedVersion)
+  {
+      if ($requestedVersion < $minimumVersion) {
+          throw new ServiceException(sprintf("%s is not supported "
+          ."in version %s.", $header, $requestedVersion));
+      }
   }
 
   /**
@@ -112,13 +117,14 @@ abstract class DeprecationUtils {
    * @param string $moreInfoLink an optional link to a URL with more information
    */
   public static function LogDeprecatedMethodUsage($methodName,
-      $moreInfoLink = NULL) {
-    $message = sprintf("The method '%s' is deprecated.", $methodName);
-    if (isset($moreInfoLink)) {
-      $message .= sprintf(" For more information, please see '%s'",
+      $moreInfoLink = null)
+  {
+      $message = sprintf("The method '%s' is deprecated.", $methodName);
+      if (isset($moreInfoLink)) {
+          $message .= sprintf(" For more information, please see '%s'",
           $moreInfoLink);
-    }
-    self::Log($message, Logger::$ERROR);
+      }
+      self::Log($message, Logger::$ERROR);
   }
 
   /**
@@ -127,9 +133,9 @@ abstract class DeprecationUtils {
    * @param string $message is the message to log
    * @param string $level is the message level to log
    */
-  protected static function Log($message, $level = NULL) {
-    Logger::log(Logger::$SOAP_XML_LOG, $message, $level);
-    Logger::log(Logger::$REQUEST_INFO_LOG, $message, $level);
+  protected static function Log($message, $level = null)
+  {
+      Logger::log(Logger::$SOAP_XML_LOG, $message, $level);
+      Logger::log(Logger::$REQUEST_INFO_LOG, $message, $level);
   }
 }
-

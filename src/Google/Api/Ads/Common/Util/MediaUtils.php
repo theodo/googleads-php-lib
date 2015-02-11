@@ -36,13 +36,16 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-class MediaUtils {
+class MediaUtils
+{
 
   /**
    * The MediaUtils class is not meant to have any instances.
    * @access private
    */
-  private function __construct() {}
+  private function __construct()
+  {
+  }
 
   /**
    * Gets the base64 encoded data from an asset located at <var>path</var> for
@@ -53,13 +56,13 @@ class MediaUtils {
    * @return string the base64 encoded data of the file
    * @see http://us2.php.net/file_get_contents
    */
-  public static function GetBase64Data($path, $useIncludePath = NULL,
-      $context = NULL) {
-    if ($useIncludePath) {
-      return file_get_contents($path, FILE_USE_INCLUDE_PATH, $context);
-    } else {
-      return file_get_contents($path, 0, $context);
-    }
+  public static function GetBase64Data($path, $useIncludePath = null,
+      $context = null)
+  {
+      if ($useIncludePath) {
+          return file_get_contents($path, FILE_USE_INCLUDE_PATH, $context);
+      } else {
+          return file_get_contents($path, 0, $context);
+      }
   }
 }
-

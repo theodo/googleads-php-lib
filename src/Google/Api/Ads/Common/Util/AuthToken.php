@@ -38,7 +38,8 @@ require_once 'Google/Api/Ads/Common/Util/CurlUtils.php';
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-class AuthToken {
+class AuthToken
+{
 
   /**
    * The default account type for authentication requests.
@@ -52,16 +53,16 @@ class AuthToken {
    */
   const DEFAULT_SERVER = 'https://www.google.com';
 
-  private $email;
-  private $password;
-  private $accountType;
-  private $service;
-  private $source;
-  private $server;
-  private $captchaToken;
-  private $captchaResponse;
+    private $email;
+    private $password;
+    private $accountType;
+    private $service;
+    private $source;
+    private $server;
+    private $captchaToken;
+    private $captchaResponse;
 
-  private $curlUtils;
+    private $curlUtils;
 
   /**
    * Creates a new instance of this authentication token utility class.
@@ -76,20 +77,21 @@ class AuthToken {
    * @param string captchaResponse the response to a CAPTCHA challenge
    * @param CurlUtils $curlUtils an instance of CurlUtils
    */
-  function __construct($email, $password, $service, $source,
-      $accountType = NULL, $server = NULL, $captchaToken = NULL,
-      $captchaResponse = NULL, $curlUtils = NULL) {
-    $this->email = $email;
-    $this->password = $password;
-    $this->accountType = is_null($accountType)
+  public function __construct($email, $password, $service, $source,
+      $accountType = null, $server = null, $captchaToken = null,
+      $captchaResponse = null, $curlUtils = null)
+  {
+      $this->email = $email;
+      $this->password = $password;
+      $this->accountType = is_null($accountType)
         ? self::DEFAULT_ACCOUNT_TYPE : $accountType;
-    $this->service = $service;
-    $this->source = $source;
-    $this->server = is_null($server) ? self::DEFAULT_SERVER : $server;
-    $this->captchaToken = $captchaToken;
-    $this->captchaResponse = $captchaResponse;
+      $this->service = $service;
+      $this->source = $source;
+      $this->server = is_null($server) ? self::DEFAULT_SERVER : $server;
+      $this->captchaToken = $captchaToken;
+      $this->captchaResponse = $captchaResponse;
 
-    $this->curlUtils = is_null($curlUtils) ? new CurlUtils() : $curlUtils;
+      $this->curlUtils = is_null($curlUtils) ? new CurlUtils() : $curlUtils;
   }
 
   /**
@@ -97,25 +99,26 @@ class AuthToken {
    * @return string the auth token
    * @throws AuthTokenException if an error occurs during authentication
    */
-  public function GetAuthToken() {
-    $response = $this->Login();
-    $fields = $this->ParseResponse($response);
-    if (array_key_exists('Error', $fields)) {
-      $error = $fields['Error'];
-      if (array_key_exists('Info', $fields)) {
-        $error .= ': ' . $fields['Info'];
+  public function GetAuthToken()
+  {
+      $response = $this->Login();
+      $fields = $this->ParseResponse($response);
+      if (array_key_exists('Error', $fields)) {
+          $error = $fields['Error'];
+          if (array_key_exists('Info', $fields)) {
+              $error .= ': '.$fields['Info'];
+          }
+          $url = array_key_exists('Url', $fields) ? $fields['Url'] : null;
+          $captchaToken = array_key_exists('CaptchaToken', $fields) ?
+          $fields['CaptchaToken'] : null;
+          $captchaUrl = array_key_exists('CaptchaUrl', $fields) ?
+          $fields['CaptchaUrl'] : null;
+          throw new AuthTokenException($error, $url, $captchaToken, $captchaUrl);
+      } elseif (!array_key_exists('Auth', $fields)) {
+          throw new AuthTokenException('Unknown');
+      } else {
+          return $fields['Auth'];
       }
-      $url = array_key_exists('Url', $fields) ? $fields['Url'] : NULL;
-      $captchaToken = array_key_exists('CaptchaToken', $fields) ?
-          $fields['CaptchaToken'] : NULL;
-      $captchaUrl = array_key_exists('CaptchaUrl', $fields) ?
-          $fields['CaptchaUrl'] : NULL;
-      throw new AuthTokenException($error, $url, $captchaToken, $captchaUrl);
-    } else if (!array_key_exists('Auth', $fields)) {
-      throw new AuthTokenException('Unknown');
-    } else {
-      return $fields['Auth'];
-    }
   }
 
   /**
@@ -123,34 +126,35 @@ class AuthToken {
    * @return string the response from the ClientLogin API
    * @throws AuthTokenException if an error occurs during authentication
    */
-  private function Login() {
-    $postUrl = $this->server . '/accounts/ClientLogin';
-    $postVars = http_build_query(array(
+  private function Login()
+  {
+      $postUrl = $this->server.'/accounts/ClientLogin';
+      $postVars = http_build_query(array(
         'accountType' => $this->accountType,
         'Email' => $this->email,
         'Passwd' => $this->password,
         'service' => $this->service,
         'source' => $this->source,
         'logintoken' => $this->captchaToken,
-        'logincaptcha' => $this->captchaResponse
-    ), NULL, '&');
+        'logincaptcha' => $this->captchaResponse,
+    ), null, '&');
 
-    $ch = $this->curlUtils->CreateSession($postUrl);
-    $this->curlUtils->SetOpt($ch, CURLOPT_POST, 1);
-    $this->curlUtils->SetOpt($ch, CURLOPT_POSTFIELDS, $postVars);
+      $ch = $this->curlUtils->CreateSession($postUrl);
+      $this->curlUtils->SetOpt($ch, CURLOPT_POST, 1);
+      $this->curlUtils->SetOpt($ch, CURLOPT_POSTFIELDS, $postVars);
 
-    $response = $this->curlUtils->Exec($ch);
-    $httpCode = $this->curlUtils->GetInfo($ch, CURLINFO_HTTP_CODE);
-    $error = $this->curlUtils->Error($ch);
-    $this->curlUtils->Close($ch);
+      $response = $this->curlUtils->Exec($ch);
+      $httpCode = $this->curlUtils->GetInfo($ch, CURLINFO_HTTP_CODE);
+      $error = $this->curlUtils->Error($ch);
+      $this->curlUtils->Close($ch);
 
-    if (!empty($error)) {
-      throw new AuthTokenException($error);
-    } else if ($httpCode != 200 && $httpCode != 403) {
-      throw new AuthTokenException($httpCode);
-    }
+      if (!empty($error)) {
+          throw new AuthTokenException($error);
+      } elseif ($httpCode != 200 && $httpCode != 403) {
+          throw new AuthTokenException($httpCode);
+      }
 
-    return $response;
+      return $response;
   }
 
   /**
@@ -158,24 +162,26 @@ class AuthToken {
    * @param string $response the response from the ClientLogin API
    * @return array a map of field name to value
    */
-  private function ParseResponse($response) {
-    $result = array();
-    $lines = explode("\n", $response);
-    foreach ($lines as $line) {
-      $parts = explode('=', $line, 2);
-      $key = isset($parts[0]) ? $parts[0] : NULL;
-      $value = isset($parts[1]) ? $parts[1] : NULL;
-      $result[$key] = $value;
-    }
-    return $result;
+  private function ParseResponse($response)
+  {
+      $result = array();
+      $lines = explode("\n", $response);
+      foreach ($lines as $line) {
+          $parts = explode('=', $line, 2);
+          $key = isset($parts[0]) ? $parts[0] : null;
+          $value = isset($parts[1]) ? $parts[1] : null;
+          $result[$key] = $value;
+      }
+
+      return $result;
   }
 
   /**
    * Returns the server to make requests to.
    * @return string the server to make requests to
    */
-  public function GetServer() {
-    return $this->server;
+  public function GetServer()
+  {
+      return $this->server;
   }
 }
-

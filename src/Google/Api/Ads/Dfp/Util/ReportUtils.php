@@ -38,12 +38,15 @@ require_once 'Google/Api/Ads/Common/Util/DeprecationUtils.php';
  * @subpackage Util
  * @deprecated please use ReportDownloader.php instead
  */
-class ReportUtils {
+class ReportUtils
+{
 
   /**
    * The ReportUtils class is not meant to have any instances.
    */
-  private function __construct() {}
+  private function __construct()
+  {
+  }
 
   /**
    * Downloads a report from a URL. If the filePath parameter is specified it
@@ -55,43 +58,43 @@ class ReportUtils {
    * @return mixed if $filePath isn't specified it will return the contents of
    *     the report, otherwise the size in bytes of the downloaded report
    */
-  public static function DownloadReport($downloadUrl, $filePath = NULL) {
-    DeprecationUtils::LogDeprecatedMethodUsage('ReportUtils::DownloadReport',
+  public static function DownloadReport($downloadUrl, $filePath = null)
+  {
+      DeprecationUtils::LogDeprecatedMethodUsage('ReportUtils::DownloadReport',
         'Please use ReportDownloader.php instead.');
 
     // TODO(vtsao): This method should not be static and instantiation of this
     // class should be allowed so we can "inject" CurlUtils, but would break too
     // many things that rely on this method being static.
     $curlUtils = new CurlUtils();
-    $ch = $curlUtils->CreateSession($downloadUrl);
+      $ch = $curlUtils->CreateSession($downloadUrl);
 
-    if (isset($filePath)) {
-      $file = fopen($filePath, 'w');
-      $curlUtils->SetOpt($ch, CURLOPT_FILE, $file);
-    } else {
-      $curlUtils->SetOpt($ch, CURLOPT_RETURNTRANSFER, 1);
-    }
+      if (isset($filePath)) {
+          $file = fopen($filePath, 'w');
+          $curlUtils->SetOpt($ch, CURLOPT_FILE, $file);
+      } else {
+          $curlUtils->SetOpt($ch, CURLOPT_RETURNTRANSFER, 1);
+      }
 
-    $result = $curlUtils->Exec($ch);
-    $httpCode = $curlUtils->GetInfo($ch, CURLINFO_HTTP_CODE);
-    $error = $curlUtils->Error($ch);
-    $downloadSize = $curlUtils->GetInfo($ch, CURLINFO_SIZE_DOWNLOAD);
+      $result = $curlUtils->Exec($ch);
+      $httpCode = $curlUtils->GetInfo($ch, CURLINFO_HTTP_CODE);
+      $error = $curlUtils->Error($ch);
+      $downloadSize = $curlUtils->GetInfo($ch, CURLINFO_SIZE_DOWNLOAD);
 
-    $curlUtils->Close($ch);
-    if (isset($file)) {
-      fclose($file);
-    }
+      $curlUtils->Close($ch);
+      if (isset($file)) {
+          fclose($file);
+      }
 
-    if ($httpCode != 200) {
-      $message = sprintf('Invalid report download URL: %s', $downloadUrl);
-      throw new InvalidArgumentException($message, $httpCode);
-    }
+      if ($httpCode != 200) {
+          $message = sprintf('Invalid report download URL: %s', $downloadUrl);
+          throw new InvalidArgumentException($message, $httpCode);
+      }
 
-    if (isset($filePath)) {
-      return $downloadSize;
-    } else {
-      return $result;
-    }
+      if (isset($filePath)) {
+          return $downloadSize;
+      } else {
+          return $result;
+      }
   }
 }
-

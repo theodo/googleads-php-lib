@@ -37,26 +37,30 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-class ChoiceUtils {
+class ChoiceUtils
+{
 
   /**
    * The ChoiceUtils class is not meant to have any instances.
    * @access private
    */
-  private function __construct() {}
+  private function __construct()
+  {
+  }
 
   /**
    * Gets the value of a choice object.
    * @param object $choice the choice to get the value of.
    * @return mixed the value of the choice.
    */
-  public static function GetValue($choice) {
-    foreach (get_object_vars($choice) as $name => $value) {
-      if (isset($value)) {
-        return $value;
+  public static function GetValue($choice)
+  {
+      foreach (get_object_vars($choice) as $name => $value) {
+          if (isset($value)) {
+              return $value;
+          }
       }
-    }
-    return NULL;
+
+      return;
   }
 }
-

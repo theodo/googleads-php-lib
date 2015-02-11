@@ -34,7 +34,8 @@
  * @package GoogleApiAdsCommon
  * @subpackage Lib
  */
-class ValidationException extends Exception {
+class ValidationException extends Exception
+{
 
     const EXCEPTION_FORMAT = 'Validation failed for [%s] with value [%s]: %s';
 
@@ -48,12 +49,13 @@ class ValidationException extends Exception {
      * Constructor for ValidationException where the exception will appear
      * as "Validation failed for [$trigger] with value [$value]: $message".
      * @param string $trigger the trigger for the validation error
-     * @param string $value the value for the trigger
+     * @param string $value   the value for the trigger
      * @param string $message the message representing the error in validation
      */
-    public function __construct($trigger, $value, $message) {
-      $this->trigger = $trigger;
-      parent::__construct(sprintf(self::EXCEPTION_FORMAT, $trigger, $value,
+    public function __construct($trigger, $value, $message)
+    {
+        $this->trigger = $trigger;
+        parent::__construct(sprintf(self::EXCEPTION_FORMAT, $trigger, $value,
           $message));
     }
 
@@ -61,8 +63,8 @@ class ValidationException extends Exception {
      * Get the trigger for the validation error.
      * @return string the trigger for the validation error.
      */
-    public function GetTrigger() {
-      return $this->trigger;
+    public function GetTrigger()
+    {
+        return $this->trigger;
     }
 }
-

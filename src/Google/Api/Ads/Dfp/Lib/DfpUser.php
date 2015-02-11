@@ -42,11 +42,12 @@ require_once 'Google/Api/Ads/Dfp/Lib/DfpSoapClientFactory.php';
  * @package GoogleApiAdsDfp
  * @subpackage Lib
  */
-class DfpUser extends AdsUser {
+class DfpUser extends AdsUser
+{
 
   const OAUTH2_SCOPE = 'https://www.googleapis.com/auth/dfp';
-  const OAUTH2_HANDLER_CLASS = 'SimpleOAuth2Handler';
-  const FINAL_CLIENT_LOGIN_VERSION = "v201311";
+    const OAUTH2_HANDLER_CLASS = 'SimpleOAuth2Handler';
+    const FINAL_CLIENT_LOGIN_VERSION = "v201311";
 
   /**
    * The name of the SOAP header that represents the user agent making API
@@ -55,15 +56,14 @@ class DfpUser extends AdsUser {
    */
   const USER_AGENT_HEADER_NAME = 'applicationName';
 
-  const DEFAULT_APPLICATION_NAME = 'INSERT_APPLICATION_NAME_HERE';
+    const DEFAULT_APPLICATION_NAME = 'INSERT_APPLICATION_NAME_HERE';
 
-  private $libVersion;
-  private $libName;
+    private $libVersion;
+    private $libName;
 
-  private $email;
-  private $password;
-  private $applicationName;
-
+    private $email;
+    private $password;
+    private $applicationName;
 
   /**
    * The DfpUser constructor.
@@ -102,58 +102,58 @@ class DfpUser extends AdsUser {
    * @param string $authToken the authToken to use for requests
    * @param array $oauth2Info the OAuth 2.0 information to use for requests
    */
-  public function __construct($authenticationIniPath = NULL, $email = NULL,
-      $password = NULL, $applicationName = NULL, $networkCode = NULL,
-      $settingsIniPath = NULL, $authToken = NULL, $oauth2Info = NULL) {
-    parent::__construct();
+  public function __construct($authenticationIniPath = null, $email = null,
+      $password = null, $applicationName = null, $networkCode = null,
+      $settingsIniPath = null, $authToken = null, $oauth2Info = null)
+  {
+      parent::__construct();
 
-
-    $buildIniDfp = parse_ini_file(dirname(__FILE__) . '/build.ini',
+      $buildIniDfp = parse_ini_file(dirname(__FILE__).'/build.ini',
         false);
-    $buildIniCommon = parse_ini_file(dirname(__FILE__) .
+      $buildIniCommon = parse_ini_file(dirname(__FILE__).
         '/../../Common/Lib/build.ini', false);
-    $this->libName = $buildIniDfp['LIB_NAME'];
-    $this->libVersion = $buildIniCommon['LIB_VERSION'];
+      $this->libName = $buildIniDfp['LIB_NAME'];
+      $this->libVersion = $buildIniCommon['LIB_VERSION'];
 
-    $apiProps = ApiPropertiesUtils::ParseApiPropertiesFile(dirname(__FILE__) .
+      $apiProps = ApiPropertiesUtils::ParseApiPropertiesFile(dirname(__FILE__).
         '/api.properties');
-    $versions = explode(',', $apiProps['api.versions']);
-    $defaultVersion = $versions[count($versions) - 1];
-    $defaultServer = $apiProps['api.server'];
+      $versions = explode(',', $apiProps['api.versions']);
+      $defaultVersion = $versions[count($versions) - 1];
+      $defaultServer = $apiProps['api.server'];
 
-    if (isset($authenticationIniPath)) {
-      $authenticationIni =
-          parse_ini_file(realpath($authenticationIniPath), TRUE);
-    } else {
-      $authenticationIni =
-          parse_ini_file(dirname(__FILE__) . '/../auth.ini', TRUE);
-    }
+      if (isset($authenticationIniPath)) {
+          $authenticationIni =
+          parse_ini_file(realpath($authenticationIniPath), true);
+      } else {
+          $authenticationIni =
+          parse_ini_file(dirname(__FILE__).'/../auth.ini', true);
+      }
 
-    $email = $this->GetAuthVarValue($email, 'email', $authenticationIni);
-    $password = $this->GetAuthVarValue($password, 'password',
+      $email = $this->GetAuthVarValue($email, 'email', $authenticationIni);
+      $password = $this->GetAuthVarValue($password, 'password',
         $authenticationIni);
-    $applicationName = $this->GetAuthVarValue($applicationName,
+      $applicationName = $this->GetAuthVarValue($applicationName,
         self::USER_AGENT_HEADER_NAME, $authenticationIni);
-    $networkCode = $this->GetAuthVarValue($networkCode, 'networkCode',
+      $networkCode = $this->GetAuthVarValue($networkCode, 'networkCode',
         $authenticationIni);
-    $authToken = $this->GetAuthVarValue($authToken, 'authToken',
+      $authToken = $this->GetAuthVarValue($authToken, 'authToken',
         $authenticationIni);
-    $oauth2Info = $this->GetAuthVarValue($oauth2Info, 'OAUTH2',
+      $oauth2Info = $this->GetAuthVarValue($oauth2Info, 'OAUTH2',
         $authenticationIni);
 
-    $this->SetEmail($email);
-    $this->SetPassword($password);
-    $this->SetAuthToken($authToken);
-    $this->SetOAuth2Info($oauth2Info);
-    $this->SetApplicationName($applicationName);
-    $this->SetClientLibraryUserAgent($applicationName);
-    $this->SetNetworkCode($networkCode);
+      $this->SetEmail($email);
+      $this->SetPassword($password);
+      $this->SetAuthToken($authToken);
+      $this->SetOAuth2Info($oauth2Info);
+      $this->SetApplicationName($applicationName);
+      $this->SetClientLibraryUserAgent($applicationName);
+      $this->SetNetworkCode($networkCode);
 
-    if (!isset($settingsIniPath)) {
-      $settingsIniPath = dirname(__FILE__) . '/../settings.ini';
-    }
+      if (!isset($settingsIniPath)) {
+          $settingsIniPath = dirname(__FILE__).'/../settings.ini';
+      }
 
-    $this->loadSettings($settingsIniPath,
+      $this->loadSettings($settingsIniPath,
         $defaultVersion,
         $defaultServer,
         getcwd(), dirname(__FILE__));
@@ -171,25 +171,26 @@ class DfpUser extends AdsUser {
    * @return SoapClient the instantiated service
    * @throws ServiceException if an error occurred when getting the service
    */
-  public function GetService($serviceName, $version = NULL, $server = NULL,
-      SoapClientFactory $serviceFactory = NULL) {
-    $this->ValidateUser();
-    if (!isset($serviceFactory)) {
-      if (!isset($version)) {
-        $version = $this->GetDefaultVersion();
+  public function GetService($serviceName, $version = null, $server = null,
+      SoapClientFactory $serviceFactory = null)
+  {
+      $this->ValidateUser();
+      if (!isset($serviceFactory)) {
+          if (!isset($version)) {
+              $version = $this->GetDefaultVersion();
+          }
+
+          if (!isset($server)) {
+              $server = $this->GetDefaultServer();
+          }
+
+          $serviceFactory = new DfpSoapClientFactory($this, $version, $server);
       }
 
-      if (!isset($server)) {
-        $server = $this->GetDefaultServer();
-      }
-
-      $serviceFactory = new DfpSoapClientFactory($this, $version, $server);
-    }
-
-    DeprecationUtils::CheckUsingClientLoginWithUnsupportedVersion($this,
+      DeprecationUtils::CheckUsingClientLoginWithUnsupportedVersion($this,
         self::FINAL_CLIENT_LOGIN_VERSION, $version);
 
-    return parent::GetServiceSoapClient($serviceName, $serviceFactory);
+      return parent::GetServiceSoapClient($serviceName, $serviceFactory);
   }
 
   /**
@@ -197,113 +198,128 @@ class DfpUser extends AdsUser {
    * @param string $server The server to retrieve the token from.
    * @return string The newly generated auth token.
    */
-  public function RegenerateAuthToken($server = NULL) {
-    if (!isset($server)) {
-      $server = $this->GetAuthServer();
-    }
-    $authTokenClient = new AuthToken($this->email, $this->password, 'gam',
+  public function RegenerateAuthToken($server = null)
+  {
+      if (!isset($server)) {
+          $server = $this->GetAuthServer();
+      }
+      $authTokenClient = new AuthToken($this->email, $this->password, 'gam',
         $this->GetClientLibraryUserAgent(), 'GOOGLE', $server);
-    $authToken = $authTokenClient->GetAuthToken();
-    $this->SetAuthToken($authToken);
-    return $authToken;
+      $authToken = $authTokenClient->GetAuthToken();
+      $this->SetAuthToken($authToken);
+
+      return $authToken;
   }
 
   /**
    * Gets the authentication token.
    * @return string the auth token
    */
-  public function GetAuthToken() {
-    $authToken = $this->GetHeaderValue('authToken');
-    if (!isset($authToken) && isset($this->email) && isset($this->password)) {
-      $authToken = $this->RegenerateAuthToken();
-    }
-    return $authToken;
+  public function GetAuthToken()
+  {
+      $authToken = $this->GetHeaderValue('authToken');
+      if (!isset($authToken) && isset($this->email) && isset($this->password)) {
+          $authToken = $this->RegenerateAuthToken();
+      }
+
+      return $authToken;
   }
 
   /**
    * Sets the authentication token.
    * @param string $authToken the auth token to set
    */
-  public function SetAuthToken($authToken) {
-    $this->SetHeaderValue('authToken', $authToken);
+  public function SetAuthToken($authToken)
+  {
+      $this->SetHeaderValue('authToken', $authToken);
   }
 
   /**
    * Gets the code for the network that this user belongs to.
    * @return string the network code
    */
-  public function GetNetworkCode() {
-    return $this->GetHeaderValue('networkCode');
+  public function GetNetworkCode()
+  {
+      return $this->GetHeaderValue('networkCode');
   }
 
   /**
    * Sets the code for the network that this user belongs to.
    * @param string $networkCode the network code
    */
-  public function SetNetworkCode($networkCode) {
-    $this->SetHeaderValue('networkCode', $networkCode);
+  public function SetNetworkCode($networkCode)
+  {
+      $this->SetHeaderValue('networkCode', $networkCode);
   }
 
   /**
    * Gets the raw application name for this user.
    * @return string The raw application name.
    */
-  public function GetApplicationName() {
-    return $this->applicationName;
+  public function GetApplicationName()
+  {
+      return $this->applicationName;
   }
 
   /**
    * Sets the raw application name for this user.
    * @param string $applicationName The raw application name.
    */
-  public function SetApplicationName($applicationName) {
-    $this->applicationName = $applicationName;
+  public function SetApplicationName($applicationName)
+  {
+      $this->applicationName = $applicationName;
   }
 
   /**
    * @see AdsUser::GetUserAgentHeaderName()
    */
-  public function GetUserAgentHeaderName() {
-    return self::USER_AGENT_HEADER_NAME;
+  public function GetUserAgentHeaderName()
+  {
+      return self::USER_AGENT_HEADER_NAME;
   }
 
   /**
    * @see AdsUser::GetClientLibraryNameAndVersion()
    */
-  public function GetClientLibraryNameAndVersion() {
-    return array($this->libName, $this->libVersion);
+  public function GetClientLibraryNameAndVersion()
+  {
+      return array($this->libName, $this->libVersion);
   }
 
   /**
    * Gets the email address of the user login.
    * @return string the user login email
    */
-  public function GetEmail() {
-    return $this->email;
+  public function GetEmail()
+  {
+      return $this->email;
   }
 
   /**
    * Sets the email address of the user login.
    * @param string $email the user login email
    */
-  public function SetEmail($email) {
-    $this->email = $email;
+  public function SetEmail($email)
+  {
+      $this->email = $email;
   }
 
   /**
    * Gets the password for this user.
    * @return string the password for this user
    */
-  public function GetPassword() {
-    return $this->password;
+  public function GetPassword()
+  {
+      return $this->password;
   }
 
   /**
    * Sets the password for this user.
    * @param string $password the password for this user
    */
-  public function SetPassword($password) {
-    $this->password = $password;
+  public function SetPassword($password)
+  {
+      $this->password = $password;
   }
 
   /**
@@ -311,43 +327,44 @@ class DfpUser extends AdsUser {
    * @param NULL|string $className the name of the oauth2Handler class or NULL
    * @return mixed the configured OAuth2Handler class
    */
-  public function GetDefaultOAuth2Handler($className = NULL) {
-    $className = !empty($className) ? $className : self::OAUTH2_HANDLER_CLASS;
-    return new $className($this->GetAuthServer(), self::OAUTH2_SCOPE);
-  }
+  public function GetDefaultOAuth2Handler($className = null)
+  {
+      $className = !empty($className) ? $className : self::OAUTH2_HANDLER_CLASS;
 
+      return new $className($this->GetAuthServer(), self::OAUTH2_SCOPE);
+  }
 
   /**
    * Validates the user and throws a validation error if there are any errors.
    * @throws ValidationException if there are any validation errors
    */
-  public function ValidateUser() {
-    if ($this->GetOAuth2Info() !== NULL) {
-      parent::ValidateOAuth2Info();
-    } else if ($this->GetAuthToken() == NULL) {
-      if (!isset($this->email)) {
-        throw new ValidationException('email', NULL,
+  public function ValidateUser()
+  {
+      if ($this->GetOAuth2Info() !== null) {
+          parent::ValidateOAuth2Info();
+      } elseif ($this->GetAuthToken() == null) {
+          if (!isset($this->email)) {
+              throw new ValidationException('email', null,
             'email is required and cannot be NULL.');
-      }
+          }
 
-      if (!isset($this->password)) {
-        throw new ValidationException('password', NULL,
+          if (!isset($this->password)) {
+              throw new ValidationException('password', null,
             'password is required and cannot be NULL.');
-      }
+          }
       // Generate an authToken.
       $this->RegenerateAuthToken();
-    }
+      }
 
-    if ($this->GetApplicationName() === NULL
+      if ($this->GetApplicationName() === null
         || trim($this->GetApplicationName()) === ''
         || strpos($this->GetApplicationName(),
             self::DEFAULT_APPLICATION_NAME) !== false) {
-      throw new ValidationException('applicationName', NULL,
+          throw new ValidationException('applicationName', null,
           sprintf("The property applicationName is required and cannot be "
-              . "NULL, the empty string, or the default [%s]",
+              ."NULL, the empty string, or the default [%s]",
               self::DEFAULT_APPLICATION_NAME));
-    }
-
+      }
   }
 
   /**
@@ -357,13 +374,14 @@ class DfpUser extends AdsUser {
    * @return mixed the result of the correct method call, or nothing if there
    *     is no correct method
    */
-  public function __call($name, $arguments) {
-    // Handle calls to legacy Get*Service() methods.
+  public function __call($name, $arguments)
+  {
+      // Handle calls to legacy Get*Service() methods.
     if (preg_match('/^Get(\w+Service)$/i', $name, $matches)) {
-      $serviceName = $matches[1];
-      array_unshift($arguments, $serviceName);
-      return call_user_func_array(array($this, 'GetService'), $arguments);
+        $serviceName = $matches[1];
+        array_unshift($arguments, $serviceName);
+
+        return call_user_func_array(array($this, 'GetService'), $arguments);
     }
   }
 }
-

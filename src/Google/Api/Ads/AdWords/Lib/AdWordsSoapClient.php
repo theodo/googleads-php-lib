@@ -27,14 +27,15 @@
  * @author     Adam Rogal
  * @see        AdsSoapClient
  */
-require_once dirname(__FILE__) . '/../../Common/Lib/AdsSoapClient.php';
+require_once dirname(__FILE__).'/../../Common/Lib/AdsSoapClient.php';
 
 /**
  * An extension of the {@link AdsSoapClient} for the AdWords API.
  * @package GoogleApiAdsAdWords
  * @subpackage Lib
  */
-class AdWordsSoapClient extends AdsSoapClient {
+class AdWordsSoapClient extends AdsSoapClient
+{
 
   /**
    * Constructor for the AdWords API SOAP client.
@@ -47,8 +48,9 @@ class AdWordsSoapClient extends AdsSoapClient {
    * @param string $serviceNamespace the namespace of the service
    */
   public function __construct($wsdl, array $options, AdsUser $user,
-      $serviceName, $serviceNamespace) {
-    parent::__construct($wsdl, $options, $user, $serviceName,
+      $serviceName, $serviceNamespace)
+  {
+      parent::__construct($wsdl, $options, $user, $serviceName,
         $serviceNamespace);
   }
 
@@ -62,22 +64,24 @@ class AdWordsSoapClient extends AdsSoapClient {
    * @param int $one_way if set to 1, this method returns nothing
    * @return string the XML SOAP response
    */
-  function __doRequest($request , $location , $action , $version,
-      $one_way = 0) {
-    // PHP version < 5.3.3 does not properly append HTTP headers to requests.
+  public function __doRequest($request, $location, $action, $version,
+      $one_way = 0)
+  {
+      // PHP version < 5.3.3 does not properly append HTTP headers to requests.
 
     if (version_compare(PHP_VERSION, '5.3.3', '<')) {
-      $oAuth2Info = $this->user->GetOAuth2Info();
-      $oAuth2Handler = $this->user->GetOAuth2Handler();
-      if (!empty($oAuth2Info)) {
-        $oAuth2Info = $oAuth2Handler->GetOrRefreshAccessToken($oAuth2Info);
-        $this->user->SetOAuth2Info($oAuth2Info);
-        $oauth2Parameters =
+        $oAuth2Info = $this->user->GetOAuth2Info();
+        $oAuth2Handler = $this->user->GetOAuth2Handler();
+        if (!empty($oAuth2Info)) {
+            $oAuth2Info = $oAuth2Handler->GetOrRefreshAccessToken($oAuth2Info);
+            $this->user->SetOAuth2Info($oAuth2Info);
+            $oauth2Parameters =
             $oAuth2Handler->FormatCredentialsForUrl($oAuth2Info);
-        $location .= '?' . $oauth2Parameters;
-      }
+            $location .= '?'.$oauth2Parameters;
+        }
     }
-    return parent::__doRequest($request, $location, $action, $version);
+
+      return parent::__doRequest($request, $location, $action, $version);
   }
 
   /**
@@ -85,17 +89,19 @@ class AdWordsSoapClient extends AdsSoapClient {
    * @return SoapHeader the instantiated SoapHeader ready to set
    * @access protected
    */
-  protected function GenerateSoapHeader() {
-    $soapHeaderClassName = 'SoapHeader';
-    if ($this->serviceName === 'PromotionService') {
-      $soapHeaderClassName = 'ExpressSoapHeader';
-    }
-    $headerObject = $this->Create($soapHeaderClassName);
-    foreach (get_object_vars($headerObject) as $var => $value) {
-      $headerObject->$var = $this->GetHeaderValue($var);
-    }
-    return new SoapHeader($this->serviceNamespace, 'RequestHeader',
-        $headerObject, FALSE);
+  protected function GenerateSoapHeader()
+  {
+      $soapHeaderClassName = 'SoapHeader';
+      if ($this->serviceName === 'PromotionService') {
+          $soapHeaderClassName = 'ExpressSoapHeader';
+      }
+      $headerObject = $this->Create($soapHeaderClassName);
+      foreach (get_object_vars($headerObject) as $var => $value) {
+          $headerObject->$var = $this->GetHeaderValue($var);
+      }
+
+      return new SoapHeader($this->serviceNamespace, 'RequestHeader',
+        $headerObject, false);
   }
 
   /**
@@ -104,18 +110,21 @@ class AdWordsSoapClient extends AdsSoapClient {
    * @return string the request with the authentication token removed
    * @access protected
    */
-  protected function RemoveSensitiveInfo($request) {
-    $result = preg_replace(
+  protected function RemoveSensitiveInfo($request)
+  {
+      $result = preg_replace(
         '/(.*authToken>)(.*)(<\/.*authToken>.*)/sU', '\1*****\3', $request);
-    return isset($result) ? $result : $request;
+
+      return isset($result) ? $result : $request;
   }
 
   /**
    * Gets the effective user the request was made against.
    * @return string the effective user the request was made against
    */
-  public function GetEffectiveUser() {
-    return $this->GetAdsUser()->GetClientCustomerId();
+  public function GetEffectiveUser()
+  {
+      return $this->GetAdsUser()->GetClientCustomerId();
   }
 
   /**
@@ -123,68 +132,71 @@ class AdWordsSoapClient extends AdsSoapClient {
    * "operator1,operator2".
    * @return string the last set of operators
    */
-  public function GetLastOperators() {
-    try {
-      $operatorString = '{';
-      $operators = array();
-      $operatorElements =
+  public function GetLastOperators()
+  {
+      try {
+          $operatorString = '{';
+          $operators = array();
+          $operatorElements =
           $this->GetLastRequestDom()->getElementsByTagName('operator');
 
-      foreach ($operatorElements as $operatorElement) {
-        if (array_key_exists($operatorElement->nodeValue, $operators)) {
-          $operators[$operatorElement->nodeValue] += 1;
-        } else {
-          $operators[$operatorElement->nodeValue] = 1;
-        }
-      }
+          foreach ($operatorElements as $operatorElement) {
+              if (array_key_exists($operatorElement->nodeValue, $operators)) {
+                  $operators[$operatorElement->nodeValue] += 1;
+              } else {
+                  $operators[$operatorElement->nodeValue] = 1;
+              }
+          }
 
-      foreach ($operators as $operator => $numOps) {
-        $operatorString .= $operator . ': ' . $numOps . ', ';
-      }
+          foreach ($operators as $operator => $numOps) {
+              $operatorString .= $operator.': '.$numOps.', ';
+          }
 
-      if ($operatorString != '{') {
-        $operatorString = substr($operatorString, 0, -2);
-      }
+          if ($operatorString != '{') {
+              $operatorString = substr($operatorString, 0, -2);
+          }
 
-      return $operatorString . '}';
-    } catch (DOMException $e) {
-      // TODO(api.arogal): Log failures to retrieve headers.
+          return $operatorString.'}';
+      } catch (DOMException $e) {
+          // TODO(api.arogal): Log failures to retrieve headers.
       return 'null';
-    }
+      }
   }
 
   /**
    * Gets the last number of operations.
    * @return string the last number of operations
    */
-  public function GetLastOperations() {
-    try {
-      $operationsElements =
+  public function GetLastOperations()
+  {
+      try {
+          $operationsElements =
           $this->GetLastResponseDom()->getElementsByTagName('operations');
-      foreach ($operationsElements as $operationsElement) {
-        return $operationsElement->nodeValue;
-      }
-    } catch (DOMException $e) {
-      // TODO(api.arogal): Log failures to retrieve headers.
+          foreach ($operationsElements as $operationsElement) {
+              return $operationsElement->nodeValue;
+          }
+      } catch (DOMException $e) {
+          // TODO(api.arogal): Log failures to retrieve headers.
       return 'null';
-    }
+      }
   }
 
   /**
    * Gets the last number of units.
    * @return string the last number of units
    */
-  public function GetLastUnits() {
-    try {
-      $unitsElements =
+  public function GetLastUnits()
+  {
+      try {
+          $unitsElements =
           $this->GetLastResponseDom()->getElementsByTagName('units');
-      foreach ($unitsElements as $unitsElement) {
-        return $unitsElement->nodeValue;
-      }
-    } catch (DOMException $e) {
-      // TODO(api.arogal): Log failures to retrieve headers.
+          foreach ($unitsElements as $unitsElement) {
+              return $unitsElement->nodeValue;
+          }
+      } catch (DOMException $e) {
+          // TODO(api.arogal): Log failures to retrieve headers.
       return 'null';
-    }
+      }
   }
 
   /**
@@ -205,17 +217,17 @@ class AdWordsSoapClient extends AdsSoapClient {
    * @return string the request info message to log
    * @access protected
    */
-  protected function GenerateRequestInfoMessage() {
-    return 'effectiveUser=' . $this->GetEffectiveUser()
-        . ' service=' . $this->GetServiceName()
-        . ' method=' . $this->GetLastMethodName() . ' operators='
-        . $this->GetLastOperators() . ' responseTime='
-        . $this->GetLastResponseTime() . ' requestId='
-        . $this->GetLastRequestId() . ' operations='
-        . $this->GetLastOperations() . ' units='
-        . $this->GetLastUnits() . ' server=' . $this->GetServer()
-        . ' isFault=' . ($this->IsFault() ? 'true' : 'false')
-        . ' faultMessage=' . $this->GetLastFaultMessage();
+  protected function GenerateRequestInfoMessage()
+  {
+      return 'effectiveUser='.$this->GetEffectiveUser()
+        .' service='.$this->GetServiceName()
+        .' method='.$this->GetLastMethodName().' operators='
+        .$this->GetLastOperators().' responseTime='
+        .$this->GetLastResponseTime().' requestId='
+        .$this->GetLastRequestId().' operations='
+        .$this->GetLastOperations().' units='
+        .$this->GetLastUnits().' server='.$this->GetServer()
+        .' isFault='.($this->IsFault() ? 'true' : 'false')
+        .' faultMessage='.$this->GetLastFaultMessage();
   }
 }
-

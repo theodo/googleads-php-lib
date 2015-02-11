@@ -33,13 +33,14 @@ require_once 'Google/Api/Ads/Common/Util/CurlUtils.php';
  * @package GoogleApiAdsDfp
  * @subpackage Util
  */
-class ReportDownloader {
+class ReportDownloader
+{
 
   /** The time to sleep in seconds before each request to the service. */
   const SLEEP_DURATION = 30;
 
-  private $reportService;
-  private $reportJobId;
+    private $reportService;
+    private $reportJobId;
 
   /**
    * Constructs a {@code ReportDownloader} object for a {@link ReportService}
@@ -48,9 +49,10 @@ class ReportDownloader {
    * @param ReportService $reportService an instance of the report service
    * @param float $reportJobId the report job ID
    */
-  public function __construct($reportService, $reportJobId) {
-    $this->reportService = $reportService;
-    $this->reportJobId = $reportJobId;
+  public function __construct($reportService, $reportJobId)
+  {
+      $this->reportService = $reportService;
+      $this->reportJobId = $reportJobId;
   }
 
   /**
@@ -62,16 +64,17 @@ class ReportDownloader {
    * @return bool {@code true} if the report was successful, {@code false}
    *     otherwise
    */
-  public function waitForReportReady() {
-    $reportJobStatus =
+  public function waitForReportReady()
+  {
+      $reportJobStatus =
         $this->reportService->getReportJob($this->reportJobId)->reportJobStatus;
-    while ($reportJobStatus === 'IN_PROGRESS') {
-      sleep(self::SLEEP_DURATION);
-      $reportJobStatus = $this->reportService->getReportJob(
+      while ($reportJobStatus === 'IN_PROGRESS') {
+          sleep(self::SLEEP_DURATION);
+          $reportJobStatus = $this->reportService->getReportJob(
           $this->reportJobId)->reportJobStatus;
-    }
+      }
 
-    return $reportJobStatus === 'COMPLETED';
+      return $reportJobStatus === 'COMPLETED';
   }
 
   /**
@@ -86,38 +89,39 @@ class ReportDownloader {
    *     specified, otherwise the size of the downloaded report in bytes
    * @throws InvalidArgumentException if the report download URL is invalid
    */
-  public function downloadReport($exportFormat, $filePath = null) {
-    $downloadUrl = $this->getDownloadUrl($exportFormat);
-    $curlUtils = new CurlUtils();
-    $ch = $curlUtils->CreateSession($downloadUrl);
+  public function downloadReport($exportFormat, $filePath = null)
+  {
+      $downloadUrl = $this->getDownloadUrl($exportFormat);
+      $curlUtils = new CurlUtils();
+      $ch = $curlUtils->CreateSession($downloadUrl);
 
-    if (isset($filePath)) {
-      $file = fopen($filePath, 'w');
-      $curlUtils->SetOpt($ch, CURLOPT_FILE, $file);
-    } else {
-      $curlUtils->SetOpt($ch, CURLOPT_RETURNTRANSFER, 1);
-    }
+      if (isset($filePath)) {
+          $file = fopen($filePath, 'w');
+          $curlUtils->SetOpt($ch, CURLOPT_FILE, $file);
+      } else {
+          $curlUtils->SetOpt($ch, CURLOPT_RETURNTRANSFER, 1);
+      }
 
-    $result = $curlUtils->Exec($ch);
-    $httpCode = $curlUtils->GetInfo($ch, CURLINFO_HTTP_CODE);
-    $error = $curlUtils->Error($ch);
-    $downloadSize = $curlUtils->GetInfo($ch, CURLINFO_SIZE_DOWNLOAD);
+      $result = $curlUtils->Exec($ch);
+      $httpCode = $curlUtils->GetInfo($ch, CURLINFO_HTTP_CODE);
+      $error = $curlUtils->Error($ch);
+      $downloadSize = $curlUtils->GetInfo($ch, CURLINFO_SIZE_DOWNLOAD);
 
-    $curlUtils->Close($ch);
-    if (isset($file)) {
-      fclose($file);
-    }
+      $curlUtils->Close($ch);
+      if (isset($file)) {
+          fclose($file);
+      }
 
-    if ($httpCode != 200) {
-      $message = sprintf('Invalid report download URL: %s', $downloadUrl);
-      throw new InvalidArgumentException($message, $httpCode);
-    }
+      if ($httpCode != 200) {
+          $message = sprintf('Invalid report download URL: %s', $downloadUrl);
+          throw new InvalidArgumentException($message, $httpCode);
+      }
 
-    if (isset($filePath)) {
-      return $downloadSize;
-    } else {
-      return $result;
-    }
+      if (isset($filePath)) {
+          return $downloadSize;
+      } else {
+          return $result;
+      }
   }
 
   /**
@@ -127,16 +131,17 @@ class ReportDownloader {
    * @return string the URL for the report download
    * @throws ValidationException if the report is not completed
    */
-  private function getDownloadUrl($exportFormat) {
-    $reportJobStatus =
+  private function getDownloadUrl($exportFormat)
+  {
+      $reportJobStatus =
         $this->reportService->getReportJob($this->reportJobId)->reportJobStatus;
-    if ($reportJobStatus !== 'COMPLETED') {
-      throw new ValidationException('reportJobStatus', $reportJobStatus,
+      if ($reportJobStatus !== 'COMPLETED') {
+          throw new ValidationException('reportJobStatus', $reportJobStatus,
           sprintf('Report %d must be completed before downloading.',
               $this->reportJobId));
-    }
-    return $this->reportService->getReportDownloadURL($this->reportJobId,
+      }
+
+      return $this->reportService->getReportDownloadURL($this->reportJobId,
         $exportFormat);
   }
 }
-

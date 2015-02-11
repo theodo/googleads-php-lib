@@ -33,13 +33,16 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-class MapUtils {
+class MapUtils
+{
 
   /**
    * The MapUtils class is not meant to have any instances.
    * @access private
    */
-  private function __construct() {}
+  private function __construct()
+  {
+  }
 
   /**
    * Gets a map (associative array) from an array of map entries. A map entry
@@ -47,12 +50,14 @@ class MapUtils {
    * @param array $mapEntries an array of map entries
    * @return array a map built from the keys and values of the map entries
    */
-  public static function GetMap(array $mapEntries) {
-    $result = array();
-    foreach ($mapEntries as $mapEntry) {
-      $result[$mapEntry->key] = $mapEntry->value;
-    }
-    return $result;
+  public static function GetMap(array $mapEntries)
+  {
+      $result = array();
+      foreach ($mapEntries as $mapEntry) {
+          $result[$mapEntry->key] = $mapEntry->value;
+      }
+
+      return $result;
   }
 
   /**
@@ -66,19 +71,21 @@ class MapUtils {
    * @return array an array of map entries built from the key-value pairs in
    *     the map
    */
-  public static function GetMapEntries(array $map, $mapEntryClassName = NULL) {
-    $result = array();
-    foreach($map as $key => $value) {
-      if (isset($mapEntryClassName)) {
-        $entry = new $mapEntryClassName();
-      } else {
-        $entry = (object) array();
+  public static function GetMapEntries(array $map, $mapEntryClassName = null)
+  {
+      $result = array();
+      foreach ($map as $key => $value) {
+          if (isset($mapEntryClassName)) {
+              $entry = new $mapEntryClassName();
+          } else {
+              $entry = (object) array();
+          }
+          $entry->key = $key;
+          $entry->value = $value;
+          $result[] = $entry;
       }
-      $entry->key = $key;
-      $entry->value = $value;
-      $result[] = $entry;
-    }
-    return $result;
+
+      return $result;
   }
 
   /**
@@ -87,8 +94,9 @@ class MapUtils {
    * @param array $array the array to evaluate
    * @return bool true if the array is a map, false otherwise
    */
-  public static function IsMap(array $array) {
-    return (bool) sizeof(array_filter(array_keys($array), 'is_string'));
+  public static function IsMap(array $array)
+  {
+      return (bool) sizeof(array_filter(array_keys($array), 'is_string'));
   }
 
   /**
@@ -99,15 +107,16 @@ class MapUtils {
    * @param ReflectionMethod $method the method to use for the mapping
    * @return array the parameter values as a flat array
    */
-  public static function MapToMethodParameters($map, $method) {
-    $params = $method->getParameters();
-    $result = array_fill(0, sizeof($params), NULL);
-    foreach ($params as $param) {
-      if (isset($map[$param->getName()])) {
-        $result[$param->getPosition()] = $map[$param->getName()];
+  public static function MapToMethodParameters($map, $method)
+  {
+      $params = $method->getParameters();
+      $result = array_fill(0, sizeof($params), null);
+      foreach ($params as $param) {
+          if (isset($map[$param->getName()])) {
+              $result[$param->getPosition()] = $map[$param->getName()];
+          }
       }
-    }
-    return $result;
+
+      return $result;
   }
 }
-

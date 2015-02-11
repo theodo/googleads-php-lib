@@ -35,7 +35,8 @@
  * @package GoogleApiAdsDfp
  * @subpackage Util
  */
-class DateTimeUtils {
+class DateTimeUtils
+{
 
   /**
    * ISO-8601 date time format (example: 2005-08-15T15:52:01+00:00).
@@ -50,26 +51,30 @@ class DateTimeUtils {
    */
   public static $DFP_DATE_TIME_STRING_FORMAT = 'Y-m-d\TH:i:s';
 
-  const DFP_DATE_PATTERN = "%04d-%02d-%02d";
+    const DFP_DATE_PATTERN = "%04d-%02d-%02d";
 
   /**
    * {@link DateTimeUtils} is meant to be used statically.
    */
-  private function __construct() {}
+  private function __construct()
+  {
+  }
 
   /**
    * @deprecated use ToDfpDateTime() instead
    */
-  public static function GetDfpDateTime(DateTime $dateTime) {
-    return self::ToDfpDateTime($dateTime);
+  public static function GetDfpDateTime(DateTime $dateTime)
+  {
+      return self::ToDfpDateTime($dateTime);
   }
 
   /**
    * @deprecated use FromDfpDateTime() instead
    */
   public static function GetDateTime(DfpDateTime $dfpDateTime,
-      $timezone = null) {
-    return self::FromDfpDateTime($dfpDateTime);
+      $timezone = null)
+  {
+      return self::FromDfpDateTime($dfpDateTime);
   }
 
   /**
@@ -78,27 +83,30 @@ class DateTimeUtils {
    * @param DateTime $dateTime a PHP DateTime object
    * @return DfpDateTime a DfpDateTime object
    */
-  public static function ToDfpDateTime(DateTime $dateTime) {
-    $result = new DfpDateTime();
-    if (class_exists('Date', false)) {
-      $result->date = new Date();
-    }
-    $result->date->year = (int) $dateTime->format('Y');
-    $result->date->month = (int) $dateTime->format('m');
-    $result->date->day = (int) $dateTime->format('d');
-    $result->hour = (int) $dateTime->format('H');
-    $result->minute = (int) $dateTime->format('i');
-    $result->second = (int) $dateTime->format('s');
-    $result->timeZoneID = $dateTime->format('e');
-    return $result;
+  public static function ToDfpDateTime(DateTime $dateTime)
+  {
+      $result = new DfpDateTime();
+      if (class_exists('Date', false)) {
+          $result->date = new Date();
+      }
+      $result->date->year = (int) $dateTime->format('Y');
+      $result->date->month = (int) $dateTime->format('m');
+      $result->date->day = (int) $dateTime->format('d');
+      $result->hour = (int) $dateTime->format('H');
+      $result->minute = (int) $dateTime->format('i');
+      $result->second = (int) $dateTime->format('s');
+      $result->timeZoneID = $dateTime->format('e');
+
+      return $result;
   }
 
   /**
    * Converts a string in the form of {@code yyyy-MM-dd'T'HH:mm:ss±HH:mm} to a
    * DfpDateTime.
    */
-  public static function ToDfpDateTimeFromString($dateTime) {
-    return self::ToDfpDateTime(DateTime::createFromFormat(self::ISO8601,
+  public static function ToDfpDateTimeFromString($dateTime)
+  {
+      return self::ToDfpDateTime(DateTime::createFromFormat(self::ISO8601,
         $dateTime));
   }
 
@@ -107,8 +115,9 @@ class DateTimeUtils {
    * DfpDateTime in the time zone supplied.
    */
   public static function ToDfpDateTimeFromStringWithTimeZone($dateTime,
-      $timeZoneId) {
-    return self::ToDfpDateTime(
+      $timeZoneId)
+  {
+      return self::ToDfpDateTime(
         (new DateTime($dateTime, new DateTimeZone($timeZoneId))));
   }
 
@@ -118,11 +127,13 @@ class DateTimeUtils {
    * @param DfpDateTime $dfpDateTime a DfpDateTime object
    * @return DateTime a PHP DateTime object
    */
-  public static function FromDfpDateTime(DfpDateTime $dfpDateTime) {
-    $dateTimeString = sprintf("%d-%d-%dT%d:%d:%d", $dfpDateTime->date->year,
+  public static function FromDfpDateTime(DfpDateTime $dfpDateTime)
+  {
+      $dateTimeString = sprintf("%d-%d-%dT%d:%d:%d", $dfpDateTime->date->year,
         $dfpDateTime->date->month, $dfpDateTime->date->day, $dfpDateTime->hour,
         $dfpDateTime->minute, $dfpDateTime->second);
-    return new DateTime($dateTimeString,
+
+      return new DateTime($dateTimeString,
         new DateTimeZone($dfpDateTime->timeZoneID));
   }
 
@@ -133,8 +144,9 @@ class DateTimeUtils {
    * @return string a string representation of the DFP {@code Date} in
    *     {@code yyyy-MM-dd}
    */
-  public static function ToString(Date $dfpDate) {
-    return sprintf(self::DFP_DATE_PATTERN, $dfpDate->year, $dfpDate->month,
+  public static function ToString(Date $dfpDate)
+  {
+      return sprintf(self::DFP_DATE_PATTERN, $dfpDate->year, $dfpDate->month,
         $dfpDate->day);
   }
 
@@ -149,8 +161,9 @@ class DateTimeUtils {
    *     {@code 2013-09-013T12:02:03+08:00} or
    *     {@code 2013-09-013T12:02:03Z} for Etc/GMT.
    */
-  public static function ToStringWithTimeZone(DfpDateTime $dfpDateTime) {
-    return self::FromDfpDateTime($dfpDateTime)->format(self::ISO8601);
+  public static function ToStringWithTimeZone(DfpDateTime $dfpDateTime)
+  {
+      return self::FromDfpDateTime($dfpDateTime)->format(self::ISO8601);
   }
 
   /**
@@ -176,10 +189,10 @@ class DateTimeUtils {
    *          {@code yyyy-MM-dd'T'HH:mm:ss}
    */
   public static function ToStringForTimeZone(DfpDateTime $dfpDateTime,
-      $newZoneId) {
-    return self::FromDfpDateTime($dfpDateTime)->
+      $newZoneId)
+  {
+      return self::FromDfpDateTime($dfpDateTime)->
         setTimezone(new DateTimeZone($newZoneId))->
         format(substr(self::ISO8601, 0, -1));
   }
 }
-

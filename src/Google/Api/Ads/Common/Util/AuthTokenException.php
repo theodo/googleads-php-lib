@@ -34,12 +34,13 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-class AuthTokenException extends Exception {
+class AuthTokenException extends Exception
+{
 
   private $error;
-  private $url;
-  private $captchaToken;
-  private $captchaUrl;
+    private $url;
+    private $captchaToken;
+    private $captchaUrl;
 
   /**
    * Constructor for AuthTokenException.
@@ -48,45 +49,49 @@ class AuthTokenException extends Exception {
    * @param string $captchaToken an optional CATPCHA token for the error
    * @param string $captchaUrl an optional CAPTCHA URL for the error
    */
-  public function __construct($error, $url = NULL, $captchaToken = NULL,
-      $captchaUrl = NULL) {
-    $this->error = $error;
-    $this->url = $url;
-    $this->captchaToken = $captchaToken;
-    $this->captchaUrl = $captchaUrl;
-    parent::__construct('Failed to get authToken. Reason: ' . $error);
+  public function __construct($error, $url = null, $captchaToken = null,
+      $captchaUrl = null)
+  {
+      $this->error = $error;
+      $this->url = $url;
+      $this->captchaToken = $captchaToken;
+      $this->captchaUrl = $captchaUrl;
+      parent::__construct('Failed to get authToken. Reason: '.$error);
   }
 
   /**
    * Gets the error that caused the exception.
    * @return string the error that caused the exception
    */
-  public function GetError() {
-    return $this->error;
+  public function GetError()
+  {
+      return $this->error;
   }
 
   /**
    * Gets the URL associated with the error.
    * @return string the URL associated with the error
    */
-  public function GetUrl() {
-    return $this->url;
+  public function GetUrl()
+  {
+      return $this->url;
   }
 
   /**
    * Gets the CATPCHA token for the error.
    * @return string the CATPCHA token for the error
    */
-  public function GetCaptchaToken() {
-    return $this->captchaToken;
+  public function GetCaptchaToken()
+  {
+      return $this->captchaToken;
   }
 
   /**
    * Gets the CAPTCHA URL for the error.
    * @return string the CAPTCHA URL for the error
    */
-  public function GetCaptchaUrl() {
-    return $this->captchaUrl;
+  public function GetCaptchaUrl()
+  {
+      return $this->captchaUrl;
   }
 }
-

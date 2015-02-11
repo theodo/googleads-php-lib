@@ -33,7 +33,8 @@
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-class CurlUtils {
+class CurlUtils
+{
 
   /**
    * Creates a new cURL session with the following default options applied. Use
@@ -49,104 +50,110 @@ class CurlUtils {
    * @param string $url the URL of the resource to connect to
    * @return the cURL handle for the new session
    */
-  public function CreateSession($url) {
-    $ch = $this->Init($url);
+  public function CreateSession($url)
+  {
+      $ch = $this->Init($url);
 
     // Default options.
     $openBasedir = ini_get('open_basedir');
-    $this->SetOpt($ch, CURLOPT_FOLLOWLOCATION, empty($openBasedir));
-    $this->SetOpt($ch, CURLOPT_HEADER, false);
-    $this->SetOpt($ch, CURLOPT_RETURNTRANSFER, true);
-    $this->SetOpt($ch, CURLOPT_ENCODING, 'gzip');
-    $this->SetOpt($ch, CURLOPT_USERAGENT, 'curl, gzip');
+      $this->SetOpt($ch, CURLOPT_FOLLOWLOCATION, empty($openBasedir));
+      $this->SetOpt($ch, CURLOPT_HEADER, false);
+      $this->SetOpt($ch, CURLOPT_RETURNTRANSFER, true);
+      $this->SetOpt($ch, CURLOPT_ENCODING, 'gzip');
+      $this->SetOpt($ch, CURLOPT_USERAGENT, 'curl, gzip');
 
     // Proxy options.
     if (defined('HTTP_PROXY_HOST') && HTTP_PROXY_HOST != '') {
-      $this->SetOpt($ch, CURLOPT_PROXY, HTTP_PROXY_HOST);
+        $this->SetOpt($ch, CURLOPT_PROXY, HTTP_PROXY_HOST);
     }
-    if (defined('HTTP_PROXY_PORT') && HTTP_PROXY_PORT != '') {
-      $this->SetOpt($ch, CURLOPT_PROXYPORT, HTTP_PROXY_PORT);
-    }
-    if (defined('HTTP_PROXY_USER') && defined('HTTP_PROXY_PASSWORD')
+      if (defined('HTTP_PROXY_PORT') && HTTP_PROXY_PORT != '') {
+          $this->SetOpt($ch, CURLOPT_PROXYPORT, HTTP_PROXY_PORT);
+      }
+      if (defined('HTTP_PROXY_USER') && defined('HTTP_PROXY_PASSWORD')
         && HTTP_PROXY_USER != '' && HTTP_PROXY_PASSWORD != '') {
-      $this->SetOpt($ch, CURLOPT_PROXYUSERPWD, HTTP_PROXY_USER . ':'
-          . HTTP_PROXY_PASSWORD);
-    }
+          $this->SetOpt($ch, CURLOPT_PROXYUSERPWD, HTTP_PROXY_USER.':'
+          .HTTP_PROXY_PASSWORD);
+      }
 
     // SSL options.
     if (defined('SSL_VERIFY_PEER') && SSL_VERIFY_PEER != '') {
-      $this->SetOpt($ch, CURLOPT_SSL_VERIFYPEER, SSL_VERIFY_PEER);
+        $this->SetOpt($ch, CURLOPT_SSL_VERIFYPEER, SSL_VERIFY_PEER);
     } else {
-      // Default to disabled, for backwards compatibility.
+        // Default to disabled, for backwards compatibility.
       $this->SetOpt($ch, CURLOPT_SSL_VERIFYPEER, false);
     }
-    if (defined('SSL_VERIFY_HOST') && SSL_VERIFY_HOST != '') {
-      if (SSL_VERIFY_HOST) {
-        // Verify that the host exists in the certificate and matches the
+      if (defined('SSL_VERIFY_HOST') && SSL_VERIFY_HOST != '') {
+          if (SSL_VERIFY_HOST) {
+              // Verify that the host exists in the certificate and matches the
         // host in the request.
         $this->SetOpt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+          } else {
+              $this->SetOpt($ch, CURLOPT_SSL_VERIFYHOST, false);
+          }
       } else {
-        $this->SetOpt($ch, CURLOPT_SSL_VERIFYHOST, false);
+          $this->SetOpt($ch, CURLOPT_SSL_VERIFYHOST, false);
       }
-    } else {
-      $this->SetOpt($ch, CURLOPT_SSL_VERIFYHOST, false);
-    }
-    if (defined('SSL_CA_PATH') && SSL_CA_PATH != '') {
-      $this->SetOpt($ch, CURLOPT_CAPATH, SSL_CA_PATH);
-    }
-    if (defined('SSL_CA_FILE') && SSL_CA_FILE != '') {
-      $this->SetOpt($ch, CURLOPT_CAINFO, SSL_CA_FILE);
-    }
+      if (defined('SSL_CA_PATH') && SSL_CA_PATH != '') {
+          $this->SetOpt($ch, CURLOPT_CAPATH, SSL_CA_PATH);
+      }
+      if (defined('SSL_CA_FILE') && SSL_CA_FILE != '') {
+          $this->SetOpt($ch, CURLOPT_CAINFO, SSL_CA_FILE);
+      }
 
-    return $ch;
+      return $ch;
   }
 
   /**
    * Wraps the global curl function
    * {@link http://php.net/manual/en/function.curl-init.php}.
    */
-  public function Init($url = null) {
-    return curl_init($url);
+  public function Init($url = null)
+  {
+      return curl_init($url);
   }
 
   /**
    * Wraps the global curl function
    * {@link http://php.net/manual/en/function.curl-setopt.php}.
    */
-  public function SetOpt($ch, $option, $value) {
-    return curl_setopt($ch, $option, $value);
+  public function SetOpt($ch, $option, $value)
+  {
+      return curl_setopt($ch, $option, $value);
   }
 
   /**
    * Wraps the global curl function
    * {@link http://php.net/manual/en/function.curl-exec.php}.
    */
-  public function Exec($ch) {
-    return curl_exec($ch);
+  public function Exec($ch)
+  {
+      return curl_exec($ch);
   }
 
   /**
    * Wraps the global curl function
    * {@link http://php.net/manual/en/function.curl-getinfo.php}.
    */
-  public function GetInfo($ch, $opt = 0) {
-    return curl_getinfo($ch, $opt);
+  public function GetInfo($ch, $opt = 0)
+  {
+      return curl_getinfo($ch, $opt);
   }
 
   /**
    * Wraps the global curl function
    * {@link http://php.net/manual/en/function.curl-error.php}.
    */
-  public function Error($ch) {
-    return curl_error($ch);
+  public function Error($ch)
+  {
+      return curl_error($ch);
   }
 
   /**
    * Wraps the global curl function
    * {@link http://php.net/manual/en/function.curl-close.php}.
    */
-  public function Close($ch) {
-    curl_close($ch);
+  public function Close($ch)
+  {
+      curl_close($ch);
   }
 }
-

@@ -38,35 +38,37 @@ require_once 'Google/Api/Ads/Common/Lib/ValidationException.php';
  * @package GoogleApiAdsCommon
  * @subpackage Lib
  */
-abstract class AdsUser {
+abstract class AdsUser
+{
 
   private $libVersion;
-  private $libName;
+    private $libName;
 
-  private $requestHeaderElements;
-  private $defaultServer;
-  private $defaultVersion;
-  private $logsDirectory;
-  private $soapCompression;
-  private $soapCompressionLevel;
-  private $wsdlCache;
-  private $forceHttpVersion;
-  private $forceAddXsiTypes;
-  private $authServer;
-  private $oauth2Info;
-  private $oauth2Handler;
+    private $requestHeaderElements;
+    private $defaultServer;
+    private $defaultVersion;
+    private $logsDirectory;
+    private $soapCompression;
+    private $soapCompressionLevel;
+    private $wsdlCache;
+    private $forceHttpVersion;
+    private $forceAddXsiTypes;
+    private $authServer;
+    private $oauth2Info;
+    private $oauth2Handler;
 
   /**
    * Constructor for AdsUser.
    * @access protected
    */
-  protected function __construct() {
-    $this->requestHeaderElements = array();
+  protected function __construct()
+  {
+      $this->requestHeaderElements = array();
 
-    $buildIni = parse_ini_file(dirname(__FILE__) .
-        '/../Lib/build.ini', FALSE);
-    $this->libVersion = $buildIni['LIB_VERSION'];
-    $this->libName = $buildIni['LIB_NAME'];
+      $buildIni = parse_ini_file(dirname(__FILE__).
+        '/../Lib/build.ini', false);
+      $this->libVersion = $buildIni['LIB_VERSION'];
+      $this->libName = $buildIni['LIB_NAME'];
   }
 
   /**
@@ -82,24 +84,26 @@ abstract class AdsUser {
    * @access protected
    */
   protected function GetAuthVarValue($authVar, $authVarName,
-      array $authIni) {
-    if (isset($authVar)) {
-      return $authVar;
-    } else {
-      if (array_key_exists($authVarName, $authIni)) {
-        return $authIni[$authVarName];
+      array $authIni)
+  {
+      if (isset($authVar)) {
+          return $authVar;
       } else {
-        return NULL;
+          if (array_key_exists($authVarName, $authIni)) {
+              return $authIni[$authVarName];
+          } else {
+              return;
+          }
       }
-    }
   }
 
   /**
    * Gets the names of all registered request header elements.
    * @return array the names of the request header elements
    */
-  public function GetHeaderNames() {
-    return array_keys($this->requestHeaderElements);
+  public function GetHeaderNames()
+  {
+      return array_keys($this->requestHeaderElements);
   }
 
   /**
@@ -107,12 +111,13 @@ abstract class AdsUser {
    * @param string $key the name of the request header element
    * @return string the value of the request header element or NULL if not found
    */
-  public function GetHeaderValue($key) {
-    if (array_key_exists($key, $this->requestHeaderElements)) {
-      return $this->requestHeaderElements[$key];
-    } else {
-      return NULL;
-    }
+  public function GetHeaderValue($key)
+  {
+      if (array_key_exists($key, $this->requestHeaderElements)) {
+          return $this->requestHeaderElements[$key];
+      } else {
+          return;
+      }
   }
 
   /**
@@ -120,8 +125,9 @@ abstract class AdsUser {
    * @param string $key the name of the request header element
    * @param string $value the value for the request header element
    */
-  public function SetHeaderValue($key, $value) {
-    $this->requestHeaderElements[$key] = $value;
+  public function SetHeaderValue($key, $value)
+  {
+      $this->requestHeaderElements[$key] = $value;
   }
 
   /**
@@ -131,8 +137,9 @@ abstract class AdsUser {
    * @return SoapClient the instantiated service
    */
   public function GetServiceSoapClient($serviceName,
-      SoapClientFactory $serviceFactory) {
-    return $serviceFactory->GenerateSoapClient($serviceName);
+      SoapClientFactory $serviceFactory)
+  {
+      return $serviceFactory->GenerateSoapClient($serviceName);
   }
 
   /**
@@ -141,38 +148,42 @@ abstract class AdsUser {
    * request information is logged to the request_info.log file under the logs
    * directory.
    */
-  protected function InitLogs() {
-    Logger::LogToFile(Logger::$SOAP_XML_LOG,
-        $this->logsDirectory . "/soap_xml.log");
-    Logger::LogToFile(Logger::$REQUEST_INFO_LOG,
-        $this->logsDirectory . "/request_info.log");
-    Logger::SetLogLevel(Logger::$SOAP_XML_LOG, Logger::$FATAL);
-    Logger::SetLogLevel(Logger::$REQUEST_INFO_LOG, Logger::$FATAL);
+  protected function InitLogs()
+  {
+      Logger::LogToFile(Logger::$SOAP_XML_LOG,
+        $this->logsDirectory."/soap_xml.log");
+      Logger::LogToFile(Logger::$REQUEST_INFO_LOG,
+        $this->logsDirectory."/request_info.log");
+      Logger::SetLogLevel(Logger::$SOAP_XML_LOG, Logger::$FATAL);
+      Logger::SetLogLevel(Logger::$REQUEST_INFO_LOG, Logger::$FATAL);
   }
 
   /**
    * Configures the library to log basic information about all requests and
    * the full SOAP XML request and response only when an error occurs.
    */
-  public function LogDefaults() {
-    Logger::SetLogLevel(Logger::$SOAP_XML_LOG, Logger::$ERROR);
-    Logger::SetLogLevel(Logger::$REQUEST_INFO_LOG, Logger::$INFO);
+  public function LogDefaults()
+  {
+      Logger::SetLogLevel(Logger::$SOAP_XML_LOG, Logger::$ERROR);
+      Logger::SetLogLevel(Logger::$REQUEST_INFO_LOG, Logger::$INFO);
   }
 
   /**
    * Configures the library to only log requests that return an error.
    */
-  public function LogErrors() {
-    Logger::SetLogLevel(Logger::$SOAP_XML_LOG, Logger::$ERROR);
-    Logger::SetLogLevel(Logger::$REQUEST_INFO_LOG, Logger::$ERROR);
+  public function LogErrors()
+  {
+      Logger::SetLogLevel(Logger::$SOAP_XML_LOG, Logger::$ERROR);
+      Logger::SetLogLevel(Logger::$REQUEST_INFO_LOG, Logger::$ERROR);
   }
 
   /**
    * Configures the library to log all requests.
    */
-  public function LogAll() {
-    Logger::SetLogLevel(Logger::$SOAP_XML_LOG, Logger::$INFO);
-    Logger::SetLogLevel(Logger::$REQUEST_INFO_LOG, Logger::$INFO);
+  public function LogAll()
+  {
+      Logger::SetLogLevel(Logger::$SOAP_XML_LOG, Logger::$INFO);
+      Logger::SetLogLevel(Logger::$REQUEST_INFO_LOG, Logger::$INFO);
   }
 
   /**
@@ -190,75 +201,75 @@ abstract class AdsUser {
    *     directory
    */
   public function LoadSettings($settingsIniPath, $defaultVersion,
-      $defaultServer, $defaultLogsDir, $logsRelativePathBase) {
-    // Set no time limit for PHP operations.
+      $defaultServer, $defaultLogsDir, $logsRelativePathBase)
+  {
+      // Set no time limit for PHP operations.
     set_time_limit(0);
-    ini_set('default_socket_timeout', 480);
+      ini_set('default_socket_timeout', 480);
 
-    $settingsIni = parse_ini_file($settingsIniPath, TRUE);
+      $settingsIni = parse_ini_file($settingsIniPath, true);
 
     // Logging settings.
     $pathRelative = $this->GetSetting($settingsIni, 'LOGGING',
-        'PATH_RELATIVE', FALSE);
-    $libLogDirPath = $this->GetSetting($settingsIni, 'LOGGING',
+        'PATH_RELATIVE', false);
+      $libLogDirPath = $this->GetSetting($settingsIni, 'LOGGING',
         'LIB_LOG_DIR_PATH', $defaultLogsDir);
-    $relativePath = realpath($logsRelativePathBase . '/' . $libLogDirPath);
+      $relativePath = realpath($logsRelativePathBase.'/'.$libLogDirPath);
 
-    if ($pathRelative && $relativePath) {
-      $this->logsDirectory = $relativePath;
-    } elseif (!$pathRelative && $libLogDirPath) {
-      $this->logsDirectory = $libLogDirPath;
-    } else {
-      $this->logsDirectory = $defaultLogsDir;
-    }
-    $this->InitLogs();
+      if ($pathRelative && $relativePath) {
+          $this->logsDirectory = $relativePath;
+      } elseif (!$pathRelative && $libLogDirPath) {
+          $this->logsDirectory = $libLogDirPath;
+      } else {
+          $this->logsDirectory = $defaultLogsDir;
+      }
+      $this->InitLogs();
 
     // Server settings.
     $this->defaultVersion = $this->GetSetting($settingsIni, 'SERVER',
         'DEFAULT_VERSION', $defaultVersion);
-    $this->defaultServer = $this->GetSetting($settingsIni, 'SERVER',
+      $this->defaultServer = $this->GetSetting($settingsIni, 'SERVER',
         'DEFAULT_SERVER', $defaultServer);
 
     // SOAP settings.
     $this->soapCompression = (bool) $this->GetSetting($settingsIni, 'SOAP',
-        'COMPRESSION', TRUE);
-    $this->soapCompressionLevel = $this->GetSetting($settingsIni, 'SOAP',
+        'COMPRESSION', true);
+      $this->soapCompressionLevel = $this->GetSetting($settingsIni, 'SOAP',
         'COMPRESSION_LEVEL', 1);
-    if ($this->soapCompressionLevel < 1 || $this->soapCompressionLevel > 9) {
-      $this->soapCompressionLevel = 1;
-    }
-    $this->wsdlCache = (int) $this->GetSetting($settingsIni, 'SOAP',
+      if ($this->soapCompressionLevel < 1 || $this->soapCompressionLevel > 9) {
+          $this->soapCompressionLevel = 1;
+      }
+      $this->wsdlCache = (int) $this->GetSetting($settingsIni, 'SOAP',
         'WSDL_CACHE', WSDL_CACHE_NONE);
-    if ($this->wsdlCache < 0 || $this->wsdlCache > 3) {
-      $this->wsdlCache = WSDL_CACHE_NONE;
-    }
-    $forceHttpVersion = $this->GetSetting($settingsIni, 'SOAP',
+      if ($this->wsdlCache < 0 || $this->wsdlCache > 3) {
+          $this->wsdlCache = WSDL_CACHE_NONE;
+      }
+      $forceHttpVersion = $this->GetSetting($settingsIni, 'SOAP',
         'FORCE_HTTP_VERSION');
-    $this->forceHttpVersion = $forceHttpVersion === null ? null :
+      $this->forceHttpVersion = $forceHttpVersion === null ? null :
         (float) $forceHttpVersion;
-    $forceAddXsiTypes = $this->GetSetting($settingsIni, 'SOAP',
+      $forceAddXsiTypes = $this->GetSetting($settingsIni, 'SOAP',
         'FORCE_ADD_XSI_TYPES');
-    $this->forceAddXsiTypes = $forceAddXsiTypes === null ? null :
+      $this->forceAddXsiTypes = $forceAddXsiTypes === null ? null :
         (bool) $forceAddXsiTypes;
-
 
     // Proxy settings.
     $proxyHost = $this->GetSetting($settingsIni, 'PROXY', 'HOST');
-    if (isset($proxyHost)) {
-      $this->Define('HTTP_PROXY_HOST', $proxyHost);
-    }
-    $proxyPort = $this->GetSetting($settingsIni, 'PROXY', 'PORT');
-    if (isset($proxyPort)) {
-      $this->Define('HTTP_PROXY_PORT', (int) $proxyPort);
-    }
-    $proxyUser = $this->GetSetting($settingsIni, 'PROXY', 'USER');
-    if (isset($proxyUser)) {
-      $this->Define('HTTP_PROXY_USER', $proxyUser);
-    }
-    $proxyPassword = $this->GetSetting($settingsIni, 'PROXY', 'PASSWORD');
-    if (isset($proxyPassword)) {
-      $this->Define('HTTP_PROXY_PASSWORD', $proxyPassword);
-    }
+      if (isset($proxyHost)) {
+          $this->Define('HTTP_PROXY_HOST', $proxyHost);
+      }
+      $proxyPort = $this->GetSetting($settingsIni, 'PROXY', 'PORT');
+      if (isset($proxyPort)) {
+          $this->Define('HTTP_PROXY_PORT', (int) $proxyPort);
+      }
+      $proxyUser = $this->GetSetting($settingsIni, 'PROXY', 'USER');
+      if (isset($proxyUser)) {
+          $this->Define('HTTP_PROXY_USER', $proxyUser);
+      }
+      $proxyPassword = $this->GetSetting($settingsIni, 'PROXY', 'PASSWORD');
+      if (isset($proxyPassword)) {
+          $this->Define('HTTP_PROXY_PASSWORD', $proxyPassword);
+      }
 
     // Auth settings.
     $this->authServer = $this->GetSetting($settingsIni, 'AUTH', 'AUTH_SERVER',
@@ -269,21 +280,21 @@ abstract class AdsUser {
 
     // SSL settings.
     $sslVerifyPeer = $this->GetSetting($settingsIni, 'SSL', 'VERIFY_PEER');
-    if (isset($sslVerifyPeer)) {
-      $this->Define('SSL_VERIFY_PEER', $sslVerifyPeer);
-    }
-    $sslVerifyHost = $this->GetSetting($settingsIni, 'SSL', 'VERIFY_HOST');
-    if (isset($sslVerifyHost)) {
-      $this->Define('SSL_VERIFY_HOST', (int) $sslVerifyHost);
-    }
-    $sslCaPath = $this->GetSetting($settingsIni, 'SSL', 'CA_PATH');
-    if (isset($sslCaPath)) {
-      $this->Define('SSL_CA_PATH', $sslCaPath);
-    }
-    $sslCaFile = $this->GetSetting($settingsIni, 'SSL', 'CA_FILE');
-    if (isset($sslCaFile)) {
-      $this->Define('SSL_CA_FILE', $sslCaFile);
-    }
+      if (isset($sslVerifyPeer)) {
+          $this->Define('SSL_VERIFY_PEER', $sslVerifyPeer);
+      }
+      $sslVerifyHost = $this->GetSetting($settingsIni, 'SSL', 'VERIFY_HOST');
+      if (isset($sslVerifyHost)) {
+          $this->Define('SSL_VERIFY_HOST', (int) $sslVerifyHost);
+      }
+      $sslCaPath = $this->GetSetting($settingsIni, 'SSL', 'CA_PATH');
+      if (isset($sslCaPath)) {
+          $this->Define('SSL_CA_PATH', $sslCaPath);
+      }
+      $sslCaFile = $this->GetSetting($settingsIni, 'SSL', 'CA_FILE');
+      if (isset($sslCaFile)) {
+          $this->Define('SSL_CA_FILE', $sslCaFile);
+      }
   }
 
   /**
@@ -295,14 +306,16 @@ abstract class AdsUser {
    * @param mixed $default the default value of the setting
    * @return string the value of the setting
    */
-  private function GetSetting($settings, $section, $name, $default = NULL) {
-    if (!$settings || !array_key_exists($section, $settings)
+  private function GetSetting($settings, $section, $name, $default = null)
+  {
+      if (!$settings || !array_key_exists($section, $settings)
         || !array_key_exists($name, $settings[$section])
-        || $settings[$section][$name] == NULL
+        || $settings[$section][$name] == null
         || $settings[$section][$name] == '') {
-      return $default;
-    }
-    return $settings[$section][$name];
+          return $default;
+      }
+
+      return $settings[$section][$name];
   }
 
   /**
@@ -312,130 +325,146 @@ abstract class AdsUser {
    * @param string $name the name of the constant
    * @param string $value the value of the constant
    */
-  private function Define($name, $value) {
-    if (!defined($name) || (constant($name) != $value)) {
-      define($name, $value);
-    }
+  private function Define($name, $value)
+  {
+      if (!defined($name) || (constant($name) != $value)) {
+          define($name, $value);
+      }
   }
 
   /**
    * Gets the default server.
    * @return string the default server
    */
-  public function GetDefaultServer() {
-    return $this->defaultServer;
+  public function GetDefaultServer()
+  {
+      return $this->defaultServer;
   }
 
   /**
    * Sets the default server.
    * @param string $defaultServer the default server
    */
-  public function SetDefaultServer($defaultServer) {
-    $this->defaultServer = $defaultServer;
+  public function SetDefaultServer($defaultServer)
+  {
+      $this->defaultServer = $defaultServer;
   }
 
   /**
    * Gets the default version.
    * @return string the default version
    */
-  public function GetDefaultVersion() {
-    return $this->defaultVersion;
+  public function GetDefaultVersion()
+  {
+      return $this->defaultVersion;
   }
 
   /**
    * Sets the default version.
    * @param string $defaultVersion the default version
    */
-  public function SetDefaultVersion($defaultVersion) {
-    $this->defaultVersion = $defaultVersion;
+  public function SetDefaultVersion($defaultVersion)
+  {
+      $this->defaultVersion = $defaultVersion;
   }
 
   /**
    * Gets the logs directory.
    * @return string the logs directory
    */
-  public function GetLogsDirectory() {
-    return $this->logsDirectory;
+  public function GetLogsDirectory()
+  {
+      return $this->logsDirectory;
   }
 
   /**
    * Is SOAP compression enabled.
    * @return bool is SOAP compression enabled
    */
-  public function IsSoapCompressionEnabled() {
-    return $this->soapCompression;
+  public function IsSoapCompressionEnabled()
+  {
+      return $this->soapCompression;
   }
 
   /**
    * Gets the SOAP compression level.
    * @return int the SOAP compression level
    */
-  public function GetSoapCompressionLevel() {
-    return $this->soapCompressionLevel;
+  public function GetSoapCompressionLevel()
+  {
+      return $this->soapCompressionLevel;
   }
 
   /**
    * Gets the type of WSDL caching in use.
    * @return int the type of WSDL caching in use
    */
-  public function GetWsdlCacheType() {
-    return $this->wsdlCache;
+  public function GetWsdlCacheType()
+  {
+      return $this->wsdlCache;
   }
 
   /**
    * Gets the version of the HTTP protocol to use regardless of PHP version.
    * @return float the HTTP version that should be used
    */
-  public function GetForceHttpVersion() {
-    return $this->forceHttpVersion;
+  public function GetForceHttpVersion()
+  {
+      return $this->forceHttpVersion;
   }
 
   /**
    * Gets the setting of whether or not to add XSI types in the SOAP payload.
    * @return bool whether or not to add XSI types in the SOAP payload
    */
-  public function GetForceAddXsiTypes() {
-    return $this->forceAddXsiTypes;
+  public function GetForceAddXsiTypes()
+  {
+      return $this->forceAddXsiTypes;
   }
 
   /**
    * Gets the server used for authentication.
    * @return string the server used for authentiation
    */
-  public function GetAuthServer() {
-    return $this->authServer;
+  public function GetAuthServer()
+  {
+      return $this->authServer;
   }
 
   /**
    * Gets the OAuth2 info for this user.
    * @return array the OAuth2 info for this user
    */
-  public function GetOAuth2Info() {
-    return $this->oauth2Info;
+  public function GetOAuth2Info()
+  {
+      return $this->oauth2Info;
   }
 
   /**
    * Sets the OAuth2 info for this user.
    * @param array $oauth2Info the OAuth2 info for this user
    */
-  public function SetOAuth2Info($oauth2Info) {
-    $this->oauth2Info = $oauth2Info;
+  public function SetOAuth2Info($oauth2Info)
+  {
+      $this->oauth2Info = $oauth2Info;
   }
 
   /**
    * Gets the OAuth2 handler for this user.
    * @return OAuth2Handler the OAuth2 handler for this user
    */
-  public function GetOAuth2Handler() {
-    return $this->oauth2Handler;
+  public function GetOAuth2Handler()
+  {
+      return $this->oauth2Handler;
   }
 
   /**
    * Sets the OAuth2 handler for this user.
    * @param array $oauth2Handler the OAuth2 handler for this user
    */
-  public function SetOAuth2Handler($oauth2Handler) {
-    $this->oauth2Handler = $oauth2Handler;
+  public function SetOAuth2Handler($oauth2Handler)
+  {
+      $this->oauth2Handler = $oauth2Handler;
   }
 
   /**
@@ -458,17 +487,19 @@ abstract class AdsUser {
    * @return array An array of arrays with each inner array representing a user
    *     agent parts, e.g.: ['PHP', '5.3.2'] or ['PHP', '5.4.0'].
    */
-  private function GetCommonClientLibraryUserAgentParts() {
-    return array(array($this->libName, $this->libVersion), array('PHP',
-        PHP_VERSION));
+  private function GetCommonClientLibraryUserAgentParts()
+  {
+      return array(array($this->libName, $this->libVersion), array('PHP',
+        PHP_VERSION, ));
   }
 
   /**
    * Gets the user agent string that identifies this library for this user.
    * @return string A user agent string.
    */
-  public function GetClientLibraryUserAgent() {
-    return $this->GetHeaderValue($this->GetUserAgentHeaderName());
+  public function GetClientLibraryUserAgent()
+  {
+      return $this->GetHeaderValue($this->GetUserAgentHeaderName());
   }
 
   /**
@@ -477,15 +508,16 @@ abstract class AdsUser {
    *     client library where each user agent part has been joined by a '/'
    *     (forward slash).
    */
-  private function GetAllClientLibraryUserAgentParts() {
-    $allUserAgentParts[] = implode('/',
+  private function GetAllClientLibraryUserAgentParts()
+  {
+      $allUserAgentParts[] = implode('/',
         $this->GetClientLibraryNameAndVersion());
 
-    foreach ($this->GetCommonClientLibraryUserAgentParts() as $userAgentPart) {
-      $allUserAgentParts[] = implode('/', $userAgentPart);
-    }
+      foreach ($this->GetCommonClientLibraryUserAgentParts() as $userAgentPart) {
+          $allUserAgentParts[] = implode('/', $userAgentPart);
+      }
 
-    return $allUserAgentParts;
+      return $allUserAgentParts;
   }
 
   /**
@@ -497,8 +529,9 @@ abstract class AdsUser {
    * @param $applicationName The application name that will appear in this
    *     header.
    */
-  public function SetClientLibraryUserAgent($applicationName) {
-    $this->SetHeaderValue($this->GetUserAgentHeaderName(), sprintf("%s (%s)",
+  public function SetClientLibraryUserAgent($applicationName)
+  {
+      $this->SetHeaderValue($this->GetUserAgentHeaderName(), sprintf("%s (%s)",
         $applicationName, implode(', ',
         $this->GetAllClientLibraryUserAgentParts())));
   }
@@ -508,26 +541,26 @@ abstract class AdsUser {
    * @param NULL|string $className the name of the oauth2Handler class or NULL
    * @return mixed the configured OAuth2Handler class
    */
-  public abstract function GetDefaultOAuth2Handler($className = NULL);
+  abstract public function GetDefaultOAuth2Handler($className = null);
 
   /**
    * Validates that the OAuth2 info is complete.
    * @throws ValidationException if there are any validation errors
    * @access protected
    */
-  protected function ValidateOAuth2Info() {
-    $requiredFields = array('client_id', 'client_secret');
-    foreach ($requiredFields as $field) {
-      if (empty($this->oauth2Info[$field])) {
-        throw new ValidationException($field, NULL,
+  protected function ValidateOAuth2Info()
+  {
+      $requiredFields = array('client_id', 'client_secret');
+      foreach ($requiredFields as $field) {
+          if (empty($this->oauth2Info[$field])) {
+              throw new ValidationException($field, null,
             sprintf('%s is required.', $field));
+          }
       }
-    }
-    if (empty($this->oauth2Info['access_token'])
+      if (empty($this->oauth2Info['access_token'])
         && empty($this->oauth2Info['refresh_token'])) {
-      throw new ValidationException('refresh_token', NULL,
+          throw new ValidationException('refresh_token', null,
           'Either the refresh_token or the access_token is required.');
-    }
+      }
   }
 }
-

@@ -35,7 +35,8 @@ require_once 'Google/Api/Ads/Common/Util/MapUtils.php';
  * @package GoogleApiAdsCommon
  * @subpackage Util
  */
-class XmlUtils {
+class XmlUtils
+{
 
   /**
    * Gets the DOMDocument of the <var>$xml</var>.
@@ -43,13 +44,15 @@ class XmlUtils {
    * @return DOMDocument the DOMDocument of the XML
    * @throws DOMException if the DOM could not be loaded
    */
-  public static function GetDomFromXml($xml) {
-    set_error_handler(array('XmlUtils', 'HandleXmlError'));
-    $dom = new DOMDocument();
-    $dom->loadXML($xml,
+  public static function GetDomFromXml($xml)
+  {
+      set_error_handler(array('XmlUtils', 'HandleXmlError'));
+      $dom = new DOMDocument();
+      $dom->loadXML($xml,
         LIBXML_DTDLOAD | LIBXML_DTDATTR | LIBXML_NOENT | LIBXML_XINCLUDE);
-    restore_error_handler();
-    return $dom;
+      restore_error_handler();
+
+      return $dom;
   }
 
   /**
@@ -57,8 +60,9 @@ class XmlUtils {
    * @param DOMDocument $document the document to convert
    * @return string the XML represenation of the document
    */
-  public static function GetXmlFromDom($document) {
-    return trim($document->saveXml());
+  public static function GetXmlFromDom($document)
+  {
+      return trim($document->saveXml());
   }
 
   /**
@@ -67,15 +71,18 @@ class XmlUtils {
    * @param string $xml the XML to pretty print
    * @return string a pretty printed string
    */
-  public static function PrettyPrint($xml) {
-    try {
-      $dom = self::GetDomFromXml($xml);
-      $dom->formatOutput = true;
-      return self::GetXmlFromDom($dom);
-    } catch (DOMException $e) {
-      restore_error_handler();
-      return str_replace(array("\r\n", "\n", "\r"), '', $xml);
-    }
+  public static function PrettyPrint($xml)
+  {
+      try {
+          $dom = self::GetDomFromXml($xml);
+          $dom->formatOutput = true;
+
+          return self::GetXmlFromDom($dom);
+      } catch (DOMException $e) {
+          restore_error_handler();
+
+          return str_replace(array("\r\n", "\n", "\r"), '', $xml);
+      }
   }
 
   /**
@@ -84,8 +91,9 @@ class XmlUtils {
    * @param DOMDocument $document the document to convert
    * @returns Object the converted object
    */
-  public static function ConvertDocumentToObject($document) {
-    return self::ConvertElementToObject($document->documentElement);
+  public static function ConvertDocumentToObject($document)
+  {
+      return self::ConvertElementToObject($document->documentElement);
   }
 
   /**
@@ -94,31 +102,32 @@ class XmlUtils {
    * @param DOMElement $element the element to convert
    * @returns Object the converted object
    */
-  private static function ConvertElementToObject($element) {
-    $result = array();
-    if ($element->hasChildNodes()) {
-      $numChildNodes = $element->childNodes->length;
-      for ($i = 0; $i < $numChildNodes; $i++) {
-        $childNode = $element->childNodes->item($i);
-        if ($childNode instanceof DOMElement) {
-          $name = $childNode->tagName;
-          $value = self::ConvertElementToObject($childNode);
-          if (isset($result[$name])) {
-            if (!is_array($result[$name])) {
-              $result[$name] = array($result[$name]);
-            }
-            $result[$name][] = $value;
-          } else {
-            $result[$name] = $value;
+  private static function ConvertElementToObject($element)
+  {
+      $result = array();
+      if ($element->hasChildNodes()) {
+          $numChildNodes = $element->childNodes->length;
+          for ($i = 0; $i < $numChildNodes; $i++) {
+              $childNode = $element->childNodes->item($i);
+              if ($childNode instanceof DOMElement) {
+                  $name = $childNode->tagName;
+                  $value = self::ConvertElementToObject($childNode);
+                  if (isset($result[$name])) {
+                      if (!is_array($result[$name])) {
+                          $result[$name] = array($result[$name]);
+                      }
+                      $result[$name][] = $value;
+                  } else {
+                      $result[$name] = $value;
+                  }
+              }
           }
-        }
       }
-    }
-    if (sizeof($result) > 0) {
-      return (Object) $result;
-    } else {
-      return self::ConvertNodeValueToObject($element->nodeValue);
-    }
+      if (sizeof($result) > 0) {
+          return (Object) $result;
+      } else {
+          return self::ConvertNodeValueToObject($element->nodeValue);
+      }
   }
 
   /**
@@ -126,20 +135,21 @@ class XmlUtils {
    * @param string $value the value of the node
    * @return mixed the PHP value as the appropriate type
    */
-  private static function ConvertNodeValueToObject($value) {
-    if (is_numeric($value)) {
-      if (strcmp(strval(intval($value)), $value) === 0) {
-        return intval($value);
-      } elseif (strcmp(sprintf('%.0f', floatval($value)), $value) === 0) {
-        return floatval($value);
+  private static function ConvertNodeValueToObject($value)
+  {
+      if (is_numeric($value)) {
+          if (strcmp(strval(intval($value)), $value) === 0) {
+              return intval($value);
+          } elseif (strcmp(sprintf('%.0f', floatval($value)), $value) === 0) {
+              return floatval($value);
+          } else {
+              return $value;
+          }
+      } elseif (strtolower($value) == 'true' || strtolower($value) == 'false') {
+          return filter_var($value, FILTER_VALIDATE_BOOLEAN);
       } else {
-        return $value;
+          return $value;
       }
-    } else if (strtolower($value) == 'true' || strtolower($value) == 'false') {
-      return filter_var($value, FILTER_VALIDATE_BOOLEAN);
-    } else {
-      return $value;
-    }
   }
 
   /**
@@ -151,11 +161,13 @@ class XmlUtils {
    * @param string $rootElementName the name of the root element
    * @return DOMDocument the document representing the object
    */
-  public static function ConvertObjectToDocument($object, $rootElementName) {
-    $document = new DOMDocument();
-    $document->appendChild(
+  public static function ConvertObjectToDocument($object, $rootElementName)
+  {
+      $document = new DOMDocument();
+      $document->appendChild(
         self::ConvertObjectToElement($object, $rootElementName, $document));
-    return $document;
+
+      return $document;
   }
 
   /**
@@ -166,36 +178,38 @@ class XmlUtils {
    * @return DOMElement the element representing the object
    */
   private static function ConvertObjectToElement($object, $elementName,
-      $document) {
-    if (!isset($object)) {
-      return NULL;
-    }
-    $element = $document->createElement($elementName);
-    $children = array();
-    if (is_array($object) && MapUtils::IsMap($object)) {
-      $object = (Object) $object;
-    }
-    if (is_object($object)) {
-      foreach(get_object_vars($object) as $field => $value) {
-        if (is_array($value) && !MapUtils::IsMap($value)) {
-          foreach($value as $item) {
-            $children[] =
+      $document)
+  {
+      if (!isset($object)) {
+          return;
+      }
+      $element = $document->createElement($elementName);
+      $children = array();
+      if (is_array($object) && MapUtils::IsMap($object)) {
+          $object = (Object) $object;
+      }
+      if (is_object($object)) {
+          foreach (get_object_vars($object) as $field => $value) {
+              if (is_array($value) && !MapUtils::IsMap($value)) {
+                  foreach ($value as $item) {
+                      $children[] =
                 self::ConvertObjectToElement($item, $field, $document);
-          }
-        } else {
-          $children[] =
+                  }
+              } else {
+                  $children[] =
               self::ConvertObjectToElement($value, $field, $document);
-        }
+              }
+          }
+          foreach ($children as $child) {
+              if (isset($child)) {
+                  $element->appendChild($child);
+              }
+          }
+      } else {
+          $element->nodeValue = self::ConvertObjectToNodeValue($object);
       }
-      foreach ($children as $child) {
-        if (isset($child)) {
-          $element->appendChild($child);
-        }
-      }
-    } else {
-      $element->nodeValue = self::ConvertObjectToNodeValue($object);
-    }
-    return $element;
+
+      return $element;
   }
 
   /**
@@ -203,18 +217,19 @@ class XmlUtils {
    * @param mixed $object the PHP value
    * @returns string the string value of the object
    */
-  private static function ConvertObjectToNodeValue($object) {
-    if (is_float($object)) {
-      if (floatval(strval($object)) == $object) {
-        return strval($object);
+  private static function ConvertObjectToNodeValue($object)
+  {
+      if (is_float($object)) {
+          if (floatval(strval($object)) == $object) {
+              return strval($object);
+          } else {
+              return sprintf('%.0f', $object);
+          }
+      } elseif (is_bool($object)) {
+          return $object ? 'true' : 'false';
       } else {
-        return sprintf('%.0f', $object);
+          return strval($object);
       }
-    } else if (is_bool($object)) {
-      return $object ? 'true': 'false';
-    } else {
-      return strval($object);
-    }
   }
 
   /**
@@ -229,13 +244,13 @@ class XmlUtils {
    * @return boolean <var>FALSE</var> if the normal error handler should
    *     continue
    */
-  public static function HandleXmlError($errno, $errstr, $errfile, $errline) {
-    if ($errno == E_WARNING
+  public static function HandleXmlError($errno, $errstr, $errfile, $errline)
+  {
+      if ($errno == E_WARNING
         && substr_count($errstr, 'DOMDocument::loadXML()') > 0) {
-      throw new DOMException($errstr);
-    } else {
-      return FALSE;
-    }
+          throw new DOMException($errstr);
+      } else {
+          return false;
+      }
   }
 }
-

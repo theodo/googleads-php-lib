@@ -39,7 +39,8 @@ require_once 'Google/Api/Ads/Common/Lib/AdsSoapClient.php';
  * @package GoogleApiAdsDfp
  * @subpackage Lib
  */
-class DfpSoapClient extends AdsSoapClient {
+class DfpSoapClient extends AdsSoapClient
+{
 
   /**
    * Constructor for Google's DoubleClick for Publishers API SOAP client.
@@ -52,54 +53,59 @@ class DfpSoapClient extends AdsSoapClient {
    * @param string $serviceNamespace the namespace of the service
    */
   public function __construct($wsdl, array $options, AdsUser $user,
-      $serviceName, $serviceNamespace) {
-    parent::__construct($wsdl, $options, $user, $serviceName,
+      $serviceName, $serviceNamespace)
+  {
+      parent::__construct($wsdl, $options, $user, $serviceName,
         $serviceNamespace);
   }
 
   /**
    * @see AdsSoapClient::GenerateSoapHeader()
    */
-  protected function GenerateSoapHeader() {
-    $headerObject = $this->Create('SoapRequestHeader');
-    foreach (get_object_vars($headerObject) as $var => $value) {
-      $authToken = $this->GetHeaderValue('authToken');
-      if ($var === 'authentication' && !empty($authToken)) {
-        $authentication = $this->Create('ClientLogin');
-        $authentication->token = $this->GetHeaderValue('authToken');
-        $headerObject->$var = $authentication;
-      } else {
-        $headerObject->$var = $this->GetHeaderValue($var);
+  protected function GenerateSoapHeader()
+  {
+      $headerObject = $this->Create('SoapRequestHeader');
+      foreach (get_object_vars($headerObject) as $var => $value) {
+          $authToken = $this->GetHeaderValue('authToken');
+          if ($var === 'authentication' && !empty($authToken)) {
+              $authentication = $this->Create('ClientLogin');
+              $authentication->token = $this->GetHeaderValue('authToken');
+              $headerObject->$var = $authentication;
+          } else {
+              $headerObject->$var = $this->GetHeaderValue($var);
+          }
       }
-    }
-    return new SoapHeader($this->serviceNamespace, 'RequestHeader',
-        $headerObject, FALSE);
+
+      return new SoapHeader($this->serviceNamespace, 'RequestHeader',
+        $headerObject, false);
   }
 
   /**
    * @see AdsSoapClient::RemoveSensitiveInfo()
    */
-  protected function RemoveSensitiveInfo($request) {
-    $tags = array('authToken', 'authentication');
-    $regexFormat = '/(<(?:[^:]+:)?%s(?:\s[^>]*)?>).*(<\/(?:[^:]+:)?%s\s*>)/sU';
-    $result = $request;
-    foreach ($tags as $tag) {
-      $regex = sprintf($regexFormat, $tag, $tag);
-      $result = preg_replace($regex, '\1*****\2', $result);
-    }
-    return isset($result) ? $result : $request;
+  protected function RemoveSensitiveInfo($request)
+  {
+      $tags = array('authToken', 'authentication');
+      $regexFormat = '/(<(?:[^:]+:)?%s(?:\s[^>]*)?>).*(<\/(?:[^:]+:)?%s\s*>)/sU';
+      $result = $request;
+      foreach ($tags as $tag) {
+          $regex = sprintf($regexFormat, $tag, $tag);
+          $result = preg_replace($regex, '\1*****\2', $result);
+      }
+
+      return isset($result) ? $result : $request;
   }
 
   /**
    * @see AdsSoapClient::GenerateRequestInfoMessage()
    */
-  protected function GenerateRequestInfoMessage() {
-    return 'email=' . $this->GetEmail() . ' service=' . $this->GetServiceName()
-        . ' method=' . $this->GetLastMethodName() . ' responseTime='
-        . $this->GetLastResponseTime() . ' requestId='
-        . $this->GetLastRequestId() . ' server=' . $this->GetServer()
-        . ' isFault=' . $this->IsFault() . ' faultMessage='
-        . $this->GetLastFaultMessage();
+  protected function GenerateRequestInfoMessage()
+  {
+      return 'email='.$this->GetEmail().' service='.$this->GetServiceName()
+        .' method='.$this->GetLastMethodName().' responseTime='
+        .$this->GetLastResponseTime().' requestId='
+        .$this->GetLastRequestId().' server='.$this->GetServer()
+        .' isFault='.$this->IsFault().' faultMessage='
+        .$this->GetLastFaultMessage();
   }
 }
-
