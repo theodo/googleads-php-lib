@@ -48,13 +48,6 @@ use  \Google\Api\Ads\Common\Util\XmlUtils ;
  */
 
 
-
-
-
-
-
-
-
 if (!class_exists("ReportDefinitionReportType", false)) {
     /**
  * Enums for report types.

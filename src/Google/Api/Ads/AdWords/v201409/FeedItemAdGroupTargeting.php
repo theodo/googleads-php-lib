@@ -31,8 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
 if (!class_exists("FeedItemAdGroupTargeting", false)) {
     /**
    * Specifies the adgroup the request context must match in order for

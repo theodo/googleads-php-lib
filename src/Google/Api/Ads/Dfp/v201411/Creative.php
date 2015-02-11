@@ -31,20 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("Creative", false)) {
     /**
    * A {@code Creative} represents the media for the ad being served.

@@ -31,40 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("MobileCarrierTargeting", false)) {
     /**
    * Represents mobile carriers that are being targeted or excluded by the {@link LineItem}.

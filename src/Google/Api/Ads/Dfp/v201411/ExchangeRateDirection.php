@@ -31,36 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ExchangeRateDirection", false)) {
     /**
    * Determines which direction (from which currency to which currency) the exchange rate is in.

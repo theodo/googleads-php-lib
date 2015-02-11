@@ -31,47 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ExpressBusinessOperation", false)) {
     /**
    * A typed {@link Operation} class that uses an instance of {@link ExpressBusiness} as its operand.

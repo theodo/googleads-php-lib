@@ -31,31 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("InventoryUnitError", false)) {
     /**
    * Lists the generic errors associated with {@link AdUnit} objects.

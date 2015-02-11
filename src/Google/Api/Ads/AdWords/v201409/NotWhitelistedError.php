@@ -31,22 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("NotWhitelistedError", false)) {
     /**
    * Indicates that the customer is not whitelisted for accessing the API.

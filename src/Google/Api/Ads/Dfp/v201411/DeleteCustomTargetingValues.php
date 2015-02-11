@@ -31,21 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("DeleteCustomTargetingValues", false)) {
     /**
    * Represents the delete action that can be performed on

@@ -31,13 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
 if (!class_exists("SystemFeedGenerationData", false)) {
     /**
    * Configuration data allowing feed items to be populated for a system feed.

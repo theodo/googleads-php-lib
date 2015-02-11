@@ -31,9 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
 if (!class_exists("AdUnionId", false)) {
     /**
    * Represents an id indicating a grouping of Ads under some heuristic.

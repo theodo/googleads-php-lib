@@ -31,23 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("CustomCriteriaNode", false)) {
     /**
    * A {@link CustomCriteriaNode} is a node in the custom targeting tree. A custom

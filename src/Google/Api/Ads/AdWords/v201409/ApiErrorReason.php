@@ -31,21 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ApiErrorReason", false)) {
     /**
    * Interface that has a reason return an associated service error.

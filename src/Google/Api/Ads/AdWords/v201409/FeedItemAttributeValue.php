@@ -31,10 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
 if (!class_exists("FeedItemAttributeValue", false)) {
     /**
    * Represents a feed item's value for a particular feed attribute. A feed item's value is

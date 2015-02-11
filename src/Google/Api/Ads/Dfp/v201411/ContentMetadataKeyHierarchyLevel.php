@@ -31,13 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
 if (!class_exists("ContentMetadataKeyHierarchyLevel", false)) {
     /**
    * A {@code ContentMetadataKeyHierarchyLevel} represents one level in a

@@ -48,11 +48,6 @@ use  \Google\Api\Ads\Common\Util\XmlUtils ;
  */
 
 
-
-
-
-
-
 if (!class_exists("Paging", false)) {
     /**
  * Specifies the page of results to return in the response. A page is specified

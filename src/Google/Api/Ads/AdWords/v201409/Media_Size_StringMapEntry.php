@@ -31,8 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
 if (!class_exists("Media_Size_StringMapEntry", false)) {
     /**
    * This represents an entry in a map with a key of type Size

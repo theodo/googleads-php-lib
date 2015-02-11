@@ -31,19 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("NotNullError", false)) {
     /**
    * Caused by supplying a null value for an attribute that cannot be null.

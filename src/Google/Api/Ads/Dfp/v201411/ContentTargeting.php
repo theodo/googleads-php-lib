@@ -31,18 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ContentTargeting", false)) {
     /**
    * Used to target {@link LineItem}s to specific videos on a publisher's site.

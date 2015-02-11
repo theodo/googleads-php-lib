@@ -31,53 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ManualCPCAdGroupCriterionExperimentBidMultiplier", false)) {
     /**
    * AdGroupCriterion level bid multiplier used in manual CPC bidding strategies.

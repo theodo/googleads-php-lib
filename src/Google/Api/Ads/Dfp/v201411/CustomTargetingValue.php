@@ -31,16 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("CustomTargetingValue", false)) {
     /**
    * {@code CustomTargetingValue} represents a value used for custom targeting.

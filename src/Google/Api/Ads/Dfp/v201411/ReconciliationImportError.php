@@ -31,22 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ReconciliationImportError", false)) {
     /**
    * The API errors for reconciliation CSV import.

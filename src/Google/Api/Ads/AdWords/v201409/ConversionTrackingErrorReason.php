@@ -31,31 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ConversionTrackingErrorReason", false)) {
     /**
    * Enumerates all the possible reasons for a ConversionTypeError.

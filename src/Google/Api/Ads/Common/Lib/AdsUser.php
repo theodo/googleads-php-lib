@@ -30,10 +30,10 @@ namespace Google\Api\Ads\Common\Lib ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Util\Logger ;
-use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Util\SimpleOAuth2Handler ;
-use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Lib\SoapClientFactory ;
-use  \Google\Api\Ads\Common\LibGoogle\Api\Ads\Common\Lib\ValidationException ;
+use  \Google\Api\Ads\Common\Util\Logger ;
+use  \Google\Api\Ads\Common\Util\SimpleOAuth2Handler ;
+use  \Google\Api\Ads\Common\Lib\SoapClientFactory ;
+use  \Google\Api\Ads\Common\Lib\ValidationException ;
 
 /**
  * User class for all API modules using the Ads API.

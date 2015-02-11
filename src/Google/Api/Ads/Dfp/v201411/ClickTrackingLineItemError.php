@@ -31,10 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
 if (!class_exists("ClickTrackingLineItemError", false)) {
     /**
    * Click tracking is a special line item type with a number of unique errors as

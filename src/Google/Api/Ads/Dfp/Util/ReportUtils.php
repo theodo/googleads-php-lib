@@ -31,8 +31,8 @@ namespace Google\Api\Ads\Dfp\Util ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Dfp\UtilGoogle\Api\Ads\Common\Util\CurlUtils ;
-use  \Google\Api\Ads\Dfp\UtilGoogle\Api\Ads\Common\Util\DeprecationUtils ;
+use  \Google\Api\Ads\Common\Util\CurlUtils ;
+use  \Google\Api\Ads\Common\Util\DeprecationUtils ;
 
 /**
  * A collection of utility methods for working with reports.

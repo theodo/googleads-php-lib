@@ -31,9 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
 if (!class_exists("CampaignFeed", false)) {
     /**
    * CampaignFeeds are used to link a feed to a campaign using a matching function,

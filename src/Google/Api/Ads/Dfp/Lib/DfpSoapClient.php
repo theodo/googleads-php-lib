@@ -33,7 +33,7 @@ namespace Google\Api\Ads\Dfp\Lib ;
  * @author     Vincent Tsao
  * @see        AdsSoapClient
  */
-use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Lib\AdsSoapClient ;
+use  \Google\Api\Ads\Common\Lib\AdsSoapClient ;
 
 /**
  * An extension of the {@link AdsSoapClient} for Google's DoubleClick for

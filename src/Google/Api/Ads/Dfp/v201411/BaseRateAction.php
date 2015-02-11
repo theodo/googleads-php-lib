@@ -31,9 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
 if (!class_exists("BaseRateAction", false)) {
     /**
    * Represents the action that can be performed on {@link BaseRate} objects.

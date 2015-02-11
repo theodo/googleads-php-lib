@@ -31,19 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("CampaignLabel", false)) {
     /**
    * Manages the labels associated with a campaign.

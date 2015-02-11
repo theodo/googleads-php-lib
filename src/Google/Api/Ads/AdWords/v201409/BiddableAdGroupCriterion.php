@@ -31,16 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("BiddableAdGroupCriterion", false)) {
     /**
    * A biddable (positive) criterion in an adgroup.

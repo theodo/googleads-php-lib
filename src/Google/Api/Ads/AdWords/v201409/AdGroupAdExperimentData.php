@@ -31,7 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
 if (!class_exists("AdGroupAdExperimentData", false)) {
     /**
    * Data associated with an advertiser experiment for an AdGroupAd

@@ -31,10 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
 if (!class_exists("AudienceSegmentPage", false)) {
     /**
    * Represents a page of {@link AudienceSegment} objects.

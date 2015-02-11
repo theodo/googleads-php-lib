@@ -31,20 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("PremiumRatePage", false)) {
     /**
    * Captures a page of {@link PremiumRate} objects.

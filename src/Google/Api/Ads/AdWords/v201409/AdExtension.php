@@ -31,17 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("AdExtension", false)) {
     /**
    * Base class for AdExtension objects. An AdExtension is an extension to

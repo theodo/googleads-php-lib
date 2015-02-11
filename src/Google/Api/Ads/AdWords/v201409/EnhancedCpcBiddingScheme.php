@@ -31,34 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("EnhancedCpcBiddingScheme", false)) {
     /**
    * Enhanced CPC is a bidding strategy that raises your bids for clicks that seem more likely to

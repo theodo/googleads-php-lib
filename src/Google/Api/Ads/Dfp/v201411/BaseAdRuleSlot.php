@@ -31,8 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
 if (!class_exists("BaseAdRuleSlot", false)) {
     /**
    * Simple object representing an ad slot within an {@link AdRule}. Ad rule slots

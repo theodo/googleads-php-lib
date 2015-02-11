@@ -31,9 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
 if (!class_exists("AppUrl", false)) {
     /**
    * A URL for deep linking into an app for the given operating system.

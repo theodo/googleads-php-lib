@@ -31,13 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
 if (!class_exists("Company", false)) {
     /**
    * A {@code Company} represents an agency, a single advertiser or an entire

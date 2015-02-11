@@ -31,10 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
 if (!class_exists("CommonError", false)) {
     /**
    * A place for common errors that can be used across services.

@@ -31,29 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("LineItemCreativeAssociation", false)) {
     /**
    * A {@code LineItemCreativeAssociation} associates a {@link Creative} or {@link CreativeSet} with a

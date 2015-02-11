@@ -28,7 +28,7 @@ namespace Google\Api\Ads\Dfp\Util ;
  *             Version 2.0
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Dfp\UtilGoogle\Api\Ads\Dfp\Util\DateTimeUtils ;
+use  \Google\Api\Ads\Dfp\Util\DateTimeUtils ;
 
 /**
  * A utility class for handling PQL objects.

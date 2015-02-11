@@ -31,9 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
 if (!class_exists("CollectionSizeError", false)) {
     /**
    * Errors associated with the size of the given collection being

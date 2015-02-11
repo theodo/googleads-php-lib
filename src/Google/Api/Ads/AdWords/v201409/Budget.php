@@ -31,14 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
 if (!class_exists("Budget", false)) {
     /**
    * Budgets are used for managing the amount of money spent on AdWords.

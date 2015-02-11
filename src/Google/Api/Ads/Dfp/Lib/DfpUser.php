@@ -31,12 +31,12 @@ namespace Google\Api\Ads\Dfp\Lib ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Lib\AdsUser ;
-use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Util\ApiPropertiesUtils ;
-use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Util\AuthToken ;
-use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Util\DeprecationUtils ;
-use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Common\Util\Logger ;
-use  \Google\Api\Ads\Dfp\LibGoogle\Api\Ads\Dfp\Lib\DfpSoapClientFactory ;
+use  \Google\Api\Ads\Common\Lib\AdsUser ;
+use  \Google\Api\Ads\Common\Util\ApiPropertiesUtils ;
+use  \Google\Api\Ads\Common\Util\AuthToken ;
+use  \Google\Api\Ads\Common\Util\DeprecationUtils ;
+use  \Google\Api\Ads\Common\Util\Logger ;
+use  \Google\Api\Ads\Dfp\Lib\DfpSoapClientFactory ;
 
 /**
  * User class for the DoubleClick for Publishers API to create SOAP clients to

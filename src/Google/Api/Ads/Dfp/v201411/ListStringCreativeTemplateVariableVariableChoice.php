@@ -31,12 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
 if (!class_exists("ListStringCreativeTemplateVariableVariableChoice", false)) {
     /**
    * Stores variable choices that users can select from

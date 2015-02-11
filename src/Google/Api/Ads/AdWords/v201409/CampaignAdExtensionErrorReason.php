@@ -31,28 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("CampaignAdExtensionErrorReason", false)) {
     /**
    * Cannot operate on an adextensions under the wrong campaign

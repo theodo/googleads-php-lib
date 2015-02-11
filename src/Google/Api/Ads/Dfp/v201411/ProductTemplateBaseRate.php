@@ -31,25 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ProductTemplateBaseRate", false)) {
     /**
    * A base rate applied to a {@link ProductTemplate}.

@@ -31,18 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("CampaignAdExtension", false)) {
     /**
    * Represents a campaign level ad extension. A campaign ad extension specifies

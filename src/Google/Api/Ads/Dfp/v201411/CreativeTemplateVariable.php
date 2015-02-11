@@ -31,14 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
 if (!class_exists("CreativeTemplateVariable", false)) {
     /**
    * Represents a variable defined in a creative template.

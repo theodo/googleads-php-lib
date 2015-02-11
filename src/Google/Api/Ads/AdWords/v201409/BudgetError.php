@@ -31,15 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
 if (!class_exists("BudgetError", false)) {
     /**
    * A list of all the error codes being used by the common budget domain package.

@@ -48,8 +48,6 @@ use  \Google\Api\Ads\Common\Util\XmlUtils ;
  */
 
 
-
-
 if (!class_exists("PredicateOperator", false)) {
     /**
    * Defines the valid set of operators.

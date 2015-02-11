@@ -48,15 +48,6 @@ use  \Google\Api\Ads\Common\Util\XmlUtils ;
  */
 
 
-
-
-
-
-
-
-
-
-
 if (!class_exists("DownloadFormat", false)) {
     /**
  * Enum class that describes the supported formats for content downloads.

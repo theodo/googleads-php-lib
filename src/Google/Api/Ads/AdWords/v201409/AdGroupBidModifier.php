@@ -31,15 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
 if (!class_exists("AdGroupBidModifier", false)) {
     /**
    * Represents an adgroup level bid modifier override for campaign level criterion

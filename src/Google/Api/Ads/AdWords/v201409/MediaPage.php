@@ -31,17 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("MediaPage", false)) {
     /**
    * Page of media returned by the {@link MediaService} which includes

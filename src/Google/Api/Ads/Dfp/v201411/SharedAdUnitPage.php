@@ -31,23 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("SharedAdUnitPage", false)) {
     /**
    * Captures a page of {@link SharedAdUnit} objects.

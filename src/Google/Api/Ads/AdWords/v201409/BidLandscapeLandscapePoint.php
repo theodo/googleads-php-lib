@@ -31,15 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
 if (!class_exists("BidLandscapeLandscapePoint", false)) {
     /**
    * A set of estimates for a criterion's performance for a specific bid

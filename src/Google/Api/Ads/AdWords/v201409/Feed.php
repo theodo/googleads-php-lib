@@ -31,16 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("Feed", false)) {
     /**
    * A Feed identifies a source of data and its schema. The data for the Feed can either be

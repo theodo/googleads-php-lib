@@ -31,7 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
 if (!class_exists("FeedMapping", false)) {
     /**
    * A FeedMapping represents a mapping between feed attributes in a specific feed

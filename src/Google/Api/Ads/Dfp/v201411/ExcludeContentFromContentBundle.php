@@ -31,16 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ExcludeContentFromContentBundle", false)) {
     /**
    * The action used for explicitly excluding specific content from a {@link ContentBundle} object.

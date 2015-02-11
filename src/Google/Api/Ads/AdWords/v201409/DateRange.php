@@ -31,7 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
 if (!class_exists("DateRange", false)) {
     /**
    * Represents a range of dates that has either an upper or a lower bound.

@@ -31,32 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ProposalCompanyAssociation", false)) {
     /**
    * A {@code ProposalCompanyAssociation} represents a {@link Company} associated with the

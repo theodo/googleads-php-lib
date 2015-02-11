@@ -31,18 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("PremiumRate", false)) {
     /**
    * A premium rate holding a set of {@link PremiumRateValue} objects with the

@@ -31,9 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
 if (!class_exists("AudienceSegmentDataProvider", false)) {
     /**
    * Data provider that owns this segment. For a {@link FirstPartyAudienceSegment}, it would be the

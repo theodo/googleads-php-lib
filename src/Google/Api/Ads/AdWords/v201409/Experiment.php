@@ -31,12 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
 if (!class_exists("Experiment", false)) {
     /**
    * Class representing a experiment for the ExperimentService.

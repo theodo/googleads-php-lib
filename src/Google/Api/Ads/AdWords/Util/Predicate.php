@@ -48,7 +48,6 @@ use  \Google\Api\Ads\Common\Util\XmlUtils ;
  */
 
 
-
 if (!class_exists("Predicate", false)) {
     /**
    * Specifies how an entity (eg. adgroup, campaign, criterion, ad) should be filtered.

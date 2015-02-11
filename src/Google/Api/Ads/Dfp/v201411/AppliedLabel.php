@@ -31,8 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
 if (!class_exists("AppliedLabel", false)) {
     /**
    * Represents a {@link Label} that can be applied to an entity. To negate an

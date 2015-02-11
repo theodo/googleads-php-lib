@@ -31,36 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("InternalRedirectCreative", false)) {
     /**
    * A {@code Creative} hosted by either DoubleClick for Advertisers (DFA) or DART

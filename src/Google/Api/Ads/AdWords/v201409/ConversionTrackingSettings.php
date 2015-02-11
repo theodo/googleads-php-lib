@@ -31,31 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ConversionTrackingSettings", false)) {
     /**
    * A collection of customer-wide settings related to AdWords Conversion Tracking. Settings

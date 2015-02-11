@@ -31,10 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
 if (!class_exists("AppUrlList", false)) {
     /**
    * Wrapper object for a list of AppUrls. The list can be cleared if a request contains

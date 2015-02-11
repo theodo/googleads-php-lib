@@ -29,8 +29,8 @@ namespace Google\Api\Ads\Common\Util ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Util\OAuth2Handler ;
-use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Util\CurlUtils ;
+use  \Google\Api\Ads\Common\Util\OAuth2Handler ;
+use  \Google\Api\Ads\Common\Util\CurlUtils ;
 
 /**
  * A simple OAuth 2.0 handler.

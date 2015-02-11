@@ -48,9 +48,6 @@ use  \Google\Api\Ads\Common\Util\XmlUtils ;
  */
 
 
-
-
-
 if (!class_exists("DateRange", false)) {
     /**
  * Represents a range of dates that has either an upper or a lower bound.

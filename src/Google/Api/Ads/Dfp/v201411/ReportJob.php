@@ -31,22 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ReportJob", false)) {
     /**
    * Represents a report job that will be run to retrieve performance and

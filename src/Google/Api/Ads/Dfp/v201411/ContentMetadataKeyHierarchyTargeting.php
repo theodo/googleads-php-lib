@@ -31,17 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ContentMetadataKeyHierarchyTargeting", false)) {
     /**
    * Represents one or more {@link CustomTargetingValue custom targeting values} from different

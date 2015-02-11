@@ -31,17 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("CreativeAsset", false)) {
     /**
    * A {@code CreativeAsset} is an asset that can be used in creatives.

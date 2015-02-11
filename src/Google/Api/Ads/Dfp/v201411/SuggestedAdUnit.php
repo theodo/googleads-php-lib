@@ -31,32 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("SuggestedAdUnit", false)) {
     /**
    * A {@code SuggestedAdUnit} represents a suggestion for a new ad unit, based on an ad tag that has

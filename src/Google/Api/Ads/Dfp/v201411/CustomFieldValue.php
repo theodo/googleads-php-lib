@@ -31,18 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("CustomFieldValue", false)) {
     /**
    * The value of a {@link CustomField} that does not have a {@link CustomField#dataType}

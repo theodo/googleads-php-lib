@@ -31,10 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
 if (!class_exists("CreativeTemplate", false)) {
     /**
    * A template upon which a creative can be created.

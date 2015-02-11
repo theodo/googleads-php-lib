@@ -31,20 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("DateTimeRangeTargetingError", false)) {
     /**
    * Lists all date time range errors caused by associating a line item with a targeting

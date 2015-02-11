@@ -31,23 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("RateCard", false)) {
     /**
    * Defines a collection of rules, including base rates for product templates and products, premiums,

@@ -31,8 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
 if (!class_exists("AudienceExtensionError", false)) {
     /**
    * Errors associated with audience extension enabled line items

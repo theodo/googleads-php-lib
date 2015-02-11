@@ -31,23 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("QuotaError", false)) {
     /**
    * Describes a client-side error on which a user is attempting

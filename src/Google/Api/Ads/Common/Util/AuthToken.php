@@ -31,8 +31,8 @@ namespace Google\Api\Ads\Common\Util ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Util\AuthTokenException ;
-use  \Google\Api\Ads\Common\UtilGoogle\Api\Ads\Common\Util\CurlUtils ;
+use  \Google\Api\Ads\Common\Util\AuthTokenException ;
+use  \Google\Api\Ads\Common\Util\CurlUtils ;
 
 /**
  * Client used to retrieve authentication tokens from the Client Login API.

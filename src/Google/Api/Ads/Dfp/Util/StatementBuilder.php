@@ -28,8 +28,8 @@ namespace Google\Api\Ads\Dfp\Util ;
  *             Version 2.0
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Dfp\UtilGoogle\Api\Ads\Common\Lib\ValidationException ;
-use  \Google\Api\Ads\Dfp\UtilGoogle\Api\Ads\Dfp\Util\Pql ;
+use  \Google\Api\Ads\Common\Lib\ValidationException ;
+use  \Google\Api\Ads\Dfp\Util\Pql ;
 
 /**
  * {@code StatementBuilder} allows for statements to be constructed in parts.

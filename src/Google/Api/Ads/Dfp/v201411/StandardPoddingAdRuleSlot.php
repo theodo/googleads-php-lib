@@ -31,9 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
 if (!class_exists("StandardPoddingAdRuleSlot", false)) {
     /**
    * An ad rule slot with standard podding. A standard pod is a series of video ads played

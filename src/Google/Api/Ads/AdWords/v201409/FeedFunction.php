@@ -31,18 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("FeedFunction", false)) {
     /**
    * Represents a function where its operator is applied to its argument operands

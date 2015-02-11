@@ -31,12 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
 if (!class_exists("CollectionSizeError", false)) {
     /**
    * Errors associated with the size of the given collection being

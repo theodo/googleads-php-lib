@@ -31,20 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("AdWordsConversionTrackerMarkupLanguage", false)) {
     /**
    * Controls the markup language in which the snippet will be written.

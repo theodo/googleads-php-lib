@@ -31,21 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("FeedItemValidationDetail", false)) {
     /**
    * Contains offline-validation and approval results for a given FeedItem and FeedMapping. Each

@@ -31,14 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
 if (!class_exists("ExchangeRateError", false)) {
     /**
    * Lists all errors associated with {@link ExchangeRate} objects.

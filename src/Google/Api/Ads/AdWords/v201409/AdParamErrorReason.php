@@ -31,19 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("AdParamErrorReason", false)) {
     /**
    * The same ad param cannot be specified in multiple operations

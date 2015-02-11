@@ -31,17 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("InternalApiError", false)) {
     /**
    * Indicates that a server-side error has occured. {@code InternalApiError}s

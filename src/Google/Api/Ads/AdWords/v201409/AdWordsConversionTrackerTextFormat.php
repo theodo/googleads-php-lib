@@ -31,21 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("AdWordsConversionTrackerTextFormat", false)) {
     /**
    * Text format to display on the conversion page.

@@ -31,11 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
 if (!class_exists("ContentBundle", false)) {
     /**
    * A {@code ContentBundle} is a grouping of individual {@link Content}. A {@code ContentBundle} is

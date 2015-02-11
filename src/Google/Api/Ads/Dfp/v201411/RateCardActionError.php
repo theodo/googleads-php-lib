@@ -31,22 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("RateCardActionError", false)) {
     /**
    * An error lists all error reasons associated with performing action

@@ -38,8 +38,8 @@ use  \Google\Api\Ads\Common\Util\ApiPropertiesUtils ;
 use  \Google\Api\Ads\Common\Util\AuthToken ;
 use  \Google\Api\Ads\Common\Util\DeprecationUtils ;
 use  \Google\Api\Ads\AdWords\Util\ReportUtils ;
-use  \Google\Api\Ads\AdWords\LibAdWordsSoapClientFactory ;
-use  \Google\Api\Ads\AdWords\LibAdWordsConstants ;
+use  \AdWordsSoapClientFactory ;
+use  \AdWordsConstants ;
 
 /**
  * User class for the AdWords API to create SOAP clients to the available API

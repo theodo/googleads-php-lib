@@ -31,23 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("PauseLiveStreamEventAds", false)) {
     /**
    * The action used for pausing ads for {@link LiveStreamEvent} objects.

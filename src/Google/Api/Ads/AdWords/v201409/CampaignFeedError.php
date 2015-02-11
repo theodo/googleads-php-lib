@@ -31,10 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
 if (!class_exists("CampaignFeedError", false)) {
     /**
    * Represents an error for the CampaignFeedService.

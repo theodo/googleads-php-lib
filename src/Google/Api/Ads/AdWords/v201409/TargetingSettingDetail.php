@@ -31,15 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
 if (!class_exists("TargetingSettingDetail", false)) {
     /**
    * Specifies if criteria of this type group should be used to restrict

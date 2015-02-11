@@ -31,20 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("SoapResponseHeader", false)) {
     /**
    * Defines the elements within the header of a SOAP response.

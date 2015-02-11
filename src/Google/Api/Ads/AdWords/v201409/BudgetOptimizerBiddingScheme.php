@@ -31,16 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("BudgetOptimizerBiddingScheme", false)) {
     /**
    * In budget optimizer, Google automatically places bids for the user based on

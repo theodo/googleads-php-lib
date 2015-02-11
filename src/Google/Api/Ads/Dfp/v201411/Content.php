@@ -31,11 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
 if (!class_exists("Content", false)) {
     /**
    * A {@code Content} represents video metadata from a publisher's

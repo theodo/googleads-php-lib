@@ -31,21 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("PublisherQueryLanguageContextError", false)) {
     /**
    * An error that occurs while executing a PQL query contained in

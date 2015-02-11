@@ -31,25 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("FirstPartyAudienceSegmentRule", false)) {
     /**
    * Rule of a {@link FirstPartyAudienceSegment} that defines user's eligibility criteria to be part

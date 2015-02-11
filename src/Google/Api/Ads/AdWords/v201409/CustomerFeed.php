@@ -31,11 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
 if (!class_exists("CustomerFeed", false)) {
     /**
    * CustomerFeeds are used to link a feed to the customer using a matching function,

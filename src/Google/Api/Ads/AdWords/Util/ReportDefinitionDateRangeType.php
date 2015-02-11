@@ -48,14 +48,6 @@ use  \Google\Api\Ads\Common\Util\XmlUtils ;
  */
 
 
-
-
-
-
-
-
-
-
 if (!class_exists("ReportDefinitionDateRangeType", false)) {
     /**
  * Enums for date range of report.

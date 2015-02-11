@@ -48,10 +48,6 @@ use  \Google\Api\Ads\Common\Util\XmlUtils ;
  */
 
 
-
-
-
-
 if (!class_exists("OrderBy", false)) {
     /**
  * Specifies how the resulting information should be sorted.

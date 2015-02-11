@@ -31,11 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
 if (!class_exists("BaseCustomFieldValue", false)) {
     /**
    * The value of a {@link CustomField} for a particular entity.

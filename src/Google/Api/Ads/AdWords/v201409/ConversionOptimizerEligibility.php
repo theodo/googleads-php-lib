@@ -31,23 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ConversionOptimizerEligibility", false)) {
     /**
    * Eligibility data for Campaign to transition to Conversion Optimizer

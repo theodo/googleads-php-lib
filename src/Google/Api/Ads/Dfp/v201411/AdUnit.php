@@ -31,8 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
 if (!class_exists("AdUnit", false)) {
     /**
    * An {@code AdUnit} represents a chunk of identified inventory for the

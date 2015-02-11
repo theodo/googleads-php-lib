@@ -31,17 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("BiddableAdGroupCriterionExperimentData", false)) {
     /**
    * Data associated with an advertiser experiment for this {@link BiddableAdGroupCriterion}.

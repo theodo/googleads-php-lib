@@ -31,22 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("SharedAdUnit", false)) {
     /**
    * An ad unit that is shared from a distributor network.

@@ -31,14 +31,6 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 
 
-
-
-
-
-
-
-
-
 if (!class_exists("FeedItemScheduling", false)) {
     /**
    * Represents a collection of FeedItem schedules specifying all time intervals for which

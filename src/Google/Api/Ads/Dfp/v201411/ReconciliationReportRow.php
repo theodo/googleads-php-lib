@@ -31,24 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ReconciliationReportRow", false)) {
     /**
    * A {@code ReconciliationReportRow} represents each row in the reconciliation report.

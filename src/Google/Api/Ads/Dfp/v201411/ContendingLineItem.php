@@ -31,20 +31,6 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if (!class_exists("ContendingLineItem", false)) {
     /**
    * Describes contending line items for a {@link Forecast}.
