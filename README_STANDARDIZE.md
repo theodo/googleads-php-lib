@@ -2,7 +2,8 @@ How to standardize :
 =========
 
  * With a python custom script:
-    * EXECUTE cs php fixer BEFORE !!! (Will give very bad results otherwise)
+    * Get Sensiolabs php cs fixer there : http://cs.sensiolabs.org/
+    * EXECUTE cs php fixer BEFORE standardizing!!! (Will give very bad results otherwise)
     * ```python standardize.py``` (For now it justs takes the src/ folder) 
     * Remove the first space that is at the first line of your first file generated
 
