@@ -80,8 +80,13 @@ def treat_files_of_dir( path ):
                         filename = path_clean_file+'/'+class_name+".php"
                         f = open( filename, "w")
                         print "Writing %s" % filename
-                        number_line = 1;
+                        number_line = 1
+                        consec_white_lines = 0
                         for line_w in header:
+                            if "" == line_w.rstrip():
+                                consec_white_lines += 1
+                            else:
+                                consec_white_lines = 0
                             if 1 == number_line:
                                 line_w = line_w.rstrip()+'\n'
                             if 2 == number_line:
@@ -91,10 +96,16 @@ def treat_files_of_dir( path ):
                                 for line_use in extra_use:
                                     f.write( line_use )
                                 put_extra_use = True
-                            write( f, line_w, entities )
-                            number_line += 1
+                            if 2 >= consec_white_lines:
+                                write( f, line_w, entities )
+                                number_line += 1
                         for line_w in body:
-                            write( f, line_w, entities )
+                            if "" == line_w.rstrip():
+                                consec_white_lines += 1
+                            else:
+                                consec_white_lines = 0
+                            if 2 >= consec_white_lines:
+                                write( f, line_w, entities )
                         f.write( '\n' )
                         f.write( '' )
                         f.close()
@@ -113,8 +124,13 @@ def treat_files_of_dir( path ):
                             relative_path = line.split( "'" )[1]
                             go_up = relative_path.count( '/..' )
                             namespace_array = namespace.split( '\\' )
-                            use_path = '\\'.join( namespace_array[0:len(namespace_array)-go_up] )+relative_path[3*go_up:].replace( '/', '\\' ).replace( '.php', '' )
-                            header.append( 'use  \\%s ;\n' % use_path )
+                            if 0 != go_up:
+                                use_path = '\\'.join( namespace_array[0:len(namespace_array)-go_up] )+relative_path[3*go_up:].replace( '/', '\\' ).replace( '.php', '' )
+                            else:
+                                use_path = relative_path.replace( '/', '\\' ).replace( '.php', '' )
+                            useline = 'use \\%s ;\n' % use_path                         
+                            header.append( useline )
+                            print "[USE] |%s| changed to |%s|" % (line, useline)
                         except IndexError:
                             try:
                                 using = line.split( '"' )[1].replace( '.php', '' ).replace( '/', '\\' )
