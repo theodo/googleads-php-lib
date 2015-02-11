@@ -1,11 +1,11 @@
 {
-    "name": "googleads/googleads-php-lib",
-    "description": "Google Ads APIs Client Library for PHP (AdWords, Adx, and DFP)",
+    "name": "theodo/googleads-php-lib",
+    "description": "Google Ads APIs Client Library for PHP (AdWords, Adx, and DFP) adapted for Sf2",
     "require": {
         "php": ">=5.2.0"
     },
     "type": "library",
-    "homepage": "https://github.com/googleads/googleads-php-lib",
+    "homepage": "https://github.com/theodo/googleads-php-lib",
     "license": "Apache-2.0",
     "include-path": ["src/"],
     "autoload": {
