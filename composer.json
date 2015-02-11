@@ -9,10 +9,9 @@
     "license": "Apache-2.0",
     "include-path": ["src/"],
     "autoload": {
-      "classmap": [
-        "src/Google/Api/Ads/AdWords/Lib",
-        "src/Google/Api/Ads/Dfp/Lib"
-      ]
+        "psr-4" : {
+            "Google\\Api\\Ads\\" : "src/Google/Api/Ads/"
+        }
     },
     "authors": [
       {
