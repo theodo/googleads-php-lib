@@ -37,7 +37,7 @@ use \Google\Api\Ads\Common\Lib\AdsUser;
  * @package GoogleApiAdsCommon
  * @subpackage Lib
  */
-abstract class \SoapClientFactory
+abstract class SoapClientFactory
 {
 
   /**

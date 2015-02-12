@@ -38,7 +38,7 @@ use \Google\Api\Ads\Common\Lib\SoapClientFactory;
  * @package GoogleApiAdsDfp
  * @subpackage Lib
  */
-class DfpSoapClientFactory extends \SoapClientFactory
+class DfpSoapClientFactory extends SoapClientFactory
 {
 
   /**

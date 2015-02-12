@@ -1,6 +1,9 @@
 <?php
 namespace Google\Api\Ads\Dfp\Util ;
 
+use \Google\Api\Ads\Dfp\v201411\Value;
+use \Google\Api\Ads\Dfp\v201411\ResultSet;
+use \Google\Api\Ads\Dfp\v201411\Row;
 /**
  * A utility class for handling PQL objects.
  *

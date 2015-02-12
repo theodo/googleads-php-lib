@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the CampaignService
+ * Contains all client objects for the LabelService
  * service.
  *
  * PHP version 5

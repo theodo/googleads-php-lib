@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the FeedItemService
+ * Contains all client objects for the ManagedCustomerService
  * service.
  *
  * PHP version 5
@@ -35,6 +35,10 @@ if (!class_exists("Operation", false)) {
     /**
    * This represents an operation that includes an operator and an operand
    * specified type.
+   *
+   *
+   *
+   * Errors returned when Authentication failed.
    * @package Google_Api_Ads_AdWords_v201409
    * @subpackage v201409
    */

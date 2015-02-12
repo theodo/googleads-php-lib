@@ -1,6 +1,8 @@
 <?php
 namespace Google\Api\Ads\Dfp\Util ;
 
+use \Google\Api\Ads\Dfp\v201411\DfpDateTime;
+use \Google\Api\Ads\Dfp\v201411\Date;
 /**
  * A utility class for converting PHP DateTime objects to DFP native objects and
  * vice versa.
@@ -40,65 +42,65 @@ namespace Google\Api\Ads\Dfp\Util ;
 class DateTimeUtils
 {
 
-  /**
-   * ISO-8601 date time format (example: 2005-08-15T15:52:01+00:00).
-   */
-  const ISO8601 = "Y-m-d\TH:i:sP";
+    /**
+     * ISO-8601 date time format (example: 2005-08-15T15:52:01+00:00).
+     */
+    const ISO8601 = "Y-m-d\TH:i:sP";
 
-  /**
-   * Format string used to format a DateTime for use with DFP PQL.
-   *
-   * @var string
-   * @deprecated
-   */
-  public static $DFP_DATE_TIME_STRING_FORMAT = 'Y-m-d\TH:i:s';
+    /**
+     * Format string used to format a DateTime for use with DFP PQL.
+     *
+     * @var string
+     * @deprecated
+     */
+    public static $DFP_DATE_TIME_STRING_FORMAT = 'Y-m-d\TH:i:s';
 
     const DFP_DATE_PATTERN = "%04d-%02d-%02d";
 
-  /**
-   * {@link DateTimeUtils} is meant to be used statically.
-   */
-  private function __construct()
-  {
-  }
+    /**
+     * {@link DateTimeUtils} is meant to be used statically.
+     */
+    private function __construct()
+    {
+    }
 
-  /**
-   * @deprecated use ToDfpDateTime() instead
-   */
-  public static function GetDfpDateTime(DateTime $dateTime)
-  {
-      return self::ToDfpDateTime($dateTime);
-  }
+    /**
+     * @deprecated use ToDfpDateTime() instead
+     */
+    public static function GetDfpDateTime(DateTime $dateTime)
+    {
+        return self::ToDfpDateTime($dateTime);
+    }
 
-  /**
-   * @deprecated use FromDfpDateTime() instead
-   */
-  public static function GetDateTime(DfpDateTime $dfpDateTime,
-      $timezone = null)
-  {
-      return self::FromDfpDateTime($dfpDateTime);
-  }
+    /**
+     * @deprecated use FromDfpDateTime() instead
+     */
+    public static function GetDateTime(DfpDateTime $dfpDateTime,
+                                       $timezone = null)
+    {
+        return self::FromDfpDateTime($dfpDateTime);
+    }
 
-  /**
-   * Converts a PHP DateTime to a DfpDateTime.
-   *
-   * @param DateTime $dateTime a PHP DateTime object
-   * @return DfpDateTime a DfpDateTime object
-   */
-  public static function ToDfpDateTime(DateTime $dateTime)
-  {
-      $result = new DfpDateTime();
-      if (class_exists('Date', false)) {
-          $result->date = new Date();
-      }
-      $result->date->year = (int) $dateTime->format('Y');
-      $result->date->month = (int) $dateTime->format('m');
-      $result->date->day = (int) $dateTime->format('d');
-      $result->hour = (int) $dateTime->format('H');
-      $result->minute = (int) $dateTime->format('i');
-      $result->second = (int) $dateTime->format('s');
-      $result->timeZoneID = $dateTime->format('e');
+    /**
+     * Converts a PHP DateTime to a DfpDateTime.
+     *
+     * @param DateTime $dateTime a PHP DateTime object
+     * @return DfpDateTime a DfpDateTime object
+     */
+    public static function ToDfpDateTime(DateTime $dateTime)
+    {
+        $result = new DfpDateTime();
+        if (class_exists('Date', false)) {
+            $result->date = new Date();
+        }
+        $result->date->year = (int)$dateTime->format('Y');
+        $result->date->month = (int)$dateTime->format('m');
+        $result->date->day = (int)$dateTime->format('d');
+        $result->hour = (int)$dateTime->format('H');
+        $result->minute = (int)$dateTime->format('i');
+        $result->second = (int)$dateTime->format('s');
+        $result->timeZoneID = $dateTime->format('e');
 
-      return $result;
-  }
-
+        return $result;
+    }
+}

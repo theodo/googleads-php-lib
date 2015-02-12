@@ -1,6 +1,7 @@
 <?php
 namespace Google\Api\Ads\Dfp\Lib ;
 
+use \Google\Api\Ads\Common\Lib\SoapClientFactory;
 /**
  * User class for the DoubleClick for Publishers API to create SOAP clients to
  * the available API services.
@@ -168,13 +169,13 @@ class DfpUser extends AdsUser
    *     <var>NULL</var>, then the default version will be used
    * @param string $server the server to make the request to. If
    *     <var>NULL</var>, then the default server will be used
-   * @param \SoapClientFactory $serviceFactory the factory to create the client.
+   * @param SoapClientFactory $serviceFactory the factory to create the client.
    *     If <var>NULL</var>, then the built-in SOAP client factory will be used
    * @return \SoapClient the instantiated service
    * @throws ServiceException if an error occurred when getting the service
    */
   public function GetService($serviceName, $version = null, $server = null,
-      \SoapClientFactory $serviceFactory = null)
+      SoapClientFactory $serviceFactory = null)
   {
       $this->ValidateUser();
       if (!isset($serviceFactory)) {

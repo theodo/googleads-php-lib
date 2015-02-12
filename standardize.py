@@ -8,19 +8,20 @@ def treat_files_of_dir( path ):
     root_dir_cleaned = 'src'
     nb_of_files_read = 0
     nb_of_classes_read = 0
+    dynamically_loading_service_name_classes_auto = []
+    services = []
     for root, dirs, files in os.walk(path):
         for name in files:
             if name.endswith((".php")):
                 nb_of_files_read += 1
                 mynewhandle = open(root+'/'+name, "r")
-                print "Scanning %s/%s" % (root, name)
+                print "         Scanning %s/%s" % (root, name)
                 file_as_a_list = []
                 while True:
                     theline = mynewhandle.readline()
                     if len(theline) == 0:
                         break
                 
-                    # Now process the line we've just read
                     if "@param" in theline:
                         file_as_a_list.append( { 'param' : theline } )
                     elif ' * ' in theline or '* ' in theline or '/*' in theline or '*/' in theline or '//' in theline:
@@ -40,22 +41,24 @@ def treat_files_of_dir( path ):
                             nb_of_classes_read += 1
                             file_as_a_list.append( { 'class' : theline } )
                             class_name_detected = theline.split( 'class ')[1].split()[0].rstrip()
-                            try: 
-                                test = entities[ class_name_detected ]
-                            except KeyError:
-                                print "%s Already defined !!!" % class_name_detected
-                                entities[ class_name_detected ] = root.replace( path, '' ).replace( '/', '\\' )
+                            if class_name_detected in entities.keys():
+                                print "[WARNING]    %s Already defined !!!" % class_name_detected
+                            entities[ class_name_detected ] = root.replace( path, '' ).replace( '/', '\\' )
+                            if class_name_detected.endswith(("Service")):
+                                services.append( class_name_detected )
                     elif "{" in theline:
                         file_as_a_list.append( { 'opening' : theline } )
                     elif theline.rstrip() == "":
                         file_as_a_list.append( { 'empty' : theline } )
                     else:
                         file_as_a_list.append( { '.' : theline } )
+                    if 'new $serviceName' in theline and class_name_detected not in dynamically_loading_service_name_classes_auto:
+                        dynamically_loading_service_name_classes_auto.append( class_name_detected )
                 # pp.pprint( file_as_a_list )
                 mynewhandle.close()
                 paths[ root+'$'+name.replace( '.php', '' ) ] = file_as_a_list
             else:
-                print "NON PHP FILE: %s/%s copy to %s/%s/%s" % (root, name, root_dir_cleaned,root.replace(path, ""),name)
+                print "[NON PHP FILE]   %s/%s copied to %s/%s/%s" % (root, name, root_dir_cleaned,root.replace(path, ""),name)
                 if not os.path.exists( root_dir_cleaned+'/'+root.replace(path, "") ):
                     os.makedirs( root_dir_cleaned+'/'+root.replace(path, "") )
                 shutil.copy2( root+'/'+name, root_dir_cleaned+'/'+root.replace(path, "")+"/"+name )
@@ -74,6 +77,12 @@ def treat_files_of_dir( path ):
         extra_use = []
         header = []
         body = []
+        if class_name in dynamically_loading_service_name_classes_auto:
+            for service in services:
+                if service in entities:
+                    useline = 'use '+entities[ service ]+'\\'+service+';\n'
+                    if useline not in extra_use:
+                        extra_use.append( useline )
         for line_object in FaaList:
             for type_of_line, line in line_object.iteritems():
                 if "param" == type_of_line:
@@ -96,25 +105,31 @@ def treat_files_of_dir( path ):
                         filename = path_clean_file+'/'+class_name+".php"
                         f = open( filename, "w")
                         nb_of_files_written += 1
-                        print "Writing %s" % filename
+                        print "         Writing %s" % filename
                         number_line = 1
                         consec_white_lines = 0
+                        local_braces_counter = 0
                         for line_w in header:
                             if "" == line_w.rstrip():
                                 if 2 > consec_white_lines:
                                     write( f, line_w, entities )
                                 consec_white_lines += 1
                             else:
+                                if '{' in line_w:
+                                    local_braces_counter += 1
+                                if '}' in line_w:
+                                    local_braces_counter -= 1
                                 consec_white_lines = 0
                                 if 1 == number_line:
                                     line_w = line_w.rstrip()+'\n'
                                 if 2 == number_line:
                                     namespace_line = 'namespace '+namespace+' ;\n\n'
                                     f.write( namespace_line )
-                                if "use" == type_of_line and not put_extra_use:
-                                    for line_use in extra_use:
-                                        f.write( line_use )
-                                    put_extra_use = True
+                                    if not put_extra_use:
+                                        for line_use in extra_use:
+                                            if line_use not in header:
+                                                f.write( line_use )
+                                        put_extra_use = True
                                 write( f, line_w, entities )
                             number_line += 1
                         consec_white_lines = 0
@@ -127,6 +142,10 @@ def treat_files_of_dir( path ):
                                 consec_white_lines = 0
                                 write( f, line_w, entities )
                         consec_white_lines = 0
+                        if 0 < local_braces_counter:
+                            while local_braces_counter > 0:
+                                f.write( '}' )
+                                local_braces_counter -= 1
                         f.write( '\n' )
                         f.write( '' )
                         f.close()
@@ -151,7 +170,6 @@ def treat_files_of_dir( path ):
                                 use_path = relative_path.replace( '/', '\\' ).replace( '.php', '' )
                             useline = 'use \\%s;\n' % use_path                         
                             header.append( useline )
-                            print "[USE] |%s| changed to |%s|" % (line, useline)
                         except IndexError:
                             try:
                                 using = line.split( '"' )[1].replace( '.php', '' ).replace( '/', '\\' )

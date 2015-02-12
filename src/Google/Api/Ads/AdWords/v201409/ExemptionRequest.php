@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the AdGroupCriterionService
+ * Contains all client objects for the AdGroupAdService
  * service.
  *
  * PHP version 5

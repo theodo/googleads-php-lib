@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the AdGroupCriterionService
+ * Contains all client objects for the TargetingIdeaService
  * service.
  *
  * PHP version 5
@@ -34,6 +34,10 @@ use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 if (!class_exists("AdGroupCriterionErrorReason", false)) {
     /**
    * The reasons for the target error.
+   *
+   *
+   *
+   * Represents data about a bidlandscape for an adgroup.
    * @package Google_Api_Ads_AdWords_v201409
    * @subpackage v201409
    */

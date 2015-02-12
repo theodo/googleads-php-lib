@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the AdGroupCriterionService
+ * Contains all client objects for the TargetingIdeaService
  * service.
  *
  * PHP version 5
@@ -35,6 +35,10 @@ if (!class_exists("PolicyViolationKey", false)) {
     /**
    * Key of the violation. The key is used for referring to a violation when
    * filing an exemption request.
+   *
+   *
+   *
+   * Represents data about a bidlandscape for an adgroup.
    * @package Google_Api_Ads_AdWords_v201409
    * @subpackage v201409
    */

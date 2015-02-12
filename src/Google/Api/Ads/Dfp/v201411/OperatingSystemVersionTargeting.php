@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\Dfp\v201411 ;
 
 /**
- * Contains all client objects for the ForecastService
+ * Contains all client objects for the AdRuleService
  * service.
  *
  * PHP version 5

@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the FeedItemService
+ * Contains all client objects for the MediaService
  * service.
  *
  * PHP version 5
@@ -45,7 +45,7 @@ if (!class_exists("QueryResponse", false)) {
 
     /**
      * @access public
-     * @var FeedItemPage
+     * @var MediaPage
      */
     public $rval;
 

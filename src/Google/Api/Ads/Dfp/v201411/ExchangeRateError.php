@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\Dfp\v201411 ;
 
 /**
- * Contains all client objects for the ExchangeRateService
+ * Contains all client objects for the PublisherQueryLanguageService
  * service.
  *
  * PHP version 5

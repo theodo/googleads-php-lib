@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\Dfp\v201411 ;
 
 /**
- * Contains all client objects for the ProductTemplateService
+ * Contains all client objects for the BaseRateService
  * service.
  *
  * PHP version 5

@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the FeedItemService
+ * Contains all client objects for the MediaService
  * service.
  *
  * PHP version 5
@@ -37,10 +37,10 @@ if (!class_exists("Query", false)) {
    *
    *
    *
-   * Returns the list of FeedItems that match the query.
+   * Returns the list of {@link Media} objects that match the query.
    *
    * @param query The SQL-like AWQL query string
-   * @returns A list of FeedItems
+   * @returns A list of {@code Media} objects.
    * @throws ApiException when the query is invalid or there are errors processing the request.
    * @package Google_Api_Ads_AdWords_v201409
    * @subpackage v201409

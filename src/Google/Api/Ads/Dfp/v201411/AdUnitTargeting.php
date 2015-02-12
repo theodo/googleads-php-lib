@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\Dfp\v201411 ;
 
 /**
- * Contains all client objects for the ProductTemplateService
+ * Contains all client objects for the AdRuleService
  * service.
  *
  * PHP version 5
@@ -29,6 +29,7 @@ namespace Google\Api\Ads\Dfp\v201411 ;
  *             Version 2.0
  */
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
+
 
 if (!class_exists("AdUnitTargeting", false)) {
     /**

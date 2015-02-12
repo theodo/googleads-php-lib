@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the CampaignFeedService
+ * Contains all client objects for the ManagedCustomerService
  * service.
  *
  * PHP version 5
@@ -34,6 +34,10 @@ use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 if (!class_exists("OperatorErrorReason", false)) {
     /**
    * The reasons for the validation error.
+   *
+   *
+   *
+   * Errors returned when Authentication failed.
    * @package Google_Api_Ads_AdWords_v201409
    * @subpackage v201409
    */

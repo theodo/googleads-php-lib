@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the FeedItemService
+ * Contains all client objects for the CampaignService
  * service.
  *
  * PHP version 5
@@ -29,6 +29,7 @@ namespace Google\Api\Ads\AdWords\v201409 ;
  *             Version 2.0
  */
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
+
 
 if (!class_exists("CustomParameter", false)) {
     /**

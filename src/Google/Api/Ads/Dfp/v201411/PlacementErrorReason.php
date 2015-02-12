@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\Dfp\v201411 ;
 
 /**
- * Contains all client objects for the ContentBundleService
+ * Contains all client objects for the PlacementService
  * service.
  *
  * PHP version 5

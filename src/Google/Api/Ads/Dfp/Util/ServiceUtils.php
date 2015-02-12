@@ -1,6 +1,7 @@
 <?php
 namespace Google\Api\Ads\Dfp\Util ;
 
+use \Google\Api\Ads\Dfp\Lib\DfpSoapClient;
 /**
  * This class is now deprecated, please see this wiki article for more
  * information:

@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the BudgetOrderService
+ * Contains all client objects for the ReportDefinitionService
  * service.
  *
  * PHP version 5
@@ -34,14 +34,6 @@ use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 if (!class_exists("NotWhitelistedErrorReason", false)) {
     /**
    * The single reason for the whitelist error.
-   *
-   *
-   *
-   * The API error base class that provides details about an error that occurred
-   * while processing a service request.
-   *
-   * <p>The OGNL field path is provided for parsers to identify the request data
-   * element that may have caused the error.</p>
    * @package Google_Api_Ads_AdWords_v201409
    * @subpackage v201409
    */

@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\Dfp\v201411 ;
 
 /**
- * Contains all client objects for the TeamService
+ * Contains all client objects for the UserTeamAssociationService
  * service.
  *
  * PHP version 5

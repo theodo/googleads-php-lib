@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the CampaignCriterionService
+ * Contains all client objects for the LocationCriterionService
  * service.
  *
  * PHP version 5

@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the AdGroupBidModifierService
+ * Contains all client objects for the CampaignCriterionService
  * service.
  *
  * PHP version 5
@@ -34,7 +34,7 @@ use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 if (!class_exists("Platform", false)) {
     /**
    * Represents Platform criterion.
-   * <p>A criterion of this type can only be created using an ID.
+   * <p>A criterion of this type can only be created using an ID. A criterion of this type is only targetable.
    * <span class="constraint AdxEnabled">This is enabled for AdX.</span>
    * @package Google_Api_Ads_AdWords_v201409
    * @subpackage v201409

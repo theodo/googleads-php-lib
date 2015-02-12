@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the TrafficEstimatorService
+ * Contains all client objects for the TargetingIdeaService
  * service.
  *
  * PHP version 5

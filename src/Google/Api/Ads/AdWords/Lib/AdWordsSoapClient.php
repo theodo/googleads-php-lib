@@ -1,6 +1,7 @@
 <?php
 namespace Google\Api\Ads\AdWords\Lib ;
 
+use \Google\Api\Ads\Common\Lib\AdsUser;
 /**
  * An extension of the {@link AdsSoapClient} for the AdWords API.
  *

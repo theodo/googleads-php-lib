@@ -1,6 +1,7 @@
 <?php
 namespace Google\Api\Ads\Dfp\Util ;
 
+use \Google\Api\Ads\Dfp\v201411\ReportService;
 /**
  * Retrieves reports using a {@link ReportService}.
  *

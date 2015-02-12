@@ -1,6 +1,7 @@
 <?php
 namespace Google\Api\Ads\Dfp\Lib ;
 
+use \Google\Api\Ads\Common\Lib\AdsUser;
 /**
  * An extension of the {@link AdsSoapClient} for Google's DoubleClick for
  * Publishers API.

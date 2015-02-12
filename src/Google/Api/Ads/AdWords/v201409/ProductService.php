@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the ProductServiceService
+ * Contains all client objects for the PromotionService
  * service.
  *
  * PHP version 5

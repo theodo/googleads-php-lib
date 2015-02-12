@@ -27,7 +27,7 @@ namespace Google\Api\Ads\AdWords\Lib ;
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache License,
  *             Version 2.0
  * @author     Adam Rogal
- * @see        \SoapClientFactory
+ * @see        SoapClientFactory
  */
 use \Google\Api\Ads\Common\Lib\AdsUser;
 use \Google\Api\Ads\Common\Lib\SoapClientFactory;
@@ -37,7 +37,7 @@ use \Google\Api\Ads\Common\Lib\SoapClientFactory;
  * @package GoogleApiAdsAdWords
  * @subpackage Lib
  */
-class AdWordsSoapClientFactory extends \SoapClientFactory
+class AdWordsSoapClientFactory extends SoapClientFactory
 {
 
   /**

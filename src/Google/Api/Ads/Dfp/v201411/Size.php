@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\Dfp\v201411 ;
 
 /**
- * Contains all client objects for the LineItemCreativeAssociationService
+ * Contains all client objects for the InventoryService
  * service.
  *
  * PHP version 5

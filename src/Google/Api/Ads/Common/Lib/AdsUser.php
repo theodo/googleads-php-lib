@@ -135,11 +135,11 @@ abstract class AdsUser
   /**
    * Gets the service by its service name.
    * @param string $serviceName the service name
-   * @param \SoapClientFactory $serviceFactory the service factory
+   * @param SoapClientFactory $serviceFactory the service factory
    * @return \SoapClient the instantiated service
    */
   public function GetServiceSoapClient($serviceName,
-      \SoapClientFactory $serviceFactory)
+      SoapClientFactory $serviceFactory)
   {
       return $serviceFactory->GenerateSoapClient($serviceName);
   }
@@ -528,7 +528,7 @@ abstract class AdsUser
    * TODO(vtsao): The current contract requires that subclasses call this method
    * in their constructor.
    *
-   * @param $applicationName The application name that will appear in this
+   * @param string $applicationName The application name that will appear in this
    *     header.
    */
   public function SetClientLibraryUserAgent($applicationName)

@@ -2,7 +2,7 @@
 namespace Google\Api\Ads\AdWords\v201409 ;
 
 /**
- * Contains all client objects for the CampaignFeedService
+ * Contains all client objects for the CustomerFeedService
  * service.
  *
  * PHP version 5
