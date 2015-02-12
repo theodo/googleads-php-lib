@@ -45,7 +45,7 @@ def treat_files_of_dir( path ):
                 mynewhandle.close()
                 paths[ root+'$'+name.replace( '.php', '' ) ] = file_as_a_list
     # pp.pprint( entities )
-    root_dir_cleaned = 'clean_'+path.replace( './', '' )
+    root_dir_cleaned = 'src'
     for key, FaaList in paths.iteritems():
         path_file = key.split( '$' )[0].replace( path, '' )
         namespace = path_file[1:].replace( '/', '\\' ).replace( '.\\', '' )
@@ -106,6 +106,7 @@ def treat_files_of_dir( path ):
                                 consec_white_lines = 0
                             if 2 >= consec_white_lines:
                                 write( f, line_w, entities )
+                                consec_white_lines += 1
                         f.write( '\n' )
                         f.write( '' )
                         f.close()
@@ -159,6 +160,7 @@ def write( f, line, entities ):
             ' DOMElement'                           :       ' \\DOMElement',
             '(DOMElement'                           :       '(\\DOMElement',
             ' SoapClient\n'                         :       ' \\SoapClient\n',
+            ' SoapClient}'                         :       ' \\SoapClient}',
             ' SoapFault'                            :       ' \\SoapFault',
             ' SoapVar'                              :       ' \\SoapVar',
             '(SoapFault'                            :       '(\\SoapFault',
@@ -180,4 +182,4 @@ def list_dir( path ):
             print "root: %s" % root
             print "path: %s" % path
 
-treat_files_of_dir( "./src" )
+treat_files_of_dir( "./non-standard-googleads-php-lib" )
