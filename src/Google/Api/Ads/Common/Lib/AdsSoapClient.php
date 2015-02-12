@@ -32,12 +32,12 @@ namespace Google\Api\Ads\Common\Lib ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Common\Lib\AdsUser ;
-use  \Google\Api\Ads\Common\Util\Logger ;
-use  \Google\Api\Ads\Common\Util\MapUtils ;
-use  \Google\Api\Ads\Common\Util\SoapRequestXmlFixer ;
-use  \Google\Api\Ads\Common\Util\XmlUtils ;
-use  \Google\Api\Ads\Common\Util\DeprecationUtils ;
+use \Google\Api\Ads\Common\Lib\AdsUser;
+use \Google\Api\Ads\Common\Util\Logger;
+use \Google\Api\Ads\Common\Util\MapUtils;
+use \Google\Api\Ads\Common\Util\SoapRequestXmlFixer;
+use \Google\Api\Ads\Common\Util\XmlUtils;
+use \Google\Api\Ads\Common\Util\DeprecationUtils;
 
 /**
  * An extension of the {@link \SoapClient} class intended to prepare

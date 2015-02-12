@@ -29,7 +29,7 @@ namespace Google\Api\Ads\Common\Util ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Common\Util\UrlUtils ;
+use \Google\Api\Ads\Common\Util\UrlUtils;
 
 /**
  * An abstract class for Google OAuth2 flow.

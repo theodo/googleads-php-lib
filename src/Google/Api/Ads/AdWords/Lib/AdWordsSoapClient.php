@@ -29,7 +29,7 @@ namespace Google\Api\Ads\AdWords\Lib ;
  * @author     Adam Rogal
  * @see        AdsSoapClient
  */
-use  \Google\Api\Ads\Common\Lib\AdsSoapClient ;
+use \Google\Api\Ads\Common\Lib\AdsSoapClient;
 
 /**
  * An extension of the {@link AdsSoapClient} for the AdWords API.

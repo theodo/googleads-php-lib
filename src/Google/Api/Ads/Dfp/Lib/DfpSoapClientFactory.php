@@ -30,8 +30,8 @@ namespace Google\Api\Ads\Dfp\Lib ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Common\Lib\AdsUser ;
-use  \Google\Api\Ads\Common\Lib\SoapClientFactory ;
+use \Google\Api\Ads\Common\Lib\AdsUser;
+use \Google\Api\Ads\Common\Lib\SoapClientFactory;
 
 /**
  * Factory class for SOAP clients for Google's DoubleClick for Publishers API.

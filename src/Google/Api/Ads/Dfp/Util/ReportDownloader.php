@@ -28,7 +28,7 @@ namespace Google\Api\Ads\Dfp\Util ;
  *             Version 2.0
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Common\Util\CurlUtils ;
+use \Google\Api\Ads\Common\Util\CurlUtils;
 
 /**
  * Retrieves reports using a {@link ReportService}.

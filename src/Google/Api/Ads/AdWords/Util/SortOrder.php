@@ -29,11 +29,11 @@ namespace Google\Api\Ads\AdWords\Util ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\AdWords\Lib\AdWordsUser ;
-use  \Google\Api\Ads\Common\Util\CurlUtils ;
-use  \Google\Api\Ads\Common\Util\DeprecationUtils ;
-use  \Google\Api\Ads\Common\Util\Logger ;
-use  \Google\Api\Ads\Common\Util\XmlUtils ;
+use \Google\Api\Ads\AdWords\Lib\AdWordsUser;
+use \Google\Api\Ads\Common\Util\CurlUtils;
+use \Google\Api\Ads\Common\Util\DeprecationUtils;
+use \Google\Api\Ads\Common\Util\Logger;
+use \Google\Api\Ads\Common\Util\XmlUtils;
 
 /**
  * A collection of utility methods for working with reports.

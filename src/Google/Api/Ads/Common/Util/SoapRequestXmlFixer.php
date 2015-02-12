@@ -31,7 +31,7 @@ namespace Google\Api\Ads\Common\Util ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Common\Util\XmlUtils ;
+use \Google\Api\Ads\Common\Util\XmlUtils;
 
 /**
  * The SOAP XML request fixer used to fix some inconsistencies among the

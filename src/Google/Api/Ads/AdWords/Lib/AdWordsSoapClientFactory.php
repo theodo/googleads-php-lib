@@ -29,8 +29,8 @@ namespace Google\Api\Ads\AdWords\Lib ;
  * @author     Adam Rogal
  * @see        \SoapClientFactory
  */
-use  \Google\Api\Ads\Common\Lib\AdsUser ;
-use  \Google\Api\Ads\Common\Lib\SoapClientFactory ;
+use \Google\Api\Ads\Common\Lib\AdsUser;
+use \Google\Api\Ads\Common\Lib\SoapClientFactory;
 
 /**
  * Factory class for SOAP clients for the AdWords API.

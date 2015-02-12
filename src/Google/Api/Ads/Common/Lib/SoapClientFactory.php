@@ -30,7 +30,7 @@ namespace Google\Api\Ads\Common\Lib ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Common\Lib\AdsUser ;
+use \Google\Api\Ads\Common\Lib\AdsUser;
 
 /**
  * Base class for all SOAP client factories of Ads client libraries.

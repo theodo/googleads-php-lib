@@ -30,7 +30,7 @@ namespace Google\Api\Ads\Common\Util ;
  * @author     Eric Koleda
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Common\Util\MapUtils ;
+use \Google\Api\Ads\Common\Util\MapUtils;
 
 /**
  * A collection of utility methods for working with XML.

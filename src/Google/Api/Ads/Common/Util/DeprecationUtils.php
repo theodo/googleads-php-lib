@@ -30,8 +30,8 @@ namespace Google\Api\Ads\Common\Util ;
  * @author     Paul Matthews
  * @author     Vincent Tsao
  */
-use  \Google\Api\Ads\Common\Lib\AdsUser ;
-use  \Google\Api\Ads\Common\Lib\ServiceException ;
+use \Google\Api\Ads\Common\Lib\AdsUser;
+use \Google\Api\Ads\Common\Lib\ServiceException;
 
 /**
  * A collection of utility methods for logging or throwing errors related to the
