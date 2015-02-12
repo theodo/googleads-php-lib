@@ -1,13 +1,17 @@
 #!/usr/bin/python
-import os, pprint, time
+import os, pprint, time, shutil
 pp = pprint.PrettyPrinter(indent=4)
 
 def treat_files_of_dir( path ):
     paths = {}
     entities = {}
+    root_dir_cleaned = 'src'
+    nb_of_files_read = 0
+    nb_of_classes_read = 0
     for root, dirs, files in os.walk(path):
         for name in files:
             if name.endswith((".php")):
+                nb_of_files_read += 1
                 mynewhandle = open(root+'/'+name, "r")
                 print "Scanning %s/%s" % (root, name)
                 file_as_a_list = []
@@ -33,8 +37,14 @@ def treat_files_of_dir( path ):
                         if "$class " in theline:
                             file_as_a_list.append( { '.' : theline } )
                         else:    
+                            nb_of_classes_read += 1
                             file_as_a_list.append( { 'class' : theline } )
-                            entities[ theline.split( 'class ')[1].split()[0].rstrip() ] = root.replace( path, '' ).replace( '/', '\\' )
+                            class_name_detected = theline.split( 'class ')[1].split()[0].rstrip()
+                            try: 
+                                test = entities[ class_name_detected ]
+                            except KeyError:
+                                print "%s Already defined !!!" % class_name_detected
+                                entities[ class_name_detected ] = root.replace( path, '' ).replace( '/', '\\' )
                     elif "{" in theline:
                         file_as_a_list.append( { 'opening' : theline } )
                     elif theline.rstrip() == "":
@@ -44,8 +54,14 @@ def treat_files_of_dir( path ):
                 # pp.pprint( file_as_a_list )
                 mynewhandle.close()
                 paths[ root+'$'+name.replace( '.php', '' ) ] = file_as_a_list
+            else:
+                print "NON PHP FILE: %s/%s copy to %s/%s/%s" % (root, name, root_dir_cleaned,root.replace(path, ""),name)
+                if not os.path.exists( root_dir_cleaned+'/'+root.replace(path, "") ):
+                    os.makedirs( root_dir_cleaned+'/'+root.replace(path, "") )
+                shutil.copy2( root+'/'+name, root_dir_cleaned+'/'+root.replace(path, "")+"/"+name )
+
     # pp.pprint( entities )
-    root_dir_cleaned = 'src'
+    nb_of_files_written = 0
     for key, FaaList in paths.iteritems():
         path_file = key.split( '$' )[0].replace( path, '' )
         namespace = path_file[1:].replace( '/', '\\' ).replace( '.\\', '' )
@@ -79,34 +95,38 @@ def treat_files_of_dir( path ):
                         in_class = False
                         filename = path_clean_file+'/'+class_name+".php"
                         f = open( filename, "w")
+                        nb_of_files_written += 1
                         print "Writing %s" % filename
                         number_line = 1
                         consec_white_lines = 0
                         for line_w in header:
                             if "" == line_w.rstrip():
+                                if 2 > consec_white_lines:
+                                    write( f, line_w, entities )
                                 consec_white_lines += 1
                             else:
                                 consec_white_lines = 0
-                            if 1 == number_line:
-                                line_w = line_w.rstrip()+'\n'
-                            if 2 == number_line:
-                                namespace_line = 'namespace '+namespace+' ;\n\n'
-                                f.write( namespace_line )
-                            if "use" == type_of_line and not put_extra_use:
-                                for line_use in extra_use:
-                                    f.write( line_use )
-                                put_extra_use = True
-                            if 2 >= consec_white_lines:
+                                if 1 == number_line:
+                                    line_w = line_w.rstrip()+'\n'
+                                if 2 == number_line:
+                                    namespace_line = 'namespace '+namespace+' ;\n\n'
+                                    f.write( namespace_line )
+                                if "use" == type_of_line and not put_extra_use:
+                                    for line_use in extra_use:
+                                        f.write( line_use )
+                                    put_extra_use = True
                                 write( f, line_w, entities )
-                                number_line += 1
+                            number_line += 1
+                        consec_white_lines = 0
                         for line_w in body:
                             if "" == line_w.rstrip():
+                                if 2 > consec_white_lines:
+                                    write( f, line_w, entities )
                                 consec_white_lines += 1
                             else:
                                 consec_white_lines = 0
-                            if 2 >= consec_white_lines:
                                 write( f, line_w, entities )
-                                consec_white_lines += 1
+                        consec_white_lines = 0
                         f.write( '\n' )
                         f.write( '' )
                         f.close()
@@ -141,7 +161,7 @@ def treat_files_of_dir( path ):
                     else:    
                         header.append(line)
         header = []
-    # pp.pprint( entities )
+    print "%s files read (%s classes), %s files Written !" % (nb_of_files_read, nb_of_classes_read, nb_of_files_written)
 
 def write( f, line, entities ):
     particular_cases = {
@@ -160,7 +180,9 @@ def write( f, line, entities ):
             ' DOMElement'                           :       ' \\DOMElement',
             '(DOMElement'                           :       '(\\DOMElement',
             ' SoapClient\n'                         :       ' \\SoapClient\n',
-            ' SoapClient}'                         :       ' \\SoapClient}',
+            ' SoapClient.'                          :       ' \\SoapClient.',
+            ' SoapClient '                          :       ' \\SoapClient ',
+            ' SoapClient}'                          :       ' \\SoapClient}',
             ' SoapFault'                            :       ' \\SoapFault',
             ' SoapVar'                              :       ' \\SoapVar',
             '(SoapFault'                            :       '(\\SoapFault',
