@@ -128,7 +128,7 @@ def treat_files_of_dir( path ):
                                 use_path = '\\'.join( namespace_array[0:len(namespace_array)-go_up] )+relative_path[3*go_up:].replace( '/', '\\' ).replace( '.php', '' )
                             else:
                                 use_path = relative_path.replace( '/', '\\' ).replace( '.php', '' )
-                            useline = 'use \\%s ;\n' % use_path                         
+                            useline = 'use \\%s;\n' % use_path                         
                             header.append( useline )
                             print "[USE] |%s| changed to |%s|" % (line, useline)
                         except IndexError:
@@ -158,7 +158,7 @@ def write( f, line, entities ):
             '(DOMNode'                              :       '(\\DOMNode',
             ' DOMElement'                           :       ' \\DOMElement',
             '(DOMElement'                           :       '(\\DOMElement',
-            ' SoapClient'                           :       ' \\SoapClient',
+            ' SoapClient\n'                         :       ' \\SoapClient\n',
             ' SoapFault'                            :       ' \\SoapFault',
             ' SoapVar'                              :       ' \\SoapVar',
             '(SoapFault'                            :       '(\\SoapFault',
