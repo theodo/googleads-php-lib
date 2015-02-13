@@ -2,14 +2,14 @@
 import os, pprint, time, shutil
 pp = pprint.PrettyPrinter(indent=4)
 
+API_VERSION='201409'
+
 def treat_files_of_dir( path ):
     paths = {}
     entities = {}
     root_dir_cleaned = 'src'
     nb_of_files_read = 0
     nb_of_classes_read = 0
-    dynamically_loading_service_name_classes_auto = []
-    services = []
     for root, dirs, files in os.walk(path):
         for name in files:
             if name.endswith((".php")):
@@ -22,6 +22,8 @@ def treat_files_of_dir( path ):
                     if len(theline) == 0:
                         break
                 
+                    if '->DoRequireOnce($serviceName);' in theline:
+                        theline = '//'+theline
                     if "@param" in theline:
                         file_as_a_list.append( { 'param' : theline } )
                     elif ' * ' in theline or '* ' in theline or '/*' in theline or '*/' in theline or '//' in theline:
@@ -44,16 +46,12 @@ def treat_files_of_dir( path ):
                             if class_name_detected in entities.keys():
                                 print "[WARNING]    %s Already defined !!!" % class_name_detected
                             entities[ class_name_detected ] = root.replace( path, '' ).replace( '/', '\\' )
-                            if class_name_detected.endswith(("Service")):
-                                services.append( class_name_detected )
                     elif "{" in theline:
                         file_as_a_list.append( { 'opening' : theline } )
                     elif theline.rstrip() == "":
                         file_as_a_list.append( { 'empty' : theline } )
                     else:
                         file_as_a_list.append( { '.' : theline } )
-                    if 'new $serviceName' in theline and class_name_detected not in dynamically_loading_service_name_classes_auto:
-                        dynamically_loading_service_name_classes_auto.append( class_name_detected )
                 # pp.pprint( file_as_a_list )
                 mynewhandle.close()
                 paths[ root+'$'+name.replace( '.php', '' ) ] = file_as_a_list
@@ -77,12 +75,6 @@ def treat_files_of_dir( path ):
         extra_use = []
         header = []
         body = []
-        if class_name in dynamically_loading_service_name_classes_auto:
-            for service in services:
-                if service in entities:
-                    useline = 'use '+entities[ service ]+'\\'+service+';\n'
-                    if useline not in extra_use:
-                        extra_use.append( useline )
         for line_object in FaaList:
             for type_of_line, line in line_object.iteritems():
                 if "param" == type_of_line:
@@ -183,31 +175,33 @@ def treat_files_of_dir( path ):
 
 def write( f, line, entities ):
     particular_cases = {
-            ' Exception'                            :       ' \\Exception',
-            ' DOMDocument'                          :       ' \\DOMDocument',
-            '(DOMDocument'                          :       '(\\DOMDocument',
-            ' DOMException'                         :       ' \\DOMException',
-            '(DOMException'                         :       '(\\DOMException',
-            ' ReflectionClass'                      :       ' \\ReflectionClass',
-            ' DOMXPath'                             :       ' \\DOMXPath',
-            '(DOMXPath'                             :       '(\\DOMXPath',
-            ' DOMNodeList'                          :       ' \\DOMNodeList',
-            '(DOMNodeList'                          :       '(\\DOMNodeList',
-            ' DOMNode'                              :       ' \\DOMNode',
-            '(DOMNode'                              :       '(\\DOMNode',
-            ' DOMElement'                           :       ' \\DOMElement',
-            '(DOMElement'                           :       '(\\DOMElement',
-            ' SoapClient\n'                         :       ' \\SoapClient\n',
-            ' SoapClient.'                          :       ' \\SoapClient.',
-            ' SoapClient '                          :       ' \\SoapClient ',
-            ' SoapClient}'                          :       ' \\SoapClient}',
-            ' SoapFault'                            :       ' \\SoapFault',
-            ' SoapVar'                              :       ' \\SoapVar',
-            '(SoapFault'                            :       '(\\SoapFault',
-            ' SoapHeader'                           :       ' \\SoapHeader',
-            "= 'SimpleOAuth2Handler'"               :       "= '"+entities[ 'SimpleOAuth2Handler' ]+"\\"+"SimpleOAuth2Handler'",
-            "array('XmlUtils'"                      :       "array('"+entities[ 'XmlUtils' ]+'\\'+"XmlUtils'",
-            "SoapClientFactory::$SERVER_REGEX"      :       "self::$SERVER_REGEX"
+            ' Exception'                                :       ' \\Exception',
+            ' DOMDocument'                              :       ' \\DOMDocument',
+            '(DOMDocument'                              :       '(\\DOMDocument',
+            ' DOMException'                             :       ' \\DOMException',
+            '(DOMException'                             :       '(\\DOMException',
+            ' ReflectionClass'                          :       ' \\ReflectionClass',
+            ' DOMXPath'                                 :       ' \\DOMXPath',
+            '(DOMXPath'                                 :       '(\\DOMXPath',
+            ' DOMNodeList'                              :       ' \\DOMNodeList',
+            '(DOMNodeList'                              :       '(\\DOMNodeList',
+            ' DOMNode'                                  :       ' \\DOMNode',
+            '(DOMNode'                                  :       '(\\DOMNode',
+            ' DOMElement'                               :       ' \\DOMElement',
+            '(DOMElement'                               :       '(\\DOMElement',
+            ' SoapClient\n'                             :       ' \\SoapClient\n',
+            ' SoapClient.'                              :       ' \\SoapClient.',
+            ' SoapClient '                              :       ' \\SoapClient ',
+            ' SoapClient}'                              :       ' \\SoapClient}',
+            ' SoapFault'                                :       ' \\SoapFault',
+            "Create('SoapRequestHeader')"               :       "Create('"+entities[ 'SoapRequestHeader' ]+"\\SoapRequestHeader')",
+            "$this->options['classmap'][$type];"        :       "'Google\\Api\\Ads\\AdWords\\"+API_VERSION+"\\\\'.$this->options['classmap'][$type];",
+            ' SoapVar'                                  :       ' \\SoapVar',
+            '(SoapFault'                                :       '(\\SoapFault',
+            ' SoapHeader'                               :       ' \\SoapHeader',
+            "= 'SimpleOAuth2Handler'"                   :       "= '"+entities[ 'SimpleOAuth2Handler' ]+"\\"+"SimpleOAuth2Handler'",
+            "array('XmlUtils'"                          :       "array('"+entities[ 'XmlUtils' ]+'\\'+"XmlUtils'",
+            "SoapClientFactory::$SERVER_REGEX"          :       "self::$SERVER_REGEX"
     }
 
     for element_to_replace in particular_cases.keys():

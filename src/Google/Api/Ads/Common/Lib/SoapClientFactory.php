@@ -90,7 +90,7 @@ abstract class SoapClientFactory
   public function GenerateSoapClient($serviceName)
   {
       if (extension_loaded('soap')) {
-          $this->DoRequireOnce($serviceName);
+//          $this->DoRequireOnce($serviceName);
           $soapClient = $this->GenerateServiceClient($serviceName);
 
           return $soapClient;
