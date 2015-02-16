@@ -57,7 +57,7 @@ def add_namespaces_for_files_of_dir( path ):
                 print "[NON PHP FILE]   %s/%s copied to %s/%s/%s" % (root, name, root_dir_cleaned,root.replace(path, ""),name)
                 if not os.path.exists( root_dir_cleaned+'/'+root.replace(path, "") ):
                     os.makedirs( root_dir_cleaned+'/'+root.replace(path, "") )
-                shutil.copy2( root+'/'+name, root_dir_cleaned+'/'+root.replace(path, "")+"/"+name )
+                # shutil.copy2( root+'/'+name, root_dir_cleaned+'/'+root.replace(path, "")+"/"+name )
 
     # pp.pprint( entities )
     nb_of_files_written = 0
