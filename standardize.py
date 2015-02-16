@@ -2,7 +2,7 @@
 import os, pprint, time, shutil
 pp = pprint.PrettyPrinter(indent=4)
 
-API_VERSION='201409'
+API_VERSION='v201409'
 
 def add_namespaces_for_files_of_dir( path ):
     paths = {}
@@ -17,6 +17,8 @@ def add_namespaces_for_files_of_dir( path ):
                 mynewhandle = open(root+'/'+name, "r")
                 print "         Scanning %s/%s" % (root, name)
                 file_as_a_list = []
+                class_map_elements =  []
+                in_class_map = False
                 while True:
                     theline = mynewhandle.readline()
                     if len(theline) == 0:
@@ -49,6 +51,13 @@ def add_namespaces_for_files_of_dir( path ):
                     elif theline.rstrip() == "":
                         file_as_a_list.append( { 'empty' : theline } )
                     else:
+                        if in_class_map:
+                            if ')' not in theline:
+                                class_map_elements.append( theline.split( "\"" )[1] )
+                            else:
+                                in_class_map = False
+                        if "$classmap =" in theline:
+                            in_class_map = True
                         file_as_a_list.append( { '.' : theline } )
                 # pp.pprint( file_as_a_list )
                 mynewhandle.close()
@@ -58,8 +67,15 @@ def add_namespaces_for_files_of_dir( path ):
                 if not os.path.exists( root_dir_cleaned+'/'+root.replace(path, "") ):
                     os.makedirs( root_dir_cleaned+'/'+root.replace(path, "") )
                 # shutil.copy2( root+'/'+name, root_dir_cleaned+'/'+root.replace(path, "")+"/"+name )
-
+    dict_class_map = {}
+    for element_of_classmap in class_map_elements:
+        if element_of_classmap not in entities:
+            class_map_elements.remove( element_of_classmap )
+        if element_of_classmap in entities:
+            dict_class_map[ "=> \""+element_of_classmap ] = "=> \""+entities[ element_of_classmap ].replace( '\\', '\\\\' ) +'\\\\'+element_of_classmap
     # pp.pprint( entities )
+    # print '[CLASSMAP]'
+    # pp.pprint( dict_class_map )
     nb_of_files_written = 0
     for key, FaaList in paths.iteritems():
         path_file = key.split( '$' )[0].replace( path, '' )
@@ -88,8 +104,13 @@ def add_namespaces_for_files_of_dir( path ):
             number_line = 0
             consec_white_lines = 0
             print "         Writing %s" % filename
+            in_class_map = False
             for line_object in FaaList:
                 for type_of_line, line in line_object.iteritems():
+                    if "$classmap =" in line:
+                        in_class_map = True
+                    if in_class_map and ");" in line:
+                        in_class_map = False
                     if "use" == type_of_line:
                         try:
                             relative_path = line.split( "'" )[1]
@@ -100,7 +121,7 @@ def add_namespaces_for_files_of_dir( path ):
                             else:
                                 use_path = relative_path.replace( '/', '\\' ).replace( '.php', '' )
                             useline = 'use \\%s;\n' % use_path                         
-                            write(f, useline, entities )
+                            write(f, useline, entities, dict_class_map )
                             f.write( line )
                         except IndexError:
                             try:
@@ -119,14 +140,20 @@ def add_namespaces_for_files_of_dir( path ):
                             put_extra_use = True
                     if "" == line.rstrip():
                         if 2 > consec_white_lines:
-                            write( f, line, entities )
+                            if in_class_map :
+                                write( f, line, entities, dict_class_map )
+                            else:
+                                write( f, line, entities, [] )
                             number_line += 1
                         consec_white_lines += 1
                     else:
                         if 'class_exists' in line:
                             class_tested = line.split( '"' )[1]
                             line = line.replace( class_tested, entities[ class_tested ]+'\\'+class_tested ).replace( '\\', '\\\\' )
-                        write( f, line, entities )
+                        if in_class_map :
+                            write( f, line, entities, dict_class_map )
+                        else:
+                            write( f, line, entities, [] )
                         consec_white_lines = 0
                         number_line += 1
             f.write( '\n' )
@@ -134,7 +161,7 @@ def add_namespaces_for_files_of_dir( path ):
             f.close()
     print "%s files read (%s classes), %s files Written !" % (nb_of_files_read, nb_of_classes_read, nb_of_files_written)
 
-def write( f, line, entities ):
+def write( f, line, entities, fucking_classmaps ):
     particular_cases = {
             ' Exception'                                :       ' \\Exception',
             ' DOMDocument'                              :       ' \\DOMDocument',
@@ -156,193 +183,14 @@ def write( f, line, entities ):
             ' SoapClient}'                              :       ' \\SoapClient}',
             ' SoapFault'                                :       ' \\SoapFault',
             "Create('SoapRequestHeader')"               :       "Create('"+entities[ 'SoapRequestHeader' ]+"\\SoapRequestHeader')",
-            "$this->options['classmap'][$type];"        :       "'Google\\Api\\Ads\\AdWords\\"+API_VERSION+"\\\\'.$this->options['classmap'][$type];",
             ' SoapVar'                                  :       ' \\SoapVar',
             '(SoapFault'                                :       '(\\SoapFault',
             ' SoapHeader'                               :       ' \\SoapHeader',
             "= 'SimpleOAuth2Handler'"                   :       "= '"+entities[ 'SimpleOAuth2Handler' ]+"\\"+"SimpleOAuth2Handler'",
             "array('XmlUtils'"                          :       "array('"+entities[ 'XmlUtils' ]+'\\'+"XmlUtils'",
             "SoapClientFactory::$SERVER_REGEX"          :       "self::$SERVER_REGEX",
-            'public static $classmap = array(
-      "AuthenticationError" => "AuthenticationError",
-      "AuthorizationError" => "AuthorizationError",
-      "BudgetError" => "BudgetError",
-      "ClientTermsError" => "ClientTermsError",
-      "DateError" => "DateError",
-      "DateRange" => "DateRange",
-      "DateRangeError" => "DateRangeError",
-      "DistinctError" => "DistinctError",
-      "DoubleValue" => "DoubleValue",
-      "EntityCountLimitExceeded" => "EntityCountLimitExceeded",
-      "EntityNotFound" => "EntityNotFound",
-      "IdError" => "IdError",
-      "InternalApiError" => "InternalApiError",
-      "LongValue" => "LongValue",
-      "Money" => "Money",
-      "NewEntityCreationError" => "NewEntityCreationError",
-      "NotEmptyError" => "NotEmptyError",
-      "NullError" => "NullError",
-      "NumberValue" => "NumberValue",
-      "OperationAccessDenied" => "OperationAccessDenied",
-      "OrderBy" => "OrderBy",
-      "Paging" => "Paging",
-      "Predicate" => "Predicate",
-      "QueryError" => "QueryError",
-      "QuotaCheckError" => "QuotaCheckError",
-      "RangeError" => "RangeError",
-      "RateExceededError" => "RateExceededError",
-      "ReadOnlyError" => "ReadOnlyError",
-      "RejectedError" => "RejectedError",
-      "RequestError" => "RequestError",
-      "RequiredError" => "RequiredError",
-      "SelectorError" => "SelectorError",
-      "SizeLimitError" => "SizeLimitError",
-      "SoapHeader" => "SoapRequestHeader",
-      "SoapResponseHeader" => "SoapResponseHeader",
-      "StringLengthError" => "StringLengthError",
-      "ComparableValue" => "ComparableValue",
-      "DatabaseError" => "DatabaseError",
-      "ApiError" => "ApiError",
-      "ApiException" => "ApiException",
-      "ApplicationException" => "ApplicationException",
-      "Selector" => "Selector",
-      "Budget" => "Budget",
-      "BudgetOperation" => "BudgetOperation",
-      "BudgetPage" => "BudgetPage",
-      "BudgetReturnValue" => "BudgetReturnValue",
-      "ListReturnValue" => "ListReturnValue",
-      "Operation" => "Operation",
-      "Page" => "Page",
-      "AuthenticationError.Reason" => "AuthenticationErrorReason",
-      "AuthorizationError.Reason" => "AuthorizationErrorReason",
-      "Budget.BudgetDeliveryMethod" => "BudgetBudgetDeliveryMethod",
-      "Budget.BudgetPeriod" => "BudgetBudgetPeriod",
-      "Budget.BudgetStatus" => "BudgetBudgetStatus",
-      "BudgetError.Reason" => "BudgetErrorReason",
-      "ClientTermsError.Reason" => "ClientTermsErrorReason",
-      "DatabaseError.Reason" => "DatabaseErrorReason",
-      "DateError.Reason" => "DateErrorReason",
-      "DateRangeError.Reason" => "DateRangeErrorReason",
-      "DistinctError.Reason" => "DistinctErrorReason",
-      "EntityCountLimitExceeded.Reason" => "EntityCountLimitExceededReason",
-      "EntityNotFound.Reason" => "EntityNotFoundReason",
-      "IdError.Reason" => "IdErrorReason",
-      "InternalApiError.Reason" => "InternalApiErrorReason",
-      "NewEntityCreationError.Reason" => "NewEntityCreationErrorReason",
-      "NotEmptyError.Reason" => "NotEmptyErrorReason",
-      "NullError.Reason" => "NullErrorReason",
-      "OperationAccessDenied.Reason" => "OperationAccessDeniedReason",
-      "Operator" => "Operator",
-      "Predicate.Operator" => "PredicateOperator",
-      "QueryError.Reason" => "QueryErrorReason",
-      "QuotaCheckError.Reason" => "QuotaCheckErrorReason",
-      "RangeError.Reason" => "RangeErrorReason",
-      "RateExceededError.Reason" => "RateExceededErrorReason",
-      "ReadOnlyError.Reason" => "ReadOnlyErrorReason",
-      "RejectedError.Reason" => "RejectedErrorReason",
-      "RequestError.Reason" => "RequestErrorReason",
-      "RequiredError.Reason" => "RequiredErrorReason",
-      "SelectorError.Reason" => "SelectorErrorReason",
-      "SizeLimitError.Reason" => "SizeLimitErrorReason",
-      "SortOrder" => "SortOrder",
-      "StringLengthError.Reason" => "StringLengthErrorReason",
-      "get" => "BudgetServiceGet",
-      "getResponse" => "BudgetServiceGetResponse",
-      "mutate" => "BudgetServiceMutate",
-      "mutateResponse" => "BudgetServiceMutateResponse",
-      "query" => "Query",
-      "queryResponse" => "QueryResponse",
-    );'                                                 :               'public static $classmap = array(
-      "AuthenticationError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\AuthenticationError",
-      "AuthorizationError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\AuthorizationError",
-      "BudgetError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetError",
-      "ClientTermsError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\ClientTermsError",
-      "DateError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\DateError",
-      "DateRange" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\DateRange",
-      "DateRangeError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\DateRangeError",
-      "DistinctError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\DistinctError",
-      "DoubleValue" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\DoubleValue",
-      "EntityCountLimitExceeded" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\EntityCountLimitExceeded",
-      "EntityNotFound" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\EntityNotFound",
-      "IdError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\IdError",
-      "InternalApiError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\InternalApiError",
-      "LongValue" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\LongValue",
-      "Money" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\Money",
-      "NewEntityCreationError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\NewEntityCreationError",
-      "NotEmptyError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\NotEmptyError",
-      "NullError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\NullError",
-      "NumberValue" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\NumberValue",
-      "OperationAccessDenied" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\OperationAccessDenied",
-      "OrderBy" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\OrderBy",
-      "Paging" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\Paging",
-      "Predicate" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\Predicate",
-      "QueryError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\QueryError",
-      "QuotaCheckError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\QuotaCheckError",
-      "RangeError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\RangeError",
-      "RateExceededError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\RateExceededError",
-      "ReadOnlyError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\ReadOnlyError",
-      "RejectedError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\RejectedError",
-      "RequestError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\RequestError",
-      "RequiredError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\RequiredError",
-      "SelectorError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\SelectorError",
-      "SizeLimitError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\SizeLimitError",
-      "SoapHeader" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\SoapRequestHeader",
-      "SoapResponseHeader" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\SoapResponseHeader",
-      "StringLengthError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\StringLengthError",
-      "ComparableValue" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\ComparableValue",
-      "DatabaseError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\DatabaseError",
-      "ApiError" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\ApiError",
-      "ApiException" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\ApiException",
-      "ApplicationException" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\ApplicationException",
-      "Selector" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\Selector",
-      "Budget" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\Budget",
-      "BudgetOperation" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetOperation",
-      "BudgetPage" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetPage",
-      "BudgetReturnValue" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetReturnValue",
-      "ListReturnValue" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\ListReturnValue",
-      "Operation" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\Operation",
-      "Page" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\Page",
-      "AuthenticationError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\AuthenticationErrorReason",
-      "AuthorizationError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\AuthorizationErrorReason",
-      "Budget.BudgetDeliveryMethod" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetBudgetDeliveryMethod",
-      "Budget.BudgetPeriod" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetBudgetPeriod",
-      "Budget.BudgetStatus" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetBudgetStatus",
-      "BudgetError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetErrorReason",
-      "ClientTermsError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\ClientTermsErrorReason",
-      "DatabaseError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\DatabaseErrorReason",
-      "DateError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\DateErrorReason",
-      "DateRangeError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\DateRangeErrorReason",
-      "DistinctError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\DistinctErrorReason",
-      "EntityCountLimitExceeded.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\EntityCountLimitExceededReason",
-      "EntityNotFound.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\EntityNotFoundReason",
-      "IdError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\IdErrorReason",
-      "InternalApiError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\InternalApiErrorReason",
-      "NewEntityCreationError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\NewEntityCreationErrorReason",
-      "NotEmptyError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\NotEmptyErrorReason",
-      "NullError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\NullErrorReason",
-      "OperationAccessDenied.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\OperationAccessDeniedReason",
-      "Operator" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\Operator",
-      "Predicate.Operator" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\PredicateOperator",
-      "QueryError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\QueryErrorReason",
-      "QuotaCheckError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\QuotaCheckErrorReason",
-      "RangeError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\RangeErrorReason",
-      "RateExceededError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\RateExceededErrorReason",
-      "ReadOnlyError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\ReadOnlyErrorReason",
-      "RejectedError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\RejectedErrorReason",
-      "RequestError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\RequestErrorReason",
-      "RequiredError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\RequiredErrorReason",
-      "SelectorError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\SelectorErrorReason",
-      "SizeLimitError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\SizeLimitErrorReason",
-      "SortOrder" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\SortOrder",
-      "StringLengthError.Reason" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\StringLengthErrorReason",
-      "get" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetServiceGet",
-      "getResponse" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetServiceGetResponse",
-      "mutate" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetServiceMutate",
-      "mutateResponse" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\BudgetServiceMutateResponse",
-      "query" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\Query",
-      "queryResponse" => "Google\\\\Api\\\\Ads\\\\AdWords\\\\v201409\\\\QueryResponse",
-    );'
     }
+    particular_cases.update( fucking_classmaps )
 
     for element_to_replace in particular_cases.keys():
         if element_to_replace in line:
