@@ -31,7 +31,7 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 require_once "Google/Api/Ads/AdWords/Lib/AdWordsSoapClient.php";
 
-if (!class_exists("DateRange", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateRange", false)) {
     /**
    * Represents a range of dates that has either an upper or a lower bound.
    * The format for the date is YYYYMMDD.
@@ -82,7 +82,7 @@ if (!class_exists("DateRange", false)) {
   }
 }
 
-if (!class_exists("OrderBy", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OrderBy", false)) {
     /**
    * Specifies how the resulting information should be sorted.
    * @package Google_Api_Ads_AdWords_v201409
@@ -132,7 +132,7 @@ if (!class_exists("OrderBy", false)) {
   }
 }
 
-if (!class_exists("Paging", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Paging", false)) {
     /**
    * Specifies the page of results to return in the response. A page is specified
    * by the result position to start at and the maximum number of results to
@@ -184,7 +184,7 @@ if (!class_exists("Paging", false)) {
   }
 }
 
-if (!class_exists("Predicate", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Predicate", false)) {
     /**
    * Specifies how an entity (eg. adgroup, campaign, criterion, ad) should be filtered.
    * @package Google_Api_Ads_AdWords_v201409
@@ -241,7 +241,7 @@ if (!class_exists("Predicate", false)) {
   }
 }
 
-if (!class_exists("SoapRequestHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapRequestHeader", false)) {
     /**
    * Defines the required and optional elements within the header of a SOAP request.
    * @package Google_Api_Ads_AdWords_v201409
@@ -312,7 +312,7 @@ if (!class_exists("SoapRequestHeader", false)) {
   }
 }
 
-if (!class_exists("SoapResponseHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapResponseHeader", false)) {
     /**
    * Defines the elements within the header of a SOAP response.
    * @package Google_Api_Ads_AdWords_v201409
@@ -383,7 +383,7 @@ if (!class_exists("SoapResponseHeader", false)) {
   }
 }
 
-if (!class_exists("ComparableValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ComparableValue", false)) {
     /**
    * Comparable types for constructing ranges with.
    * @package Google_Api_Ads_AdWords_v201409
@@ -462,7 +462,7 @@ if (!class_exists("ComparableValue", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackerStats", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackerStats", false)) {
     /**
    * Usage stats about a single {@link ConversionTracker}.
    * @package Google_Api_Ads_AdWords_v201409
@@ -526,7 +526,7 @@ if (!class_exists("ConversionTrackerStats", false)) {
   }
 }
 
-if (!class_exists("ConversionTracker", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTracker", false)) {
     /**
    * An abstract Conversion base class.
    * @package Google_Api_Ads_AdWords_v201409
@@ -710,7 +710,7 @@ if (!class_exists("ConversionTracker", false)) {
   }
 }
 
-if (!class_exists("ListReturnValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ListReturnValue", false)) {
     /**
    * Base list return value type.
    * @package Google_Api_Ads_AdWords_v201409
@@ -789,7 +789,7 @@ if (!class_exists("ListReturnValue", false)) {
   }
 }
 
-if (!class_exists("Operation", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Operation", false)) {
     /**
    * This represents an operation that includes an operator and an operand
    * specified type.
@@ -876,7 +876,7 @@ if (!class_exists("Operation", false)) {
   }
 }
 
-if (!class_exists("ApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiError", false)) {
     /**
    * The API error base class that provides details about an error that occurred
    * while processing a service request.
@@ -980,7 +980,7 @@ if (!class_exists("ApiError", false)) {
   }
 }
 
-if (!class_exists("ApplicationException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApplicationException", false)) {
     /**
    * Base class for exceptions.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1066,7 +1066,7 @@ if (!class_exists("ApplicationException", false)) {
   }
 }
 
-if (!class_exists("Page", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Page", false)) {
     /**
    * Contains the results from a get call.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1152,7 +1152,7 @@ if (!class_exists("Page", false)) {
   }
 }
 
-if (!class_exists("Selector", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Selector", false)) {
     /**
    * A generic selector to specify the type of information to return.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1223,7 +1223,7 @@ if (!class_exists("Selector", false)) {
   }
 }
 
-if (!class_exists("AdWordsConversionTrackerMarkupLanguage", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AdWordsConversionTrackerMarkupLanguage", false)) {
     /**
    * Controls the markup language in which the snippet will be written.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1259,7 +1259,7 @@ if (!class_exists("AdWordsConversionTrackerMarkupLanguage", false)) {
   }
 }
 
-if (!class_exists("AdWordsConversionTrackerTextFormat", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AdWordsConversionTrackerTextFormat", false)) {
     /**
    * Text format to display on the conversion page.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1295,7 +1295,7 @@ if (!class_exists("AdWordsConversionTrackerTextFormat", false)) {
   }
 }
 
-if (!class_exists("AdWordsConversionTrackerTrackingCodeType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AdWordsConversionTrackerTrackingCodeType", false)) {
     /**
    * Type of snippet code to generate.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1331,7 +1331,7 @@ if (!class_exists("AdWordsConversionTrackerTrackingCodeType", false)) {
   }
 }
 
-if (!class_exists("AppConversionAppConversionType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AppConversionAppConversionType", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -1367,7 +1367,7 @@ if (!class_exists("AppConversionAppConversionType", false)) {
   }
 }
 
-if (!class_exists("AppConversionAppPlatform", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AppConversionAppPlatform", false)) {
     /**
    * App platform for the AppConversionTracker.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1403,7 +1403,7 @@ if (!class_exists("AppConversionAppPlatform", false)) {
   }
 }
 
-if (!class_exists("AuthenticationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationErrorReason", false)) {
     /**
    * The single reason for the authentication failure.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1439,7 +1439,7 @@ if (!class_exists("AuthenticationErrorReason", false)) {
   }
 }
 
-if (!class_exists("AuthorizationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationErrorReason", false)) {
     /**
    * The reasons for the database error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1475,7 +1475,7 @@ if (!class_exists("AuthorizationErrorReason", false)) {
   }
 }
 
-if (!class_exists("ClientTermsErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsErrorReason", false)) {
     /**
    * Enums for the various reasons an error can be thrown as a result of
    * ClientTerms violation.
@@ -1512,7 +1512,7 @@ if (!class_exists("ClientTermsErrorReason", false)) {
   }
 }
 
-if (!class_exists("ConversionDeduplicationMode", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionDeduplicationMode", false)) {
     /**
    * Conversion deduplication mode for Conversion Optimizer. That is, whether to
    * optimize for number of clicks that get at least one conversion, or total number
@@ -1550,7 +1550,7 @@ if (!class_exists("ConversionDeduplicationMode", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackerCategory", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackerCategory", false)) {
     /**
    * The category of conversion tracker that is being tracked.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1586,7 +1586,7 @@ if (!class_exists("ConversionTrackerCategory", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackerStatus", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackerStatus", false)) {
     /**
    * Status of the conversion tracker. The user cannot ADD or SET the
    * status to {@code HIDDEN}.
@@ -1623,7 +1623,7 @@ if (!class_exists("ConversionTrackerStatus", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackingErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackingErrorReason", false)) {
     /**
    * Enumerates all the possible reasons for a ConversionTypeError.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1659,7 +1659,7 @@ if (!class_exists("ConversionTrackingErrorReason", false)) {
   }
 }
 
-if (!class_exists("DatabaseErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseErrorReason", false)) {
     /**
    * The reasons for the database error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1695,7 +1695,7 @@ if (!class_exists("DatabaseErrorReason", false)) {
   }
 }
 
-if (!class_exists("DateErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1731,7 +1731,7 @@ if (!class_exists("DateErrorReason", false)) {
   }
 }
 
-if (!class_exists("DistinctErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DistinctErrorReason", false)) {
     /**
    * The reasons for the validation error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1767,7 +1767,7 @@ if (!class_exists("DistinctErrorReason", false)) {
   }
 }
 
-if (!class_exists("IdErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\IdErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1803,7 +1803,7 @@ if (!class_exists("IdErrorReason", false)) {
   }
 }
 
-if (!class_exists("InternalApiErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiErrorReason", false)) {
     /**
    * The single reason for the internal API error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1839,7 +1839,7 @@ if (!class_exists("InternalApiErrorReason", false)) {
   }
 }
 
-if (!class_exists("NotEmptyErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyErrorReason", false)) {
     /**
    * The reasons for the validation error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1875,7 +1875,7 @@ if (!class_exists("NotEmptyErrorReason", false)) {
   }
 }
 
-if (!class_exists("OperationAccessDeniedReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDeniedReason", false)) {
     /**
    * The reasons for the operation access error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1911,7 +1911,7 @@ if (!class_exists("OperationAccessDeniedReason", false)) {
   }
 }
 
-if (!class_exists("Operator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Operator", false)) {
     /**
    * This represents an operator that may be presented to an adsapi service.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1947,7 +1947,7 @@ if (!class_exists("Operator", false)) {
   }
 }
 
-if (!class_exists("OperatorErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperatorErrorReason", false)) {
     /**
    * The reasons for the validation error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1983,7 +1983,7 @@ if (!class_exists("OperatorErrorReason", false)) {
   }
 }
 
-if (!class_exists("PredicateOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\PredicateOperator", false)) {
     /**
    * Defines the valid set of operators.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2019,7 +2019,7 @@ if (!class_exists("PredicateOperator", false)) {
   }
 }
 
-if (!class_exists("QuotaCheckErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckErrorReason", false)) {
     /**
    * Enums for all the reasons an error can be thrown to the user during
    * billing quota checks.
@@ -2056,7 +2056,7 @@ if (!class_exists("QuotaCheckErrorReason", false)) {
   }
 }
 
-if (!class_exists("RangeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2092,7 +2092,7 @@ if (!class_exists("RangeErrorReason", false)) {
   }
 }
 
-if (!class_exists("RateExceededErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RateExceededErrorReason", false)) {
     /**
    * The reason for the rate exceeded error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2128,7 +2128,7 @@ if (!class_exists("RateExceededErrorReason", false)) {
   }
 }
 
-if (!class_exists("ReadOnlyErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2164,7 +2164,7 @@ if (!class_exists("ReadOnlyErrorReason", false)) {
   }
 }
 
-if (!class_exists("RejectedErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RejectedErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2200,7 +2200,7 @@ if (!class_exists("RejectedErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequestErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequestErrorReason", false)) {
     /**
    * Error reason is unknown.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2236,7 +2236,7 @@ if (!class_exists("RequestErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2272,7 +2272,7 @@ if (!class_exists("RequiredErrorReason", false)) {
   }
 }
 
-if (!class_exists("SelectorErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SelectorErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2308,7 +2308,7 @@ if (!class_exists("SelectorErrorReason", false)) {
   }
 }
 
-if (!class_exists("SizeLimitErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitErrorReason", false)) {
     /**
    * The reasons for Ad Scheduling errors.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2344,7 +2344,7 @@ if (!class_exists("SizeLimitErrorReason", false)) {
   }
 }
 
-if (!class_exists("SortOrder", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SortOrder", false)) {
     /**
    * Possible orders of sorting.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2380,7 +2380,7 @@ if (!class_exists("SortOrder", false)) {
   }
 }
 
-if (!class_exists("StringLengthErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2416,7 +2416,7 @@ if (!class_exists("StringLengthErrorReason", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackerServiceGet", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackerServiceGet", false)) {
     /**
    * <span class="constraint Required">This field is required and should not be {@code null}.</span>
    *
@@ -2471,7 +2471,7 @@ if (!class_exists("ConversionTrackerServiceGet", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackerServiceGetResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackerServiceGetResponse", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -2514,7 +2514,7 @@ if (!class_exists("ConversionTrackerServiceGetResponse", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackerServiceMutate", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackerServiceMutate", false)) {
     /**
    * <span class="constraint ContentsNotNull">This field must not contain {@code null} elements.</span>
    * <span class="constraint DistinctIds">Elements in this field must have distinct IDs for following {@link Operator}s : SET, REMOVE.</span>
@@ -2575,7 +2575,7 @@ if (!class_exists("ConversionTrackerServiceMutate", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackerServiceMutateResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackerServiceMutateResponse", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -2618,7 +2618,7 @@ if (!class_exists("ConversionTrackerServiceMutateResponse", false)) {
   }
 }
 
-if (!class_exists("AdCallMetricsConversion", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AdCallMetricsConversion", false)) {
     /**
    * A ConversionTracker for phone calls from conversion-tracked call extensions.
    * A call made from the call extension is reported as a conversion if it lasts longer
@@ -2681,7 +2681,7 @@ if (!class_exists("AdCallMetricsConversion", false)) {
   }
 }
 
-if (!class_exists("AdWordsConversionTracker", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AdWordsConversionTracker", false)) {
     /**
    * A conversion tracker created through AdWords Conversion Tracking.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2776,7 +2776,7 @@ if (!class_exists("AdWordsConversionTracker", false)) {
   }
 }
 
-if (!class_exists("AppConversion", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AppConversion", false)) {
     /**
    * A ConversionTracker for mobile apps.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2864,7 +2864,7 @@ if (!class_exists("AppConversion", false)) {
   }
 }
 
-if (!class_exists("AuthenticationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationError", false)) {
     /**
    * Errors returned when Authentication failed.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2912,7 +2912,7 @@ if (!class_exists("AuthenticationError", false)) {
   }
 }
 
-if (!class_exists("AuthorizationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationError", false)) {
     /**
    * Errors encountered when trying to authorize a user.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2960,7 +2960,7 @@ if (!class_exists("AuthorizationError", false)) {
   }
 }
 
-if (!class_exists("ClientTermsError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsError", false)) {
     /**
    * Error due to user not accepting the AdWords terms of service.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3008,7 +3008,7 @@ if (!class_exists("ClientTermsError", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackingError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackingError", false)) {
     /**
    * An error that can occur during calls to the ConversionTypeService.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3056,7 +3056,7 @@ if (!class_exists("ConversionTrackingError", false)) {
   }
 }
 
-if (!class_exists("DateError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateError", false)) {
     /**
    * Errors associated with invalid dates and date ranges.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3104,7 +3104,7 @@ if (!class_exists("DateError", false)) {
   }
 }
 
-if (!class_exists("DistinctError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DistinctError", false)) {
     /**
    * Errors related to distinct ids or content.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3152,7 +3152,7 @@ if (!class_exists("DistinctError", false)) {
   }
 }
 
-if (!class_exists("IdError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\IdError", false)) {
     /**
    * Errors associated with the ids.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3200,7 +3200,7 @@ if (!class_exists("IdError", false)) {
   }
 }
 
-if (!class_exists("InternalApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiError", false)) {
     /**
    * Indicates that a server-side error has occured. {@code InternalApiError}s
    * are generally not the result of an invalid request or message sent by the
@@ -3250,7 +3250,7 @@ if (!class_exists("InternalApiError", false)) {
   }
 }
 
-if (!class_exists("Money", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Money", false)) {
     /**
    * Represents a money amount.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3295,7 +3295,7 @@ if (!class_exists("Money", false)) {
   }
 }
 
-if (!class_exists("NotEmptyError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyError", false)) {
     /**
    * Errors corresponding with violation of a NOT EMPTY check.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3343,7 +3343,7 @@ if (!class_exists("NotEmptyError", false)) {
   }
 }
 
-if (!class_exists("NumberValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NumberValue", false)) {
     /**
    * Number value types for constructing number valued ranges.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3381,7 +3381,7 @@ if (!class_exists("NumberValue", false)) {
   }
 }
 
-if (!class_exists("OperationAccessDenied", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDenied", false)) {
     /**
    * Operation not permitted due to the invoked service's access policy.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3429,7 +3429,7 @@ if (!class_exists("OperationAccessDenied", false)) {
   }
 }
 
-if (!class_exists("OperatorError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperatorError", false)) {
     /**
    * Errors due to the use of unsupported operations.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3477,7 +3477,7 @@ if (!class_exists("OperatorError", false)) {
   }
 }
 
-if (!class_exists("QuotaCheckError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckError", false)) {
     /**
    * Encapsulates the errors thrown during developer quota checks.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3525,7 +3525,7 @@ if (!class_exists("QuotaCheckError", false)) {
   }
 }
 
-if (!class_exists("RangeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeError", false)) {
     /**
    * A list of all errors associated with the Range constraint.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3573,7 +3573,7 @@ if (!class_exists("RangeError", false)) {
   }
 }
 
-if (!class_exists("RateExceededError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RateExceededError", false)) {
     /**
    * Signals that a call failed because a measured rate exceeded.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3642,7 +3642,7 @@ if (!class_exists("RateExceededError", false)) {
   }
 }
 
-if (!class_exists("ReadOnlyError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyError", false)) {
     /**
    * Errors from attempting to write to read-only fields.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3690,7 +3690,7 @@ if (!class_exists("ReadOnlyError", false)) {
   }
 }
 
-if (!class_exists("RejectedError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RejectedError", false)) {
     /**
    * Indicates that a field was rejected due to compatibility issues.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3738,7 +3738,7 @@ if (!class_exists("RejectedError", false)) {
   }
 }
 
-if (!class_exists("RequestError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequestError", false)) {
     /**
    * Encapsulates the generic errors thrown when there's an error with user
    * request.
@@ -3787,7 +3787,7 @@ if (!class_exists("RequestError", false)) {
   }
 }
 
-if (!class_exists("RequiredError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredError", false)) {
     /**
    * Errors due to missing required field.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3835,7 +3835,7 @@ if (!class_exists("RequiredError", false)) {
   }
 }
 
-if (!class_exists("SelectorError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SelectorError", false)) {
     /**
    * Represents possible error codes for {@link Selector}.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3883,7 +3883,7 @@ if (!class_exists("SelectorError", false)) {
   }
 }
 
-if (!class_exists("SizeLimitError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitError", false)) {
     /**
    * Indicates that the number of entries in the request or response exceeds the system limit.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3931,7 +3931,7 @@ if (!class_exists("SizeLimitError", false)) {
   }
 }
 
-if (!class_exists("StringLengthError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthError", false)) {
     /**
    * Errors associated with the length of the given string being
    * out of bounds.
@@ -3980,7 +3980,7 @@ if (!class_exists("StringLengthError", false)) {
   }
 }
 
-if (!class_exists("UploadConversion", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UploadConversion", false)) {
     /**
    * A conversion type that receives conversions by having them uploaded
    * through the OfflineConversionFeedService.
@@ -4038,7 +4038,7 @@ if (!class_exists("UploadConversion", false)) {
   }
 }
 
-if (!class_exists("WebsiteCallMetricsConversion", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\WebsiteCallMetricsConversion", false)) {
     /**
    * A conversion that happens when a user performs the following sequence of actions:
    * <ul>
@@ -4113,7 +4113,7 @@ if (!class_exists("WebsiteCallMetricsConversion", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackerOperation", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackerOperation", false)) {
     /**
    * Operations for conversion tracker.
    * @package Google_Api_Ads_AdWords_v201409
@@ -4159,7 +4159,7 @@ if (!class_exists("ConversionTrackerOperation", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackerReturnValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackerReturnValue", false)) {
     /**
    * A container for return values from the ConversionTrackerService.
    * @package Google_Api_Ads_AdWords_v201409
@@ -4204,7 +4204,7 @@ if (!class_exists("ConversionTrackerReturnValue", false)) {
   }
 }
 
-if (!class_exists("DatabaseError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseError", false)) {
     /**
    * Errors that are thrown due to a database access problem.
    * @package Google_Api_Ads_AdWords_v201409
@@ -4252,7 +4252,7 @@ if (!class_exists("DatabaseError", false)) {
   }
 }
 
-if (!class_exists("ApiException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiException", false)) {
     /**
    * \Exception class for holding a list of service errors.
    * @package Google_Api_Ads_AdWords_v201409
@@ -4298,7 +4298,7 @@ if (!class_exists("ApiException", false)) {
   }
 }
 
-if (!class_exists("NoStatsPage", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NoStatsPage", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -4337,7 +4337,7 @@ if (!class_exists("NoStatsPage", false)) {
   }
 }
 
-if (!class_exists("DoubleValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DoubleValue", false)) {
     /**
    * Number value type for constructing double valued ranges.
    * @package Google_Api_Ads_AdWords_v201409
@@ -4381,7 +4381,7 @@ if (!class_exists("DoubleValue", false)) {
   }
 }
 
-if (!class_exists("LongValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\LongValue", false)) {
     /**
    * Number value type for constructing long valued ranges.
    * @package Google_Api_Ads_AdWords_v201409
@@ -4425,7 +4425,7 @@ if (!class_exists("LongValue", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackerPage", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackerPage", false)) {
     /**
    * Contains a subset of {@link ConversionTracker}s resulting from the filtering
    * and paging of the {@link ConversionTrackerService#get} call.
@@ -4470,7 +4470,7 @@ if (!class_exists("ConversionTrackerPage", false)) {
   }
 }
 
-if (!class_exists("ConversionTrackerService", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ConversionTrackerService", false)) {
     /**
    * ConversionTrackerService
    * @package Google_Api_Ads_AdWords_v201409

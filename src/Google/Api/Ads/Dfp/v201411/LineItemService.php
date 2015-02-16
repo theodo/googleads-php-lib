@@ -31,7 +31,7 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 require_once "Google/Api/Ads/Dfp/Lib/DfpSoapClient.php";
 
-if (!class_exists("AdUnitTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AdUnitTargeting", false)) {
     /**
    * Represents targeted or excluded ad units.
    * @package GoogleApiAdsDfp
@@ -81,7 +81,7 @@ if (!class_exists("AdUnitTargeting", false)) {
   }
 }
 
-if (!class_exists("ApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiError", false)) {
     /**
    * The API error base class that provides details about an error that occurred
    * while processing a service request.
@@ -185,7 +185,7 @@ if (!class_exists("ApiError", false)) {
   }
 }
 
-if (!class_exists("TechnologyTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TechnologyTargeting", false)) {
     /**
    * Provides {@link LineItem} objects the ability to target or exclude
    * technologies.
@@ -299,7 +299,7 @@ if (!class_exists("TechnologyTargeting", false)) {
   }
 }
 
-if (!class_exists("ApiVersionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiVersionError", false)) {
     /**
    * Errors related to the usage of API versions.
    * @package GoogleApiAdsDfp
@@ -347,7 +347,7 @@ if (!class_exists("ApiVersionError", false)) {
   }
 }
 
-if (!class_exists("ApplicationException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApplicationException", false)) {
     /**
    * Base class for exceptions.
    * @package GoogleApiAdsDfp
@@ -433,7 +433,7 @@ if (!class_exists("ApplicationException", false)) {
   }
 }
 
-if (!class_exists("AppliedLabel", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AppliedLabel", false)) {
     /**
    * Represents a {@link Label} that can be applied to an entity. To negate an
    * inherited label, create an {@code AppliedLabel} with {@code labelId} as the
@@ -485,7 +485,7 @@ if (!class_exists("AppliedLabel", false)) {
   }
 }
 
-if (!class_exists("AudienceExtensionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceExtensionError", false)) {
     /**
    * Errors associated with audience extension enabled line items
    * @package GoogleApiAdsDfp
@@ -533,7 +533,7 @@ if (!class_exists("AudienceExtensionError", false)) {
   }
 }
 
-if (!class_exists("AuthenticationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationError", false)) {
     /**
    * An error for an exception that occurred when authenticating.
    * @package GoogleApiAdsDfp
@@ -581,7 +581,7 @@ if (!class_exists("AuthenticationError", false)) {
   }
 }
 
-if (!class_exists("BandwidthGroupTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BandwidthGroupTargeting", false)) {
     /**
    * Represents bandwidth groups that are being targeted or excluded by the
    * {@link LineItem}.
@@ -632,7 +632,7 @@ if (!class_exists("BandwidthGroupTargeting", false)) {
   }
 }
 
-if (!class_exists("BaseCustomFieldValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BaseCustomFieldValue", false)) {
     /**
    * The value of a {@link CustomField} for a particular entity.
    * @package GoogleApiAdsDfp
@@ -718,7 +718,7 @@ if (!class_exists("BaseCustomFieldValue", false)) {
   }
 }
 
-if (!class_exists("BrowserLanguageTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BrowserLanguageTargeting", false)) {
     /**
    * Represents browser languages that are being targeted or excluded by the
    * {@link LineItem}.
@@ -769,7 +769,7 @@ if (!class_exists("BrowserLanguageTargeting", false)) {
   }
 }
 
-if (!class_exists("BrowserTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BrowserTargeting", false)) {
     /**
    * Represents browsers that are being targeted or excluded by the
    * {@link LineItem}.
@@ -820,7 +820,7 @@ if (!class_exists("BrowserTargeting", false)) {
   }
 }
 
-if (!class_exists("ClickTrackingLineItemError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ClickTrackingLineItemError", false)) {
     /**
    * Click tracking is a special line item type with a number of unique errors as
    * described below.
@@ -869,7 +869,7 @@ if (!class_exists("ClickTrackingLineItemError", false)) {
   }
 }
 
-if (!class_exists("CommonError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CommonError", false)) {
     /**
    * A place for common errors that can be used across services.
    * @package GoogleApiAdsDfp
@@ -917,7 +917,7 @@ if (!class_exists("CommonError", false)) {
   }
 }
 
-if (!class_exists("CompanyCreditStatusError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CompanyCreditStatusError", false)) {
     /**
    * Lists all errors due to {@link Company#creditStatus}.
    * @package GoogleApiAdsDfp
@@ -965,7 +965,7 @@ if (!class_exists("CompanyCreditStatusError", false)) {
   }
 }
 
-if (!class_exists("ContentMetadataKeyHierarchyTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ContentMetadataKeyHierarchyTargeting", false)) {
     /**
    * Represents one or more {@link CustomTargetingValue custom targeting values} from different
    * {@link CustomTargetingKey custom targeting keys} ANDed together.
@@ -1009,7 +1009,7 @@ if (!class_exists("ContentMetadataKeyHierarchyTargeting", false)) {
   }
 }
 
-if (!class_exists("ContentMetadataTargetingError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ContentMetadataTargetingError", false)) {
     /**
    * Lists all errors related to {@link ContentMetadataTargeting}.
    * @package GoogleApiAdsDfp
@@ -1057,7 +1057,7 @@ if (!class_exists("ContentMetadataTargetingError", false)) {
   }
 }
 
-if (!class_exists("ContentTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ContentTargeting", false)) {
     /**
    * Used to target {@link LineItem}s to specific videos on a publisher's site.
    * @package GoogleApiAdsDfp
@@ -1149,7 +1149,7 @@ if (!class_exists("ContentTargeting", false)) {
   }
 }
 
-if (!class_exists("CreativeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeError", false)) {
     /**
    * Lists all errors associated with creatives.
    * @package GoogleApiAdsDfp
@@ -1197,7 +1197,7 @@ if (!class_exists("CreativeError", false)) {
   }
 }
 
-if (!class_exists("CreativePlaceholder", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativePlaceholder", false)) {
     /**
    * A {@code CreativePlaceholder} describes a slot that a creative is expected to
    * fill. This is used primarily to help in forecasting, and also to validate
@@ -1287,7 +1287,7 @@ if (!class_exists("CreativePlaceholder", false)) {
   }
 }
 
-if (!class_exists("CrossSellError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CrossSellError", false)) {
     /**
    * Lists all errors associated with cross selling.
    * @package GoogleApiAdsDfp
@@ -1335,7 +1335,7 @@ if (!class_exists("CrossSellError", false)) {
   }
 }
 
-if (!class_exists("CustomFieldValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomFieldValue", false)) {
     /**
    * The value of a {@link CustomField} that does not have a {@link CustomField#dataType}
    * of {@link CustomFieldDataType#DROP_DOWN}.
@@ -1382,7 +1382,7 @@ if (!class_exists("CustomFieldValue", false)) {
   }
 }
 
-if (!class_exists("CustomFieldValueError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomFieldValueError", false)) {
     /**
    * Errors specific to editing custom field values
    * @package GoogleApiAdsDfp
@@ -1430,7 +1430,7 @@ if (!class_exists("CustomFieldValueError", false)) {
   }
 }
 
-if (!class_exists("CustomTargetingError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomTargetingError", false)) {
     /**
    * Lists all errors related to {@link CustomTargetingKey} and
    * {@link CustomTargetingValue} objects.
@@ -1479,7 +1479,7 @@ if (!class_exists("CustomTargetingError", false)) {
   }
 }
 
-if (!class_exists("CustomCriteriaNode", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteriaNode", false)) {
     /**
    * A {@link CustomCriteriaNode} is a node in the custom targeting tree. A custom
    * criteria node can either be a {@link CustomCriteriaSet} (a non-leaf node) or
@@ -1561,7 +1561,7 @@ if (!class_exists("CustomCriteriaNode", false)) {
   }
 }
 
-if (!class_exists("Date", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Date", false)) {
     /**
    * Represents a date.
    * @package GoogleApiAdsDfp
@@ -1618,7 +1618,7 @@ if (!class_exists("Date", false)) {
   }
 }
 
-if (!class_exists("DfpDateTime", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DfpDateTime", false)) {
     /**
    * Represents a date combined with the time of day.
    * @package GoogleApiAdsDfp
@@ -1689,7 +1689,7 @@ if (!class_exists("DfpDateTime", false)) {
   }
 }
 
-if (!class_exists("DateTimeRangeTargetingError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DateTimeRangeTargetingError", false)) {
     /**
    * Lists all date time range errors caused by associating a line item with a targeting
    * expression.
@@ -1738,7 +1738,7 @@ if (!class_exists("DateTimeRangeTargetingError", false)) {
   }
 }
 
-if (!class_exists("DayPart", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DayPart", false)) {
     /**
    * {@code DayPart} represents a time-period within a day of the week which is
    * targeted by a {@link LineItem}.
@@ -1796,7 +1796,7 @@ if (!class_exists("DayPart", false)) {
   }
 }
 
-if (!class_exists("DayPartTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DayPartTargeting", false)) {
     /**
    * Modify the delivery times of line items for particular days of the week. By
    * default, line items are served at all days and times.
@@ -1847,7 +1847,7 @@ if (!class_exists("DayPartTargeting", false)) {
   }
 }
 
-if (!class_exists("DayPartTargetingError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DayPartTargetingError", false)) {
     /**
    * Lists all errors associated with day-part targeting for a line item.
    * @package GoogleApiAdsDfp
@@ -1895,7 +1895,7 @@ if (!class_exists("DayPartTargetingError", false)) {
   }
 }
 
-if (!class_exists("DeliveryData", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeliveryData", false)) {
     /**
    * Holds the number of clicks or impressions, determined by
    * {@link LineItem#costType}, delivered for a single line item for the
@@ -1940,7 +1940,7 @@ if (!class_exists("DeliveryData", false)) {
   }
 }
 
-if (!class_exists("DeliveryIndicator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeliveryIndicator", false)) {
     /**
    * Indicates the delivery performance of the {@link LineItem}.
    * @package GoogleApiAdsDfp
@@ -1990,7 +1990,7 @@ if (!class_exists("DeliveryIndicator", false)) {
   }
 }
 
-if (!class_exists("DeviceCapabilityTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeviceCapabilityTargeting", false)) {
     /**
    * Represents device capabilities that are being targeted or excluded by the {@link LineItem}.
    * @package GoogleApiAdsDfp
@@ -2040,7 +2040,7 @@ if (!class_exists("DeviceCapabilityTargeting", false)) {
   }
 }
 
-if (!class_exists("DeviceCategoryTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeviceCategoryTargeting", false)) {
     /**
    * Represents device categories that are being targeted or excluded by the {@link LineItem}.
    * @package GoogleApiAdsDfp
@@ -2090,7 +2090,7 @@ if (!class_exists("DeviceCategoryTargeting", false)) {
   }
 }
 
-if (!class_exists("DeviceManufacturerTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeviceManufacturerTargeting", false)) {
     /**
    * Represents device manufacturer that are being targeted or excluded by the
    * {@link LineItem}.
@@ -2141,7 +2141,7 @@ if (!class_exists("DeviceManufacturerTargeting", false)) {
   }
 }
 
-if (!class_exists("DropDownCustomFieldValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DropDownCustomFieldValue", false)) {
     /**
    * A {@link CustomFieldValue} for a {@link CustomField} that has a {@link CustomField#dataType}
    * of {@link CustomFieldDataType#DROP_DOWN}
@@ -2188,7 +2188,7 @@ if (!class_exists("DropDownCustomFieldValue", false)) {
   }
 }
 
-if (!class_exists("EntityChildrenLimitReachedError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\EntityChildrenLimitReachedError", false)) {
     /**
    * Lists errors relating to having too many children on an entity.
    * @package GoogleApiAdsDfp
@@ -2236,7 +2236,7 @@ if (!class_exists("EntityChildrenLimitReachedError", false)) {
   }
 }
 
-if (!class_exists("EntityLimitReachedError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\EntityLimitReachedError", false)) {
     /**
    * An error that occurs when creating an entity if the limit on the number of allowed entities for
    * a network has already been reached.
@@ -2278,7 +2278,7 @@ if (!class_exists("EntityLimitReachedError", false)) {
   }
 }
 
-if (!class_exists("FeatureError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FeatureError", false)) {
     /**
    * Errors related to feature management.  If you attempt using a feature that is not available to
    * the current network you'll receive a FeatureError with the missing feature as the trigger.
@@ -2327,7 +2327,7 @@ if (!class_exists("FeatureError", false)) {
   }
 }
 
-if (!class_exists("ForecastError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ForecastError", false)) {
     /**
    * Errors that can result from a forecast request.
    * @package GoogleApiAdsDfp
@@ -2375,7 +2375,7 @@ if (!class_exists("ForecastError", false)) {
   }
 }
 
-if (!class_exists("FrequencyCap", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FrequencyCap", false)) {
     /**
    * Represents a limit on the number of times a single viewer can be exposed to
    * the same {@link LineItem} in a specified time period.
@@ -2433,7 +2433,7 @@ if (!class_exists("FrequencyCap", false)) {
   }
 }
 
-if (!class_exists("FrequencyCapError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FrequencyCapError", false)) {
     /**
    * Lists all errors associated with frequency caps.
    * @package GoogleApiAdsDfp
@@ -2481,7 +2481,7 @@ if (!class_exists("FrequencyCapError", false)) {
   }
 }
 
-if (!class_exists("GenericTargetingError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GenericTargetingError", false)) {
     /**
    * Targeting validation errors that can be used by different targeting types.
    * @package GoogleApiAdsDfp
@@ -2529,7 +2529,7 @@ if (!class_exists("GenericTargetingError", false)) {
   }
 }
 
-if (!class_exists("GeoTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GeoTargeting", false)) {
     /**
    * Provides line items the ability to target geographical locations. By default,
    * line items target all countries and their subdivisions. With geographical
@@ -2593,7 +2593,7 @@ if (!class_exists("GeoTargeting", false)) {
   }
 }
 
-if (!class_exists("GeoTargetingError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GeoTargetingError", false)) {
     /**
    * Lists all errors associated with geographical targeting for a
    * {@link LineItem}.
@@ -2642,7 +2642,7 @@ if (!class_exists("GeoTargetingError", false)) {
   }
 }
 
-if (!class_exists("Goal", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Goal", false)) {
     /**
    * Defines the criteria a {@link LineItem} needs to satisfy to meet its delivery goal.
    * @package GoogleApiAdsDfp
@@ -2699,7 +2699,7 @@ if (!class_exists("Goal", false)) {
   }
 }
 
-if (!class_exists("GrpSettings", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GrpSettings", false)) {
     /**
    * {@code GrpSettings} contains information for a line item that will have a target demographic
    * when serving. This information will be used to set up tracking and enable reporting on the
@@ -2765,7 +2765,7 @@ if (!class_exists("GrpSettings", false)) {
   }
 }
 
-if (!class_exists("InternalApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiError", false)) {
     /**
    * Indicates that a server-side error has occured. {@code InternalApiError}s
    * are generally not the result of an invalid request or message sent by the
@@ -2815,7 +2815,7 @@ if (!class_exists("InternalApiError", false)) {
   }
 }
 
-if (!class_exists("InvalidUrlError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InvalidUrlError", false)) {
     /**
    * Lists all errors associated with URLs.
    * @package GoogleApiAdsDfp
@@ -2863,7 +2863,7 @@ if (!class_exists("InvalidUrlError", false)) {
   }
 }
 
-if (!class_exists("InventoryTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InventoryTargeting", false)) {
     /**
    * A collection of targeted and excluded ad units and placements.
    * @package GoogleApiAdsDfp
@@ -2920,7 +2920,7 @@ if (!class_exists("InventoryTargeting", false)) {
   }
 }
 
-if (!class_exists("InventoryTargetingError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InventoryTargetingError", false)) {
     /**
    * Lists all inventory errors caused by associating a line item with a targeting
    * expression.
@@ -2969,7 +2969,7 @@ if (!class_exists("InventoryTargetingError", false)) {
   }
 }
 
-if (!class_exists("LabelEntityAssociationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LabelEntityAssociationError", false)) {
     /**
    * Errors specific to creating label entity associations.
    * @package GoogleApiAdsDfp
@@ -3017,7 +3017,7 @@ if (!class_exists("LabelEntityAssociationError", false)) {
   }
 }
 
-if (!class_exists("LineItemAction", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemAction", false)) {
     /**
    * Represents the actions that can be performed on {@link LineItem} objects.
    * @package GoogleApiAdsDfp
@@ -3096,7 +3096,7 @@ if (!class_exists("LineItemAction", false)) {
   }
 }
 
-if (!class_exists("LineItemActivityAssociationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemActivityAssociationError", false)) {
     /**
    * Errors specific to associating activities to line items.
    * @package GoogleApiAdsDfp
@@ -3144,7 +3144,7 @@ if (!class_exists("LineItemActivityAssociationError", false)) {
   }
 }
 
-if (!class_exists("LineItemActivityAssociation", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemActivityAssociation", false)) {
     /**
    * A {@code LineItemActivityAssociation} associates a {@link LineItem} with an {@link Activity} so
    * that the conversions of the {@link Activity} can be counted against the {@link LineItem}.
@@ -3202,7 +3202,7 @@ if (!class_exists("LineItemActivityAssociation", false)) {
   }
 }
 
-if (!class_exists("LineItemCreativeAssociationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemCreativeAssociationError", false)) {
     /**
    * Lists all errors associated with line item-to-creative association dates.
    * @package GoogleApiAdsDfp
@@ -3250,7 +3250,7 @@ if (!class_exists("LineItemCreativeAssociationError", false)) {
   }
 }
 
-if (!class_exists("LineItemError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemError", false)) {
     /**
    * A catch-all error that lists all generic errors associated with LineItem.
    * @package GoogleApiAdsDfp
@@ -3298,7 +3298,7 @@ if (!class_exists("LineItemError", false)) {
   }
 }
 
-if (!class_exists("LineItemFlightDateError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemFlightDateError", false)) {
     /**
    * Lists all errors associated with LineItem start and end dates.
    * @package GoogleApiAdsDfp
@@ -3346,7 +3346,7 @@ if (!class_exists("LineItemFlightDateError", false)) {
   }
 }
 
-if (!class_exists("LineItemOperationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemOperationError", false)) {
     /**
    * Lists all errors for executing operations on line items
    * @package GoogleApiAdsDfp
@@ -3394,7 +3394,7 @@ if (!class_exists("LineItemOperationError", false)) {
   }
 }
 
-if (!class_exists("LineItemPage", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemPage", false)) {
     /**
    * Captures a page of {@link LineItem} objects.
    * @package GoogleApiAdsDfp
@@ -3451,7 +3451,7 @@ if (!class_exists("LineItemPage", false)) {
   }
 }
 
-if (!class_exists("LineItemSummary", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemSummary", false)) {
     /**
    * The {@code LineItemSummary} represents the base class from which a {@code
    * LineItem} is derived.
@@ -3909,7 +3909,7 @@ if (!class_exists("LineItemSummary", false)) {
   }
 }
 
-if (!class_exists("DfpLocation", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DfpLocation", false)) {
     /**
    * A {@link Location} represents a geographical entity that can be targeted. If
    * a location type is not available because of the API version you are using,
@@ -4019,7 +4019,7 @@ if (!class_exists("DfpLocation", false)) {
   }
 }
 
-if (!class_exists("MobileCarrierTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\MobileCarrierTargeting", false)) {
     /**
    * Represents mobile carriers that are being targeted or excluded by the {@link LineItem}.
    * @package GoogleApiAdsDfp
@@ -4069,7 +4069,7 @@ if (!class_exists("MobileCarrierTargeting", false)) {
   }
 }
 
-if (!class_exists("MobileDeviceSubmodelTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\MobileDeviceSubmodelTargeting", false)) {
     /**
    * Represents mobile devices that are being targeted or excluded by the {@link LineItem}.
    * @package GoogleApiAdsDfp
@@ -4119,7 +4119,7 @@ if (!class_exists("MobileDeviceSubmodelTargeting", false)) {
   }
 }
 
-if (!class_exists("MobileDeviceTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\MobileDeviceTargeting", false)) {
     /**
    * Represents mobile devices that are being targeted or excluded by the {@link LineItem}.
    * @package GoogleApiAdsDfp
@@ -4169,7 +4169,7 @@ if (!class_exists("MobileDeviceTargeting", false)) {
   }
 }
 
-if (!class_exists("Money", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Money", false)) {
     /**
    * Represents a money amount.
    * @package GoogleApiAdsDfp
@@ -4219,7 +4219,7 @@ if (!class_exists("Money", false)) {
   }
 }
 
-if (!class_exists("NotNullError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NotNullError", false)) {
     /**
    * Caused by supplying a null value for an attribute that cannot be null.
    * @package GoogleApiAdsDfp
@@ -4267,7 +4267,7 @@ if (!class_exists("NotNullError", false)) {
   }
 }
 
-if (!class_exists("NullError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullError", false)) {
     /**
    * Errors associated with violation of a NOT NULL check.
    * @package GoogleApiAdsDfp
@@ -4315,7 +4315,7 @@ if (!class_exists("NullError", false)) {
   }
 }
 
-if (!class_exists("OperatingSystemTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\OperatingSystemTargeting", false)) {
     /**
    * Represents operating systems that are being targeted or excluded by the
    * {@link LineItem}.
@@ -4366,7 +4366,7 @@ if (!class_exists("OperatingSystemTargeting", false)) {
   }
 }
 
-if (!class_exists("OperatingSystemVersionTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\OperatingSystemVersionTargeting", false)) {
     /**
    * Represents operating system versions that are being targeted or excluded by the {@link LineItem}.
    * @package GoogleApiAdsDfp
@@ -4416,7 +4416,7 @@ if (!class_exists("OperatingSystemVersionTargeting", false)) {
   }
 }
 
-if (!class_exists("OrderError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\OrderError", false)) {
     /**
    * Lists all errors associated with orders.
    * @package GoogleApiAdsDfp
@@ -4464,7 +4464,7 @@ if (!class_exists("OrderError", false)) {
   }
 }
 
-if (!class_exists("ParseError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ParseError", false)) {
     /**
    * Lists errors related to parsing.
    * @package GoogleApiAdsDfp
@@ -4512,7 +4512,7 @@ if (!class_exists("ParseError", false)) {
   }
 }
 
-if (!class_exists("PauseLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PauseLineItems", false)) {
     /**
    * The action used for pausing {@link LineItem} objects.
    * @package GoogleApiAdsDfp
@@ -4550,7 +4550,7 @@ if (!class_exists("PauseLineItems", false)) {
   }
 }
 
-if (!class_exists("PermissionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PermissionError", false)) {
     /**
    * Errors related to incorrect permission.
    * @package GoogleApiAdsDfp
@@ -4598,7 +4598,7 @@ if (!class_exists("PermissionError", false)) {
   }
 }
 
-if (!class_exists("ProgrammaticError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ProgrammaticError", false)) {
     /**
    * Errors associated with programmatic line items
    * @package GoogleApiAdsDfp
@@ -4646,7 +4646,7 @@ if (!class_exists("ProgrammaticError", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageContextError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageContextError", false)) {
     /**
    * An error that occurs while executing a PQL query contained in
    * a {@link Statement} object.
@@ -4695,7 +4695,7 @@ if (!class_exists("PublisherQueryLanguageContextError", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageSyntaxError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageSyntaxError", false)) {
     /**
    * An error that occurs while parsing a PQL query contained in a
    * {@link Statement} object.
@@ -4744,7 +4744,7 @@ if (!class_exists("PublisherQueryLanguageSyntaxError", false)) {
   }
 }
 
-if (!class_exists("QuotaError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\QuotaError", false)) {
     /**
    * Describes a client-side error on which a user is attempting
    * to perform an action to which they have no quota remaining.
@@ -4793,7 +4793,7 @@ if (!class_exists("QuotaError", false)) {
   }
 }
 
-if (!class_exists("RangeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeError", false)) {
     /**
    * A list of all errors associated with the Range constraint.
    * @package GoogleApiAdsDfp
@@ -4841,7 +4841,7 @@ if (!class_exists("RangeError", false)) {
   }
 }
 
-if (!class_exists("ReleaseLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ReleaseLineItems", false)) {
     /**
    * The action used for releasing {@link LineItem} objects.
    * @package GoogleApiAdsDfp
@@ -4879,7 +4879,7 @@ if (!class_exists("ReleaseLineItems", false)) {
   }
 }
 
-if (!class_exists("RequiredCollectionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredCollectionError", false)) {
     /**
    * A list of all errors to be used for validating sizes of collections.
    * @package GoogleApiAdsDfp
@@ -4927,7 +4927,7 @@ if (!class_exists("RequiredCollectionError", false)) {
   }
 }
 
-if (!class_exists("RequiredError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredError", false)) {
     /**
    * Errors due to missing required field.
    * @package GoogleApiAdsDfp
@@ -4975,7 +4975,7 @@ if (!class_exists("RequiredError", false)) {
   }
 }
 
-if (!class_exists("RequiredNumberError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredNumberError", false)) {
     /**
    * A list of all errors to be used in conjunction with required number
    * validators.
@@ -5024,7 +5024,7 @@ if (!class_exists("RequiredNumberError", false)) {
   }
 }
 
-if (!class_exists("RequiredSizeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredSizeError", false)) {
     /**
    * A list of all errors to be used for validating {@link Size}.
    * @package GoogleApiAdsDfp
@@ -5072,7 +5072,7 @@ if (!class_exists("RequiredSizeError", false)) {
   }
 }
 
-if (!class_exists("ReservationDetailsError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ReservationDetailsError", false)) {
     /**
    * Lists all errors associated with LineItem's reservation details.
    * @package GoogleApiAdsDfp
@@ -5120,7 +5120,7 @@ if (!class_exists("ReservationDetailsError", false)) {
   }
 }
 
-if (!class_exists("ReserveLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ReserveLineItems", false)) {
     /**
    * The action used for reserving {@link LineItem} objects.
    * @package GoogleApiAdsDfp
@@ -5165,7 +5165,7 @@ if (!class_exists("ReserveLineItems", false)) {
   }
 }
 
-if (!class_exists("ResumeLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ResumeLineItems", false)) {
     /**
    * The action used for resuming {@link LineItem} objects.
    * @package GoogleApiAdsDfp
@@ -5210,7 +5210,7 @@ if (!class_exists("ResumeLineItems", false)) {
   }
 }
 
-if (!class_exists("ServerError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ServerError", false)) {
     /**
    * Errors related to the server.
    * @package GoogleApiAdsDfp
@@ -5258,7 +5258,7 @@ if (!class_exists("ServerError", false)) {
   }
 }
 
-if (!class_exists("Size", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Size", false)) {
     /**
    * Represents the dimensions of an {@link AdUnit}, {@link LineItem} or {@link Creative}.
    * <p>
@@ -5317,7 +5317,7 @@ if (!class_exists("Size", false)) {
   }
 }
 
-if (!class_exists("SoapRequestHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapRequestHeader", false)) {
     /**
    * Represents the SOAP request header used by API requests.
    * @package GoogleApiAdsDfp
@@ -5367,7 +5367,7 @@ if (!class_exists("SoapRequestHeader", false)) {
   }
 }
 
-if (!class_exists("SoapResponseHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapResponseHeader", false)) {
     /**
    * Represents the SOAP request header used by API responses.
    * @package GoogleApiAdsDfp
@@ -5417,7 +5417,7 @@ if (!class_exists("SoapResponseHeader", false)) {
   }
 }
 
-if (!class_exists("Statement", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Statement", false)) {
     /**
    * Captures the {@code WHERE}, {@code ORDER BY} and {@code LIMIT} clauses of a
    * PQL query. Statements are typically used to retrieve objects of a predefined
@@ -5495,7 +5495,7 @@ if (!class_exists("Statement", false)) {
   }
 }
 
-if (!class_exists("StatementError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StatementError", false)) {
     /**
    * An error that occurs while parsing {@link Statement} objects.
    * @package GoogleApiAdsDfp
@@ -5543,7 +5543,7 @@ if (!class_exists("StatementError", false)) {
   }
 }
 
-if (!class_exists("Stats", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Stats", false)) {
     /**
    * {@code Stats} contains trafficking statistics for {@link LineItem} and
    * {@link LineItemCreativeAssociation} objects
@@ -5608,7 +5608,7 @@ if (!class_exists("Stats", false)) {
   }
 }
 
-if (!class_exists("StringLengthError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthError", false)) {
     /**
    * Errors for Strings which do not meet given length constraints.
    * @package GoogleApiAdsDfp
@@ -5656,7 +5656,7 @@ if (!class_exists("StringLengthError", false)) {
   }
 }
 
-if (!class_exists("String_ValueMapEntry", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\String_ValueMapEntry", false)) {
     /**
    * This represents an entry in a map with a key of type String
    * and value of type Value.
@@ -5707,7 +5707,7 @@ if (!class_exists("String_ValueMapEntry", false)) {
   }
 }
 
-if (!class_exists("Targeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Targeting", false)) {
     /**
    * Contains targeting criteria for {@link LineItem} objects. See
    * {@link LineItem#targeting}.
@@ -5800,7 +5800,7 @@ if (!class_exists("Targeting", false)) {
   }
 }
 
-if (!class_exists("TeamError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TeamError", false)) {
     /**
    * Errors related to a Team.
    * @package GoogleApiAdsDfp
@@ -5848,7 +5848,7 @@ if (!class_exists("TeamError", false)) {
   }
 }
 
-if (!class_exists("Technology", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Technology", false)) {
     /**
    * Represents a technology entity that can be targeted.
    * @package GoogleApiAdsDfp
@@ -5941,7 +5941,7 @@ if (!class_exists("Technology", false)) {
   }
 }
 
-if (!class_exists("TechnologyTargetingError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TechnologyTargetingError", false)) {
     /**
    * Technology targeting validation errors.
    * @package GoogleApiAdsDfp
@@ -5989,7 +5989,7 @@ if (!class_exists("TechnologyTargetingError", false)) {
   }
 }
 
-if (!class_exists("TimeOfDay", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TimeOfDay", false)) {
     /**
    * Represents a specific time in a day.
    * @package GoogleApiAdsDfp
@@ -6039,7 +6039,7 @@ if (!class_exists("TimeOfDay", false)) {
   }
 }
 
-if (!class_exists("TypeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TypeError", false)) {
     /**
    * An error for a field which is an invalid type.
    * @package GoogleApiAdsDfp
@@ -6080,7 +6080,7 @@ if (!class_exists("TypeError", false)) {
   }
 }
 
-if (!class_exists("UnarchiveLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UnarchiveLineItems", false)) {
     /**
    * The action used for unarchiving {@link LineItem} objects.
    * @package GoogleApiAdsDfp
@@ -6118,7 +6118,7 @@ if (!class_exists("UnarchiveLineItems", false)) {
   }
 }
 
-if (!class_exists("UniqueError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UniqueError", false)) {
     /**
    * An error for a field which must satisfy a uniqueness constraint
    * @package GoogleApiAdsDfp
@@ -6159,7 +6159,7 @@ if (!class_exists("UniqueError", false)) {
   }
 }
 
-if (!class_exists("UpdateResult", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UpdateResult", false)) {
     /**
    * Represents the result of performing an action on objects.
    * @package GoogleApiAdsDfp
@@ -6202,7 +6202,7 @@ if (!class_exists("UpdateResult", false)) {
   }
 }
 
-if (!class_exists("UserDomainTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UserDomainTargeting", false)) {
     /**
    * Provides line items the ability to target or exclude users visiting their
    * websites from a list of domains or subdomains.
@@ -6253,7 +6253,7 @@ if (!class_exists("UserDomainTargeting", false)) {
   }
 }
 
-if (!class_exists("UserDomainTargetingError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UserDomainTargetingError", false)) {
     /**
    * Lists all errors related to user domain targeting for a line item.
    * @package GoogleApiAdsDfp
@@ -6301,7 +6301,7 @@ if (!class_exists("UserDomainTargetingError", false)) {
   }
 }
 
-if (!class_exists("Value", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Value", false)) {
     /**
    * {@code Value} represents a value.
    * @package GoogleApiAdsDfp
@@ -6380,7 +6380,7 @@ if (!class_exists("Value", false)) {
   }
 }
 
-if (!class_exists("VideoPosition", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VideoPosition", false)) {
     /**
    * Represents a targetable position within a video. A video ad can be targeted
    * to a position (pre-roll, all mid-rolls, or post-roll), or to a specific mid-roll index.
@@ -6431,7 +6431,7 @@ if (!class_exists("VideoPosition", false)) {
   }
 }
 
-if (!class_exists("VideoPositionTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VideoPositionTargeting", false)) {
     /**
    * Represents positions within and around a video where ads can be targeted to.
    * <p>
@@ -6478,7 +6478,7 @@ if (!class_exists("VideoPositionTargeting", false)) {
   }
 }
 
-if (!class_exists("VideoPositionWithinPod", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VideoPositionWithinPod", false)) {
     /**
    * Represents a targetable position within a pod within a video stream. A video ad can be targeted
    * to any position in the pod (first, second, third ... last).  If there is only 1 ad in a pod,
@@ -6523,7 +6523,7 @@ if (!class_exists("VideoPositionWithinPod", false)) {
   }
 }
 
-if (!class_exists("VideoPositionTarget", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VideoPositionTarget", false)) {
     /**
    * Represents the options for targetable positions within a video.
    * @package GoogleApiAdsDfp
@@ -6580,7 +6580,7 @@ if (!class_exists("VideoPositionTarget", false)) {
   }
 }
 
-if (!class_exists("ApiVersionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiVersionErrorReason", false)) {
     /**
    * Indicates that the operation is not allowed in the version the request
    * was made in.
@@ -6617,7 +6617,7 @@ if (!class_exists("ApiVersionErrorReason", false)) {
   }
 }
 
-if (!class_exists("AudienceExtensionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceExtensionErrorReason", false)) {
     /**
    * Specific audience extension error reasons.
    * @package GoogleApiAdsDfp
@@ -6653,7 +6653,7 @@ if (!class_exists("AudienceExtensionErrorReason", false)) {
   }
 }
 
-if (!class_exists("AuthenticationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationErrorReason", false)) {
     /**
    * The SOAP message contains a request header with an ambiguous definition
    * of the authentication header fields. This means either the {@code
@@ -6692,7 +6692,7 @@ if (!class_exists("AuthenticationErrorReason", false)) {
   }
 }
 
-if (!class_exists("ClickTrackingLineItemErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ClickTrackingLineItemErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -6728,7 +6728,7 @@ if (!class_exists("ClickTrackingLineItemErrorReason", false)) {
   }
 }
 
-if (!class_exists("CommonErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CommonErrorReason", false)) {
     /**
    * Describes reasons for common errors
    * @package GoogleApiAdsDfp
@@ -6764,7 +6764,7 @@ if (!class_exists("CommonErrorReason", false)) {
   }
 }
 
-if (!class_exists("CompanionDeliveryOption", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CompanionDeliveryOption", false)) {
     /**
    * The delivery option for companions.  Used for line items whose environmentType is
    * {@link EnvironmentType#VIDEO_PLAYER}.
@@ -6801,7 +6801,7 @@ if (!class_exists("CompanionDeliveryOption", false)) {
   }
 }
 
-if (!class_exists("CompanyCreditStatusErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CompanyCreditStatusErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -6837,7 +6837,7 @@ if (!class_exists("CompanyCreditStatusErrorReason", false)) {
   }
 }
 
-if (!class_exists("ComputedStatus", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ComputedStatus", false)) {
     /**
    * Describes the computed {@link LineItem} status that is derived from the
    * current state of the line item.
@@ -6874,7 +6874,7 @@ if (!class_exists("ComputedStatus", false)) {
   }
 }
 
-if (!class_exists("ContentMetadataTargetingErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ContentMetadataTargetingErrorReason", false)) {
     /**
    * The reasons for the metadata targeting error.
    * @package GoogleApiAdsDfp
@@ -6910,7 +6910,7 @@ if (!class_exists("ContentMetadataTargetingErrorReason", false)) {
   }
 }
 
-if (!class_exists("CostType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CostType", false)) {
     /**
    * Describes the {@link LineItem} actions that are billable.
    * @package GoogleApiAdsDfp
@@ -6946,7 +6946,7 @@ if (!class_exists("CostType", false)) {
   }
 }
 
-if (!class_exists("CreativeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -6982,7 +6982,7 @@ if (!class_exists("CreativeErrorReason", false)) {
   }
 }
 
-if (!class_exists("CreativeRotationType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeRotationType", false)) {
     /**
    * The strategy to use for displaying multiple {@link Creative} objects that are
    * associated with a {@link LineItem}.
@@ -7019,7 +7019,7 @@ if (!class_exists("CreativeRotationType", false)) {
   }
 }
 
-if (!class_exists("CreativeSizeType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeSizeType", false)) {
     /**
    * Descriptions of the types of sizes a creative can be.  Not all creatives can
    * be described by a height-width pair, this provides additional context.
@@ -7056,7 +7056,7 @@ if (!class_exists("CreativeSizeType", false)) {
   }
 }
 
-if (!class_exists("CrossSellErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CrossSellErrorReason", false)) {
     /**
    * The reason of the error.
    * @package GoogleApiAdsDfp
@@ -7092,7 +7092,7 @@ if (!class_exists("CrossSellErrorReason", false)) {
   }
 }
 
-if (!class_exists("CustomCriteriaComparisonOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteriaComparisonOperator", false)) {
     /**
    * Specifies the available comparison operators.
    * @package GoogleApiAdsDfp
@@ -7128,7 +7128,7 @@ if (!class_exists("CustomCriteriaComparisonOperator", false)) {
   }
 }
 
-if (!class_exists("CustomCriteriaSetLogicalOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteriaSetLogicalOperator", false)) {
     /**
    * Specifies the available logical operators.
    * @package GoogleApiAdsDfp
@@ -7164,7 +7164,7 @@ if (!class_exists("CustomCriteriaSetLogicalOperator", false)) {
   }
 }
 
-if (!class_exists("CustomFieldValueErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomFieldValueErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -7200,7 +7200,7 @@ if (!class_exists("CustomFieldValueErrorReason", false)) {
   }
 }
 
-if (!class_exists("CustomTargetingErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomTargetingErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -7236,7 +7236,7 @@ if (!class_exists("CustomTargetingErrorReason", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentCriteriaComparisonOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentCriteriaComparisonOperator", false)) {
     /**
    * Specifies the available comparison operators.
    * @package GoogleApiAdsDfp
@@ -7272,7 +7272,7 @@ if (!class_exists("AudienceSegmentCriteriaComparisonOperator", false)) {
   }
 }
 
-if (!class_exists("DateTimeRangeTargetingErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DateTimeRangeTargetingErrorReason", false)) {
     /**
    * {@link ApiErrorReason} enum for date time range targeting error.
    * @package GoogleApiAdsDfp
@@ -7308,7 +7308,7 @@ if (!class_exists("DateTimeRangeTargetingErrorReason", false)) {
   }
 }
 
-if (!class_exists("DayOfWeek", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DayOfWeek", false)) {
     /**
    * Days of the week.
    * @package GoogleApiAdsDfp
@@ -7344,7 +7344,7 @@ if (!class_exists("DayOfWeek", false)) {
   }
 }
 
-if (!class_exists("DayPartTargetingErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DayPartTargetingErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -7380,7 +7380,7 @@ if (!class_exists("DayPartTargetingErrorReason", false)) {
   }
 }
 
-if (!class_exists("DeliveryTimeZone", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeliveryTimeZone", false)) {
     /**
    * Represents the time zone to be used for {@link DayPartTargeting}.
    * @package GoogleApiAdsDfp
@@ -7416,7 +7416,7 @@ if (!class_exists("DeliveryTimeZone", false)) {
   }
 }
 
-if (!class_exists("DeliveryRateType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeliveryRateType", false)) {
     /**
    * Possible delivery rates for a {@link LineItem}, which dictate the manner in
    * which they are served.
@@ -7453,7 +7453,7 @@ if (!class_exists("DeliveryRateType", false)) {
   }
 }
 
-if (!class_exists("EntityChildrenLimitReachedErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\EntityChildrenLimitReachedErrorReason", false)) {
     /**
    * The reasons for the entity children limit reached error.
    * @package GoogleApiAdsDfp
@@ -7489,7 +7489,7 @@ if (!class_exists("EntityChildrenLimitReachedErrorReason", false)) {
   }
 }
 
-if (!class_exists("EnvironmentType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\EnvironmentType", false)) {
     /**
    * Enum for the valid environments in which ads can be shown.
    * @package GoogleApiAdsDfp
@@ -7525,7 +7525,7 @@ if (!class_exists("EnvironmentType", false)) {
   }
 }
 
-if (!class_exists("FeatureErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FeatureErrorReason", false)) {
     /**
    * A feature is being used that is not enabled on the current network.
    * @package GoogleApiAdsDfp
@@ -7561,7 +7561,7 @@ if (!class_exists("FeatureErrorReason", false)) {
   }
 }
 
-if (!class_exists("ForecastErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ForecastErrorReason", false)) {
     /**
    * Reason why a forecast could not be retrieved.
    * @package GoogleApiAdsDfp
@@ -7597,7 +7597,7 @@ if (!class_exists("ForecastErrorReason", false)) {
   }
 }
 
-if (!class_exists("FrequencyCapErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FrequencyCapErrorReason", false)) {
     /**
    * The value returned if the actual value is not exposed by the requested API version.
    * @package GoogleApiAdsDfp
@@ -7633,7 +7633,7 @@ if (!class_exists("FrequencyCapErrorReason", false)) {
   }
 }
 
-if (!class_exists("GenericTargetingErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GenericTargetingErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -7669,7 +7669,7 @@ if (!class_exists("GenericTargetingErrorReason", false)) {
   }
 }
 
-if (!class_exists("GeoTargetingErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GeoTargetingErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -7705,7 +7705,7 @@ if (!class_exists("GeoTargetingErrorReason", false)) {
   }
 }
 
-if (!class_exists("GoalType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GoalType", false)) {
     /**
    * Specifies the type of the goal for a {@link LineItem}.
    * @package GoogleApiAdsDfp
@@ -7741,7 +7741,7 @@ if (!class_exists("GoalType", false)) {
   }
 }
 
-if (!class_exists("GrpProvider", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GrpProvider", false)) {
     /**
    * Represents available GRP providers that a line item will have its target demographic measured by.
    * @package GoogleApiAdsDfp
@@ -7777,7 +7777,7 @@ if (!class_exists("GrpProvider", false)) {
   }
 }
 
-if (!class_exists("GrpTargetGender", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GrpTargetGender", false)) {
     /**
    * Represents the target gender for a GRP demographic targeted line item.
    * @package GoogleApiAdsDfp
@@ -7813,7 +7813,7 @@ if (!class_exists("GrpTargetGender", false)) {
   }
 }
 
-if (!class_exists("InternalApiErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiErrorReason", false)) {
     /**
    * The single reason for the internal API error.
    * @package GoogleApiAdsDfp
@@ -7849,7 +7849,7 @@ if (!class_exists("InternalApiErrorReason", false)) {
   }
 }
 
-if (!class_exists("InvalidUrlErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InvalidUrlErrorReason", false)) {
     /**
    * The URL contains invalid characters.
    * @package GoogleApiAdsDfp
@@ -7885,7 +7885,7 @@ if (!class_exists("InvalidUrlErrorReason", false)) {
   }
 }
 
-if (!class_exists("InventoryTargetingErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InventoryTargetingErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -7921,7 +7921,7 @@ if (!class_exists("InventoryTargetingErrorReason", false)) {
   }
 }
 
-if (!class_exists("LabelEntityAssociationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LabelEntityAssociationErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -7957,7 +7957,7 @@ if (!class_exists("LabelEntityAssociationErrorReason", false)) {
   }
 }
 
-if (!class_exists("LineItemActivityAssociationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemActivityAssociationErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -7993,7 +7993,7 @@ if (!class_exists("LineItemActivityAssociationErrorReason", false)) {
   }
 }
 
-if (!class_exists("LineItemCreativeAssociationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemCreativeAssociationErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -8029,7 +8029,7 @@ if (!class_exists("LineItemCreativeAssociationErrorReason", false)) {
   }
 }
 
-if (!class_exists("LineItemDiscountType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemDiscountType", false)) {
     /**
    * Describes the possible discount types on the cost of booking a
    * {@link LineItem}.
@@ -8066,7 +8066,7 @@ if (!class_exists("LineItemDiscountType", false)) {
   }
 }
 
-if (!class_exists("LineItemErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -8102,7 +8102,7 @@ if (!class_exists("LineItemErrorReason", false)) {
   }
 }
 
-if (!class_exists("LineItemFlightDateErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemFlightDateErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -8138,7 +8138,7 @@ if (!class_exists("LineItemFlightDateErrorReason", false)) {
   }
 }
 
-if (!class_exists("LineItemOperationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemOperationErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -8174,7 +8174,7 @@ if (!class_exists("LineItemOperationErrorReason", false)) {
   }
 }
 
-if (!class_exists("LineItemSummaryReservationStatus", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemSummaryReservationStatus", false)) {
     /**
    * Specifies the reservation status of the {@link LineItem}.
    * @package GoogleApiAdsDfp
@@ -8210,7 +8210,7 @@ if (!class_exists("LineItemSummaryReservationStatus", false)) {
   }
 }
 
-if (!class_exists("LineItemType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemType", false)) {
     /**
    * {@code LineItemType} indicates the priority of a {@link LineItem}, determined
    * by the way in which impressions are reserved to be served for it.
@@ -8247,7 +8247,7 @@ if (!class_exists("LineItemType", false)) {
   }
 }
 
-if (!class_exists("MinuteOfHour", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\MinuteOfHour", false)) {
     /**
    * Minutes in an hour. Currently, only 0, 15, 30, and 45 are supported. This
    * field is required.
@@ -8284,7 +8284,7 @@ if (!class_exists("MinuteOfHour", false)) {
   }
 }
 
-if (!class_exists("NotNullErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NotNullErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -8320,7 +8320,7 @@ if (!class_exists("NotNullErrorReason", false)) {
   }
 }
 
-if (!class_exists("NullErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullErrorReason", false)) {
     /**
    * The reasons for the validation error.
    * @package GoogleApiAdsDfp
@@ -8356,7 +8356,7 @@ if (!class_exists("NullErrorReason", false)) {
   }
 }
 
-if (!class_exists("OrderErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\OrderErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -8392,7 +8392,7 @@ if (!class_exists("OrderErrorReason", false)) {
   }
 }
 
-if (!class_exists("ParseErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ParseErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -8428,7 +8428,7 @@ if (!class_exists("ParseErrorReason", false)) {
   }
 }
 
-if (!class_exists("PermissionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PermissionErrorReason", false)) {
     /**
    * Describes reasons for permission errors.
    * @package GoogleApiAdsDfp
@@ -8464,7 +8464,7 @@ if (!class_exists("PermissionErrorReason", false)) {
   }
 }
 
-if (!class_exists("CreativePersistenceType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativePersistenceType", false)) {
     /**
    * Specifies options to prevent ads from replacing or appearing with this
    * line item. If persistence is set, this line item's ads will not be
@@ -8510,7 +8510,7 @@ if (!class_exists("CreativePersistenceType", false)) {
   }
 }
 
-if (!class_exists("ProgrammaticErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ProgrammaticErrorReason", false)) {
     /**
    * Audience extension is not supported by programmatic line items.
    * @package GoogleApiAdsDfp
@@ -8546,7 +8546,7 @@ if (!class_exists("ProgrammaticErrorReason", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageContextErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageContextErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -8582,7 +8582,7 @@ if (!class_exists("PublisherQueryLanguageContextErrorReason", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageSyntaxErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageSyntaxErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -8618,7 +8618,7 @@ if (!class_exists("PublisherQueryLanguageSyntaxErrorReason", false)) {
   }
 }
 
-if (!class_exists("QuotaErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\QuotaErrorReason", false)) {
     /**
    * The number of requests made per second is too high and has exceeded the
    * allowable limit. The recommended approach to handle this error is to wait
@@ -8664,7 +8664,7 @@ if (!class_exists("QuotaErrorReason", false)) {
   }
 }
 
-if (!class_exists("RangeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeErrorReason", false)) {
     /**
    * The value returned if the actual value is not exposed by the requested API version.
    * @package GoogleApiAdsDfp
@@ -8700,7 +8700,7 @@ if (!class_exists("RangeErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredCollectionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredCollectionErrorReason", false)) {
     /**
    * A required collection is missing.
    * @package GoogleApiAdsDfp
@@ -8736,7 +8736,7 @@ if (!class_exists("RequiredCollectionErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -8772,7 +8772,7 @@ if (!class_exists("RequiredErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredNumberErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredNumberErrorReason", false)) {
     /**
    * Describes reasons for a number to be invalid.
    * @package GoogleApiAdsDfp
@@ -8808,7 +8808,7 @@ if (!class_exists("RequiredNumberErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredSizeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredSizeErrorReason", false)) {
     /**
    * {@link Creative#size} or {@link LineItem#creativeSizes} is
    * missing.
@@ -8845,7 +8845,7 @@ if (!class_exists("RequiredSizeErrorReason", false)) {
   }
 }
 
-if (!class_exists("ReservationDetailsErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ReservationDetailsErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -8881,7 +8881,7 @@ if (!class_exists("ReservationDetailsErrorReason", false)) {
   }
 }
 
-if (!class_exists("RoadblockingType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RoadblockingType", false)) {
     /**
    * Describes the roadblocking types.
    * @package GoogleApiAdsDfp
@@ -8917,7 +8917,7 @@ if (!class_exists("RoadblockingType", false)) {
   }
 }
 
-if (!class_exists("ServerErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ServerErrorReason", false)) {
     /**
    * Describes reasons for server errors
    * @package GoogleApiAdsDfp
@@ -8953,7 +8953,7 @@ if (!class_exists("ServerErrorReason", false)) {
   }
 }
 
-if (!class_exists("StartDateTimeType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StartDateTimeType", false)) {
     /**
    * Specifies the start type to use for an entity with a start date time field.
    * For example, a {@link LineItem} or {@link LineItemCreativeAssociation}.
@@ -8990,7 +8990,7 @@ if (!class_exists("StartDateTimeType", false)) {
   }
 }
 
-if (!class_exists("StatementErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StatementErrorReason", false)) {
     /**
    * A bind variable has not been bound to a value.
    * @package GoogleApiAdsDfp
@@ -9026,7 +9026,7 @@ if (!class_exists("StatementErrorReason", false)) {
   }
 }
 
-if (!class_exists("StringLengthErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthErrorReason", false)) {
     /**
    * The value returned if the actual value is not exposed by the requested API version.
    * @package GoogleApiAdsDfp
@@ -9062,7 +9062,7 @@ if (!class_exists("StringLengthErrorReason", false)) {
   }
 }
 
-if (!class_exists("TargetPlatform", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TargetPlatform", false)) {
     /**
    * Indicates the target platform.
    * @package GoogleApiAdsDfp
@@ -9098,7 +9098,7 @@ if (!class_exists("TargetPlatform", false)) {
   }
 }
 
-if (!class_exists("TeamErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TeamErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -9134,7 +9134,7 @@ if (!class_exists("TeamErrorReason", false)) {
   }
 }
 
-if (!class_exists("TechnologyTargetingErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TechnologyTargetingErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -9170,7 +9170,7 @@ if (!class_exists("TechnologyTargetingErrorReason", false)) {
   }
 }
 
-if (!class_exists("TimeUnit", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TimeUnit", false)) {
     /**
    * Represent the possible time units for frequency capping.
    * @package GoogleApiAdsDfp
@@ -9206,7 +9206,7 @@ if (!class_exists("TimeUnit", false)) {
   }
 }
 
-if (!class_exists("UnitType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UnitType", false)) {
     /**
    * Indicates the type of unit used for defining a reservation. The
    * {@link CostType} can differ from the {@link UnitType} - an
@@ -9246,7 +9246,7 @@ if (!class_exists("UnitType", false)) {
   }
 }
 
-if (!class_exists("UserDomainTargetingErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UserDomainTargetingErrorReason", false)) {
     /**
    * {@link ApiErrorReason} enum for user domain targeting error.
    * @package GoogleApiAdsDfp
@@ -9282,7 +9282,7 @@ if (!class_exists("UserDomainTargetingErrorReason", false)) {
   }
 }
 
-if (!class_exists("VideoBumperType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VideoBumperType", false)) {
     /**
    * Represents the options for targetable bumper positions, surrounding an ad
    * pod, within a video stream. This includes before and after the supported ad
@@ -9321,7 +9321,7 @@ if (!class_exists("VideoBumperType", false)) {
   }
 }
 
-if (!class_exists("VideoPositionType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VideoPositionType", false)) {
     /**
    * Represents a targetable position within a video.
    * @package GoogleApiAdsDfp
@@ -9357,7 +9357,7 @@ if (!class_exists("VideoPositionType", false)) {
   }
 }
 
-if (!class_exists("CreateLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreateLineItems", false)) {
     /**
    * Creates new {@link LineItem} objects.
    *
@@ -9403,7 +9403,7 @@ if (!class_exists("CreateLineItems", false)) {
   }
 }
 
-if (!class_exists("CreateLineItemsResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreateLineItemsResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -9446,7 +9446,7 @@ if (!class_exists("CreateLineItemsResponse", false)) {
   }
 }
 
-if (!class_exists("GetLineItemsByStatement", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GetLineItemsByStatement", false)) {
     /**
    * Gets a {@link LineItemPage} of {@link LineItem} objects that satisfy the
    * given {@link Statement#query}. The following fields are supported for
@@ -9513,7 +9513,7 @@ if (!class_exists("GetLineItemsByStatement", false)) {
   }
 }
 
-if (!class_exists("GetLineItemsByStatementResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GetLineItemsByStatementResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -9556,7 +9556,7 @@ if (!class_exists("GetLineItemsByStatementResponse", false)) {
   }
 }
 
-if (!class_exists("PerformLineItemAction", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PerformLineItemAction", false)) {
     /**
    * Performs actions on {@link LineItem} objects that match the given
    * {@link Statement#query}.
@@ -9612,7 +9612,7 @@ if (!class_exists("PerformLineItemAction", false)) {
   }
 }
 
-if (!class_exists("PerformLineItemActionResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PerformLineItemActionResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -9655,7 +9655,7 @@ if (!class_exists("PerformLineItemActionResponse", false)) {
   }
 }
 
-if (!class_exists("UpdateLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UpdateLineItems", false)) {
     /**
    * Updates the specified {@link LineItem} objects.
    *
@@ -9701,7 +9701,7 @@ if (!class_exists("UpdateLineItems", false)) {
   }
 }
 
-if (!class_exists("UpdateLineItemsResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UpdateLineItemsResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -9744,7 +9744,7 @@ if (!class_exists("UpdateLineItemsResponse", false)) {
   }
 }
 
-if (!class_exists("ObjectValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ObjectValue", false)) {
     /**
    * Contains an object value.
    * <p>
@@ -9789,7 +9789,7 @@ if (!class_exists("ObjectValue", false)) {
   }
 }
 
-if (!class_exists("ActivateLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ActivateLineItems", false)) {
     /**
    * The action used for activating {@link LineItem} objects.
    * @package GoogleApiAdsDfp
@@ -9827,7 +9827,7 @@ if (!class_exists("ActivateLineItems", false)) {
   }
 }
 
-if (!class_exists("ApiException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiException", false)) {
     /**
    * \Exception class for holding a list of service errors.
    * @package GoogleApiAdsDfp
@@ -9873,7 +9873,7 @@ if (!class_exists("ApiException", false)) {
   }
 }
 
-if (!class_exists("ArchiveLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ArchiveLineItems", false)) {
     /**
    * The action used for archiving {@link LineItem} objects.
    * @package GoogleApiAdsDfp
@@ -9911,7 +9911,7 @@ if (!class_exists("ArchiveLineItems", false)) {
   }
 }
 
-if (!class_exists("BandwidthGroup", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BandwidthGroup", false)) {
     /**
    * Represents a group of bandwidths that are logically organized by some well
    * known generic names such as 'Cable' or 'DSL'.
@@ -9952,7 +9952,7 @@ if (!class_exists("BandwidthGroup", false)) {
   }
 }
 
-if (!class_exists("BooleanValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BooleanValue", false)) {
     /**
    * Contains a boolean value.
    * @package GoogleApiAdsDfp
@@ -9997,7 +9997,7 @@ if (!class_exists("BooleanValue", false)) {
   }
 }
 
-if (!class_exists("Browser", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Browser", false)) {
     /**
    * Represents an internet browser.
    * @package GoogleApiAdsDfp
@@ -10051,7 +10051,7 @@ if (!class_exists("Browser", false)) {
   }
 }
 
-if (!class_exists("BrowserLanguage", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BrowserLanguage", false)) {
     /**
    * Represents a Browser's language.
    * @package GoogleApiAdsDfp
@@ -10091,7 +10091,7 @@ if (!class_exists("BrowserLanguage", false)) {
   }
 }
 
-if (!class_exists("CustomCriteriaSet", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteriaSet", false)) {
     /**
    * A {@link CustomCriteriaSet} comprises of a set of {@link CustomCriteriaNode}
    * objects combined by the
@@ -10147,7 +10147,7 @@ if (!class_exists("CustomCriteriaSet", false)) {
   }
 }
 
-if (!class_exists("CustomCriteriaLeaf", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteriaLeaf", false)) {
     /**
    * A {@link CustomCriteriaLeaf} object represents a generic leaf of {@link CustomCriteria} tree
    * structure.
@@ -10186,7 +10186,7 @@ if (!class_exists("CustomCriteriaLeaf", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentCriteria", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentCriteria", false)) {
     /**
    * An {@link AudienceSegmentCriteria} object is used to target {@link AudienceSegment} objects.
    * @package GoogleApiAdsDfp
@@ -10237,7 +10237,7 @@ if (!class_exists("AudienceSegmentCriteria", false)) {
   }
 }
 
-if (!class_exists("DateTimeValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DateTimeValue", false)) {
     /**
    * Contains a date-time value.
    * @package GoogleApiAdsDfp
@@ -10282,7 +10282,7 @@ if (!class_exists("DateTimeValue", false)) {
   }
 }
 
-if (!class_exists("DateValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DateValue", false)) {
     /**
    * Contains a date value.
    * @package GoogleApiAdsDfp
@@ -10327,7 +10327,7 @@ if (!class_exists("DateValue", false)) {
   }
 }
 
-if (!class_exists("DeleteLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeleteLineItems", false)) {
     /**
    * The action used for deleting {@link LineItem} objects. A line item can be
    * deleted if it has never been eligible to serve.
@@ -10366,7 +10366,7 @@ if (!class_exists("DeleteLineItems", false)) {
   }
 }
 
-if (!class_exists("DeviceCapability", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeviceCapability", false)) {
     /**
    * Represents a capability of a physical device.
    * @package GoogleApiAdsDfp
@@ -10406,7 +10406,7 @@ if (!class_exists("DeviceCapability", false)) {
   }
 }
 
-if (!class_exists("DeviceCategory", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeviceCategory", false)) {
     /**
    * Represents the category of a device.
    * @package GoogleApiAdsDfp
@@ -10446,7 +10446,7 @@ if (!class_exists("DeviceCategory", false)) {
   }
 }
 
-if (!class_exists("DeviceManufacturer", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeviceManufacturer", false)) {
     /**
    * Represents a mobile device's manufacturer.
    * @package GoogleApiAdsDfp
@@ -10486,7 +10486,7 @@ if (!class_exists("DeviceManufacturer", false)) {
   }
 }
 
-if (!class_exists("LineItem", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItem", false)) {
     /**
    * {@code LineItem} is an advertiser's commitment to purchase a specific number
    * of ad impressions, clicks, or time.
@@ -10586,7 +10586,7 @@ if (!class_exists("LineItem", false)) {
   }
 }
 
-if (!class_exists("MobileCarrier", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\MobileCarrier", false)) {
     /**
    * Represents a mobile carrier.
    * Carrier targeting is only available to DFP mobile publishers.
@@ -10627,7 +10627,7 @@ if (!class_exists("MobileCarrier", false)) {
   }
 }
 
-if (!class_exists("MobileDevice", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\MobileDevice", false)) {
     /**
    * Represents a Mobile Device.
    * @package GoogleApiAdsDfp
@@ -10674,7 +10674,7 @@ if (!class_exists("MobileDevice", false)) {
   }
 }
 
-if (!class_exists("MobileDeviceSubmodel", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\MobileDeviceSubmodel", false)) {
     /**
    * Represents a mobile device submodel.
    * @package GoogleApiAdsDfp
@@ -10728,7 +10728,7 @@ if (!class_exists("MobileDeviceSubmodel", false)) {
   }
 }
 
-if (!class_exists("NumberValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NumberValue", false)) {
     /**
    * Contains a numeric value.
    * @package GoogleApiAdsDfp
@@ -10773,7 +10773,7 @@ if (!class_exists("NumberValue", false)) {
   }
 }
 
-if (!class_exists("OperatingSystem", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\OperatingSystem", false)) {
     /**
    * Represents an Operating System, such as Linux, Mac OS or Windows.
    * @package GoogleApiAdsDfp
@@ -10813,7 +10813,7 @@ if (!class_exists("OperatingSystem", false)) {
   }
 }
 
-if (!class_exists("OperatingSystemVersion", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\OperatingSystemVersion", false)) {
     /**
    * Represents a specific version of an operating system.
    * @package GoogleApiAdsDfp
@@ -10874,7 +10874,7 @@ if (!class_exists("OperatingSystemVersion", false)) {
   }
 }
 
-if (!class_exists("ReserveAndOverbookLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ReserveAndOverbookLineItems", false)) {
     /**
    * The action used for reserving and overbooking {@link LineItem} objects.
    * @package GoogleApiAdsDfp
@@ -10912,7 +10912,7 @@ if (!class_exists("ReserveAndOverbookLineItems", false)) {
   }
 }
 
-if (!class_exists("ResumeAndOverbookLineItems", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ResumeAndOverbookLineItems", false)) {
     /**
    * The action used for resuming and overbooking {@link LineItem} objects.
    * @package GoogleApiAdsDfp
@@ -10950,7 +10950,7 @@ if (!class_exists("ResumeAndOverbookLineItems", false)) {
   }
 }
 
-if (!class_exists("SetValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SetValue", false)) {
     /**
    * Contains a set of {@link Value Values}. May not contain duplicates.
    * @package GoogleApiAdsDfp
@@ -10995,7 +10995,7 @@ if (!class_exists("SetValue", false)) {
   }
 }
 
-if (!class_exists("TextValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TextValue", false)) {
     /**
    * Contains a string value.
    * @package GoogleApiAdsDfp
@@ -11040,7 +11040,7 @@ if (!class_exists("TextValue", false)) {
   }
 }
 
-if (!class_exists("CustomCriteria", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteria", false)) {
     /**
    * A {@link CustomCriteria} object is used to perform custom criteria targeting
    * on custom targeting keys of type {@link CustomTargetingKey.Type#PREDEFINED}
@@ -11100,7 +11100,7 @@ if (!class_exists("CustomCriteria", false)) {
   }
 }
 
-if (!class_exists("LineItemService", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemService", false)) {
     /**
    * LineItemService
    * @package GoogleApiAdsDfp

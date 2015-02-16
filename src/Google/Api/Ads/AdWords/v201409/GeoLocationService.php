@@ -31,7 +31,7 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 require_once "Google/Api/Ads/AdWords/Lib/AdWordsSoapClient.php";
 
-if (!class_exists("Address", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Address", false)) {
     /**
    * Structure to specify an address location.
    * @package Google_Api_Ads_AdWords_v201409
@@ -116,7 +116,7 @@ if (!class_exists("Address", false)) {
   }
 }
 
-if (!class_exists("GeoLocationSelector", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\GeoLocationSelector", false)) {
     /**
    * A selector used to fetch geographic coordinates for given addresses.
    * @package Google_Api_Ads_AdWords_v201409
@@ -159,7 +159,7 @@ if (!class_exists("GeoLocationSelector", false)) {
   }
 }
 
-if (!class_exists("GeoPoint", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\GeoPoint", false)) {
     /**
    * Specifies a geo location with the supplied latitude/longitude.
    * @package Google_Api_Ads_AdWords_v201409
@@ -209,7 +209,7 @@ if (!class_exists("GeoPoint", false)) {
   }
 }
 
-if (!class_exists("SoapRequestHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapRequestHeader", false)) {
     /**
    * Defines the required and optional elements within the header of a SOAP request.
    * @package Google_Api_Ads_AdWords_v201409
@@ -280,7 +280,7 @@ if (!class_exists("SoapRequestHeader", false)) {
   }
 }
 
-if (!class_exists("SoapResponseHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapResponseHeader", false)) {
     /**
    * Defines the elements within the header of a SOAP response.
    * @package Google_Api_Ads_AdWords_v201409
@@ -351,7 +351,7 @@ if (!class_exists("SoapResponseHeader", false)) {
   }
 }
 
-if (!class_exists("GeoLocation", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\GeoLocation", false)) {
     /**
    * Class representing a location with its geographic coordinates.
    * @package Google_Api_Ads_AdWords_v201409
@@ -451,7 +451,7 @@ if (!class_exists("GeoLocation", false)) {
   }
 }
 
-if (!class_exists("ApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiError", false)) {
     /**
    * The API error base class that provides details about an error that occurred
    * while processing a service request.
@@ -555,7 +555,7 @@ if (!class_exists("ApiError", false)) {
   }
 }
 
-if (!class_exists("ApplicationException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApplicationException", false)) {
     /**
    * Base class for exceptions.
    * @package Google_Api_Ads_AdWords_v201409
@@ -641,7 +641,7 @@ if (!class_exists("ApplicationException", false)) {
   }
 }
 
-if (!class_exists("AuthenticationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationErrorReason", false)) {
     /**
    * The single reason for the authentication failure.
    * @package Google_Api_Ads_AdWords_v201409
@@ -677,7 +677,7 @@ if (!class_exists("AuthenticationErrorReason", false)) {
   }
 }
 
-if (!class_exists("AuthorizationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationErrorReason", false)) {
     /**
    * The reasons for the database error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -713,7 +713,7 @@ if (!class_exists("AuthorizationErrorReason", false)) {
   }
 }
 
-if (!class_exists("ClientTermsErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsErrorReason", false)) {
     /**
    * Enums for the various reasons an error can be thrown as a result of
    * ClientTerms violation.
@@ -750,7 +750,7 @@ if (!class_exists("ClientTermsErrorReason", false)) {
   }
 }
 
-if (!class_exists("DatabaseErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseErrorReason", false)) {
     /**
    * The reasons for the database error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -786,7 +786,7 @@ if (!class_exists("DatabaseErrorReason", false)) {
   }
 }
 
-if (!class_exists("DistinctErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DistinctErrorReason", false)) {
     /**
    * The reasons for the validation error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -822,7 +822,7 @@ if (!class_exists("DistinctErrorReason", false)) {
   }
 }
 
-if (!class_exists("GeoLocationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\GeoLocationErrorReason", false)) {
     /**
    * The reasons for the geolocation errors.
    * @package Google_Api_Ads_AdWords_v201409
@@ -858,7 +858,7 @@ if (!class_exists("GeoLocationErrorReason", false)) {
   }
 }
 
-if (!class_exists("IdErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\IdErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -894,7 +894,7 @@ if (!class_exists("IdErrorReason", false)) {
   }
 }
 
-if (!class_exists("InternalApiErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiErrorReason", false)) {
     /**
    * The single reason for the internal API error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -930,7 +930,7 @@ if (!class_exists("InternalApiErrorReason", false)) {
   }
 }
 
-if (!class_exists("NotEmptyErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyErrorReason", false)) {
     /**
    * The reasons for the validation error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -966,7 +966,7 @@ if (!class_exists("NotEmptyErrorReason", false)) {
   }
 }
 
-if (!class_exists("NullErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullErrorReason", false)) {
     /**
    * The reasons for the validation error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1002,7 +1002,7 @@ if (!class_exists("NullErrorReason", false)) {
   }
 }
 
-if (!class_exists("OperationAccessDeniedReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDeniedReason", false)) {
     /**
    * The reasons for the operation access error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1038,7 +1038,7 @@ if (!class_exists("OperationAccessDeniedReason", false)) {
   }
 }
 
-if (!class_exists("QuotaCheckErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckErrorReason", false)) {
     /**
    * Enums for all the reasons an error can be thrown to the user during
    * billing quota checks.
@@ -1075,7 +1075,7 @@ if (!class_exists("QuotaCheckErrorReason", false)) {
   }
 }
 
-if (!class_exists("RangeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1111,7 +1111,7 @@ if (!class_exists("RangeErrorReason", false)) {
   }
 }
 
-if (!class_exists("RateExceededErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RateExceededErrorReason", false)) {
     /**
    * The reason for the rate exceeded error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1147,7 +1147,7 @@ if (!class_exists("RateExceededErrorReason", false)) {
   }
 }
 
-if (!class_exists("ReadOnlyErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1183,7 +1183,7 @@ if (!class_exists("ReadOnlyErrorReason", false)) {
   }
 }
 
-if (!class_exists("RegionCodeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RegionCodeErrorReason", false)) {
     /**
    * The reasons for the validation error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1219,7 +1219,7 @@ if (!class_exists("RegionCodeErrorReason", false)) {
   }
 }
 
-if (!class_exists("RejectedErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RejectedErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1255,7 +1255,7 @@ if (!class_exists("RejectedErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequestErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequestErrorReason", false)) {
     /**
    * Error reason is unknown.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1291,7 +1291,7 @@ if (!class_exists("RequestErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1327,7 +1327,7 @@ if (!class_exists("RequiredErrorReason", false)) {
   }
 }
 
-if (!class_exists("SizeLimitErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitErrorReason", false)) {
     /**
    * The reasons for Ad Scheduling errors.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1363,7 +1363,7 @@ if (!class_exists("SizeLimitErrorReason", false)) {
   }
 }
 
-if (!class_exists("StringLengthErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1399,7 +1399,7 @@ if (!class_exists("StringLengthErrorReason", false)) {
   }
 }
 
-if (!class_exists("GeoLocationServiceGet", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\GeoLocationServiceGet", false)) {
     /**
    * <span class="constraint Required">This field is required and should not be {@code null}.</span>
    *
@@ -1451,7 +1451,7 @@ if (!class_exists("GeoLocationServiceGet", false)) {
   }
 }
 
-if (!class_exists("GeoLocationServiceGetResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\GeoLocationServiceGetResponse", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -1494,7 +1494,7 @@ if (!class_exists("GeoLocationServiceGetResponse", false)) {
   }
 }
 
-if (!class_exists("AuthenticationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationError", false)) {
     /**
    * Errors returned when Authentication failed.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1542,7 +1542,7 @@ if (!class_exists("AuthenticationError", false)) {
   }
 }
 
-if (!class_exists("AuthorizationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationError", false)) {
     /**
    * Errors encountered when trying to authorize a user.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1590,7 +1590,7 @@ if (!class_exists("AuthorizationError", false)) {
   }
 }
 
-if (!class_exists("ClientTermsError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsError", false)) {
     /**
    * Error due to user not accepting the AdWords terms of service.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1638,7 +1638,7 @@ if (!class_exists("ClientTermsError", false)) {
   }
 }
 
-if (!class_exists("DistinctError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DistinctError", false)) {
     /**
    * Errors related to distinct ids or content.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1686,7 +1686,7 @@ if (!class_exists("DistinctError", false)) {
   }
 }
 
-if (!class_exists("GeoLocationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\GeoLocationError", false)) {
     /**
    * Errors for {@link GeoLocationService}.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1734,7 +1734,7 @@ if (!class_exists("GeoLocationError", false)) {
   }
 }
 
-if (!class_exists("IdError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\IdError", false)) {
     /**
    * Errors associated with the ids.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1782,7 +1782,7 @@ if (!class_exists("IdError", false)) {
   }
 }
 
-if (!class_exists("InternalApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiError", false)) {
     /**
    * Indicates that a server-side error has occured. {@code InternalApiError}s
    * are generally not the result of an invalid request or message sent by the
@@ -1832,7 +1832,7 @@ if (!class_exists("InternalApiError", false)) {
   }
 }
 
-if (!class_exists("InvalidGeoLocation", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\InvalidGeoLocation", false)) {
     /**
    * Invalid GeoLocation object.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1873,7 +1873,7 @@ if (!class_exists("InvalidGeoLocation", false)) {
   }
 }
 
-if (!class_exists("NotEmptyError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyError", false)) {
     /**
    * Errors corresponding with violation of a NOT EMPTY check.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1921,7 +1921,7 @@ if (!class_exists("NotEmptyError", false)) {
   }
 }
 
-if (!class_exists("NullError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullError", false)) {
     /**
    * Errors associated with violation of a NOT NULL check.
    * @package Google_Api_Ads_AdWords_v201409
@@ -1969,7 +1969,7 @@ if (!class_exists("NullError", false)) {
   }
 }
 
-if (!class_exists("OperationAccessDenied", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDenied", false)) {
     /**
    * Operation not permitted due to the invoked service's access policy.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2017,7 +2017,7 @@ if (!class_exists("OperationAccessDenied", false)) {
   }
 }
 
-if (!class_exists("QuotaCheckError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckError", false)) {
     /**
    * Encapsulates the errors thrown during developer quota checks.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2065,7 +2065,7 @@ if (!class_exists("QuotaCheckError", false)) {
   }
 }
 
-if (!class_exists("RangeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeError", false)) {
     /**
    * A list of all errors associated with the Range constraint.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2113,7 +2113,7 @@ if (!class_exists("RangeError", false)) {
   }
 }
 
-if (!class_exists("RateExceededError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RateExceededError", false)) {
     /**
    * Signals that a call failed because a measured rate exceeded.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2182,7 +2182,7 @@ if (!class_exists("RateExceededError", false)) {
   }
 }
 
-if (!class_exists("ReadOnlyError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyError", false)) {
     /**
    * Errors from attempting to write to read-only fields.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2230,7 +2230,7 @@ if (!class_exists("ReadOnlyError", false)) {
   }
 }
 
-if (!class_exists("RegionCodeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RegionCodeError", false)) {
     /**
    * A list of all errors associated with the @RegionCode constraints.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2278,7 +2278,7 @@ if (!class_exists("RegionCodeError", false)) {
   }
 }
 
-if (!class_exists("RejectedError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RejectedError", false)) {
     /**
    * Indicates that a field was rejected due to compatibility issues.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2326,7 +2326,7 @@ if (!class_exists("RejectedError", false)) {
   }
 }
 
-if (!class_exists("RequestError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequestError", false)) {
     /**
    * Encapsulates the generic errors thrown when there's an error with user
    * request.
@@ -2375,7 +2375,7 @@ if (!class_exists("RequestError", false)) {
   }
 }
 
-if (!class_exists("RequiredError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredError", false)) {
     /**
    * Errors due to missing required field.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2423,7 +2423,7 @@ if (!class_exists("RequiredError", false)) {
   }
 }
 
-if (!class_exists("SizeLimitError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitError", false)) {
     /**
    * Indicates that the number of entries in the request or response exceeds the system limit.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2471,7 +2471,7 @@ if (!class_exists("SizeLimitError", false)) {
   }
 }
 
-if (!class_exists("StringLengthError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthError", false)) {
     /**
    * Errors associated with the length of the given string being
    * out of bounds.
@@ -2520,7 +2520,7 @@ if (!class_exists("StringLengthError", false)) {
   }
 }
 
-if (!class_exists("DatabaseError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseError", false)) {
     /**
    * Errors that are thrown due to a database access problem.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2568,7 +2568,7 @@ if (!class_exists("DatabaseError", false)) {
   }
 }
 
-if (!class_exists("ApiException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiException", false)) {
     /**
    * \Exception class for holding a list of service errors.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2614,7 +2614,7 @@ if (!class_exists("ApiException", false)) {
   }
 }
 
-if (!class_exists("GeoLocationService", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\GeoLocationService", false)) {
     /**
    * GeoLocationService
    * @package Google_Api_Ads_AdWords_v201409

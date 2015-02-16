@@ -31,7 +31,7 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 require_once "Google/Api/Ads/Dfp/Lib/DfpSoapClient.php";
 
-if (!class_exists("ApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiError", false)) {
     /**
    * The API error base class that provides details about an error that occurred
    * while processing a service request.
@@ -135,7 +135,7 @@ if (!class_exists("ApiError", false)) {
   }
 }
 
-if (!class_exists("ApiVersionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiVersionError", false)) {
     /**
    * Errors related to the usage of API versions.
    * @package GoogleApiAdsDfp
@@ -183,7 +183,7 @@ if (!class_exists("ApiVersionError", false)) {
   }
 }
 
-if (!class_exists("ApplicationException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApplicationException", false)) {
     /**
    * Base class for exceptions.
    * @package GoogleApiAdsDfp
@@ -269,7 +269,7 @@ if (!class_exists("ApplicationException", false)) {
   }
 }
 
-if (!class_exists("AuthenticationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationError", false)) {
     /**
    * An error for an exception that occurred when authenticating.
    * @package GoogleApiAdsDfp
@@ -317,7 +317,7 @@ if (!class_exists("AuthenticationError", false)) {
   }
 }
 
-if (!class_exists("WorkflowRequest", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowRequest", false)) {
     /**
    * A {@code WorkflowRequest} represents a workflow action unit that requires external or manual
    * interference.
@@ -432,7 +432,7 @@ if (!class_exists("WorkflowRequest", false)) {
   }
 }
 
-if (!class_exists("CommonError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CommonError", false)) {
     /**
    * A place for common errors that can be used across services.
    * @package GoogleApiAdsDfp
@@ -480,7 +480,7 @@ if (!class_exists("CommonError", false)) {
   }
 }
 
-if (!class_exists("Date", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Date", false)) {
     /**
    * Represents a date.
    * @package GoogleApiAdsDfp
@@ -537,7 +537,7 @@ if (!class_exists("Date", false)) {
   }
 }
 
-if (!class_exists("DfpDateTime", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DfpDateTime", false)) {
     /**
    * Represents a date combined with the time of day.
    * @package GoogleApiAdsDfp
@@ -608,7 +608,7 @@ if (!class_exists("DfpDateTime", false)) {
   }
 }
 
-if (!class_exists("FeatureError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FeatureError", false)) {
     /**
    * Errors related to feature management.  If you attempt using a feature that is not available to
    * the current network you'll receive a FeatureError with the missing feature as the trigger.
@@ -657,7 +657,7 @@ if (!class_exists("FeatureError", false)) {
   }
 }
 
-if (!class_exists("ForecastError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ForecastError", false)) {
     /**
    * Errors that can result from a forecast request.
    * @package GoogleApiAdsDfp
@@ -705,7 +705,7 @@ if (!class_exists("ForecastError", false)) {
   }
 }
 
-if (!class_exists("InternalApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiError", false)) {
     /**
    * Indicates that a server-side error has occured. {@code InternalApiError}s
    * are generally not the result of an invalid request or message sent by the
@@ -755,7 +755,7 @@ if (!class_exists("InternalApiError", false)) {
   }
 }
 
-if (!class_exists("LineItemOperationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemOperationError", false)) {
     /**
    * Lists all errors for executing operations on line items
    * @package GoogleApiAdsDfp
@@ -803,7 +803,7 @@ if (!class_exists("LineItemOperationError", false)) {
   }
 }
 
-if (!class_exists("NotNullError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NotNullError", false)) {
     /**
    * Caused by supplying a null value for an attribute that cannot be null.
    * @package GoogleApiAdsDfp
@@ -851,7 +851,7 @@ if (!class_exists("NotNullError", false)) {
   }
 }
 
-if (!class_exists("PermissionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PermissionError", false)) {
     /**
    * Errors related to incorrect permission.
    * @package GoogleApiAdsDfp
@@ -899,7 +899,7 @@ if (!class_exists("PermissionError", false)) {
   }
 }
 
-if (!class_exists("ProposalActionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ProposalActionError", false)) {
     /**
    * Lists all errors associated with performing actions on {@link Proposal} objects.
    * @package GoogleApiAdsDfp
@@ -947,7 +947,7 @@ if (!class_exists("ProposalActionError", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageContextError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageContextError", false)) {
     /**
    * An error that occurs while executing a PQL query contained in
    * a {@link Statement} object.
@@ -996,7 +996,7 @@ if (!class_exists("PublisherQueryLanguageContextError", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageSyntaxError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageSyntaxError", false)) {
     /**
    * An error that occurs while parsing a PQL query contained in a
    * {@link Statement} object.
@@ -1045,7 +1045,7 @@ if (!class_exists("PublisherQueryLanguageSyntaxError", false)) {
   }
 }
 
-if (!class_exists("QuotaError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\QuotaError", false)) {
     /**
    * Describes a client-side error on which a user is attempting
    * to perform an action to which they have no quota remaining.
@@ -1094,7 +1094,7 @@ if (!class_exists("QuotaError", false)) {
   }
 }
 
-if (!class_exists("ServerError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ServerError", false)) {
     /**
    * Errors related to the server.
    * @package GoogleApiAdsDfp
@@ -1142,7 +1142,7 @@ if (!class_exists("ServerError", false)) {
   }
 }
 
-if (!class_exists("SoapRequestHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapRequestHeader", false)) {
     /**
    * Represents the SOAP request header used by API requests.
    * @package GoogleApiAdsDfp
@@ -1192,7 +1192,7 @@ if (!class_exists("SoapRequestHeader", false)) {
   }
 }
 
-if (!class_exists("SoapResponseHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapResponseHeader", false)) {
     /**
    * Represents the SOAP request header used by API responses.
    * @package GoogleApiAdsDfp
@@ -1242,7 +1242,7 @@ if (!class_exists("SoapResponseHeader", false)) {
   }
 }
 
-if (!class_exists("Statement", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Statement", false)) {
     /**
    * Captures the {@code WHERE}, {@code ORDER BY} and {@code LIMIT} clauses of a
    * PQL query. Statements are typically used to retrieve objects of a predefined
@@ -1320,7 +1320,7 @@ if (!class_exists("Statement", false)) {
   }
 }
 
-if (!class_exists("StatementError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StatementError", false)) {
     /**
    * An error that occurs while parsing {@link Statement} objects.
    * @package GoogleApiAdsDfp
@@ -1368,7 +1368,7 @@ if (!class_exists("StatementError", false)) {
   }
 }
 
-if (!class_exists("String_ValueMapEntry", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\String_ValueMapEntry", false)) {
     /**
    * This represents an entry in a map with a key of type String
    * and value of type Value.
@@ -1419,7 +1419,7 @@ if (!class_exists("String_ValueMapEntry", false)) {
   }
 }
 
-if (!class_exists("UpdateResult", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UpdateResult", false)) {
     /**
    * Represents the result of performing an action on objects.
    * @package GoogleApiAdsDfp
@@ -1462,7 +1462,7 @@ if (!class_exists("UpdateResult", false)) {
   }
 }
 
-if (!class_exists("Value", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Value", false)) {
     /**
    * {@code Value} represents a value.
    * @package GoogleApiAdsDfp
@@ -1541,7 +1541,7 @@ if (!class_exists("Value", false)) {
   }
 }
 
-if (!class_exists("WorkflowActionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowActionError", false)) {
     /**
    * Lists all errors associated with performing actions within {@link WorkflowAction}.
    * @package GoogleApiAdsDfp
@@ -1589,7 +1589,7 @@ if (!class_exists("WorkflowActionError", false)) {
   }
 }
 
-if (!class_exists("WorkflowApprovalRequest", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowApprovalRequest", false)) {
     /**
    * A {@code WorkflowApprovalRequest} represents a workflow action unit that requires user approval.
    * @package GoogleApiAdsDfp
@@ -1639,7 +1639,7 @@ if (!class_exists("WorkflowApprovalRequest", false)) {
   }
 }
 
-if (!class_exists("WorkflowExternalConditionRequest", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowExternalConditionRequest", false)) {
     /**
    * A {@code WorkflowExternalConditionRequest} represents a workflow condition that requires external
    * system to determine the result.
@@ -1690,7 +1690,7 @@ if (!class_exists("WorkflowExternalConditionRequest", false)) {
   }
 }
 
-if (!class_exists("WorkflowRequestAction", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowRequestAction", false)) {
     /**
    * Represents the actions that can be performed on {@link WorkflowRequest} objects.
    * @package GoogleApiAdsDfp
@@ -1769,7 +1769,7 @@ if (!class_exists("WorkflowRequestAction", false)) {
   }
 }
 
-if (!class_exists("WorkflowRequestError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowRequestError", false)) {
     /**
    * Lists errors associated with {@link WorkflowRequest workflow requests}.
    * @package GoogleApiAdsDfp
@@ -1817,7 +1817,7 @@ if (!class_exists("WorkflowRequestError", false)) {
   }
 }
 
-if (!class_exists("WorkflowRequestPage", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowRequestPage", false)) {
     /**
    * Captures a page of {@link WorkflowRequest} objects.
    * @package GoogleApiAdsDfp
@@ -1874,7 +1874,7 @@ if (!class_exists("WorkflowRequestPage", false)) {
   }
 }
 
-if (!class_exists("ApiVersionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiVersionErrorReason", false)) {
     /**
    * Indicates that the operation is not allowed in the version the request
    * was made in.
@@ -1911,7 +1911,7 @@ if (!class_exists("ApiVersionErrorReason", false)) {
   }
 }
 
-if (!class_exists("WorkflowApprovalRequestStatus", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowApprovalRequestStatus", false)) {
     /**
    * The status of the workflow approval request.
    * @package GoogleApiAdsDfp
@@ -1947,7 +1947,7 @@ if (!class_exists("WorkflowApprovalRequestStatus", false)) {
   }
 }
 
-if (!class_exists("AuthenticationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationErrorReason", false)) {
     /**
    * The SOAP message contains a request header with an ambiguous definition
    * of the authentication header fields. This means either the {@code
@@ -1986,7 +1986,7 @@ if (!class_exists("AuthenticationErrorReason", false)) {
   }
 }
 
-if (!class_exists("CommonErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CommonErrorReason", false)) {
     /**
    * Describes reasons for common errors
    * @package GoogleApiAdsDfp
@@ -2022,7 +2022,7 @@ if (!class_exists("CommonErrorReason", false)) {
   }
 }
 
-if (!class_exists("FeatureErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FeatureErrorReason", false)) {
     /**
    * A feature is being used that is not enabled on the current network.
    * @package GoogleApiAdsDfp
@@ -2058,7 +2058,7 @@ if (!class_exists("FeatureErrorReason", false)) {
   }
 }
 
-if (!class_exists("ForecastErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ForecastErrorReason", false)) {
     /**
    * Reason why a forecast could not be retrieved.
    * @package GoogleApiAdsDfp
@@ -2094,7 +2094,7 @@ if (!class_exists("ForecastErrorReason", false)) {
   }
 }
 
-if (!class_exists("InternalApiErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiErrorReason", false)) {
     /**
    * The single reason for the internal API error.
    * @package GoogleApiAdsDfp
@@ -2130,7 +2130,7 @@ if (!class_exists("InternalApiErrorReason", false)) {
   }
 }
 
-if (!class_exists("LineItemOperationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemOperationErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2166,7 +2166,7 @@ if (!class_exists("LineItemOperationErrorReason", false)) {
   }
 }
 
-if (!class_exists("NotNullErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NotNullErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2202,7 +2202,7 @@ if (!class_exists("NotNullErrorReason", false)) {
   }
 }
 
-if (!class_exists("PermissionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PermissionErrorReason", false)) {
     /**
    * Describes reasons for permission errors.
    * @package GoogleApiAdsDfp
@@ -2238,7 +2238,7 @@ if (!class_exists("PermissionErrorReason", false)) {
   }
 }
 
-if (!class_exists("ProposalActionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ProposalActionErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2274,7 +2274,7 @@ if (!class_exists("ProposalActionErrorReason", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageContextErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageContextErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2310,7 +2310,7 @@ if (!class_exists("PublisherQueryLanguageContextErrorReason", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageSyntaxErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageSyntaxErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2346,7 +2346,7 @@ if (!class_exists("PublisherQueryLanguageSyntaxErrorReason", false)) {
   }
 }
 
-if (!class_exists("QuotaErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\QuotaErrorReason", false)) {
     /**
    * The number of requests made per second is too high and has exceeded the
    * allowable limit. The recommended approach to handle this error is to wait
@@ -2392,7 +2392,7 @@ if (!class_exists("QuotaErrorReason", false)) {
   }
 }
 
-if (!class_exists("ServerErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ServerErrorReason", false)) {
     /**
    * Describes reasons for server errors
    * @package GoogleApiAdsDfp
@@ -2428,7 +2428,7 @@ if (!class_exists("ServerErrorReason", false)) {
   }
 }
 
-if (!class_exists("StatementErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StatementErrorReason", false)) {
     /**
    * A bind variable has not been bound to a value.
    * @package GoogleApiAdsDfp
@@ -2464,7 +2464,7 @@ if (!class_exists("StatementErrorReason", false)) {
   }
 }
 
-if (!class_exists("WorkflowActionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowActionErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2500,7 +2500,7 @@ if (!class_exists("WorkflowActionErrorReason", false)) {
   }
 }
 
-if (!class_exists("WorkflowEntityType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowEntityType", false)) {
     /**
    * The entity types that workflows can be applied to.
    * @package GoogleApiAdsDfp
@@ -2536,7 +2536,7 @@ if (!class_exists("WorkflowEntityType", false)) {
   }
 }
 
-if (!class_exists("WorkflowRequestErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowRequestErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2572,7 +2572,7 @@ if (!class_exists("WorkflowRequestErrorReason", false)) {
   }
 }
 
-if (!class_exists("WorkflowRequestType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowRequestType", false)) {
     /**
    * Types of a workflow request.
    * @package GoogleApiAdsDfp
@@ -2608,7 +2608,7 @@ if (!class_exists("WorkflowRequestType", false)) {
   }
 }
 
-if (!class_exists("WorkflowExternalConditionStatus", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowExternalConditionStatus", false)) {
     /**
    * The status of workflow external conditions during workflow execution.
    * @package GoogleApiAdsDfp
@@ -2644,7 +2644,7 @@ if (!class_exists("WorkflowExternalConditionStatus", false)) {
   }
 }
 
-if (!class_exists("GetWorkflowRequestsByStatement", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GetWorkflowRequestsByStatement", false)) {
     /**
    * Gets a list of {@link WorkflowRequest} objects that satisfy the given {@link Statement#query}.
    * The following fields are supported for filtering:
@@ -2726,7 +2726,7 @@ if (!class_exists("GetWorkflowRequestsByStatement", false)) {
   }
 }
 
-if (!class_exists("GetWorkflowRequestsByStatementResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GetWorkflowRequestsByStatementResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -2769,7 +2769,7 @@ if (!class_exists("GetWorkflowRequestsByStatementResponse", false)) {
   }
 }
 
-if (!class_exists("PerformWorkflowRequestAction", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PerformWorkflowRequestAction", false)) {
     /**
    * Perform actions on {@link WorkflowRequest} objects that match the given
    * {@link Statement#query}.
@@ -2825,7 +2825,7 @@ if (!class_exists("PerformWorkflowRequestAction", false)) {
   }
 }
 
-if (!class_exists("PerformWorkflowRequestActionResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PerformWorkflowRequestActionResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -2868,7 +2868,7 @@ if (!class_exists("PerformWorkflowRequestActionResponse", false)) {
   }
 }
 
-if (!class_exists("ObjectValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ObjectValue", false)) {
     /**
    * Contains an object value.
    * <p>
@@ -2913,7 +2913,7 @@ if (!class_exists("ObjectValue", false)) {
   }
 }
 
-if (!class_exists("ApiException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiException", false)) {
     /**
    * \Exception class for holding a list of service errors.
    * @package GoogleApiAdsDfp
@@ -2959,7 +2959,7 @@ if (!class_exists("ApiException", false)) {
   }
 }
 
-if (!class_exists("ApproveWorkflowApprovalRequests", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApproveWorkflowApprovalRequests", false)) {
     /**
    * The action used to approve {@link WorkflowApprovalRequest workflow approval requests}.
    * @package GoogleApiAdsDfp
@@ -2997,7 +2997,7 @@ if (!class_exists("ApproveWorkflowApprovalRequests", false)) {
   }
 }
 
-if (!class_exists("BooleanValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BooleanValue", false)) {
     /**
    * Contains a boolean value.
    * @package GoogleApiAdsDfp
@@ -3042,7 +3042,7 @@ if (!class_exists("BooleanValue", false)) {
   }
 }
 
-if (!class_exists("DateTimeValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DateTimeValue", false)) {
     /**
    * Contains a date-time value.
    * @package GoogleApiAdsDfp
@@ -3087,7 +3087,7 @@ if (!class_exists("DateTimeValue", false)) {
   }
 }
 
-if (!class_exists("DateValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DateValue", false)) {
     /**
    * Contains a date value.
    * @package GoogleApiAdsDfp
@@ -3132,7 +3132,7 @@ if (!class_exists("DateValue", false)) {
   }
 }
 
-if (!class_exists("SkipWorkflowExternalConditionRequests", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SkipWorkflowExternalConditionRequests", false)) {
     /**
    * The action to skip {@link WorkflowExternalConditionRequest workflow external condition requests}.
    * Doing so means that the rule did not trigger.
@@ -3171,7 +3171,7 @@ if (!class_exists("SkipWorkflowExternalConditionRequests", false)) {
   }
 }
 
-if (!class_exists("NumberValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NumberValue", false)) {
     /**
    * Contains a numeric value.
    * @package GoogleApiAdsDfp
@@ -3216,7 +3216,7 @@ if (!class_exists("NumberValue", false)) {
   }
 }
 
-if (!class_exists("TriggerWorkflowExternalConditionRequests", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TriggerWorkflowExternalConditionRequests", false)) {
     /**
    * The action to trigger {@link WorkflowExternalConditionRequest workflow external condition
    * requests}.
@@ -3255,7 +3255,7 @@ if (!class_exists("TriggerWorkflowExternalConditionRequests", false)) {
   }
 }
 
-if (!class_exists("RejectWorkflowApprovalRequests", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RejectWorkflowApprovalRequests", false)) {
     /**
    * The action used to reject {@link WorkflowApprovalRequest workflow approval requests}.
    * @package GoogleApiAdsDfp
@@ -3293,7 +3293,7 @@ if (!class_exists("RejectWorkflowApprovalRequests", false)) {
   }
 }
 
-if (!class_exists("SetValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SetValue", false)) {
     /**
    * Contains a set of {@link Value Values}. May not contain duplicates.
    * @package GoogleApiAdsDfp
@@ -3338,7 +3338,7 @@ if (!class_exists("SetValue", false)) {
   }
 }
 
-if (!class_exists("TextValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TextValue", false)) {
     /**
    * Contains a string value.
    * @package GoogleApiAdsDfp
@@ -3383,7 +3383,7 @@ if (!class_exists("TextValue", false)) {
   }
 }
 
-if (!class_exists("WorkflowRequestService", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\WorkflowRequestService", false)) {
     /**
    * WorkflowRequestService
    * @package GoogleApiAdsDfp

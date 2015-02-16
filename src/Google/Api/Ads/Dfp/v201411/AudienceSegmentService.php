@@ -31,7 +31,7 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 require_once "Google/Api/Ads/Dfp/Lib/DfpSoapClient.php";
 
-if (!class_exists("AdUnitTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AdUnitTargeting", false)) {
     /**
    * Represents targeted or excluded ad units.
    * @package GoogleApiAdsDfp
@@ -81,7 +81,7 @@ if (!class_exists("AdUnitTargeting", false)) {
   }
 }
 
-if (!class_exists("ApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiError", false)) {
     /**
    * The API error base class that provides details about an error that occurred
    * while processing a service request.
@@ -185,7 +185,7 @@ if (!class_exists("ApiError", false)) {
   }
 }
 
-if (!class_exists("ApiVersionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiVersionError", false)) {
     /**
    * Errors related to the usage of API versions.
    * @package GoogleApiAdsDfp
@@ -233,7 +233,7 @@ if (!class_exists("ApiVersionError", false)) {
   }
 }
 
-if (!class_exists("ApplicationException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApplicationException", false)) {
     /**
    * Base class for exceptions.
    * @package GoogleApiAdsDfp
@@ -319,7 +319,7 @@ if (!class_exists("ApplicationException", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentDataProvider", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentDataProvider", false)) {
     /**
    * Data provider that owns this segment. For a {@link FirstPartyAudienceSegment}, it would be the
    * publisher network. For a {@link SharedAudienceSegment} or a {@link ThirdPartyAudienceSegment}, it
@@ -364,7 +364,7 @@ if (!class_exists("AudienceSegmentDataProvider", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentPage", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentPage", false)) {
     /**
    * Represents a page of {@link AudienceSegment} objects.
    * @package GoogleApiAdsDfp
@@ -421,7 +421,7 @@ if (!class_exists("AudienceSegmentPage", false)) {
   }
 }
 
-if (!class_exists("AuthenticationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationError", false)) {
     /**
    * An error for an exception that occurred when authenticating.
    * @package GoogleApiAdsDfp
@@ -469,7 +469,7 @@ if (!class_exists("AuthenticationError", false)) {
   }
 }
 
-if (!class_exists("CommonError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CommonError", false)) {
     /**
    * A place for common errors that can be used across services.
    * @package GoogleApiAdsDfp
@@ -517,7 +517,7 @@ if (!class_exists("CommonError", false)) {
   }
 }
 
-if (!class_exists("CustomCriteriaNode", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteriaNode", false)) {
     /**
    * A {@link CustomCriteriaNode} is a node in the custom targeting tree. A custom
    * criteria node can either be a {@link CustomCriteriaSet} (a non-leaf node) or
@@ -599,7 +599,7 @@ if (!class_exists("CustomCriteriaNode", false)) {
   }
 }
 
-if (!class_exists("Date", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Date", false)) {
     /**
    * Represents a date.
    * @package GoogleApiAdsDfp
@@ -656,7 +656,7 @@ if (!class_exists("Date", false)) {
   }
 }
 
-if (!class_exists("DfpDateTime", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DfpDateTime", false)) {
     /**
    * Represents a date combined with the time of day.
    * @package GoogleApiAdsDfp
@@ -727,7 +727,7 @@ if (!class_exists("DfpDateTime", false)) {
   }
 }
 
-if (!class_exists("FeatureError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FeatureError", false)) {
     /**
    * Errors related to feature management.  If you attempt using a feature that is not available to
    * the current network you'll receive a FeatureError with the missing feature as the trigger.
@@ -776,7 +776,7 @@ if (!class_exists("FeatureError", false)) {
   }
 }
 
-if (!class_exists("InternalApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiError", false)) {
     /**
    * Indicates that a server-side error has occured. {@code InternalApiError}s
    * are generally not the result of an invalid request or message sent by the
@@ -826,7 +826,7 @@ if (!class_exists("InternalApiError", false)) {
   }
 }
 
-if (!class_exists("InventoryTargeting", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InventoryTargeting", false)) {
     /**
    * A collection of targeted and excluded ad units and placements.
    * @package GoogleApiAdsDfp
@@ -883,7 +883,7 @@ if (!class_exists("InventoryTargeting", false)) {
   }
 }
 
-if (!class_exists("Money", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Money", false)) {
     /**
    * Represents a money amount.
    * @package GoogleApiAdsDfp
@@ -933,7 +933,7 @@ if (!class_exists("Money", false)) {
   }
 }
 
-if (!class_exists("NotNullError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NotNullError", false)) {
     /**
    * Caused by supplying a null value for an attribute that cannot be null.
    * @package GoogleApiAdsDfp
@@ -981,7 +981,7 @@ if (!class_exists("NotNullError", false)) {
   }
 }
 
-if (!class_exists("ParseError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ParseError", false)) {
     /**
    * Lists errors related to parsing.
    * @package GoogleApiAdsDfp
@@ -1029,7 +1029,7 @@ if (!class_exists("ParseError", false)) {
   }
 }
 
-if (!class_exists("PermissionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PermissionError", false)) {
     /**
    * Errors related to incorrect permission.
    * @package GoogleApiAdsDfp
@@ -1077,7 +1077,7 @@ if (!class_exists("PermissionError", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageContextError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageContextError", false)) {
     /**
    * An error that occurs while executing a PQL query contained in
    * a {@link Statement} object.
@@ -1126,7 +1126,7 @@ if (!class_exists("PublisherQueryLanguageContextError", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageSyntaxError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageSyntaxError", false)) {
     /**
    * An error that occurs while parsing a PQL query contained in a
    * {@link Statement} object.
@@ -1175,7 +1175,7 @@ if (!class_exists("PublisherQueryLanguageSyntaxError", false)) {
   }
 }
 
-if (!class_exists("FirstPartyAudienceSegmentRule", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FirstPartyAudienceSegmentRule", false)) {
     /**
    * Rule of a {@link FirstPartyAudienceSegment} that defines user's eligibility criteria to be part
    * of a segment.
@@ -1226,7 +1226,7 @@ if (!class_exists("FirstPartyAudienceSegmentRule", false)) {
   }
 }
 
-if (!class_exists("QuotaError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\QuotaError", false)) {
     /**
    * Describes a client-side error on which a user is attempting
    * to perform an action to which they have no quota remaining.
@@ -1275,7 +1275,7 @@ if (!class_exists("QuotaError", false)) {
   }
 }
 
-if (!class_exists("RequiredError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredError", false)) {
     /**
    * Errors due to missing required field.
    * @package GoogleApiAdsDfp
@@ -1323,7 +1323,7 @@ if (!class_exists("RequiredError", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentAction", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentAction", false)) {
     /**
    * Action that can be performed on {@link AudienceSegment} objects.
    * @package GoogleApiAdsDfp
@@ -1402,7 +1402,7 @@ if (!class_exists("AudienceSegmentAction", false)) {
   }
 }
 
-if (!class_exists("AudienceSegment", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegment", false)) {
     /**
    * An {@link AudienceSegment} represents audience segment object.
    * @package GoogleApiAdsDfp
@@ -1537,7 +1537,7 @@ if (!class_exists("AudienceSegment", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentError", false)) {
     /**
    * Errors that could occur on audience segment related requests.
    * @package GoogleApiAdsDfp
@@ -1585,7 +1585,7 @@ if (!class_exists("AudienceSegmentError", false)) {
   }
 }
 
-if (!class_exists("ServerError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ServerError", false)) {
     /**
    * Errors related to the server.
    * @package GoogleApiAdsDfp
@@ -1633,7 +1633,7 @@ if (!class_exists("ServerError", false)) {
   }
 }
 
-if (!class_exists("SharedAudienceSegment", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SharedAudienceSegment", false)) {
     /**
    * A {@link SharedAudienceSegment} is an {@link AudienceSegment} owned by another entity and shared
    * with the publisher network.
@@ -1680,7 +1680,7 @@ if (!class_exists("SharedAudienceSegment", false)) {
   }
 }
 
-if (!class_exists("SoapRequestHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapRequestHeader", false)) {
     /**
    * Represents the SOAP request header used by API requests.
    * @package GoogleApiAdsDfp
@@ -1730,7 +1730,7 @@ if (!class_exists("SoapRequestHeader", false)) {
   }
 }
 
-if (!class_exists("SoapResponseHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapResponseHeader", false)) {
     /**
    * Represents the SOAP request header used by API responses.
    * @package GoogleApiAdsDfp
@@ -1780,7 +1780,7 @@ if (!class_exists("SoapResponseHeader", false)) {
   }
 }
 
-if (!class_exists("Statement", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Statement", false)) {
     /**
    * Captures the {@code WHERE}, {@code ORDER BY} and {@code LIMIT} clauses of a
    * PQL query. Statements are typically used to retrieve objects of a predefined
@@ -1858,7 +1858,7 @@ if (!class_exists("Statement", false)) {
   }
 }
 
-if (!class_exists("StatementError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StatementError", false)) {
     /**
    * An error that occurs while parsing {@link Statement} objects.
    * @package GoogleApiAdsDfp
@@ -1906,7 +1906,7 @@ if (!class_exists("StatementError", false)) {
   }
 }
 
-if (!class_exists("String_ValueMapEntry", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\String_ValueMapEntry", false)) {
     /**
    * This represents an entry in a map with a key of type String
    * and value of type Value.
@@ -1957,7 +1957,7 @@ if (!class_exists("String_ValueMapEntry", false)) {
   }
 }
 
-if (!class_exists("UpdateResult", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UpdateResult", false)) {
     /**
    * Represents the result of performing an action on objects.
    * @package GoogleApiAdsDfp
@@ -2000,7 +2000,7 @@ if (!class_exists("UpdateResult", false)) {
   }
 }
 
-if (!class_exists("Value", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Value", false)) {
     /**
    * {@code Value} represents a value.
    * @package GoogleApiAdsDfp
@@ -2079,7 +2079,7 @@ if (!class_exists("Value", false)) {
   }
 }
 
-if (!class_exists("ApiVersionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiVersionErrorReason", false)) {
     /**
    * Indicates that the operation is not allowed in the version the request
    * was made in.
@@ -2116,7 +2116,7 @@ if (!class_exists("ApiVersionErrorReason", false)) {
   }
 }
 
-if (!class_exists("AuthenticationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationErrorReason", false)) {
     /**
    * The SOAP message contains a request header with an ambiguous definition
    * of the authentication header fields. This means either the {@code
@@ -2155,7 +2155,7 @@ if (!class_exists("AuthenticationErrorReason", false)) {
   }
 }
 
-if (!class_exists("CommonErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CommonErrorReason", false)) {
     /**
    * Describes reasons for common errors
    * @package GoogleApiAdsDfp
@@ -2191,7 +2191,7 @@ if (!class_exists("CommonErrorReason", false)) {
   }
 }
 
-if (!class_exists("CustomCriteriaComparisonOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteriaComparisonOperator", false)) {
     /**
    * Specifies the available comparison operators.
    * @package GoogleApiAdsDfp
@@ -2227,7 +2227,7 @@ if (!class_exists("CustomCriteriaComparisonOperator", false)) {
   }
 }
 
-if (!class_exists("CustomCriteriaSetLogicalOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteriaSetLogicalOperator", false)) {
     /**
    * Specifies the available logical operators.
    * @package GoogleApiAdsDfp
@@ -2263,7 +2263,7 @@ if (!class_exists("CustomCriteriaSetLogicalOperator", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentCriteriaComparisonOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentCriteriaComparisonOperator", false)) {
     /**
    * Specifies the available comparison operators.
    * @package GoogleApiAdsDfp
@@ -2299,7 +2299,7 @@ if (!class_exists("AudienceSegmentCriteriaComparisonOperator", false)) {
   }
 }
 
-if (!class_exists("ThirdPartyAudienceSegmentAudienceSegmentApprovalStatus", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ThirdPartyAudienceSegmentAudienceSegmentApprovalStatus", false)) {
     /**
    * Approval status values for {@link ThirdPartyAudienceSegment} objects.
    * @package GoogleApiAdsDfp
@@ -2335,7 +2335,7 @@ if (!class_exists("ThirdPartyAudienceSegmentAudienceSegmentApprovalStatus", fals
   }
 }
 
-if (!class_exists("FeatureErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FeatureErrorReason", false)) {
     /**
    * A feature is being used that is not enabled on the current network.
    * @package GoogleApiAdsDfp
@@ -2371,7 +2371,7 @@ if (!class_exists("FeatureErrorReason", false)) {
   }
 }
 
-if (!class_exists("InternalApiErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiErrorReason", false)) {
     /**
    * The single reason for the internal API error.
    * @package GoogleApiAdsDfp
@@ -2407,7 +2407,7 @@ if (!class_exists("InternalApiErrorReason", false)) {
   }
 }
 
-if (!class_exists("NotNullErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NotNullErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2443,7 +2443,7 @@ if (!class_exists("NotNullErrorReason", false)) {
   }
 }
 
-if (!class_exists("ParseErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ParseErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2479,7 +2479,7 @@ if (!class_exists("ParseErrorReason", false)) {
   }
 }
 
-if (!class_exists("PermissionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PermissionErrorReason", false)) {
     /**
    * Describes reasons for permission errors.
    * @package GoogleApiAdsDfp
@@ -2515,7 +2515,7 @@ if (!class_exists("PermissionErrorReason", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageContextErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageContextErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2551,7 +2551,7 @@ if (!class_exists("PublisherQueryLanguageContextErrorReason", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageSyntaxErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageSyntaxErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2587,7 +2587,7 @@ if (!class_exists("PublisherQueryLanguageSyntaxErrorReason", false)) {
   }
 }
 
-if (!class_exists("QuotaErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\QuotaErrorReason", false)) {
     /**
    * The number of requests made per second is too high and has exceeded the
    * allowable limit. The recommended approach to handle this error is to wait
@@ -2633,7 +2633,7 @@ if (!class_exists("QuotaErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -2669,7 +2669,7 @@ if (!class_exists("RequiredErrorReason", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentAudienceSegmentType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentAudienceSegmentType", false)) {
     /**
    * Specifies types for {@link AudienceSegment} objects.
    * @package GoogleApiAdsDfp
@@ -2705,7 +2705,7 @@ if (!class_exists("AudienceSegmentAudienceSegmentType", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentStatus", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentStatus", false)) {
     /**
    * Specifies the statuses for {@link AudienceSegment} objects.
    * @package GoogleApiAdsDfp
@@ -2741,7 +2741,7 @@ if (!class_exists("AudienceSegmentStatus", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentErrorReason", false)) {
     /**
    * Reason of the given {@link AudienceSegmentError}.
    * @package GoogleApiAdsDfp
@@ -2777,7 +2777,7 @@ if (!class_exists("AudienceSegmentErrorReason", false)) {
   }
 }
 
-if (!class_exists("ServerErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ServerErrorReason", false)) {
     /**
    * Describes reasons for server errors
    * @package GoogleApiAdsDfp
@@ -2813,7 +2813,7 @@ if (!class_exists("ServerErrorReason", false)) {
   }
 }
 
-if (!class_exists("StatementErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StatementErrorReason", false)) {
     /**
    * A bind variable has not been bound to a value.
    * @package GoogleApiAdsDfp
@@ -2849,7 +2849,7 @@ if (!class_exists("StatementErrorReason", false)) {
   }
 }
 
-if (!class_exists("CreateAudienceSegments", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreateAudienceSegments", false)) {
     /**
    * Creates new {@link RuleBasedFirstPartyAudienceSegment} objects.
    *
@@ -2895,7 +2895,7 @@ if (!class_exists("CreateAudienceSegments", false)) {
   }
 }
 
-if (!class_exists("CreateAudienceSegmentsResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreateAudienceSegmentsResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -2938,7 +2938,7 @@ if (!class_exists("CreateAudienceSegmentsResponse", false)) {
   }
 }
 
-if (!class_exists("GetAudienceSegmentsByStatement", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GetAudienceSegmentsByStatement", false)) {
     /**
    * Gets an {@link AudienceSegmentPage} of {@link AudienceSegment} objects that satisfy the given
    * {@link Statement#query}. The following fields are supported for filtering:
@@ -3033,7 +3033,7 @@ if (!class_exists("GetAudienceSegmentsByStatement", false)) {
   }
 }
 
-if (!class_exists("GetAudienceSegmentsByStatementResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GetAudienceSegmentsByStatementResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -3076,7 +3076,7 @@ if (!class_exists("GetAudienceSegmentsByStatementResponse", false)) {
   }
 }
 
-if (!class_exists("PerformAudienceSegmentAction", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PerformAudienceSegmentAction", false)) {
     /**
    * Performs the given {@link AudienceSegmentAction} on the set of segments identified by the given
    * statement.
@@ -3132,7 +3132,7 @@ if (!class_exists("PerformAudienceSegmentAction", false)) {
   }
 }
 
-if (!class_exists("PerformAudienceSegmentActionResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PerformAudienceSegmentActionResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -3175,7 +3175,7 @@ if (!class_exists("PerformAudienceSegmentActionResponse", false)) {
   }
 }
 
-if (!class_exists("UpdateAudienceSegments", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UpdateAudienceSegments", false)) {
     /**
    * Updates the given {@link RuleBasedFirstPartyAudienceSegment} objects.
    *
@@ -3221,7 +3221,7 @@ if (!class_exists("UpdateAudienceSegments", false)) {
   }
 }
 
-if (!class_exists("UpdateAudienceSegmentsResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UpdateAudienceSegmentsResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -3264,7 +3264,7 @@ if (!class_exists("UpdateAudienceSegmentsResponse", false)) {
   }
 }
 
-if (!class_exists("ObjectValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ObjectValue", false)) {
     /**
    * Contains an object value.
    * <p>
@@ -3309,7 +3309,7 @@ if (!class_exists("ObjectValue", false)) {
   }
 }
 
-if (!class_exists("ActivateAudienceSegments", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ActivateAudienceSegments", false)) {
     /**
    * Action that can be performed on {@link FirstPartyAudienceSegment} objects to activate them.
    * @package GoogleApiAdsDfp
@@ -3347,7 +3347,7 @@ if (!class_exists("ActivateAudienceSegments", false)) {
   }
 }
 
-if (!class_exists("ApiException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiException", false)) {
     /**
    * \Exception class for holding a list of service errors.
    * @package GoogleApiAdsDfp
@@ -3393,7 +3393,7 @@ if (!class_exists("ApiException", false)) {
   }
 }
 
-if (!class_exists("ApproveAudienceSegments", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApproveAudienceSegments", false)) {
     /**
    * Action that can be performed on {@link ThirdPartyAudienceSegment} objects to approve them.
    * @package GoogleApiAdsDfp
@@ -3431,7 +3431,7 @@ if (!class_exists("ApproveAudienceSegments", false)) {
   }
 }
 
-if (!class_exists("FirstPartyAudienceSegment", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FirstPartyAudienceSegment", false)) {
     /**
    * A {@link FirstPartyAudienceSegment} is an {@link AudienceSegment} owned by the publisher network.
    * @package GoogleApiAdsDfp
@@ -3477,7 +3477,7 @@ if (!class_exists("FirstPartyAudienceSegment", false)) {
   }
 }
 
-if (!class_exists("BooleanValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BooleanValue", false)) {
     /**
    * Contains a boolean value.
    * @package GoogleApiAdsDfp
@@ -3522,7 +3522,7 @@ if (!class_exists("BooleanValue", false)) {
   }
 }
 
-if (!class_exists("CustomCriteriaSet", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteriaSet", false)) {
     /**
    * A {@link CustomCriteriaSet} comprises of a set of {@link CustomCriteriaNode}
    * objects combined by the
@@ -3578,7 +3578,7 @@ if (!class_exists("CustomCriteriaSet", false)) {
   }
 }
 
-if (!class_exists("CustomCriteriaLeaf", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteriaLeaf", false)) {
     /**
    * A {@link CustomCriteriaLeaf} object represents a generic leaf of {@link CustomCriteria} tree
    * structure.
@@ -3617,7 +3617,7 @@ if (!class_exists("CustomCriteriaLeaf", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentCriteria", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentCriteria", false)) {
     /**
    * An {@link AudienceSegmentCriteria} object is used to target {@link AudienceSegment} objects.
    * @package GoogleApiAdsDfp
@@ -3668,7 +3668,7 @@ if (!class_exists("AudienceSegmentCriteria", false)) {
   }
 }
 
-if (!class_exists("DateTimeValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DateTimeValue", false)) {
     /**
    * Contains a date-time value.
    * @package GoogleApiAdsDfp
@@ -3713,7 +3713,7 @@ if (!class_exists("DateTimeValue", false)) {
   }
 }
 
-if (!class_exists("DateValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DateValue", false)) {
     /**
    * Contains a date value.
    * @package GoogleApiAdsDfp
@@ -3758,7 +3758,7 @@ if (!class_exists("DateValue", false)) {
   }
 }
 
-if (!class_exists("DeactivateAudienceSegments", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DeactivateAudienceSegments", false)) {
     /**
    * Action that can be performed on {@link FirstPartyAudienceSegment} objects to deactivate them.
    * @package GoogleApiAdsDfp
@@ -3796,7 +3796,7 @@ if (!class_exists("DeactivateAudienceSegments", false)) {
   }
 }
 
-if (!class_exists("ThirdPartyAudienceSegment", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ThirdPartyAudienceSegment", false)) {
     /**
    * A {@link ThirdPartyAudienceSegment} is an {@link AudienceSegment} owned by a data provider and
    * licensed to the DFP publisher.
@@ -3871,7 +3871,7 @@ if (!class_exists("ThirdPartyAudienceSegment", false)) {
   }
 }
 
-if (!class_exists("NonRuleBasedFirstPartyAudienceSegment", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NonRuleBasedFirstPartyAudienceSegment", false)) {
     /**
    * A {@link NonRuleBasedFirstPartyAudienceSegment} is a {@link FirstPartyAudienceSegment} owned by
    * the publisher network. It doesn't contain a rule. Cookies are usually added to this segment via
@@ -3910,7 +3910,7 @@ if (!class_exists("NonRuleBasedFirstPartyAudienceSegment", false)) {
   }
 }
 
-if (!class_exists("NumberValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NumberValue", false)) {
     /**
    * Contains a numeric value.
    * @package GoogleApiAdsDfp
@@ -3955,7 +3955,7 @@ if (!class_exists("NumberValue", false)) {
   }
 }
 
-if (!class_exists("PopulateAudienceSegments", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PopulateAudienceSegments", false)) {
     /**
    * Action that can be performed on {@link FirstPartyAudienceSegment} objects to populate them based
    * on last 30 days of traffic.
@@ -3994,7 +3994,7 @@ if (!class_exists("PopulateAudienceSegments", false)) {
   }
 }
 
-if (!class_exists("RejectAudienceSegments", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RejectAudienceSegments", false)) {
     /**
    * Action that can be performed on {@link ThirdPartyAudienceSegment} objects to reject them.
    * @package GoogleApiAdsDfp
@@ -4032,7 +4032,7 @@ if (!class_exists("RejectAudienceSegments", false)) {
   }
 }
 
-if (!class_exists("RuleBasedFirstPartyAudienceSegmentSummary", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RuleBasedFirstPartyAudienceSegmentSummary", false)) {
     /**
    * A {@link RuleBasedFirstPartyAudienceSegmentSummary} is a {@link FirstPartyAudienceSegment} owned
    * by the publisher network.
@@ -4091,7 +4091,7 @@ if (!class_exists("RuleBasedFirstPartyAudienceSegmentSummary", false)) {
   }
 }
 
-if (!class_exists("SetValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SetValue", false)) {
     /**
    * Contains a set of {@link Value Values}. May not contain duplicates.
    * @package GoogleApiAdsDfp
@@ -4136,7 +4136,7 @@ if (!class_exists("SetValue", false)) {
   }
 }
 
-if (!class_exists("TextValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TextValue", false)) {
     /**
    * Contains a string value.
    * @package GoogleApiAdsDfp
@@ -4181,7 +4181,7 @@ if (!class_exists("TextValue", false)) {
   }
 }
 
-if (!class_exists("CustomCriteria", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCriteria", false)) {
     /**
    * A {@link CustomCriteria} object is used to perform custom criteria targeting
    * on custom targeting keys of type {@link CustomTargetingKey.Type#PREDEFINED}
@@ -4241,7 +4241,7 @@ if (!class_exists("CustomCriteria", false)) {
   }
 }
 
-if (!class_exists("RuleBasedFirstPartyAudienceSegment", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RuleBasedFirstPartyAudienceSegment", false)) {
     /**
    * A {@link RuleBasedFirstPartyAudienceSegment} is a {@link FirstPartyAudienceSegment} owned by the
    * publisher network. It contains a rule.
@@ -4289,7 +4289,7 @@ if (!class_exists("RuleBasedFirstPartyAudienceSegment", false)) {
   }
 }
 
-if (!class_exists("AudienceSegmentService", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AudienceSegmentService", false)) {
     /**
    * AudienceSegmentService
    * @package GoogleApiAdsDfp

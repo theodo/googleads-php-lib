@@ -31,7 +31,7 @@ namespace Google\Api\Ads\Dfp\v201411 ;
 use Google\Api\Ads\Dfp\Lib\DfpSoapClient ;
 require_once "Google/Api/Ads/Dfp/Lib/DfpSoapClient.php";
 
-if (!class_exists("BaseCreativeTemplateVariableValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BaseCreativeTemplateVariableValue", false)) {
     /**
    * A base class for storing values of the {@link CreativeTemplateVariable}.
    * @package GoogleApiAdsDfp
@@ -117,7 +117,7 @@ if (!class_exists("BaseCreativeTemplateVariableValue", false)) {
   }
 }
 
-if (!class_exists("ApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiError", false)) {
     /**
    * The API error base class that provides details about an error that occurred
    * while processing a service request.
@@ -221,7 +221,7 @@ if (!class_exists("ApiError", false)) {
   }
 }
 
-if (!class_exists("ApiVersionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiVersionError", false)) {
     /**
    * Errors related to the usage of API versions.
    * @package GoogleApiAdsDfp
@@ -269,7 +269,7 @@ if (!class_exists("ApiVersionError", false)) {
   }
 }
 
-if (!class_exists("ApplicationException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApplicationException", false)) {
     /**
    * Base class for exceptions.
    * @package GoogleApiAdsDfp
@@ -355,7 +355,7 @@ if (!class_exists("ApplicationException", false)) {
   }
 }
 
-if (!class_exists("AppliedLabel", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AppliedLabel", false)) {
     /**
    * Represents a {@link Label} that can be applied to an entity. To negate an
    * inherited label, create an {@code AppliedLabel} with {@code labelId} as the
@@ -407,7 +407,7 @@ if (!class_exists("AppliedLabel", false)) {
   }
 }
 
-if (!class_exists("AssetCreativeTemplateVariableValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AssetCreativeTemplateVariableValue", false)) {
     /**
    * Stores values of {@link CreativeTemplateVariable} of {@link VariableType#ASSET}.
    * @package GoogleApiAdsDfp
@@ -467,7 +467,7 @@ if (!class_exists("AssetCreativeTemplateVariableValue", false)) {
   }
 }
 
-if (!class_exists("Asset", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Asset", false)) {
     /**
    * Base asset properties.
    * @package GoogleApiAdsDfp
@@ -546,7 +546,7 @@ if (!class_exists("Asset", false)) {
   }
 }
 
-if (!class_exists("AssetError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AssetError", false)) {
     /**
    * Lists all errors associated with assets.
    * @package GoogleApiAdsDfp
@@ -594,7 +594,7 @@ if (!class_exists("AssetError", false)) {
   }
 }
 
-if (!class_exists("AuthenticationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationError", false)) {
     /**
    * An error for an exception that occurred when authenticating.
    * @package GoogleApiAdsDfp
@@ -642,7 +642,7 @@ if (!class_exists("AuthenticationError", false)) {
   }
 }
 
-if (!class_exists("BaseCustomFieldValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BaseCustomFieldValue", false)) {
     /**
    * The value of a {@link CustomField} for a particular entity.
    * @package GoogleApiAdsDfp
@@ -728,7 +728,7 @@ if (!class_exists("BaseCustomFieldValue", false)) {
   }
 }
 
-if (!class_exists("CommonError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CommonError", false)) {
     /**
    * A place for common errors that can be used across services.
    * @package GoogleApiAdsDfp
@@ -776,7 +776,7 @@ if (!class_exists("CommonError", false)) {
   }
 }
 
-if (!class_exists("ConversionEvent_TrackingUrlsMapEntry", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ConversionEvent_TrackingUrlsMapEntry", false)) {
     /**
    * This represents an entry in a map with a key of type ConversionEvent
    * and value of type TrackingUrls.
@@ -827,7 +827,7 @@ if (!class_exists("ConversionEvent_TrackingUrlsMapEntry", false)) {
   }
 }
 
-if (!class_exists("CreativeAsset", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeAsset", false)) {
     /**
    * A {@code CreativeAsset} is an asset that can be used in creatives.
    * @package GoogleApiAdsDfp
@@ -912,7 +912,7 @@ if (!class_exists("CreativeAsset", false)) {
   }
 }
 
-if (!class_exists("CustomCreativeAsset", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCreativeAsset", false)) {
     /**
    * A {@code CustomCreativeAsset} is an association between a
    * {@link CustomCreative} and an asset. Any assets that are associated with a
@@ -985,7 +985,7 @@ if (!class_exists("CustomCreativeAsset", false)) {
   }
 }
 
-if (!class_exists("CreativeAssetMacroError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeAssetMacroError", false)) {
     /**
    * Lists all errors associated with creative asset macros.
    * @package GoogleApiAdsDfp
@@ -1033,7 +1033,7 @@ if (!class_exists("CreativeAssetMacroError", false)) {
   }
 }
 
-if (!class_exists("Creative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Creative", false)) {
     /**
    * A {@code Creative} represents the media for the ad being served.
    * @package GoogleApiAdsDfp
@@ -1168,7 +1168,7 @@ if (!class_exists("Creative", false)) {
   }
 }
 
-if (!class_exists("CreativeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeError", false)) {
     /**
    * Lists all errors associated with creatives.
    * @package GoogleApiAdsDfp
@@ -1216,7 +1216,7 @@ if (!class_exists("CreativeError", false)) {
   }
 }
 
-if (!class_exists("CreativePage", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativePage", false)) {
     /**
    * Captures a page of {@link Creative} objects.
    * @package GoogleApiAdsDfp
@@ -1273,7 +1273,7 @@ if (!class_exists("CreativePage", false)) {
   }
 }
 
-if (!class_exists("CreativeSetError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeSetError", false)) {
     /**
    * Errors relating to creative sets & subclasses.
    * @package GoogleApiAdsDfp
@@ -1321,7 +1321,7 @@ if (!class_exists("CreativeSetError", false)) {
   }
 }
 
-if (!class_exists("CustomCreativeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCreativeError", false)) {
     /**
    * Lists all errors associated with custom creatives.
    * @package GoogleApiAdsDfp
@@ -1369,7 +1369,7 @@ if (!class_exists("CustomCreativeError", false)) {
   }
 }
 
-if (!class_exists("CustomFieldValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomFieldValue", false)) {
     /**
    * The value of a {@link CustomField} that does not have a {@link CustomField#dataType}
    * of {@link CustomFieldDataType#DROP_DOWN}.
@@ -1416,7 +1416,7 @@ if (!class_exists("CustomFieldValue", false)) {
   }
 }
 
-if (!class_exists("CustomFieldValueError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomFieldValueError", false)) {
     /**
    * Errors specific to editing custom field values
    * @package GoogleApiAdsDfp
@@ -1464,7 +1464,7 @@ if (!class_exists("CustomFieldValueError", false)) {
   }
 }
 
-if (!class_exists("Date", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Date", false)) {
     /**
    * Represents a date.
    * @package GoogleApiAdsDfp
@@ -1521,7 +1521,7 @@ if (!class_exists("Date", false)) {
   }
 }
 
-if (!class_exists("DfpDateTime", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DfpDateTime", false)) {
     /**
    * Represents a date combined with the time of day.
    * @package GoogleApiAdsDfp
@@ -1592,7 +1592,7 @@ if (!class_exists("DfpDateTime", false)) {
   }
 }
 
-if (!class_exists("DropDownCustomFieldValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DropDownCustomFieldValue", false)) {
     /**
    * A {@link CustomFieldValue} for a {@link CustomField} that has a {@link CustomField#dataType}
    * of {@link CustomFieldDataType#DROP_DOWN}
@@ -1639,7 +1639,7 @@ if (!class_exists("DropDownCustomFieldValue", false)) {
   }
 }
 
-if (!class_exists("EntityLimitReachedError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\EntityLimitReachedError", false)) {
     /**
    * An error that occurs when creating an entity if the limit on the number of allowed entities for
    * a network has already been reached.
@@ -1681,7 +1681,7 @@ if (!class_exists("EntityLimitReachedError", false)) {
   }
 }
 
-if (!class_exists("FeatureError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FeatureError", false)) {
     /**
    * Errors related to feature management.  If you attempt using a feature that is not available to
    * the current network you'll receive a FeatureError with the missing feature as the trigger.
@@ -1730,7 +1730,7 @@ if (!class_exists("FeatureError", false)) {
   }
 }
 
-if (!class_exists("FileError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FileError", false)) {
     /**
    * A list of all errors to be used for problems related to files.
    * @package GoogleApiAdsDfp
@@ -1778,7 +1778,7 @@ if (!class_exists("FileError", false)) {
   }
 }
 
-if (!class_exists("HasDestinationUrlCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\HasDestinationUrlCreative", false)) {
     /**
    * A {@code Creative} that has a destination url
    * @package GoogleApiAdsDfp
@@ -1838,7 +1838,7 @@ if (!class_exists("HasDestinationUrlCreative", false)) {
   }
 }
 
-if (!class_exists("ImageError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ImageError", false)) {
     /**
    * Lists all errors associated with images.
    * @package GoogleApiAdsDfp
@@ -1886,7 +1886,7 @@ if (!class_exists("ImageError", false)) {
   }
 }
 
-if (!class_exists("InternalApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiError", false)) {
     /**
    * Indicates that a server-side error has occured. {@code InternalApiError}s
    * are generally not the result of an invalid request or message sent by the
@@ -1936,7 +1936,7 @@ if (!class_exists("InternalApiError", false)) {
   }
 }
 
-if (!class_exists("InternalRedirectCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalRedirectCreative", false)) {
     /**
    * A {@code Creative} hosted by either DoubleClick for Advertisers (DFA) or DART
    * for Publishers.
@@ -2036,7 +2036,7 @@ if (!class_exists("InternalRedirectCreative", false)) {
   }
 }
 
-if (!class_exists("InvalidPhoneNumberError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InvalidPhoneNumberError", false)) {
     /**
    * Lists all errors associated with phone numbers.
    * @package GoogleApiAdsDfp
@@ -2084,7 +2084,7 @@ if (!class_exists("InvalidPhoneNumberError", false)) {
   }
 }
 
-if (!class_exists("InvalidUrlError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InvalidUrlError", false)) {
     /**
    * Lists all errors associated with URLs.
    * @package GoogleApiAdsDfp
@@ -2132,7 +2132,7 @@ if (!class_exists("InvalidUrlError", false)) {
   }
 }
 
-if (!class_exists("LabelEntityAssociationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LabelEntityAssociationError", false)) {
     /**
    * Errors specific to creating label entity associations.
    * @package GoogleApiAdsDfp
@@ -2180,7 +2180,7 @@ if (!class_exists("LabelEntityAssociationError", false)) {
   }
 }
 
-if (!class_exists("LegacyDfpCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LegacyDfpCreative", false)) {
     /**
    * A {@code Creative} that isn't supported by Google DFP, but was migrated
    * from DART. Creatives of this type cannot be created or modified.
@@ -2227,7 +2227,7 @@ if (!class_exists("LegacyDfpCreative", false)) {
   }
 }
 
-if (!class_exists("LineItemCreativeAssociationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemCreativeAssociationError", false)) {
     /**
    * Lists all errors associated with line item-to-creative association dates.
    * @package GoogleApiAdsDfp
@@ -2275,7 +2275,7 @@ if (!class_exists("LineItemCreativeAssociationError", false)) {
   }
 }
 
-if (!class_exists("LongCreativeTemplateVariableValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LongCreativeTemplateVariableValue", false)) {
     /**
    * Stores values of {@link CreativeTemplateVariable} of {@link VariableType#LONG}.
    * @package GoogleApiAdsDfp
@@ -2321,7 +2321,7 @@ if (!class_exists("LongCreativeTemplateVariableValue", false)) {
   }
 }
 
-if (!class_exists("NotNullError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NotNullError", false)) {
     /**
    * Caused by supplying a null value for an attribute that cannot be null.
    * @package GoogleApiAdsDfp
@@ -2369,7 +2369,7 @@ if (!class_exists("NotNullError", false)) {
   }
 }
 
-if (!class_exists("NullError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullError", false)) {
     /**
    * Errors associated with violation of a NOT NULL check.
    * @package GoogleApiAdsDfp
@@ -2417,7 +2417,7 @@ if (!class_exists("NullError", false)) {
   }
 }
 
-if (!class_exists("ParseError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ParseError", false)) {
     /**
    * Lists errors related to parsing.
    * @package GoogleApiAdsDfp
@@ -2465,7 +2465,7 @@ if (!class_exists("ParseError", false)) {
   }
 }
 
-if (!class_exists("PermissionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PermissionError", false)) {
     /**
    * Errors related to incorrect permission.
    * @package GoogleApiAdsDfp
@@ -2513,7 +2513,7 @@ if (!class_exists("PermissionError", false)) {
   }
 }
 
-if (!class_exists("ProgrammaticCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ProgrammaticCreative", false)) {
     /**
    * A {@code Creative} used for programmatic trafficking. This creative will be auto-created with
    * the right approval from the buyer. This creative cannot be created through
@@ -2561,7 +2561,7 @@ if (!class_exists("ProgrammaticCreative", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageContextError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageContextError", false)) {
     /**
    * An error that occurs while executing a PQL query contained in
    * a {@link Statement} object.
@@ -2610,7 +2610,7 @@ if (!class_exists("PublisherQueryLanguageContextError", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageSyntaxError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageSyntaxError", false)) {
     /**
    * An error that occurs while parsing a PQL query contained in a
    * {@link Statement} object.
@@ -2659,7 +2659,7 @@ if (!class_exists("PublisherQueryLanguageSyntaxError", false)) {
   }
 }
 
-if (!class_exists("QuotaError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\QuotaError", false)) {
     /**
    * Describes a client-side error on which a user is attempting
    * to perform an action to which they have no quota remaining.
@@ -2708,7 +2708,7 @@ if (!class_exists("QuotaError", false)) {
   }
 }
 
-if (!class_exists("RangeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeError", false)) {
     /**
    * A list of all errors associated with the Range constraint.
    * @package GoogleApiAdsDfp
@@ -2756,7 +2756,7 @@ if (!class_exists("RangeError", false)) {
   }
 }
 
-if (!class_exists("RedirectAsset", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RedirectAsset", false)) {
     /**
    * An externally hosted asset.
    * @package GoogleApiAdsDfp
@@ -2801,7 +2801,7 @@ if (!class_exists("RedirectAsset", false)) {
   }
 }
 
-if (!class_exists("RequiredCollectionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredCollectionError", false)) {
     /**
    * A list of all errors to be used for validating sizes of collections.
    * @package GoogleApiAdsDfp
@@ -2849,7 +2849,7 @@ if (!class_exists("RequiredCollectionError", false)) {
   }
 }
 
-if (!class_exists("RequiredError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredError", false)) {
     /**
    * Errors due to missing required field.
    * @package GoogleApiAdsDfp
@@ -2897,7 +2897,7 @@ if (!class_exists("RequiredError", false)) {
   }
 }
 
-if (!class_exists("RequiredNumberError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredNumberError", false)) {
     /**
    * A list of all errors to be used in conjunction with required number
    * validators.
@@ -2946,7 +2946,7 @@ if (!class_exists("RequiredNumberError", false)) {
   }
 }
 
-if (!class_exists("RequiredSizeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredSizeError", false)) {
     /**
    * A list of all errors to be used for validating {@link Size}.
    * @package GoogleApiAdsDfp
@@ -2994,7 +2994,7 @@ if (!class_exists("RequiredSizeError", false)) {
   }
 }
 
-if (!class_exists("RichMediaStudioChildAssetProperty", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RichMediaStudioChildAssetProperty", false)) {
     /**
    * Represents a child asset in {@code RichMediaStudioCreative}.
    * @package GoogleApiAdsDfp
@@ -3072,7 +3072,7 @@ if (!class_exists("RichMediaStudioChildAssetProperty", false)) {
   }
 }
 
-if (!class_exists("RichMediaStudioCreativeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RichMediaStudioCreativeError", false)) {
     /**
    * Lists all errors associated with Rich Media Studio creatives.
    * @package GoogleApiAdsDfp
@@ -3120,7 +3120,7 @@ if (!class_exists("RichMediaStudioCreativeError", false)) {
   }
 }
 
-if (!class_exists("ServerError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ServerError", false)) {
     /**
    * Errors related to the server.
    * @package GoogleApiAdsDfp
@@ -3168,7 +3168,7 @@ if (!class_exists("ServerError", false)) {
   }
 }
 
-if (!class_exists("Size", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Size", false)) {
     /**
    * Represents the dimensions of an {@link AdUnit}, {@link LineItem} or {@link Creative}.
    * <p>
@@ -3227,7 +3227,7 @@ if (!class_exists("Size", false)) {
   }
 }
 
-if (!class_exists("SoapRequestHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapRequestHeader", false)) {
     /**
    * Represents the SOAP request header used by API requests.
    * @package GoogleApiAdsDfp
@@ -3277,7 +3277,7 @@ if (!class_exists("SoapRequestHeader", false)) {
   }
 }
 
-if (!class_exists("SoapResponseHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapResponseHeader", false)) {
     /**
    * Represents the SOAP request header used by API responses.
    * @package GoogleApiAdsDfp
@@ -3327,7 +3327,7 @@ if (!class_exists("SoapResponseHeader", false)) {
   }
 }
 
-if (!class_exists("Statement", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Statement", false)) {
     /**
    * Captures the {@code WHERE}, {@code ORDER BY} and {@code LIMIT} clauses of a
    * PQL query. Statements are typically used to retrieve objects of a predefined
@@ -3405,7 +3405,7 @@ if (!class_exists("Statement", false)) {
   }
 }
 
-if (!class_exists("StatementError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StatementError", false)) {
     /**
    * An error that occurs while parsing {@link Statement} objects.
    * @package GoogleApiAdsDfp
@@ -3453,7 +3453,7 @@ if (!class_exists("StatementError", false)) {
   }
 }
 
-if (!class_exists("StringCreativeTemplateVariableValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringCreativeTemplateVariableValue", false)) {
     /**
    * Stores values of {@link CreativeTemplateVariable} of
    * {@link VariableType#STRING} and {@link VariableType#LIST}.
@@ -3500,7 +3500,7 @@ if (!class_exists("StringCreativeTemplateVariableValue", false)) {
   }
 }
 
-if (!class_exists("StringLengthError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthError", false)) {
     /**
    * Errors for Strings which do not meet given length constraints.
    * @package GoogleApiAdsDfp
@@ -3548,7 +3548,7 @@ if (!class_exists("StringLengthError", false)) {
   }
 }
 
-if (!class_exists("String_ValueMapEntry", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\String_ValueMapEntry", false)) {
     /**
    * This represents an entry in a map with a key of type String
    * and value of type Value.
@@ -3599,7 +3599,7 @@ if (!class_exists("String_ValueMapEntry", false)) {
   }
 }
 
-if (!class_exists("SwiffyConversionError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SwiffyConversionError", false)) {
     /**
    * Error for converting flash to swiffy asset.
    * @package GoogleApiAdsDfp
@@ -3647,7 +3647,7 @@ if (!class_exists("SwiffyConversionError", false)) {
   }
 }
 
-if (!class_exists("SwiffyFallbackAsset", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SwiffyFallbackAsset", false)) {
     /**
    * A fallback swiffy asset used for flash creatives.
    * @package GoogleApiAdsDfp
@@ -3704,7 +3704,7 @@ if (!class_exists("SwiffyFallbackAsset", false)) {
   }
 }
 
-if (!class_exists("TemplateCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TemplateCreative", false)) {
     /**
    * A {@code Creative} that is created by the specified creative template.
    * @package GoogleApiAdsDfp
@@ -3806,7 +3806,7 @@ if (!class_exists("TemplateCreative", false)) {
   }
 }
 
-if (!class_exists("TemplateInstantiatedCreativeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TemplateInstantiatedCreativeError", false)) {
     /**
    * Lists all errors associated with template instantiated creatives.
    * @package GoogleApiAdsDfp
@@ -3854,7 +3854,7 @@ if (!class_exists("TemplateInstantiatedCreativeError", false)) {
   }
 }
 
-if (!class_exists("ThirdPartyCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ThirdPartyCreative", false)) {
     /**
    * A {@code Creative} that is served by a 3rd-party vendor.
    * @package GoogleApiAdsDfp
@@ -3935,7 +3935,7 @@ if (!class_exists("ThirdPartyCreative", false)) {
   }
 }
 
-if (!class_exists("TrackingUrls", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TrackingUrls", false)) {
     /**
    * A list of URLs that should be pinged for a conversion event.
    * @package GoogleApiAdsDfp
@@ -3978,7 +3978,7 @@ if (!class_exists("TrackingUrls", false)) {
   }
 }
 
-if (!class_exists("TypeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TypeError", false)) {
     /**
    * An error for a field which is an invalid type.
    * @package GoogleApiAdsDfp
@@ -4019,7 +4019,7 @@ if (!class_exists("TypeError", false)) {
   }
 }
 
-if (!class_exists("UniqueError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UniqueError", false)) {
     /**
    * An error for a field which must satisfy a uniqueness constraint
    * @package GoogleApiAdsDfp
@@ -4060,7 +4060,7 @@ if (!class_exists("UniqueError", false)) {
   }
 }
 
-if (!class_exists("UnsupportedCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UnsupportedCreative", false)) {
     /**
    * A {@code Creative} that isn't supported by this version of the API.
    * This object is readonly and when encountered should be reported
@@ -4115,7 +4115,7 @@ if (!class_exists("UnsupportedCreative", false)) {
   }
 }
 
-if (!class_exists("UrlCreativeTemplateVariableValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UrlCreativeTemplateVariableValue", false)) {
     /**
    * Stores values of {@link CreativeTemplateVariable} of {@link VariableType#URL}.
    * @package GoogleApiAdsDfp
@@ -4161,7 +4161,7 @@ if (!class_exists("UrlCreativeTemplateVariableValue", false)) {
   }
 }
 
-if (!class_exists("Value", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Value", false)) {
     /**
    * {@code Value} represents a value.
    * @package GoogleApiAdsDfp
@@ -4240,7 +4240,7 @@ if (!class_exists("Value", false)) {
   }
 }
 
-if (!class_exists("VastRedirectCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VastRedirectCreative", false)) {
     /**
    * A {@code Creative} that points to an externally hosted VAST ad and is
    * served via VAST XML as a VAST Wrapper.
@@ -4343,7 +4343,7 @@ if (!class_exists("VastRedirectCreative", false)) {
   }
 }
 
-if (!class_exists("VideoMetadata", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VideoMetadata", false)) {
     /**
    * Metadata for a video asset.
    * @package GoogleApiAdsDfp
@@ -4442,7 +4442,7 @@ if (!class_exists("VideoMetadata", false)) {
   }
 }
 
-if (!class_exists("VideoRedirectAsset", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VideoRedirectAsset", false)) {
     /**
    * An externally-hosted video asset.
    * @package GoogleApiAdsDfp
@@ -4487,7 +4487,7 @@ if (!class_exists("VideoRedirectAsset", false)) {
   }
 }
 
-if (!class_exists("VpaidLinearCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VpaidLinearCreative", false)) {
     /**
    * A {@code Creative} that displays a DFP-hosted Flash-based ad
    * and is served via VAST 2.0 XML.  It is displayed in a linear fashion
@@ -4605,7 +4605,7 @@ if (!class_exists("VpaidLinearCreative", false)) {
   }
 }
 
-if (!class_exists("VpaidLinearRedirectCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VpaidLinearRedirectCreative", false)) {
     /**
    * A {@code Creative} that displays an externally hosted Flash-based ad
    * and is served via VAST 2.0 XML.  It is displayed in a linear fashion
@@ -4709,7 +4709,7 @@ if (!class_exists("VpaidLinearRedirectCreative", false)) {
   }
 }
 
-if (!class_exists("ApiFramework", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiFramework", false)) {
     /**
    * The various ApiFramework types.
    * @package GoogleApiAdsDfp
@@ -4745,7 +4745,7 @@ if (!class_exists("ApiFramework", false)) {
   }
 }
 
-if (!class_exists("ApiVersionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiVersionErrorReason", false)) {
     /**
    * Indicates that the operation is not allowed in the version the request
    * was made in.
@@ -4782,7 +4782,7 @@ if (!class_exists("ApiVersionErrorReason", false)) {
   }
 }
 
-if (!class_exists("AssetErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AssetErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -4818,7 +4818,7 @@ if (!class_exists("AssetErrorReason", false)) {
   }
 }
 
-if (!class_exists("AuthenticationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationErrorReason", false)) {
     /**
    * The SOAP message contains a request header with an ambiguous definition
    * of the authentication header fields. This means either the {@code
@@ -4857,7 +4857,7 @@ if (!class_exists("AuthenticationErrorReason", false)) {
   }
 }
 
-if (!class_exists("CommonErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CommonErrorReason", false)) {
     /**
    * Describes reasons for common errors
    * @package GoogleApiAdsDfp
@@ -4893,7 +4893,7 @@ if (!class_exists("CommonErrorReason", false)) {
   }
 }
 
-if (!class_exists("ConversionEvent", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ConversionEvent", false)) {
     /**
    * All possible tracking event types.  Not all events are supported by every
    * kind of creative.
@@ -4930,7 +4930,7 @@ if (!class_exists("ConversionEvent", false)) {
   }
 }
 
-if (!class_exists("CreativeAssetMacroErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeAssetMacroErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -4966,7 +4966,7 @@ if (!class_exists("CreativeAssetMacroErrorReason", false)) {
   }
 }
 
-if (!class_exists("CreativeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5002,7 +5002,7 @@ if (!class_exists("CreativeErrorReason", false)) {
   }
 }
 
-if (!class_exists("CreativeSetErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeSetErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5038,7 +5038,7 @@ if (!class_exists("CreativeSetErrorReason", false)) {
   }
 }
 
-if (!class_exists("CustomCreativeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCreativeErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5074,7 +5074,7 @@ if (!class_exists("CustomCreativeErrorReason", false)) {
   }
 }
 
-if (!class_exists("CustomFieldValueErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomFieldValueErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5110,7 +5110,7 @@ if (!class_exists("CustomFieldValueErrorReason", false)) {
   }
 }
 
-if (!class_exists("DestinationUrlType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DestinationUrlType", false)) {
     /**
    * The valid actions that a destination URL may perform if the user clicks on the ad.
    * @package GoogleApiAdsDfp
@@ -5146,7 +5146,7 @@ if (!class_exists("DestinationUrlType", false)) {
   }
 }
 
-if (!class_exists("FeatureErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FeatureErrorReason", false)) {
     /**
    * A feature is being used that is not enabled on the current network.
    * @package GoogleApiAdsDfp
@@ -5182,7 +5182,7 @@ if (!class_exists("FeatureErrorReason", false)) {
   }
 }
 
-if (!class_exists("FileErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FileErrorReason", false)) {
     /**
    * The provided byte array is empty.
    * @package GoogleApiAdsDfp
@@ -5218,7 +5218,7 @@ if (!class_exists("FileErrorReason", false)) {
   }
 }
 
-if (!class_exists("Html5Feature", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Html5Feature", false)) {
     /**
    * An HTML5 features required by HTML5 assets.
    * @package GoogleApiAdsDfp
@@ -5254,7 +5254,7 @@ if (!class_exists("Html5Feature", false)) {
   }
 }
 
-if (!class_exists("ImageDensity", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ImageDensity", false)) {
     /**
    * Image densities.
    * @package GoogleApiAdsDfp
@@ -5290,7 +5290,7 @@ if (!class_exists("ImageDensity", false)) {
   }
 }
 
-if (!class_exists("ImageErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ImageErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5326,7 +5326,7 @@ if (!class_exists("ImageErrorReason", false)) {
   }
 }
 
-if (!class_exists("InternalApiErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiErrorReason", false)) {
     /**
    * The single reason for the internal API error.
    * @package GoogleApiAdsDfp
@@ -5362,7 +5362,7 @@ if (!class_exists("InternalApiErrorReason", false)) {
   }
 }
 
-if (!class_exists("InvalidPhoneNumberErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InvalidPhoneNumberErrorReason", false)) {
     /**
    * The phone number is invalid.
    * @package GoogleApiAdsDfp
@@ -5398,7 +5398,7 @@ if (!class_exists("InvalidPhoneNumberErrorReason", false)) {
   }
 }
 
-if (!class_exists("InvalidUrlErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InvalidUrlErrorReason", false)) {
     /**
    * The URL contains invalid characters.
    * @package GoogleApiAdsDfp
@@ -5434,7 +5434,7 @@ if (!class_exists("InvalidUrlErrorReason", false)) {
   }
 }
 
-if (!class_exists("LabelEntityAssociationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LabelEntityAssociationErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5470,7 +5470,7 @@ if (!class_exists("LabelEntityAssociationErrorReason", false)) {
   }
 }
 
-if (!class_exists("LineItemCreativeAssociationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LineItemCreativeAssociationErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5506,7 +5506,7 @@ if (!class_exists("LineItemCreativeAssociationErrorReason", false)) {
   }
 }
 
-if (!class_exists("LockedOrientation", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LockedOrientation", false)) {
     /**
    * Describes the orientation that a creative should be served with.
    * @package GoogleApiAdsDfp
@@ -5542,7 +5542,7 @@ if (!class_exists("LockedOrientation", false)) {
   }
 }
 
-if (!class_exists("MimeType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\MimeType", false)) {
     /**
    * Enum of supported mime types
    * @package GoogleApiAdsDfp
@@ -5578,7 +5578,7 @@ if (!class_exists("MimeType", false)) {
   }
 }
 
-if (!class_exists("NotNullErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NotNullErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5614,7 +5614,7 @@ if (!class_exists("NotNullErrorReason", false)) {
   }
 }
 
-if (!class_exists("NullErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullErrorReason", false)) {
     /**
    * The reasons for the validation error.
    * @package GoogleApiAdsDfp
@@ -5650,7 +5650,7 @@ if (!class_exists("NullErrorReason", false)) {
   }
 }
 
-if (!class_exists("ParseErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ParseErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5686,7 +5686,7 @@ if (!class_exists("ParseErrorReason", false)) {
   }
 }
 
-if (!class_exists("PermissionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PermissionErrorReason", false)) {
     /**
    * Describes reasons for permission errors.
    * @package GoogleApiAdsDfp
@@ -5722,7 +5722,7 @@ if (!class_exists("PermissionErrorReason", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageContextErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageContextErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5758,7 +5758,7 @@ if (!class_exists("PublisherQueryLanguageContextErrorReason", false)) {
   }
 }
 
-if (!class_exists("PublisherQueryLanguageSyntaxErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\PublisherQueryLanguageSyntaxErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5794,7 +5794,7 @@ if (!class_exists("PublisherQueryLanguageSyntaxErrorReason", false)) {
   }
 }
 
-if (!class_exists("QuotaErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\QuotaErrorReason", false)) {
     /**
    * The number of requests made per second is too high and has exceeded the
    * allowable limit. The recommended approach to handle this error is to wait
@@ -5840,7 +5840,7 @@ if (!class_exists("QuotaErrorReason", false)) {
   }
 }
 
-if (!class_exists("RangeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeErrorReason", false)) {
     /**
    * The value returned if the actual value is not exposed by the requested API version.
    * @package GoogleApiAdsDfp
@@ -5876,7 +5876,7 @@ if (!class_exists("RangeErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredCollectionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredCollectionErrorReason", false)) {
     /**
    * A required collection is missing.
    * @package GoogleApiAdsDfp
@@ -5912,7 +5912,7 @@ if (!class_exists("RequiredCollectionErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -5948,7 +5948,7 @@ if (!class_exists("RequiredErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredNumberErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredNumberErrorReason", false)) {
     /**
    * Describes reasons for a number to be invalid.
    * @package GoogleApiAdsDfp
@@ -5984,7 +5984,7 @@ if (!class_exists("RequiredNumberErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredSizeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredSizeErrorReason", false)) {
     /**
    * {@link Creative#size} or {@link LineItem#creativeSizes} is
    * missing.
@@ -6021,7 +6021,7 @@ if (!class_exists("RequiredSizeErrorReason", false)) {
   }
 }
 
-if (!class_exists("RichMediaStudioChildAssetPropertyType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RichMediaStudioChildAssetPropertyType", false)) {
     /**
    * Type of {@code RichMediaStudioChildAssetProperty}
    * @package GoogleApiAdsDfp
@@ -6057,7 +6057,7 @@ if (!class_exists("RichMediaStudioChildAssetPropertyType", false)) {
   }
 }
 
-if (!class_exists("RichMediaStudioCreativeArtworkType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RichMediaStudioCreativeArtworkType", false)) {
     /**
    * Rich Media Studio creative artwork types.
    * @package GoogleApiAdsDfp
@@ -6093,7 +6093,7 @@ if (!class_exists("RichMediaStudioCreativeArtworkType", false)) {
   }
 }
 
-if (!class_exists("RichMediaStudioCreativeBillingAttribute", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RichMediaStudioCreativeBillingAttribute", false)) {
     /**
    * Rich Media Studio creative supported billing attributes.
    * <p>
@@ -6132,7 +6132,7 @@ if (!class_exists("RichMediaStudioCreativeBillingAttribute", false)) {
   }
 }
 
-if (!class_exists("RichMediaStudioCreativeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RichMediaStudioCreativeErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package GoogleApiAdsDfp
@@ -6168,7 +6168,7 @@ if (!class_exists("RichMediaStudioCreativeErrorReason", false)) {
   }
 }
 
-if (!class_exists("RichMediaStudioCreativeFormat", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RichMediaStudioCreativeFormat", false)) {
     /**
    * Different creative format supported by Rich Media Studio creative.
    * @package GoogleApiAdsDfp
@@ -6204,7 +6204,7 @@ if (!class_exists("RichMediaStudioCreativeFormat", false)) {
   }
 }
 
-if (!class_exists("ScalableType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ScalableType", false)) {
     /**
    * The different ways a video/flash can scale.
    * @package GoogleApiAdsDfp
@@ -6240,7 +6240,7 @@ if (!class_exists("ScalableType", false)) {
   }
 }
 
-if (!class_exists("ServerErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ServerErrorReason", false)) {
     /**
    * Describes reasons for server errors
    * @package GoogleApiAdsDfp
@@ -6276,7 +6276,7 @@ if (!class_exists("ServerErrorReason", false)) {
   }
 }
 
-if (!class_exists("SslManualOverride", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SslManualOverride", false)) {
     /**
    * Enum to store the creative SSL compatibility manual override.
    * Its three states are similar to that of {@link SslScanResult}.
@@ -6313,7 +6313,7 @@ if (!class_exists("SslManualOverride", false)) {
   }
 }
 
-if (!class_exists("SslScanResult", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SslScanResult", false)) {
     /**
    * Enum to store the creative SSL compatibility scan result.
    * @package GoogleApiAdsDfp
@@ -6349,7 +6349,7 @@ if (!class_exists("SslScanResult", false)) {
   }
 }
 
-if (!class_exists("StatementErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StatementErrorReason", false)) {
     /**
    * A bind variable has not been bound to a value.
    * @package GoogleApiAdsDfp
@@ -6385,7 +6385,7 @@ if (!class_exists("StatementErrorReason", false)) {
   }
 }
 
-if (!class_exists("StringLengthErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthErrorReason", false)) {
     /**
    * The value returned if the actual value is not exposed by the requested API version.
    * @package GoogleApiAdsDfp
@@ -6421,7 +6421,7 @@ if (!class_exists("StringLengthErrorReason", false)) {
   }
 }
 
-if (!class_exists("SwiffyConversionErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SwiffyConversionErrorReason", false)) {
     /**
    * Error reason for {@link SwiffyConversionError}.
    * @package GoogleApiAdsDfp
@@ -6457,7 +6457,7 @@ if (!class_exists("SwiffyConversionErrorReason", false)) {
   }
 }
 
-if (!class_exists("TemplateInstantiatedCreativeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TemplateInstantiatedCreativeErrorReason", false)) {
     /**
    * The reason for the error
    * @package GoogleApiAdsDfp
@@ -6493,7 +6493,7 @@ if (!class_exists("TemplateInstantiatedCreativeErrorReason", false)) {
   }
 }
 
-if (!class_exists("VastRedirectType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VastRedirectType", false)) {
     /**
    * The types of VAST ads that a {@link VastRedirectCreative} can point to.
    * @package GoogleApiAdsDfp
@@ -6529,7 +6529,7 @@ if (!class_exists("VastRedirectType", false)) {
   }
 }
 
-if (!class_exists("VideoDeliveryType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VideoDeliveryType", false)) {
     /**
    * The video delivery type.
    * @package GoogleApiAdsDfp
@@ -6565,7 +6565,7 @@ if (!class_exists("VideoDeliveryType", false)) {
   }
 }
 
-if (!class_exists("CreateCreatives", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreateCreatives", false)) {
     /**
    * Creates new {@link Creative} objects.
    *
@@ -6611,7 +6611,7 @@ if (!class_exists("CreateCreatives", false)) {
   }
 }
 
-if (!class_exists("CreateCreativesResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreateCreativesResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -6654,7 +6654,7 @@ if (!class_exists("CreateCreativesResponse", false)) {
   }
 }
 
-if (!class_exists("GetCreativesByStatement", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GetCreativesByStatement", false)) {
     /**
    * Gets a {@link CreativePage} of {@link Creative} objects that satisfy the
    * given {@link Statement#query}. The following fields are supported for
@@ -6733,7 +6733,7 @@ if (!class_exists("GetCreativesByStatement", false)) {
   }
 }
 
-if (!class_exists("GetCreativesByStatementResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\GetCreativesByStatementResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -6776,7 +6776,7 @@ if (!class_exists("GetCreativesByStatementResponse", false)) {
   }
 }
 
-if (!class_exists("UpdateCreatives", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UpdateCreatives", false)) {
     /**
    * Updates the specified {@link Creative} objects.
    *
@@ -6822,7 +6822,7 @@ if (!class_exists("UpdateCreatives", false)) {
   }
 }
 
-if (!class_exists("UpdateCreativesResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\UpdateCreativesResponse", false)) {
     /**
    *
    * @package GoogleApiAdsDfp
@@ -6865,7 +6865,7 @@ if (!class_exists("UpdateCreativesResponse", false)) {
   }
 }
 
-if (!class_exists("BaseDynamicAllocationCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BaseDynamicAllocationCreative", false)) {
     /**
    * A base class for dynamic allocation creatives.
    * @package GoogleApiAdsDfp
@@ -6911,7 +6911,7 @@ if (!class_exists("BaseDynamicAllocationCreative", false)) {
   }
 }
 
-if (!class_exists("ObjectValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ObjectValue", false)) {
     /**
    * Contains an object value.
    * <p>
@@ -6956,7 +6956,7 @@ if (!class_exists("ObjectValue", false)) {
   }
 }
 
-if (!class_exists("AdMobBackfillCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AdMobBackfillCreative", false)) {
     /**
    * An AdMob backfill creative.
    * @package GoogleApiAdsDfp
@@ -7014,7 +7014,7 @@ if (!class_exists("AdMobBackfillCreative", false)) {
   }
 }
 
-if (!class_exists("ApiException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiException", false)) {
     /**
    * \Exception class for holding a list of service errors.
    * @package GoogleApiAdsDfp
@@ -7060,7 +7060,7 @@ if (!class_exists("ApiException", false)) {
   }
 }
 
-if (!class_exists("AspectRatioImageCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AspectRatioImageCreative", false)) {
     /**
    * A {@code Creative} intended for mobile platforms that displays an image,
    * whose {@link LineItem#creativePlaceholders size} is defined as an
@@ -7131,7 +7131,7 @@ if (!class_exists("AspectRatioImageCreative", false)) {
   }
 }
 
-if (!class_exists("BaseFlashCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BaseFlashCreative", false)) {
     /**
    * A base type for creatives that display a Flash-based ad. If the Flash ad
    * cannot load, a fallback image is displayed instead.
@@ -7248,7 +7248,7 @@ if (!class_exists("BaseFlashCreative", false)) {
   }
 }
 
-if (!class_exists("BaseFlashRedirectCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BaseFlashRedirectCreative", false)) {
     /**
    * The base type for creatives that load a Flash asset from a specified URL.
    * If the remote flash asset cannot be served, a fallback image is used at an
@@ -7324,7 +7324,7 @@ if (!class_exists("BaseFlashRedirectCreative", false)) {
   }
 }
 
-if (!class_exists("BaseImageCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BaseImageCreative", false)) {
     /**
    * The base type for creatives that display an image.
    * @package GoogleApiAdsDfp
@@ -7377,7 +7377,7 @@ if (!class_exists("BaseImageCreative", false)) {
   }
 }
 
-if (!class_exists("BaseImageRedirectCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BaseImageRedirectCreative", false)) {
     /**
    * The base type for creatives that load an image asset from a specified URL.
    * @package GoogleApiAdsDfp
@@ -7423,7 +7423,7 @@ if (!class_exists("BaseImageRedirectCreative", false)) {
   }
 }
 
-if (!class_exists("BaseRichMediaStudioCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BaseRichMediaStudioCreative", false)) {
     /**
    * A {@code Creative} that is created by a Rich Media Studio.
    * @package GoogleApiAdsDfp
@@ -7588,7 +7588,7 @@ if (!class_exists("BaseRichMediaStudioCreative", false)) {
   }
 }
 
-if (!class_exists("BaseVideoCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BaseVideoCreative", false)) {
     /**
    * A base type for video creatives.
    * @package GoogleApiAdsDfp
@@ -7683,7 +7683,7 @@ if (!class_exists("BaseVideoCreative", false)) {
   }
 }
 
-if (!class_exists("BooleanValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\BooleanValue", false)) {
     /**
    * Contains a boolean value.
    * @package GoogleApiAdsDfp
@@ -7728,7 +7728,7 @@ if (!class_exists("BooleanValue", false)) {
   }
 }
 
-if (!class_exists("ClickTrackingCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ClickTrackingCreative", false)) {
     /**
    * A creative that is used for tracking clicks on ads that are served directly
    * from the customers' web servers or media servers.
@@ -7784,7 +7784,7 @@ if (!class_exists("ClickTrackingCreative", false)) {
   }
 }
 
-if (!class_exists("CustomCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CustomCreative", false)) {
     /**
    * A {@code Creative} that contains an arbitrary HTML snippet and file assets.
    * @package GoogleApiAdsDfp
@@ -7865,7 +7865,7 @@ if (!class_exists("CustomCreative", false)) {
   }
 }
 
-if (!class_exists("DateTimeValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DateTimeValue", false)) {
     /**
    * Contains a date-time value.
    * @package GoogleApiAdsDfp
@@ -7910,7 +7910,7 @@ if (!class_exists("DateTimeValue", false)) {
   }
 }
 
-if (!class_exists("DateValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\DateValue", false)) {
     /**
    * Contains a date value.
    * @package GoogleApiAdsDfp
@@ -7955,7 +7955,7 @@ if (!class_exists("DateValue", false)) {
   }
 }
 
-if (!class_exists("LegacyDfpMobileCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\LegacyDfpMobileCreative", false)) {
     /**
    * A mobile {@code Creative} that isn't supported by Google DFP, but was
    * migrated from DART. Creatives of this type cannot be created or modified.
@@ -7995,7 +7995,7 @@ if (!class_exists("LegacyDfpMobileCreative", false)) {
   }
 }
 
-if (!class_exists("FlashCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FlashCreative", false)) {
     /**
    * A {@code Creative} that displays a Flash-based ad. If the Flash ad cannot
    * load, a fallback image is displayed instead.
@@ -8072,7 +8072,7 @@ if (!class_exists("FlashCreative", false)) {
   }
 }
 
-if (!class_exists("FlashOverlayCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FlashOverlayCreative", false)) {
     /**
    * An overlay {@code Creative} that displays a Flash-based ad and is
    * served via VAST 2.0 XML. Overlays cover part of the video content
@@ -8171,7 +8171,7 @@ if (!class_exists("FlashOverlayCreative", false)) {
   }
 }
 
-if (!class_exists("FlashRedirectCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FlashRedirectCreative", false)) {
     /**
    * A {@code Creative} that loads a Flash asset from a specified URL. If the
    * remote flash asset cannot be served, a fallback image is used at an
@@ -8215,7 +8215,7 @@ if (!class_exists("FlashRedirectCreative", false)) {
   }
 }
 
-if (!class_exists("FlashRedirectOverlayCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\FlashRedirectOverlayCreative", false)) {
     /**
    * An overlay {@code Creative} that loads a Flash asset from a specified URL
    * and is served via VAST 2.0 XML. Overlays cover part of the video content
@@ -8308,7 +8308,7 @@ if (!class_exists("FlashRedirectOverlayCreative", false)) {
   }
 }
 
-if (!class_exists("HasHtmlSnippetDynamicAllocationCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\HasHtmlSnippetDynamicAllocationCreative", false)) {
     /**
    * Dynamic allocation creative with a backfill code snippet.
    * @package GoogleApiAdsDfp
@@ -8352,7 +8352,7 @@ if (!class_exists("HasHtmlSnippetDynamicAllocationCreative", false)) {
   }
 }
 
-if (!class_exists("ImageCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ImageCreative", false)) {
     /**
    * A {@code Creative} that displays an image.
    * @package GoogleApiAdsDfp
@@ -8419,7 +8419,7 @@ if (!class_exists("ImageCreative", false)) {
   }
 }
 
-if (!class_exists("ImageOverlayCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ImageOverlayCreative", false)) {
     /**
    * An overlay {@code Creative} that displays an image and is served via VAST
    * 2.0 XML. Overlays cover part of the video content they are displayed on
@@ -8502,7 +8502,7 @@ if (!class_exists("ImageOverlayCreative", false)) {
   }
 }
 
-if (!class_exists("ImageRedirectCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ImageRedirectCreative", false)) {
     /**
    * A {@code Creative} that loads an image asset from a specified URL.
    * @package GoogleApiAdsDfp
@@ -8554,7 +8554,7 @@ if (!class_exists("ImageRedirectCreative", false)) {
   }
 }
 
-if (!class_exists("ImageRedirectOverlayCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ImageRedirectOverlayCreative", false)) {
     /**
    * An overlay {@code Creative} that loads an image asset from a specified URL
    * and is served via VAST 2.0 XML. Overlays cover part of the video content
@@ -8636,7 +8636,7 @@ if (!class_exists("ImageRedirectOverlayCreative", false)) {
   }
 }
 
-if (!class_exists("NumberValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NumberValue", false)) {
     /**
    * Contains a numeric value.
    * @package GoogleApiAdsDfp
@@ -8681,7 +8681,7 @@ if (!class_exists("NumberValue", false)) {
   }
 }
 
-if (!class_exists("RichMediaStudioCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RichMediaStudioCreative", false)) {
     /**
    * A {@code Creative} that is created by a Rich Media Studio. You cannot create this creative,
    * but you can update some fields of this creative.
@@ -8750,7 +8750,7 @@ if (!class_exists("RichMediaStudioCreative", false)) {
   }
 }
 
-if (!class_exists("SetValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SetValue", false)) {
     /**
    * Contains a set of {@link Value Values}. May not contain duplicates.
    * @package GoogleApiAdsDfp
@@ -8795,7 +8795,7 @@ if (!class_exists("SetValue", false)) {
   }
 }
 
-if (!class_exists("TextValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\TextValue", false)) {
     /**
    * Contains a string value.
    * @package GoogleApiAdsDfp
@@ -8840,7 +8840,7 @@ if (!class_exists("TextValue", false)) {
   }
 }
 
-if (!class_exists("VideoCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VideoCreative", false)) {
     /**
    * A {@code Creative} that contains DFP-hosted video ads and is served
    * via VAST 2.0 XML.  This creative is read-only.
@@ -8886,7 +8886,7 @@ if (!class_exists("VideoCreative", false)) {
   }
 }
 
-if (!class_exists("VideoRedirectCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\VideoRedirectCreative", false)) {
     /**
    * A {@code Creative} that contains externally hosted video ads and
    * is served via VAST 2.0 XML.  This creative is read-only.
@@ -8939,7 +8939,7 @@ if (!class_exists("VideoRedirectCreative", false)) {
   }
 }
 
-if (!class_exists("AdExchangeCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AdExchangeCreative", false)) {
     /**
    * An Ad Exchange dynamic allocation creative.
    * @package GoogleApiAdsDfp
@@ -8977,7 +8977,7 @@ if (!class_exists("AdExchangeCreative", false)) {
   }
 }
 
-if (!class_exists("AdSenseCreative", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AdSenseCreative", false)) {
     /**
    * An AdSense dynamic allocation creative.
    * @package GoogleApiAdsDfp
@@ -9015,7 +9015,7 @@ if (!class_exists("AdSenseCreative", false)) {
   }
 }
 
-if (!class_exists("CreativeService", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CreativeService", false)) {
     /**
    * CreativeService
    * @package GoogleApiAdsDfp

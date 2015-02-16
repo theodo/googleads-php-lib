@@ -69,7 +69,6 @@ def add_namespaces_for_files_of_dir( path ):
             os.makedirs( path_clean_file )
         class_name = key.split( '$' )[1]
         open_br = 0
-        in_class = False
         extra_use = []
         for line_object in FaaList:
             for type_of_line, line in line_object.iteritems():
@@ -124,6 +123,9 @@ def add_namespaces_for_files_of_dir( path ):
                             number_line += 1
                         consec_white_lines += 1
                     else:
+                        if 'class_exists' in line:
+                            class_tested = line.split( '"' )[1]
+                            line = line.replace( class_tested, entities[ class_tested ]+'\\'+class_tested ).replace( '\\', '\\\\' )
                         write( f, line, entities )
                         consec_white_lines = 0
                         number_line += 1

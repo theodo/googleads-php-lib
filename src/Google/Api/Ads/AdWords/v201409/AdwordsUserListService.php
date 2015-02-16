@@ -31,7 +31,7 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 require_once "Google/Api/Ads/AdWords/Lib/AdWordsSoapClient.php";
 
-if (!class_exists("DateRange", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateRange", false)) {
     /**
    * Represents a range of dates that has either an upper or a lower bound.
    * The format for the date is YYYYMMDD.
@@ -86,7 +86,7 @@ if (!class_exists("DateRange", false)) {
   }
 }
 
-if (!class_exists("OrderBy", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OrderBy", false)) {
     /**
    * Specifies how the resulting information should be sorted.
    *
@@ -140,7 +140,7 @@ if (!class_exists("OrderBy", false)) {
   }
 }
 
-if (!class_exists("Paging", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Paging", false)) {
     /**
    * Specifies the page of results to return in the response. A page is specified
    * by the result position to start at and the maximum number of results to
@@ -196,7 +196,7 @@ if (!class_exists("Paging", false)) {
   }
 }
 
-if (!class_exists("Predicate", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Predicate", false)) {
     /**
    * Specifies how an entity (eg. adgroup, campaign, criterion, ad) should be filtered.
    *
@@ -257,7 +257,7 @@ if (!class_exists("Predicate", false)) {
   }
 }
 
-if (!class_exists("SoapRequestHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapRequestHeader", false)) {
     /**
    * Defines the required and optional elements within the header of a SOAP request.
    *
@@ -332,7 +332,7 @@ if (!class_exists("SoapRequestHeader", false)) {
   }
 }
 
-if (!class_exists("SoapResponseHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapResponseHeader", false)) {
     /**
    * Defines the elements within the header of a SOAP response.
    *
@@ -407,7 +407,7 @@ if (!class_exists("SoapResponseHeader", false)) {
   }
 }
 
-if (!class_exists("ApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiError", false)) {
     /**
    * The API error base class that provides details about an error that occurred
    * while processing a service request.
@@ -515,7 +515,7 @@ if (!class_exists("ApiError", false)) {
   }
 }
 
-if (!class_exists("ApplicationException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApplicationException", false)) {
     /**
    * Base class for exceptions.
    *
@@ -605,7 +605,7 @@ if (!class_exists("ApplicationException", false)) {
   }
 }
 
-if (!class_exists("Selector", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Selector", false)) {
     /**
    * A generic selector to specify the type of information to return.
    *
@@ -680,7 +680,7 @@ if (!class_exists("Selector", false)) {
   }
 }
 
-if (!class_exists("ListReturnValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ListReturnValue", false)) {
     /**
    * Base list return value type.
    *
@@ -763,7 +763,7 @@ if (!class_exists("ListReturnValue", false)) {
   }
 }
 
-if (!class_exists("Operation", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Operation", false)) {
     /**
    * This represents an operation that includes an operator and an operand
    * specified type.
@@ -854,7 +854,7 @@ if (!class_exists("Operation", false)) {
   }
 }
 
-if (!class_exists("Page", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Page", false)) {
     /**
    * Contains the results from a get call.
    *
@@ -944,7 +944,7 @@ if (!class_exists("Page", false)) {
   }
 }
 
-if (!class_exists("AuthenticationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationErrorReason", false)) {
     /**
    * The single reason for the authentication failure.
    *
@@ -984,7 +984,7 @@ if (!class_exists("AuthenticationErrorReason", false)) {
   }
 }
 
-if (!class_exists("AuthorizationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationErrorReason", false)) {
     /**
    * The reasons for the database error.
    *
@@ -1024,7 +1024,7 @@ if (!class_exists("AuthorizationErrorReason", false)) {
   }
 }
 
-if (!class_exists("DatabaseErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseErrorReason", false)) {
     /**
    * The reasons for the database error.
    *
@@ -1064,7 +1064,7 @@ if (!class_exists("DatabaseErrorReason", false)) {
   }
 }
 
-if (!class_exists("DateErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateErrorReason", false)) {
     /**
    * The reasons for the target error.
    *
@@ -1104,7 +1104,7 @@ if (!class_exists("DateErrorReason", false)) {
   }
 }
 
-if (!class_exists("DistinctErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DistinctErrorReason", false)) {
     /**
    * The reasons for the validation error.
    *
@@ -1144,7 +1144,7 @@ if (!class_exists("DistinctErrorReason", false)) {
   }
 }
 
-if (!class_exists("EntityNotFoundReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\EntityNotFoundReason", false)) {
     /**
    * The specified id refered to an entity which either doesn't exist or is not accessible to the
    * customer. e.g. campaign belongs to another customer.
@@ -1185,7 +1185,7 @@ if (!class_exists("EntityNotFoundReason", false)) {
   }
 }
 
-if (!class_exists("InternalApiErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiErrorReason", false)) {
     /**
    * The single reason for the internal API error.
    *
@@ -1225,7 +1225,7 @@ if (!class_exists("InternalApiErrorReason", false)) {
   }
 }
 
-if (!class_exists("NotEmptyErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyErrorReason", false)) {
     /**
    * The reasons for the validation error.
    *
@@ -1265,7 +1265,7 @@ if (!class_exists("NotEmptyErrorReason", false)) {
   }
 }
 
-if (!class_exists("NotWhitelistedErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotWhitelistedErrorReason", false)) {
     /**
    * The single reason for the whitelist error.
    *
@@ -1305,7 +1305,7 @@ if (!class_exists("NotWhitelistedErrorReason", false)) {
   }
 }
 
-if (!class_exists("NullErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullErrorReason", false)) {
     /**
    * The reasons for the validation error.
    *
@@ -1345,7 +1345,7 @@ if (!class_exists("NullErrorReason", false)) {
   }
 }
 
-if (!class_exists("OperationAccessDeniedReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDeniedReason", false)) {
     /**
    * The reasons for the operation access error.
    *
@@ -1385,7 +1385,7 @@ if (!class_exists("OperationAccessDeniedReason", false)) {
   }
 }
 
-if (!class_exists("Operator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Operator", false)) {
     /**
    * This represents an operator that may be presented to an adsapi service.
    *
@@ -1425,7 +1425,7 @@ if (!class_exists("Operator", false)) {
   }
 }
 
-if (!class_exists("OperatorErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperatorErrorReason", false)) {
     /**
    * The reasons for the validation error.
    *
@@ -1465,7 +1465,7 @@ if (!class_exists("OperatorErrorReason", false)) {
   }
 }
 
-if (!class_exists("PredicateOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\PredicateOperator", false)) {
     /**
    * Defines the valid set of operators.
    *
@@ -1505,7 +1505,7 @@ if (!class_exists("PredicateOperator", false)) {
   }
 }
 
-if (!class_exists("QuotaCheckErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckErrorReason", false)) {
     /**
    * Enums for all the reasons an error can be thrown to the user during
    * billing quota checks.
@@ -1546,7 +1546,7 @@ if (!class_exists("QuotaCheckErrorReason", false)) {
   }
 }
 
-if (!class_exists("RangeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeErrorReason", false)) {
     /**
    * The reasons for the target error.
    *
@@ -1586,7 +1586,7 @@ if (!class_exists("RangeErrorReason", false)) {
   }
 }
 
-if (!class_exists("RateExceededErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RateExceededErrorReason", false)) {
     /**
    * The reason for the rate exceeded error.
    *
@@ -1626,7 +1626,7 @@ if (!class_exists("RateExceededErrorReason", false)) {
   }
 }
 
-if (!class_exists("ReadOnlyErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyErrorReason", false)) {
     /**
    * The reasons for the target error.
    *
@@ -1666,7 +1666,7 @@ if (!class_exists("ReadOnlyErrorReason", false)) {
   }
 }
 
-if (!class_exists("RejectedErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RejectedErrorReason", false)) {
     /**
    * The reasons for the target error.
    *
@@ -1706,7 +1706,7 @@ if (!class_exists("RejectedErrorReason", false)) {
   }
 }
 
-if (!class_exists("RequiredErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredErrorReason", false)) {
     /**
    * The reasons for the target error.
    *
@@ -1746,7 +1746,7 @@ if (!class_exists("RequiredErrorReason", false)) {
   }
 }
 
-if (!class_exists("SelectorErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SelectorErrorReason", false)) {
     /**
    * The reasons for the target error.
    *
@@ -1786,7 +1786,7 @@ if (!class_exists("SelectorErrorReason", false)) {
   }
 }
 
-if (!class_exists("SizeLimitErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitErrorReason", false)) {
     /**
    * The reasons for Ad Scheduling errors.
    *
@@ -1826,7 +1826,7 @@ if (!class_exists("SizeLimitErrorReason", false)) {
   }
 }
 
-if (!class_exists("SortOrder", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SortOrder", false)) {
     /**
    * Possible orders of sorting.
    *
@@ -1866,7 +1866,7 @@ if (!class_exists("SortOrder", false)) {
   }
 }
 
-if (!class_exists("StringFormatErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringFormatErrorReason", false)) {
     /**
    * The reasons for the target error.
    *
@@ -1906,7 +1906,7 @@ if (!class_exists("StringFormatErrorReason", false)) {
   }
 }
 
-if (!class_exists("StringLengthErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthErrorReason", false)) {
     /**
    * The reasons for the target error.
    *
@@ -1946,7 +1946,7 @@ if (!class_exists("StringLengthErrorReason", false)) {
   }
 }
 
-if (!class_exists("CollectionSizeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CollectionSizeError", false)) {
     /**
    * Errors associated with the size of the given collection being
    * out of bounds.
@@ -1995,7 +1995,7 @@ if (!class_exists("CollectionSizeError", false)) {
   }
 }
 
-if (!class_exists("UserListConversionType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserListConversionType", false)) {
     /**
    * Represents a conversion type used for building remarketing user lists.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2052,7 +2052,7 @@ if (!class_exists("UserListConversionType", false)) {
   }
 }
 
-if (!class_exists("DateKey", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateKey", false)) {
     /**
    * A custom parameter of date type. Supported date formats are listed as follows:
    * <ul>
@@ -2105,7 +2105,7 @@ if (!class_exists("DateKey", false)) {
   }
 }
 
-if (!class_exists("DateRuleItem", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateRuleItem", false)) {
     /**
    * An atomic rule fragment composing of date operation.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2162,7 +2162,7 @@ if (!class_exists("DateRuleItem", false)) {
   }
 }
 
-if (!class_exists("LogicalUserListOperand", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\LogicalUserListOperand", false)) {
     /**
    * An interface for a logical user list operand. A logical user list is a
    * combination of logical rules. Each rule is defined as a logical operator and
@@ -2207,7 +2207,7 @@ if (!class_exists("LogicalUserListOperand", false)) {
   }
 }
 
-if (!class_exists("NumberKey", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NumberKey", false)) {
     /**
    * A custom parameter of type number.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2250,7 +2250,7 @@ if (!class_exists("NumberKey", false)) {
   }
 }
 
-if (!class_exists("NumberRuleItem", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NumberRuleItem", false)) {
     /**
    * An atomic rule fragment composing of number operation.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2307,7 +2307,7 @@ if (!class_exists("NumberRuleItem", false)) {
   }
 }
 
-if (!class_exists("Rule", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Rule", false)) {
     /**
    * A client defined rule based on custom parameters sent by web sites.
    * It consists of rule item groups that are connected by OR.
@@ -2351,7 +2351,7 @@ if (!class_exists("Rule", false)) {
   }
 }
 
-if (!class_exists("RuleItem", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RuleItem", false)) {
     /**
    * An atomic rule fragment.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2408,7 +2408,7 @@ if (!class_exists("RuleItem", false)) {
   }
 }
 
-if (!class_exists("RuleItemGroup", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RuleItemGroup", false)) {
     /**
    * A group of rule items that are ANDed together.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2451,7 +2451,7 @@ if (!class_exists("RuleItemGroup", false)) {
   }
 }
 
-if (!class_exists("StringKey", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringKey", false)) {
     /**
    * Custom parameter of type string. For websites, there are two built-in parameters
    * URL (name = 'url__') and referrer URL (name = 'ref_url__').
@@ -2495,7 +2495,7 @@ if (!class_exists("StringKey", false)) {
   }
 }
 
-if (!class_exists("StringRuleItem", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringRuleItem", false)) {
     /**
    * An atomic rule fragment composing of string operation.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2552,7 +2552,7 @@ if (!class_exists("StringRuleItem", false)) {
   }
 }
 
-if (!class_exists("UserList", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserList", false)) {
     /**
    * Represents a UserList object that is sent over the wire.
    * This is a list of users an account may target.
@@ -2730,7 +2730,7 @@ if (!class_exists("UserList", false)) {
   }
 }
 
-if (!class_exists("UserListError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserListError", false)) {
     /**
    * Represents possible error codes in UserListService.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2778,7 +2778,7 @@ if (!class_exists("UserListError", false)) {
   }
 }
 
-if (!class_exists("UserListLogicalRule", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserListLogicalRule", false)) {
     /**
    * A user list logical rule. A rule has a logical operator (and/or/not) and a
    * list of operands that can be user lists or user interests.
@@ -2829,7 +2829,7 @@ if (!class_exists("UserListLogicalRule", false)) {
   }
 }
 
-if (!class_exists("UserListOperation", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserListOperation", false)) {
     /**
    * UserList operations for adding/updating UserList entities.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2875,7 +2875,7 @@ if (!class_exists("UserListOperation", false)) {
   }
 }
 
-if (!class_exists("UserListPage", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserListPage", false)) {
     /**
    * Contains a list of user lists resulting from the filtering and paging of the
    * {@link UserListService#get} call.
@@ -2922,7 +2922,7 @@ if (!class_exists("UserListPage", false)) {
   }
 }
 
-if (!class_exists("UserListReturnValue", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserListReturnValue", false)) {
     /**
    * A container for return values from the UserListService.
    * @package Google_Api_Ads_AdWords_v201409
@@ -2967,7 +2967,7 @@ if (!class_exists("UserListReturnValue", false)) {
   }
 }
 
-if (!class_exists("AccessReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AccessReason", false)) {
     /**
    * This indicates the way the entity such as UserList is related to a user.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3003,7 +3003,7 @@ if (!class_exists("AccessReason", false)) {
   }
 }
 
-if (!class_exists("AccountUserListStatus", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AccountUserListStatus", false)) {
     /**
    * Status in the AccountUserListStatus table. This indicates if the user list share or
    * the licensing of the userlist is still active.
@@ -3040,7 +3040,7 @@ if (!class_exists("AccountUserListStatus", false)) {
   }
 }
 
-if (!class_exists("CollectionSizeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\CollectionSizeErrorReason", false)) {
     /**
    * The reasons for the target error.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3076,7 +3076,7 @@ if (!class_exists("CollectionSizeErrorReason", false)) {
   }
 }
 
-if (!class_exists("UserListConversionTypeCategory", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserListConversionTypeCategory", false)) {
     /**
    * User can create only BOOMERANG_EVENT conversion types. For all other types
    * UserListService service will return OTHER.
@@ -3113,7 +3113,7 @@ if (!class_exists("UserListConversionTypeCategory", false)) {
   }
 }
 
-if (!class_exists("DateRuleItemDateOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateRuleItemDateOperator", false)) {
     /**
    * Supported rule operator for date type.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3149,7 +3149,7 @@ if (!class_exists("DateRuleItemDateOperator", false)) {
   }
 }
 
-if (!class_exists("NumberRuleItemNumberOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NumberRuleItemNumberOperator", false)) {
     /**
    * Supported operator for numbers.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3185,7 +3185,7 @@ if (!class_exists("NumberRuleItemNumberOperator", false)) {
   }
 }
 
-if (!class_exists("SizeRange", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeRange", false)) {
     /**
    * Size range in terms of number of users of a UserList/UserInterest.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3221,7 +3221,7 @@ if (!class_exists("SizeRange", false)) {
   }
 }
 
-if (!class_exists("StringRuleItemStringOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringRuleItemStringOperator", false)) {
     /**
    * Supported operators for strings.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3257,7 +3257,7 @@ if (!class_exists("StringRuleItemStringOperator", false)) {
   }
 }
 
-if (!class_exists("UserListErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserListErrorReason", false)) {
     /**
    * Creating and updating external remarketing user lists is not supported.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3293,7 +3293,7 @@ if (!class_exists("UserListErrorReason", false)) {
   }
 }
 
-if (!class_exists("UserListLogicalRuleOperator", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserListLogicalRuleOperator", false)) {
     /**
    * And - all of the operands.
    * @package Google_Api_Ads_AdWords_v201409
@@ -3329,7 +3329,7 @@ if (!class_exists("UserListLogicalRuleOperator", false)) {
   }
 }
 
-if (!class_exists("UserListMembershipStatus", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserListMembershipStatus", false)) {
     /**
    * Membership status of the user list. This status indicates whether a user list
    * can accumulate more users and may be targeted to.
@@ -3366,7 +3366,7 @@ if (!class_exists("UserListMembershipStatus", false)) {
   }
 }
 
-if (!class_exists("UserListType", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\UserListType", false)) {
     /**
    * The user list types
    * @package Google_Api_Ads_AdWords_v201409
@@ -3402,7 +3402,7 @@ if (!class_exists("UserListType", false)) {
   }
 }
 
-if (!class_exists("AdwordsUserListServiceGet", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AdwordsUserListServiceGet", false)) {
     /**
    * <span class="constraint Required">This field is required and should not be {@code null}.</span>
    *
@@ -3453,7 +3453,7 @@ if (!class_exists("AdwordsUserListServiceGet", false)) {
   }
 }
 
-if (!class_exists("AdwordsUserListServiceGetResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AdwordsUserListServiceGetResponse", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -3496,7 +3496,7 @@ if (!class_exists("AdwordsUserListServiceGetResponse", false)) {
   }
 }
 
-if (!class_exists("AdwordsUserListServiceMutate", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AdwordsUserListServiceMutate", false)) {
     /**
    * <span class="constraint CollectionSize">The minimum size of this collection is 1. The maximum size of this collection is 10000.</span>
    * <span class="constraint ContentsNotNull">This field must not contain {@code null} elements.</span>
@@ -3552,7 +3552,7 @@ if (!class_exists("AdwordsUserListServiceMutate", false)) {
   }
 }
 
-if (!class_exists("AdwordsUserListServiceMutateResponse", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AdwordsUserListServiceMutateResponse", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -3595,7 +3595,7 @@ if (!class_exists("AdwordsUserListServiceMutateResponse", false)) {
   }
 }
 
-if (!class_exists("AuthenticationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationError", false)) {
     /**
    * Errors returned when Authentication failed.
    *
@@ -3647,7 +3647,7 @@ if (!class_exists("AuthenticationError", false)) {
   }
 }
 
-if (!class_exists("AuthorizationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationError", false)) {
     /**
    * Errors encountered when trying to authorize a user.
    *
@@ -3699,7 +3699,7 @@ if (!class_exists("AuthorizationError", false)) {
   }
 }
 
-if (!class_exists("DateError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateError", false)) {
     /**
    * Errors associated with invalid dates and date ranges.
    *
@@ -3751,7 +3751,7 @@ if (!class_exists("DateError", false)) {
   }
 }
 
-if (!class_exists("DistinctError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DistinctError", false)) {
     /**
    * Errors related to distinct ids or content.
    *
@@ -3803,7 +3803,7 @@ if (!class_exists("DistinctError", false)) {
   }
 }
 
-if (!class_exists("EntityNotFound", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\EntityNotFound", false)) {
     /**
    * An id did not correspond to an entity, or it referred to an entity which does not belong to the
    * customer.
@@ -3856,7 +3856,7 @@ if (!class_exists("EntityNotFound", false)) {
   }
 }
 
-if (!class_exists("InternalApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiError", false)) {
     /**
    * Indicates that a server-side error has occured. {@code InternalApiError}s
    * are generally not the result of an invalid request or message sent by the
@@ -3910,7 +3910,7 @@ if (!class_exists("InternalApiError", false)) {
   }
 }
 
-if (!class_exists("NotEmptyError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyError", false)) {
     /**
    * Errors corresponding with violation of a NOT EMPTY check.
    *
@@ -3962,7 +3962,7 @@ if (!class_exists("NotEmptyError", false)) {
   }
 }
 
-if (!class_exists("NotWhitelistedError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotWhitelistedError", false)) {
     /**
    * Indicates that the customer is not whitelisted for accessing the API.
    *
@@ -4014,7 +4014,7 @@ if (!class_exists("NotWhitelistedError", false)) {
   }
 }
 
-if (!class_exists("NullError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullError", false)) {
     /**
    * Errors associated with violation of a NOT NULL check.
    *
@@ -4066,7 +4066,7 @@ if (!class_exists("NullError", false)) {
   }
 }
 
-if (!class_exists("OperationAccessDenied", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDenied", false)) {
     /**
    * Operation not permitted due to the invoked service's access policy.
    *
@@ -4118,7 +4118,7 @@ if (!class_exists("OperationAccessDenied", false)) {
   }
 }
 
-if (!class_exists("OperatorError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperatorError", false)) {
     /**
    * Errors due to the use of unsupported operations.
    *
@@ -4170,7 +4170,7 @@ if (!class_exists("OperatorError", false)) {
   }
 }
 
-if (!class_exists("QuotaCheckError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckError", false)) {
     /**
    * Encapsulates the errors thrown during developer quota checks.
    *
@@ -4222,7 +4222,7 @@ if (!class_exists("QuotaCheckError", false)) {
   }
 }
 
-if (!class_exists("RangeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeError", false)) {
     /**
    * A list of all errors associated with the Range constraint.
    *
@@ -4274,7 +4274,7 @@ if (!class_exists("RangeError", false)) {
   }
 }
 
-if (!class_exists("RateExceededError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RateExceededError", false)) {
     /**
    * Signals that a call failed because a measured rate exceeded.
    *
@@ -4347,7 +4347,7 @@ if (!class_exists("RateExceededError", false)) {
   }
 }
 
-if (!class_exists("ReadOnlyError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyError", false)) {
     /**
    * Errors from attempting to write to read-only fields.
    *
@@ -4399,7 +4399,7 @@ if (!class_exists("ReadOnlyError", false)) {
   }
 }
 
-if (!class_exists("RejectedError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RejectedError", false)) {
     /**
    * Indicates that a field was rejected due to compatibility issues.
    *
@@ -4451,7 +4451,7 @@ if (!class_exists("RejectedError", false)) {
   }
 }
 
-if (!class_exists("RequiredError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredError", false)) {
     /**
    * Errors due to missing required field.
    *
@@ -4503,7 +4503,7 @@ if (!class_exists("RequiredError", false)) {
   }
 }
 
-if (!class_exists("SelectorError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SelectorError", false)) {
     /**
    * Represents possible error codes for {@link Selector}.
    *
@@ -4555,7 +4555,7 @@ if (!class_exists("SelectorError", false)) {
   }
 }
 
-if (!class_exists("SizeLimitError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitError", false)) {
     /**
    * Indicates that the number of entries in the request or response exceeds the system limit.
    *
@@ -4607,7 +4607,7 @@ if (!class_exists("SizeLimitError", false)) {
   }
 }
 
-if (!class_exists("StringFormatError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringFormatError", false)) {
     /**
    * A list of error code for reporting invalid content of input strings.
    *
@@ -4659,7 +4659,7 @@ if (!class_exists("StringFormatError", false)) {
   }
 }
 
-if (!class_exists("StringLengthError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthError", false)) {
     /**
    * Errors associated with the length of the given string being
    * out of bounds.
@@ -4712,7 +4712,7 @@ if (!class_exists("StringLengthError", false)) {
   }
 }
 
-if (!class_exists("DatabaseError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseError", false)) {
     /**
    * Errors that are thrown due to a database access problem.
    *
@@ -4764,7 +4764,7 @@ if (!class_exists("DatabaseError", false)) {
   }
 }
 
-if (!class_exists("ApiException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiException", false)) {
     /**
    * \Exception class for holding a list of service errors.
    *
@@ -4814,7 +4814,7 @@ if (!class_exists("ApiException", false)) {
   }
 }
 
-if (!class_exists("ExternalRemarketingUserList", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ExternalRemarketingUserList", false)) {
     /**
    * User lists created in the DoubleClick platform that are mapped
    * from DoubleClick to AdWords. These lists are readonly.
@@ -4867,7 +4867,7 @@ if (!class_exists("ExternalRemarketingUserList", false)) {
   }
 }
 
-if (!class_exists("LogicalUserList", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\LogicalUserList", false)) {
     /**
    * Represents a user list that is a custom combination of user lists and user
    * interests.
@@ -4927,7 +4927,7 @@ if (!class_exists("LogicalUserList", false)) {
   }
 }
 
-if (!class_exists("BasicUserList", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BasicUserList", false)) {
     /**
    * User list targeting as a collection of conversion types.
    * @package Google_Api_Ads_AdWords_v201409
@@ -4986,7 +4986,7 @@ if (!class_exists("BasicUserList", false)) {
   }
 }
 
-if (!class_exists("RuleBasedUserList", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RuleBasedUserList", false)) {
     /**
    * Representation of a userlist that is generated by a rule.
    * @package Google_Api_Ads_AdWords_v201409
@@ -5038,7 +5038,7 @@ if (!class_exists("RuleBasedUserList", false)) {
   }
 }
 
-if (!class_exists("SimilarUserList", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SimilarUserList", false)) {
     /**
    * SimilarUserList is a list of users which are similar to users from another UserList.
    * These lists are readonly and automatically created by google.
@@ -5126,7 +5126,7 @@ if (!class_exists("SimilarUserList", false)) {
   }
 }
 
-if (!class_exists("DateSpecificRuleUserList", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateSpecificRuleUserList", false)) {
     /**
    * Visitors of a page during specific dates. The visiting periods are defined as follows:
    * <ul>
@@ -5189,7 +5189,7 @@ if (!class_exists("DateSpecificRuleUserList", false)) {
   }
 }
 
-if (!class_exists("ExpressionRuleUserList", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ExpressionRuleUserList", false)) {
     /**
    * Visitors of a page. The page visit is defined by one boolean rule expression.
    * @package Google_Api_Ads_AdWords_v201409
@@ -5233,7 +5233,7 @@ if (!class_exists("ExpressionRuleUserList", false)) {
   }
 }
 
-if (!class_exists("AdwordsUserListService", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AdwordsUserListService", false)) {
     /**
    * AdwordsUserListService
    * @package Google_Api_Ads_AdWords_v201409
