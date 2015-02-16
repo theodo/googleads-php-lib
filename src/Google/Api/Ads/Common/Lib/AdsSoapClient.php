@@ -596,7 +596,7 @@ abstract class AdsSoapClient extends SoapClient {
    */
   public function Create($type, $params = NULL) {
     if (array_key_exists($type, $this->options['classmap'])) {
-      $class = $this->options['classmap'][$type];
+      $class = "Google\\Api\\Ads\\AdWords\\v201409\\".$this->options['classmap'][$type];
       $reflectionClass = new ReflectionClass($class);
       if (isset($params)) {
         if (MapUtils::IsMap($params)) {
