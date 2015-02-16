@@ -282,7 +282,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ProductConditionOperand
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapRequestHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SoapRequestHeader", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -353,7 +353,7 @@ if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapRequestHeader", false))
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapResponseHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SoapResponseHeader", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -474,7 +474,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ProductCondition", fals
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApiError", false)) {
     /**
    * Indicates that this instance is a subtype of ApiError.
    * Although this field is returned in the response, it is ignored on input
@@ -576,7 +576,7 @@ if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiError", false)) {
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApplicationException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApplicationException", false)) {
     /**
    * Indicates that this instance is a subtype of ApplicationException.
    * Although this field is returned in the response, it is ignored on input
@@ -1143,7 +1143,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Page", false)) {
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationErrorReason", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -1503,7 +1503,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\IdErrorReason", false))
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\InternalApiErrorReason", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -1611,7 +1611,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyErrorReason", f
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NullErrorReason", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -1827,7 +1827,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckErrorReason",
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RangeErrorReason", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -2007,7 +2007,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequestErrorReason", fa
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequiredErrorReason", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -2151,7 +2151,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SortOrder", false)) {
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringLengthErrorReason", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -2415,7 +2415,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SharedCriterionServiceM
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationError", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -2827,7 +2827,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\IdError", false)) {
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\InternalApiError", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -3085,7 +3085,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyError", false))
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NullError", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -3229,7 +3229,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperatorError", false))
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Placement", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Placement", false)) {
     /**
    * <span class="constraint AdxEnabled">This is enabled for AdX.</span>
    * @package Google_Api_Ads_AdWords_v201409
@@ -3324,7 +3324,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckError", false
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RangeError", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -3585,7 +3585,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequestError", false)) 
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequiredError", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -3729,7 +3729,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitError", false)
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringLengthError", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -4001,7 +4001,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseError", false))
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApiException", false)) {
     /**
    *
    * @package Google_Api_Ads_AdWords_v201409
@@ -4047,7 +4047,7 @@ if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiException", false)) {
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Product", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Product", false)) {
     /**
    * <span class="constraint AdxEnabled">This is disabled for AdX when it is contained within Operators: ADD, SET.</span>
    * @package Google_Api_Ads_AdWords_v201409

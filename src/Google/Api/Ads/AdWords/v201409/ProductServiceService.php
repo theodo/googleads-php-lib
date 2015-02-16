@@ -31,7 +31,7 @@ namespace Google\Api\Ads\AdWords\v201409 ;
 use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
 require_once "Google/Api/Ads/AdWords/Lib/AdWordsSoapClient.php";
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApiError", false)) {
     /**
    * The API error base class that provides details about an error that occurred
    * while processing a service request.
@@ -143,7 +143,7 @@ if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiError", false)) {
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApplicationException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApplicationException", false)) {
     /**
    * Base class for exceptions.
    *
@@ -237,7 +237,7 @@ if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApplicationException", fals
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationError", false)) {
     /**
    * Errors returned when Authentication failed.
    *
@@ -563,7 +563,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseError", false))
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Date", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Date", false)) {
     /**
    * Represents a date.
    *
@@ -855,7 +855,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\IdError", false)) {
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\InternalApiError", false)) {
     /**
    * Indicates that a server-side error has occured. {@code InternalApiError}s
    * are generally not the result of an invalid request or message sent by the
@@ -1160,7 +1160,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyError", false))
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NullError", false)) {
     /**
    * Errors associated with violation of a NOT NULL check.
    *
@@ -1484,7 +1484,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Paging", false)) {
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Placement", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Placement", false)) {
     /**
    * A placement used for modifying bids for sites when targeting the content
    * network.
@@ -1606,7 +1606,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Predicate", false)) {
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\Product", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Product", false)) {
     /**
    * Product targeting criteria, represents a filter for products in the
    * product feed that is defined by the advertiser. The criteria is used to
@@ -1838,7 +1838,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckError", false
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RangeError", false)) {
     /**
    * A list of all errors associated with the Range constraint.
    *
@@ -2140,7 +2140,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequestError", false)) 
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequiredError", false)) {
     /**
    * Errors due to missing required field.
    *
@@ -2387,7 +2387,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitError", false)
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapRequestHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SoapRequestHeader", false)) {
     /**
    * Defines the required and optional elements within the header of a SOAP request.
    *
@@ -2466,7 +2466,7 @@ if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapRequestHeader", false))
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapResponseHeader", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SoapResponseHeader", false)) {
     /**
    * Defines the elements within the header of a SOAP response.
    *
@@ -2545,7 +2545,7 @@ if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\SoapResponseHeader", false)
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthError", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringLengthError", false)) {
     /**
    * Errors associated with the length of the given string being
    * out of bounds.
@@ -2809,7 +2809,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Vertical", false)) {
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\AuthenticationErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationErrorReason", false)) {
     /**
    * The single reason for the authentication failure.
    *
@@ -3162,7 +3162,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\IdErrorReason", false))
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\InternalApiErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\InternalApiErrorReason", false)) {
     /**
    * The single reason for the internal API error.
    *
@@ -3295,7 +3295,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyErrorReason", f
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\NullErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NullErrorReason", false)) {
     /**
    * The reasons for the validation error.
    *
@@ -3472,7 +3472,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckErrorReason",
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RangeErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RangeErrorReason", false)) {
     /**
    * The reasons for the target error.
    *
@@ -3692,7 +3692,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequestErrorReason", fa
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\RequiredErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequiredErrorReason", false)) {
     /**
    * The reasons for the target error.
    *
@@ -3868,7 +3868,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SortOrder", false)) {
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\StringLengthErrorReason", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringLengthErrorReason", false)) {
     /**
    * The reasons for the target error.
    *
@@ -3956,7 +3956,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\CriterionUserListMember
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ProductService", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ProductService", false)) {
     /**
    * A {@link Criterion} which describes the product or service an Ad is targeting. A product and
    * service criterion can be used to derive a group of {@link KeywordSet} by AdWords Express.
@@ -4145,7 +4145,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ProductServiceServiceGe
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\Dfp\\v201411\\ApiException", false)) {
+if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApiException", false)) {
     /**
    * \Exception class for holding a list of service errors.
    *
