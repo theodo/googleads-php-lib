@@ -51,6 +51,7 @@ class XmlUtils {
   public static function GetDomFromXml($xml) {
     set_error_handler(array('Google\Api\Ads\Common\Util\XmlUtils', 'HandleXmlError'));
     $dom = new DOMDocument();
+    $xml = str_replace( '<ns1:settings/>', '', $xml ); // Dirty : to remove error on KeywordMatchSetting ! @adrienthiery
     $dom->loadXML($xml,
         LIBXML_DTDLOAD | LIBXML_DTDATTR | LIBXML_NOENT | LIBXML_XINCLUDE);
     restore_error_handler();
