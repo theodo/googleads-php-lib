@@ -1,6 +1,4 @@
 <?php
-namespace Google\Api\Ads\AdWords\v201409 ;
-
 /**
  * Contains all client objects for the BudgetService
  * service.
@@ -21,28 +19,28 @@ namespace Google\Api\Ads\AdWords\v201409 ;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * @package    Google_Api_Ads_AdWords_v201409
+ * @package    Google\Api\Ads\AdWords\v201409
  * @subpackage v201409
  * @category   WebServices
  * @copyright  2014, Google Inc. All Rights Reserved.
  * @license    http://www.apache.org/licenses/LICENSE-2.0 Apache License,
  *             Version 2.0
  */
-use Google\Api\Ads\AdWords\Lib\AdWordsSoapClient ;
+namespace Google\Api\Ads\AdWords\v201409;
+
 require_once "Google/Api/Ads/AdWords/Lib/AdWordsSoapClient.php";
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateRange", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\DateRange", false)) {
+  /**
    * Represents a range of dates that has either an upper or a lower bound.
    * The format for the date is YYYYMMDD.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class DateRange
-  {
+  class DateRange {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "DateRange";
+    const XSI_TYPE = "DateRange";
 
     /**
      * @access public
@@ -60,39 +58,36 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateRange", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($min = null, $max = null)
-      {
-          $this->min = $min;
-          $this->max = $max;
-      }
+    public function __construct($min = null, $max = null) {
+      $this->min = $min;
+      $this->max = $max;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OrderBy", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\OrderBy", false)) {
+  /**
    * Specifies how the resulting information should be sorted.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class OrderBy
-  {
+  class OrderBy {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "OrderBy";
+    const XSI_TYPE = "OrderBy";
 
     /**
      * @access public
@@ -110,41 +105,38 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OrderBy", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($field = null, $sortOrder = null)
-      {
-          $this->field = $field;
-          $this->sortOrder = $sortOrder;
-      }
+    public function __construct($field = null, $sortOrder = null) {
+      $this->field = $field;
+      $this->sortOrder = $sortOrder;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Paging", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\Paging", false)) {
+  /**
    * Specifies the page of results to return in the response. A page is specified
    * by the result position to start at and the maximum number of results to
    * return.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class Paging
-  {
+  class Paging {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Paging";
+    const XSI_TYPE = "Paging";
 
     /**
      * @access public
@@ -162,39 +154,36 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Paging", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($startIndex = null, $numberResults = null)
-      {
-          $this->startIndex = $startIndex;
-          $this->numberResults = $numberResults;
-      }
+    public function __construct($startIndex = null, $numberResults = null) {
+      $this->startIndex = $startIndex;
+      $this->numberResults = $numberResults;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Predicate", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\Predicate", false)) {
+  /**
    * Specifies how an entity (eg. adgroup, campaign, criterion, ad) should be filtered.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class Predicate
-  {
+  class Predicate {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Predicate";
+    const XSI_TYPE = "Predicate";
 
     /**
      * @access public
@@ -218,40 +207,37 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Predicate", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($field = null, $operator = null, $values = null)
-      {
-          $this->field = $field;
-          $this->operator = $operator;
-          $this->values = $values;
-      }
+    public function __construct($field = null, $operator = null, $values = null) {
+      $this->field = $field;
+      $this->operator = $operator;
+      $this->values = $values;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SoapRequestHeader", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\SoapRequestHeader", false)) {
+  /**
    * Defines the required and optional elements within the header of a SOAP request.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class SoapRequestHeader
-  {
+  class SoapRequestHeader {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "SoapHeader";
+    const XSI_TYPE = "SoapHeader";
 
     /**
      * @access public
@@ -287,42 +273,39 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SoapRequestHeader", fal
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($clientCustomerId = null, $developerToken = null, $userAgent = null, $validateOnly = null, $partialFailure = null)
-      {
-          $this->clientCustomerId = $clientCustomerId;
-          $this->developerToken = $developerToken;
-          $this->userAgent = $userAgent;
-          $this->validateOnly = $validateOnly;
-          $this->partialFailure = $partialFailure;
-      }
+    public function __construct($clientCustomerId = null, $developerToken = null, $userAgent = null, $validateOnly = null, $partialFailure = null) {
+      $this->clientCustomerId = $clientCustomerId;
+      $this->developerToken = $developerToken;
+      $this->userAgent = $userAgent;
+      $this->validateOnly = $validateOnly;
+      $this->partialFailure = $partialFailure;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SoapResponseHeader", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\SoapResponseHeader", false)) {
+  /**
    * Defines the elements within the header of a SOAP response.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class SoapResponseHeader
-  {
+  class SoapResponseHeader {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "SoapResponseHeader";
+    const XSI_TYPE = "SoapResponseHeader";
 
     /**
      * @access public
@@ -358,49 +341,46 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SoapResponseHeader", fa
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($requestId = null, $serviceName = null, $methodName = null, $operations = null, $responseTime = null)
-      {
-          $this->requestId = $requestId;
-          $this->serviceName = $serviceName;
-          $this->methodName = $methodName;
-          $this->operations = $operations;
-          $this->responseTime = $responseTime;
-      }
+    public function __construct($requestId = null, $serviceName = null, $methodName = null, $operations = null, $responseTime = null) {
+      $this->requestId = $requestId;
+      $this->serviceName = $serviceName;
+      $this->methodName = $methodName;
+      $this->operations = $operations;
+      $this->responseTime = $responseTime;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ComparableValue", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\ComparableValue", false)) {
+  /**
    * Comparable types for constructing ranges with.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class ComparableValue
-  {
+  class ComparableValue {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "ComparableValue";
+    const XSI_TYPE = "ComparableValue";
 
     /**
      * @access public
      * @var string
      */
     public $ComparableValueType;
-      private $_parameterMap = array(
+    private $_parameterMap = array(
       "ComparableValue.Type" => "ComparableValueType",
     );
 
@@ -409,9 +389,8 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ComparableValue", false
      * @param $var Variable name to set
      * @param $value Value to set
      */
-    public function __set($var, $value)
-    {
-        $this->{$this->_parameterMap[$var]} = $value;
+    public function __set($var, $value) {
+      $this->{$this->_parameterMap[$var]} = $value;
     }
 
     /**
@@ -419,64 +398,58 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ComparableValue", false
      * @param $var Variable name to get
      * @return mixed Variable value
      */
-    public function __get($var)
-    {
-        if (!isset($this->_parameterMap[$var])) {
-            return;
-        }
-
-        return $this->{$this->_parameterMap[$var]};
+    public function __get($var) {
+      if (!isset($this->_parameterMap[$var])) {
+        return null;
+      }
+      return $this->{$this->_parameterMap[$var]};
     }
 
     /**
      * Provided for getting non-php-standard named variables
      * @return array parameter map
      */
-    protected function getParameterMap()
-    {
-        return $this->_parameterMap;
+    protected function getParameterMap() {
+      return $this->_parameterMap;
     }
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($ComparableValueType = null)
-      {
-          $this->ComparableValueType = $ComparableValueType;
-      }
+    public function __construct($ComparableValueType = null) {
+      $this->ComparableValueType = $ComparableValueType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApiError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\ApiError", false)) {
+  /**
    * The API error base class that provides details about an error that occurred
    * while processing a service request.
-   *
+   * 
    * <p>The OGNL field path is provided for parsers to identify the request data
    * element that may have caused the error.</p>
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class ApiError
-  {
+  class ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "ApiError";
+    const XSI_TYPE = "ApiError";
 
     /**
      * @access public
@@ -501,7 +474,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApiError", false)) {
      * @var string
      */
     public $ApiErrorType;
-      private $_parameterMap = array(
+    private $_parameterMap = array(
       "ApiError.Type" => "ApiErrorType",
     );
 
@@ -510,9 +483,8 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApiError", false)) {
      * @param $var Variable name to set
      * @param $value Value to set
      */
-    public function __set($var, $value)
-    {
-        $this->{$this->_parameterMap[$var]} = $value;
+    public function __set($var, $value) {
+      $this->{$this->_parameterMap[$var]} = $value;
     }
 
     /**
@@ -520,63 +492,57 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApiError", false)) {
      * @param $var Variable name to get
      * @return mixed Variable value
      */
-    public function __get($var)
-    {
-        if (!isset($this->_parameterMap[$var])) {
-            return;
-        }
-
-        return $this->{$this->_parameterMap[$var]};
+    public function __get($var) {
+      if (!isset($this->_parameterMap[$var])) {
+        return null;
+      }
+      return $this->{$this->_parameterMap[$var]};
     }
 
     /**
      * Provided for getting non-php-standard named variables
      * @return array parameter map
      */
-    protected function getParameterMap()
-    {
-        return $this->_parameterMap;
+    protected function getParameterMap() {
+      return $this->_parameterMap;
     }
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApplicationException", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\ApplicationException", false)) {
+  /**
    * Base class for exceptions.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class ApplicationException
-  {
+  class ApplicationException {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "ApplicationException";
+    const XSI_TYPE = "ApplicationException";
 
     /**
      * @access public
@@ -589,7 +555,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApplicationException", 
      * @var string
      */
     public $ApplicationExceptionType;
-      private $_parameterMap = array(
+    private $_parameterMap = array(
       "ApplicationException.Type" => "ApplicationExceptionType",
     );
 
@@ -598,9 +564,8 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApplicationException", 
      * @param $var Variable name to set
      * @param $value Value to set
      */
-    public function __set($var, $value)
-    {
-        $this->{$this->_parameterMap[$var]} = $value;
+    public function __set($var, $value) {
+      $this->{$this->_parameterMap[$var]} = $value;
     }
 
     /**
@@ -608,61 +573,55 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApplicationException", 
      * @param $var Variable name to get
      * @return mixed Variable value
      */
-    public function __get($var)
-    {
-        if (!isset($this->_parameterMap[$var])) {
-            return;
-        }
-
-        return $this->{$this->_parameterMap[$var]};
+    public function __get($var) {
+      if (!isset($this->_parameterMap[$var])) {
+        return null;
+      }
+      return $this->{$this->_parameterMap[$var]};
     }
 
     /**
      * Provided for getting non-php-standard named variables
      * @return array parameter map
      */
-    protected function getParameterMap()
-    {
-        return $this->_parameterMap;
+    protected function getParameterMap() {
+      return $this->_parameterMap;
     }
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($message = null, $ApplicationExceptionType = null)
-      {
-          $this->message = $message;
-          $this->ApplicationExceptionType = $ApplicationExceptionType;
-      }
+    public function __construct($message = null, $ApplicationExceptionType = null) {
+      $this->message = $message;
+      $this->ApplicationExceptionType = $ApplicationExceptionType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Selector", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\Selector", false)) {
+  /**
    * A generic selector to specify the type of information to return.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class Selector
-  {
+  class Selector {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Selector";
+    const XSI_TYPE = "Selector";
 
     /**
      * @access public
@@ -698,42 +657,39 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Selector", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($fields = null, $predicates = null, $dateRange = null, $ordering = null, $paging = null)
-      {
-          $this->fields = $fields;
-          $this->predicates = $predicates;
-          $this->dateRange = $dateRange;
-          $this->ordering = $ordering;
-          $this->paging = $paging;
-      }
+    public function __construct($fields = null, $predicates = null, $dateRange = null, $ordering = null, $paging = null) {
+      $this->fields = $fields;
+      $this->predicates = $predicates;
+      $this->dateRange = $dateRange;
+      $this->ordering = $ordering;
+      $this->paging = $paging;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Budget", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\Budget", false)) {
+  /**
    * Budgets are used for managing the amount of money spent on AdWords.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class Budget
-  {
+  class Budget {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Budget";
+    const XSI_TYPE = "Budget";
 
     /**
      * @access public
@@ -787,52 +743,49 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Budget", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($budgetId = null, $name = null, $period = null, $amount = null, $deliveryMethod = null, $referenceCount = null, $isExplicitlyShared = null, $status = null)
-      {
-          $this->budgetId = $budgetId;
-          $this->name = $name;
-          $this->period = $period;
-          $this->amount = $amount;
-          $this->deliveryMethod = $deliveryMethod;
-          $this->referenceCount = $referenceCount;
-          $this->isExplicitlyShared = $isExplicitlyShared;
-          $this->status = $status;
-      }
+    public function __construct($budgetId = null, $name = null, $period = null, $amount = null, $deliveryMethod = null, $referenceCount = null, $isExplicitlyShared = null, $status = null) {
+      $this->budgetId = $budgetId;
+      $this->name = $name;
+      $this->period = $period;
+      $this->amount = $amount;
+      $this->deliveryMethod = $deliveryMethod;
+      $this->referenceCount = $referenceCount;
+      $this->isExplicitlyShared = $isExplicitlyShared;
+      $this->status = $status;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ListReturnValue", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\ListReturnValue", false)) {
+  /**
    * Base list return value type.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class ListReturnValue
-  {
+  class ListReturnValue {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "ListReturnValue";
+    const XSI_TYPE = "ListReturnValue";
 
     /**
      * @access public
      * @var string
      */
     public $ListReturnValueType;
-      private $_parameterMap = array(
+    private $_parameterMap = array(
       "ListReturnValue.Type" => "ListReturnValueType",
     );
 
@@ -841,9 +794,8 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ListReturnValue", false
      * @param $var Variable name to set
      * @param $value Value to set
      */
-    public function __set($var, $value)
-    {
-        $this->{$this->_parameterMap[$var]} = $value;
+    public function __set($var, $value) {
+      $this->{$this->_parameterMap[$var]} = $value;
     }
 
     /**
@@ -851,61 +803,55 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ListReturnValue", false
      * @param $var Variable name to get
      * @return mixed Variable value
      */
-    public function __get($var)
-    {
-        if (!isset($this->_parameterMap[$var])) {
-            return;
-        }
-
-        return $this->{$this->_parameterMap[$var]};
+    public function __get($var) {
+      if (!isset($this->_parameterMap[$var])) {
+        return null;
+      }
+      return $this->{$this->_parameterMap[$var]};
     }
 
     /**
      * Provided for getting non-php-standard named variables
      * @return array parameter map
      */
-    protected function getParameterMap()
-    {
-        return $this->_parameterMap;
+    protected function getParameterMap() {
+      return $this->_parameterMap;
     }
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($ListReturnValueType = null)
-      {
-          $this->ListReturnValueType = $ListReturnValueType;
-      }
+    public function __construct($ListReturnValueType = null) {
+      $this->ListReturnValueType = $ListReturnValueType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Operation", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\Operation", false)) {
+  /**
    * This represents an operation that includes an operator and an operand
    * specified type.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class Operation
-  {
+  class Operation {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Operation";
+    const XSI_TYPE = "Operation";
 
     /**
      * @access public
@@ -918,7 +864,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Operation", false)) {
      * @var string
      */
     public $OperationType;
-      private $_parameterMap = array(
+    private $_parameterMap = array(
       "Operation.Type" => "OperationType",
     );
 
@@ -927,9 +873,8 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Operation", false)) {
      * @param $var Variable name to set
      * @param $value Value to set
      */
-    public function __set($var, $value)
-    {
-        $this->{$this->_parameterMap[$var]} = $value;
+    public function __set($var, $value) {
+      $this->{$this->_parameterMap[$var]} = $value;
     }
 
     /**
@@ -937,61 +882,55 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Operation", false)) {
      * @param $var Variable name to get
      * @return mixed Variable value
      */
-    public function __get($var)
-    {
-        if (!isset($this->_parameterMap[$var])) {
-            return;
-        }
-
-        return $this->{$this->_parameterMap[$var]};
+    public function __get($var) {
+      if (!isset($this->_parameterMap[$var])) {
+        return null;
+      }
+      return $this->{$this->_parameterMap[$var]};
     }
 
     /**
      * Provided for getting non-php-standard named variables
      * @return array parameter map
      */
-    protected function getParameterMap()
-    {
-        return $this->_parameterMap;
+    protected function getParameterMap() {
+      return $this->_parameterMap;
     }
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($operator = null, $OperationType = null)
-      {
-          $this->operator = $operator;
-          $this->OperationType = $OperationType;
-      }
+    public function __construct($operator = null, $OperationType = null) {
+      $this->operator = $operator;
+      $this->OperationType = $OperationType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Page", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\Page", false)) {
+  /**
    * Contains the results from a get call.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class Page
-  {
+  class Page {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Page";
+    const XSI_TYPE = "Page";
 
     /**
      * @access public
@@ -1004,7 +943,7 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Page", false)) {
      * @var string
      */
     public $PageType;
-      private $_parameterMap = array(
+    private $_parameterMap = array(
       "Page.Type" => "PageType",
     );
 
@@ -1013,9 +952,8 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Page", false)) {
      * @param $var Variable name to set
      * @param $value Value to set
      */
-    public function __set($var, $value)
-    {
-        $this->{$this->_parameterMap[$var]} = $value;
+    public function __set($var, $value) {
+      $this->{$this->_parameterMap[$var]} = $value;
     }
 
     /**
@@ -1023,1260 +961,1122 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Page", false)) {
      * @param $var Variable name to get
      * @return mixed Variable value
      */
-    public function __get($var)
-    {
-        if (!isset($this->_parameterMap[$var])) {
-            return;
-        }
-
-        return $this->{$this->_parameterMap[$var]};
+    public function __get($var) {
+      if (!isset($this->_parameterMap[$var])) {
+        return null;
+      }
+      return $this->{$this->_parameterMap[$var]};
     }
 
     /**
      * Provided for getting non-php-standard named variables
      * @return array parameter map
      */
-    protected function getParameterMap()
-    {
-        return $this->_parameterMap;
+    protected function getParameterMap() {
+      return $this->_parameterMap;
     }
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($totalNumEntries = null, $PageType = null)
-      {
-          $this->totalNumEntries = $totalNumEntries;
-          $this->PageType = $PageType;
-      }
+    public function __construct($totalNumEntries = null, $PageType = null) {
+      $this->totalNumEntries = $totalNumEntries;
+      $this->PageType = $PageType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationErrorReason", false)) {
+  /**
    * The single reason for the authentication failure.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class AuthenticationErrorReason
-  {
+  class AuthenticationErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "AuthenticationError.Reason";
+    const XSI_TYPE = "AuthenticationError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationErrorReason", false)) {
+  /**
    * The reasons for the database error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class AuthorizationErrorReason
-  {
+  class AuthorizationErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "AuthorizationError.Reason";
+    const XSI_TYPE = "AuthorizationError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetBudgetDeliveryMethod", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetBudgetDeliveryMethod", false)) {
+  /**
    * Budget delivery methods.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetBudgetDeliveryMethod
-  {
+  class BudgetBudgetDeliveryMethod {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Budget.BudgetDeliveryMethod";
+    const XSI_TYPE = "Budget.BudgetDeliveryMethod";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetBudgetPeriod", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetBudgetPeriod", false)) {
+  /**
    * Budget periods.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetBudgetPeriod
-  {
+  class BudgetBudgetPeriod {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Budget.BudgetPeriod";
+    const XSI_TYPE = "Budget.BudgetPeriod";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetBudgetStatus", false)) {
-    /**
-   *
-   * @package Google_Api_Ads_AdWords_v201409
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetBudgetStatus", false)) {
+  /**
+   * 
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetBudgetStatus
-  {
+  class BudgetBudgetStatus {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Budget.BudgetStatus";
+    const XSI_TYPE = "Budget.BudgetStatus";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetErrorReason", false)) {
+  /**
    * The reasons for the budget error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetErrorReason
-  {
+  class BudgetErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "BudgetError.Reason";
+    const XSI_TYPE = "BudgetError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsErrorReason", false)) {
+  /**
    * Enums for the various reasons an error can be thrown as a result of
    * ClientTerms violation.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class ClientTermsErrorReason
-  {
+  class ClientTermsErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "ClientTermsError.Reason";
+    const XSI_TYPE = "ClientTermsError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\DatabaseErrorReason", false)) {
+  /**
    * The reasons for the database error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class DatabaseErrorReason
-  {
+  class DatabaseErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "DatabaseError.Reason";
+    const XSI_TYPE = "DatabaseError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\DateErrorReason", false)) {
+  /**
    * The reasons for the target error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class DateErrorReason
-  {
+  class DateErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "DateError.Reason";
+    const XSI_TYPE = "DateError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateRangeErrorReason", false)) {
-    /**
-   * The reasons for the date range error.
-   * @package Google_Api_Ads_AdWords_v201409
-   * @subpackage v201409
-   */
-  class DateRangeErrorReason
-  {
-
-    const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "DateRangeError.Reason";
-
-    /**
-     * Gets the namesapce of this class
-     * @return the namespace of this class
-     */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
-    }
-
-    /**
-     * Gets the xsi:type name of this class
-     * @return the xsi:type name of this class
-     */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
-    }
-
-      public function __construct()
-      {
-      }
-  }
-}
-
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DistinctErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\DistinctErrorReason", false)) {
+  /**
    * The reasons for the validation error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class DistinctErrorReason
-  {
+  class DistinctErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "DistinctError.Reason";
+    const XSI_TYPE = "DistinctError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\EntityCountLimitExceededReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\EntityCountLimitExceededReason", false)) {
+  /**
    * Limits at various levels of the account.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class EntityCountLimitExceededReason
-  {
+  class EntityCountLimitExceededReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "EntityCountLimitExceeded.Reason";
+    const XSI_TYPE = "EntityCountLimitExceeded.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\EntityNotFoundReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\EntityNotFoundReason", false)) {
+  /**
    * The specified id refered to an entity which either doesn't exist or is not accessible to the
    * customer. e.g. campaign belongs to another customer.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class EntityNotFoundReason
-  {
+  class EntityNotFoundReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "EntityNotFound.Reason";
+    const XSI_TYPE = "EntityNotFound.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\IdErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\IdErrorReason", false)) {
+  /**
    * The reasons for the target error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class IdErrorReason
-  {
+  class IdErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "IdError.Reason";
+    const XSI_TYPE = "IdError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\InternalApiErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\InternalApiErrorReason", false)) {
+  /**
    * The single reason for the internal API error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class InternalApiErrorReason
-  {
+  class InternalApiErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "InternalApiError.Reason";
+    const XSI_TYPE = "InternalApiError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NewEntityCreationErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\NewEntityCreationErrorReason", false)) {
+  /**
    * Do not set the id field while creating new entities.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class NewEntityCreationErrorReason
-  {
+  class NewEntityCreationErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "NewEntityCreationError.Reason";
+    const XSI_TYPE = "NewEntityCreationError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyErrorReason", false)) {
+  /**
    * The reasons for the validation error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class NotEmptyErrorReason
-  {
+  class NotEmptyErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "NotEmptyError.Reason";
+    const XSI_TYPE = "NotEmptyError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NullErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\NullErrorReason", false)) {
+  /**
    * The reasons for the validation error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class NullErrorReason
-  {
+  class NullErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "NullError.Reason";
+    const XSI_TYPE = "NullError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDeniedReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDeniedReason", false)) {
+  /**
    * The reasons for the operation access error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class OperationAccessDeniedReason
-  {
+  class OperationAccessDeniedReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "OperationAccessDenied.Reason";
+    const XSI_TYPE = "OperationAccessDenied.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Operator", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\Operator", false)) {
+  /**
    * This represents an operator that may be presented to an adsapi service.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class Operator
-  {
+  class Operator {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Operator";
+    const XSI_TYPE = "Operator";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\PredicateOperator", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\PredicateOperator", false)) {
+  /**
    * Defines the valid set of operators.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class PredicateOperator
-  {
+  class PredicateOperator {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Predicate.Operator";
+    const XSI_TYPE = "Predicate.Operator";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QueryErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\QueryErrorReason", false)) {
+  /**
    * The reason for the query error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class QueryErrorReason
-  {
+  class QueryErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "QueryError.Reason";
+    const XSI_TYPE = "QueryError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckErrorReason", false)) {
+  /**
    * Enums for all the reasons an error can be thrown to the user during
    * billing quota checks.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class QuotaCheckErrorReason
-  {
+  class QuotaCheckErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "QuotaCheckError.Reason";
+    const XSI_TYPE = "QuotaCheckError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RangeErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\RangeErrorReason", false)) {
+  /**
    * The reasons for the target error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class RangeErrorReason
-  {
+  class RangeErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "RangeError.Reason";
+    const XSI_TYPE = "RangeError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RateExceededErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\RateExceededErrorReason", false)) {
+  /**
    * The reason for the rate exceeded error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class RateExceededErrorReason
-  {
+  class RateExceededErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "RateExceededError.Reason";
+    const XSI_TYPE = "RateExceededError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyErrorReason", false)) {
+  /**
    * The reasons for the target error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class ReadOnlyErrorReason
-  {
+  class ReadOnlyErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "ReadOnlyError.Reason";
+    const XSI_TYPE = "ReadOnlyError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RejectedErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\RejectedErrorReason", false)) {
+  /**
    * The reasons for the target error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class RejectedErrorReason
-  {
+  class RejectedErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "RejectedError.Reason";
+    const XSI_TYPE = "RejectedError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequestErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\RequestErrorReason", false)) {
+  /**
    * Error reason is unknown.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class RequestErrorReason
-  {
+  class RequestErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "RequestError.Reason";
+    const XSI_TYPE = "RequestError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequiredErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\RequiredErrorReason", false)) {
+  /**
    * The reasons for the target error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class RequiredErrorReason
-  {
+  class RequiredErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "RequiredError.Reason";
+    const XSI_TYPE = "RequiredError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SelectorErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\SelectorErrorReason", false)) {
+  /**
    * The reasons for the target error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class SelectorErrorReason
-  {
+  class SelectorErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "SelectorError.Reason";
+    const XSI_TYPE = "SelectorError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitErrorReason", false)) {
+  /**
    * The reasons for Ad Scheduling errors.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class SizeLimitErrorReason
-  {
+  class SizeLimitErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "SizeLimitError.Reason";
+    const XSI_TYPE = "SizeLimitError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SortOrder", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\SortOrder", false)) {
+  /**
    * Possible orders of sorting.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class SortOrder
-  {
+  class SortOrder {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "SortOrder";
+    const XSI_TYPE = "SortOrder";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringLengthErrorReason", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\StringLengthErrorReason", false)) {
+  /**
    * The reasons for the target error.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class StringLengthErrorReason
-  {
+  class StringLengthErrorReason {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "StringLengthError.Reason";
+    const XSI_TYPE = "StringLengthError.Reason";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct()
-      {
-      }
+    public function __construct() {
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceGet", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceGet", false)) {
+  /**
    * <span class="constraint Required">This field is required and should not be {@code null}.</span>
-   *
-   *
-   *
+   * 
+   * 
+   * 
    * Returns a list of budgets that match the selector.
-   *
+   * 
    * @return List of budgets specified by the selector.
    * @throws com.google.ads.api.services.common.error.ApiException if problems
    * occurred while retrieving results.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetServiceGet
-  {
+  class BudgetServiceGet {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "";
+    const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2288,38 +2088,35 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceGet", fals
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($selector = null)
-      {
-          $this->selector = $selector;
-      }
+    public function __construct($selector = null) {
+      $this->selector = $selector;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceGetResponse", false)) {
-    /**
-   *
-   * @package Google_Api_Ads_AdWords_v201409
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceGetResponse", false)) {
+  /**
+   * 
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetServiceGetResponse
-  {
+  class BudgetServiceGetResponse {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "";
+    const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2331,49 +2128,46 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceGetRespons
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($rval = null)
-      {
-          $this->rval = $rval;
-      }
+    public function __construct($rval = null) {
+      $this->rval = $rval;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceMutate", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceMutate", false)) {
+  /**
    * <span class="constraint ContentsNotNull">This field must not contain {@code null} elements.</span>
    * <span class="constraint DistinctIds">Elements in this field must have distinct IDs for following {@link Operator}s : SET, REMOVE.</span>
    * <span class="constraint NotEmpty">This field must contain at least one element.</span>
    * <span class="constraint Required">This field is required and should not be {@code null}.</span>
-   *
-   *
-   *
+   * 
+   * 
+   * 
    * Applies the list of mutate operations.
-   *
+   * 
    * @param operations The operations to apply.
    * @return The modified list of Budgets, returned in the same order as <code>operations</code>.
    * @throws ApiException
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetServiceMutate
-  {
+  class BudgetServiceMutate {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "";
+    const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2385,38 +2179,35 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceMutate", f
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($operations = null)
-      {
-          $this->operations = $operations;
-      }
+    public function __construct($operations = null) {
+      $this->operations = $operations;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceMutateResponse", false)) {
-    /**
-   *
-   * @package Google_Api_Ads_AdWords_v201409
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceMutateResponse", false)) {
+  /**
+   * 
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetServiceMutateResponse
-  {
+  class BudgetServiceMutateResponse {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "";
+    const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2428,46 +2219,43 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceMutateResp
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($rval = null)
-      {
-          $this->rval = $rval;
-      }
+    public function __construct($rval = null) {
+      $this->rval = $rval;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Query", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\Query", false)) {
+  /**
    * <span class="constraint Required">This field is required and should not be {@code null}.</span>
-   *
-   *
-   *
+   * 
+   * 
+   * 
    * Returns the list of budgets that match the query.
-   *
+   * 
    * @param query The SQL-like AWQL query string
    * @returns A list of Budget
    * @throws ApiException when the query is invalid or there are errors processing the request.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class Query
-  {
+  class Query {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "";
+    const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2479,38 +2267,35 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Query", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($query = null)
-      {
-          $this->query = $query;
-      }
+    public function __construct($query = null) {
+      $this->query = $query;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QueryResponse", false)) {
-    /**
-   *
-   * @package Google_Api_Ads_AdWords_v201409
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\QueryResponse", false)) {
+  /**
+   * 
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class QueryResponse
-  {
+  class QueryResponse {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "";
+    const XSI_TYPE = "";
 
     /**
      * @access public
@@ -2522,38 +2307,35 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QueryResponse", false))
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($rval = null)
-      {
-          $this->rval = $rval;
-      }
+    public function __construct($rval = null) {
+      $this->rval = $rval;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationError", false)) {
+  /**
    * Errors returned when Authentication failed.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class AuthenticationError extends ApiError
-  {
+  class AuthenticationError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "AuthenticationError";
+    const XSI_TYPE = "AuthenticationError";
 
     /**
      * @access public
@@ -2565,43 +2347,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationError", f
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationError", false)) {
+  /**
    * Errors encountered when trying to authorize a user.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class AuthorizationError extends ApiError
-  {
+  class AuthorizationError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "AuthorizationError";
+    const XSI_TYPE = "AuthorizationError";
 
     /**
      * @access public
@@ -2613,43 +2392,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationError", fa
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetError", false)) {
+  /**
    * A list of all the error codes being used by the common budget domain package.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetError extends ApiError
-  {
+  class BudgetError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "BudgetError";
+    const XSI_TYPE = "BudgetError";
 
     /**
      * @access public
@@ -2661,43 +2437,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsError", false)) {
+  /**
    * Error due to user not accepting the AdWords terms of service.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class ClientTermsError extends ApiError
-  {
+  class ClientTermsError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "ClientTermsError";
+    const XSI_TYPE = "ClientTermsError";
 
     /**
      * @access public
@@ -2709,43 +2482,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsError", fals
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\DateError", false)) {
+  /**
    * Errors associated with invalid dates and date ranges.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class DateError extends ApiError
-  {
+  class DateError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "DateError";
+    const XSI_TYPE = "DateError";
 
     /**
      * @access public
@@ -2757,91 +2527,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DateRangeError", false)) {
-    /**
-   * A list of all the error codes being used for date range error.
-   * @package Google_Api_Ads_AdWords_v201409
-   * @subpackage v201409
-   */
-  class DateRangeError extends ApiError
-  {
-
-    const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "DateRangeError";
-
-    /**
-     * @access public
-     * @var tnsDateRangeErrorReason
-     */
-    public $reason;
-
-    /**
-     * Gets the namesapce of this class
-     * @return the namespace of this class
-     */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
-    }
-
-    /**
-     * Gets the xsi:type name of this class
-     * @return the xsi:type name of this class
-     */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
-    }
-
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
-  }
-}
-
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DistinctError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\DistinctError", false)) {
+  /**
    * Errors related to distinct ids or content.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class DistinctError extends ApiError
-  {
+  class DistinctError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "DistinctError";
+    const XSI_TYPE = "DistinctError";
 
     /**
      * @access public
@@ -2853,44 +2572,41 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DistinctError", false))
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\EntityCountLimitExceeded", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\EntityCountLimitExceeded", false)) {
+  /**
    * Signals that an entity count limit was exceeded for some level.
    * For example, too many criteria for a campaign.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class EntityCountLimitExceeded extends ApiError
-  {
+  class EntityCountLimitExceeded extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "EntityCountLimitExceeded";
+    const XSI_TYPE = "EntityCountLimitExceeded";
 
     /**
      * @access public
@@ -2926,48 +2642,45 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\EntityCountLimitExceede
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $enclosingId = null, $limit = null, $accountLimitType = null, $existingCount = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->enclosingId = $enclosingId;
-          $this->limit = $limit;
-          $this->accountLimitType = $accountLimitType;
-          $this->existingCount = $existingCount;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $enclosingId = null, $limit = null, $accountLimitType = null, $existingCount = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->enclosingId = $enclosingId;
+      $this->limit = $limit;
+      $this->accountLimitType = $accountLimitType;
+      $this->existingCount = $existingCount;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\EntityNotFound", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\EntityNotFound", false)) {
+  /**
    * An id did not correspond to an entity, or it referred to an entity which does not belong to the
    * customer.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class EntityNotFound extends ApiError
-  {
+  class EntityNotFound extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "EntityNotFound";
+    const XSI_TYPE = "EntityNotFound";
 
     /**
      * @access public
@@ -2979,43 +2692,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\EntityNotFound", false)
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\IdError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\IdError", false)) {
+  /**
    * Errors associated with the ids.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class IdError extends ApiError
-  {
+  class IdError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "IdError";
+    const XSI_TYPE = "IdError";
 
     /**
      * @access public
@@ -3027,45 +2737,42 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\IdError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\InternalApiError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\InternalApiError", false)) {
+  /**
    * Indicates that a server-side error has occured. {@code InternalApiError}s
    * are generally not the result of an invalid request or message sent by the
    * client.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class InternalApiError extends ApiError
-  {
+  class InternalApiError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "InternalApiError";
+    const XSI_TYPE = "InternalApiError";
 
     /**
      * @access public
@@ -3077,43 +2784,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\InternalApiError", fals
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Money", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\Money", false)) {
+  /**
    * Represents a money amount.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class Money extends ComparableValue
-  {
+  class Money extends ComparableValue {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "Money";
+    const XSI_TYPE = "Money";
 
     /**
      * @access public
@@ -3125,40 +2829,37 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\Money", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($microAmount = null, $ComparableValueType = null)
-      {
-          parent::__construct();
-          $this->microAmount = $microAmount;
-          $this->ComparableValueType = $ComparableValueType;
-      }
+    public function __construct($microAmount = null, $ComparableValueType = null) {
+      parent::__construct();
+      $this->microAmount = $microAmount;
+      $this->ComparableValueType = $ComparableValueType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NewEntityCreationError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\NewEntityCreationError", false)) {
+  /**
    * Error associated with creation of new entities.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class NewEntityCreationError extends ApiError
-  {
+  class NewEntityCreationError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "NewEntityCreationError";
+    const XSI_TYPE = "NewEntityCreationError";
 
     /**
      * @access public
@@ -3170,43 +2871,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NewEntityCreationError"
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyError", false)) {
+  /**
    * Errors corresponding with violation of a NOT EMPTY check.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class NotEmptyError extends ApiError
-  {
+  class NotEmptyError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "NotEmptyError";
+    const XSI_TYPE = "NotEmptyError";
 
     /**
      * @access public
@@ -3218,43 +2916,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyError", false))
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NullError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\NullError", false)) {
+  /**
    * Errors associated with violation of a NOT NULL check.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class NullError extends ApiError
-  {
+  class NullError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "NullError";
+    const XSI_TYPE = "NullError";
 
     /**
      * @access public
@@ -3266,81 +2961,75 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NullError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\NumberValue", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\NumberValue", false)) {
+  /**
    * Number value types for constructing number valued ranges.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class NumberValue extends ComparableValue
-  {
+  class NumberValue extends ComparableValue {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "NumberValue";
+    const XSI_TYPE = "NumberValue";
 
     /**
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($ComparableValueType = null)
-      {
-          parent::__construct();
-          $this->ComparableValueType = $ComparableValueType;
-      }
+    public function __construct($ComparableValueType = null) {
+      parent::__construct();
+      $this->ComparableValueType = $ComparableValueType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDenied", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDenied", false)) {
+  /**
    * Operation not permitted due to the invoked service's access policy.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class OperationAccessDenied extends ApiError
-  {
+  class OperationAccessDenied extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "OperationAccessDenied";
+    const XSI_TYPE = "OperationAccessDenied";
 
     /**
      * @access public
@@ -3352,43 +3041,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDenied",
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QueryError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\QueryError", false)) {
+  /**
    * A QueryError represents possible errors for query parsing and execution.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class QueryError extends ApiError
-  {
+  class QueryError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "QueryError";
+    const XSI_TYPE = "QueryError";
 
     /**
      * @access public
@@ -3406,44 +3092,41 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QueryError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $message = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->message = $message;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $message = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->message = $message;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckError", false)) {
+  /**
    * Encapsulates the errors thrown during developer quota checks.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class QuotaCheckError extends ApiError
-  {
+  class QuotaCheckError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "QuotaCheckError";
+    const XSI_TYPE = "QuotaCheckError";
 
     /**
      * @access public
@@ -3455,43 +3138,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckError", false
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RangeError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\RangeError", false)) {
+  /**
    * A list of all errors associated with the Range constraint.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class RangeError extends ApiError
-  {
+  class RangeError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "RangeError";
+    const XSI_TYPE = "RangeError";
 
     /**
      * @access public
@@ -3503,43 +3183,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RangeError", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RateExceededError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\RateExceededError", false)) {
+  /**
    * Signals that a call failed because a measured rate exceeded.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class RateExceededError extends ApiError
-  {
+  class RateExceededError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "RateExceededError";
+    const XSI_TYPE = "RateExceededError";
 
     /**
      * @access public
@@ -3569,46 +3246,43 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RateExceededError", fal
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $rateName = null, $rateScope = null, $retryAfterSeconds = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->rateName = $rateName;
-          $this->rateScope = $rateScope;
-          $this->retryAfterSeconds = $retryAfterSeconds;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $rateName = null, $rateScope = null, $retryAfterSeconds = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->rateName = $rateName;
+      $this->rateScope = $rateScope;
+      $this->retryAfterSeconds = $retryAfterSeconds;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyError", false)) {
+  /**
    * Errors from attempting to write to read-only fields.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class ReadOnlyError extends ApiError
-  {
+  class ReadOnlyError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "ReadOnlyError";
+    const XSI_TYPE = "ReadOnlyError";
 
     /**
      * @access public
@@ -3620,43 +3294,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyError", false))
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RejectedError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\RejectedError", false)) {
+  /**
    * Indicates that a field was rejected due to compatibility issues.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class RejectedError extends ApiError
-  {
+  class RejectedError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "RejectedError";
+    const XSI_TYPE = "RejectedError";
 
     /**
      * @access public
@@ -3668,44 +3339,41 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RejectedError", false))
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequestError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\RequestError", false)) {
+  /**
    * Encapsulates the generic errors thrown when there's an error with user
    * request.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class RequestError extends ApiError
-  {
+  class RequestError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "RequestError";
+    const XSI_TYPE = "RequestError";
 
     /**
      * @access public
@@ -3717,43 +3385,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequestError", false)) 
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequiredError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\RequiredError", false)) {
+  /**
    * Errors due to missing required field.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class RequiredError extends ApiError
-  {
+  class RequiredError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "RequiredError";
+    const XSI_TYPE = "RequiredError";
 
     /**
      * @access public
@@ -3765,43 +3430,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\RequiredError", false))
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SelectorError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\SelectorError", false)) {
+  /**
    * Represents possible error codes for {@link Selector}.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class SelectorError extends ApiError
-  {
+  class SelectorError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "SelectorError";
+    const XSI_TYPE = "SelectorError";
 
     /**
      * @access public
@@ -3813,43 +3475,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SelectorError", false))
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitError", false)) {
+  /**
    * Indicates that the number of entries in the request or response exceeds the system limit.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class SizeLimitError extends ApiError
-  {
+  class SizeLimitError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "SizeLimitError";
+    const XSI_TYPE = "SizeLimitError";
 
     /**
      * @access public
@@ -3861,44 +3520,41 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitError", false)
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringLengthError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\StringLengthError", false)) {
+  /**
    * Errors associated with the length of the given string being
    * out of bounds.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class StringLengthError extends ApiError
-  {
+  class StringLengthError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "StringLengthError";
+    const XSI_TYPE = "StringLengthError";
 
     /**
      * @access public
@@ -3910,43 +3566,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\StringLengthError", fal
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseError", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\DatabaseError", false)) {
+  /**
    * Errors that are thrown due to a database access problem.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class DatabaseError extends ApiError
-  {
+  class DatabaseError extends ApiError {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "DatabaseError";
+    const XSI_TYPE = "DatabaseError";
 
     /**
      * @access public
@@ -3958,43 +3611,40 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseError", false))
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null)
-      {
-          parent::__construct();
-          $this->reason = $reason;
-          $this->fieldPath = $fieldPath;
-          $this->trigger = $trigger;
-          $this->errorString = $errorString;
-          $this->ApiErrorType = $ApiErrorType;
-      }
+    public function __construct($reason = null, $fieldPath = null, $trigger = null, $errorString = null, $ApiErrorType = null) {
+      parent::__construct();
+      $this->reason = $reason;
+      $this->fieldPath = $fieldPath;
+      $this->trigger = $trigger;
+      $this->errorString = $errorString;
+      $this->ApiErrorType = $ApiErrorType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApiException", false)) {
-    /**
-   * \Exception class for holding a list of service errors.
-   * @package Google_Api_Ads_AdWords_v201409
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\ApiException", false)) {
+  /**
+   * Exception class for holding a list of service errors.
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class ApiException extends ApplicationException
-  {
+  class ApiException extends ApplicationException {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "ApiException";
+    const XSI_TYPE = "ApiException";
 
     /**
      * @access public
@@ -4006,41 +3656,38 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\ApiException", false)) 
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($errors = null, $message = null, $ApplicationExceptionType = null)
-      {
-          parent::__construct();
-          $this->errors = $errors;
-          $this->message = $message;
-          $this->ApplicationExceptionType = $ApplicationExceptionType;
-      }
+    public function __construct($errors = null, $message = null, $ApplicationExceptionType = null) {
+      parent::__construct();
+      $this->errors = $errors;
+      $this->message = $message;
+      $this->ApplicationExceptionType = $ApplicationExceptionType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetOperation", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetOperation", false)) {
+  /**
    * Operations for adding/updating Budget entities.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetOperation extends Operation
-  {
+  class BudgetOperation extends Operation {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "BudgetOperation";
+    const XSI_TYPE = "BudgetOperation";
 
     /**
      * @access public
@@ -4052,42 +3699,39 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetOperation", false
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($operand = null, $operator = null, $OperationType = null)
-      {
-          parent::__construct();
-          $this->operand = $operand;
-          $this->operator = $operator;
-          $this->OperationType = $OperationType;
-      }
+    public function __construct($operand = null, $operator = null, $OperationType = null) {
+      parent::__construct();
+      $this->operand = $operand;
+      $this->operator = $operator;
+      $this->OperationType = $OperationType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetPage", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetPage", false)) {
+  /**
    * Contains a list of budgets resulting from the filtering and paging of
    * {@link BudgetService#get} call.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetPage extends Page
-  {
+  class BudgetPage extends Page {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "BudgetPage";
+    const XSI_TYPE = "BudgetPage";
 
     /**
      * @access public
@@ -4099,41 +3743,38 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetPage", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($entries = null, $totalNumEntries = null, $PageType = null)
-      {
-          parent::__construct();
-          $this->entries = $entries;
-          $this->totalNumEntries = $totalNumEntries;
-          $this->PageType = $PageType;
-      }
+    public function __construct($entries = null, $totalNumEntries = null, $PageType = null) {
+      parent::__construct();
+      $this->entries = $entries;
+      $this->totalNumEntries = $totalNumEntries;
+      $this->PageType = $PageType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetReturnValue", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\BudgetReturnValue", false)) {
+  /**
    * A container for return values from the {@link BudgetService#mutate} call.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetReturnValue extends ListReturnValue
-  {
+  class BudgetReturnValue extends ListReturnValue {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "BudgetReturnValue";
+    const XSI_TYPE = "BudgetReturnValue";
 
     /**
      * @access public
@@ -4151,41 +3792,38 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetReturnValue", fal
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($value = null, $partialFailureErrors = null, $ListReturnValueType = null)
-      {
-          parent::__construct();
-          $this->value = $value;
-          $this->partialFailureErrors = $partialFailureErrors;
-          $this->ListReturnValueType = $ListReturnValueType;
-      }
+    public function __construct($value = null, $partialFailureErrors = null, $ListReturnValueType = null) {
+      parent::__construct();
+      $this->value = $value;
+      $this->partialFailureErrors = $partialFailureErrors;
+      $this->ListReturnValueType = $ListReturnValueType;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DoubleValue", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\DoubleValue", false)) {
+  /**
    * Number value type for constructing double valued ranges.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class DoubleValue extends NumberValue
-  {
+  class DoubleValue extends NumberValue {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "DoubleValue";
+    const XSI_TYPE = "DoubleValue";
 
     /**
      * @access public
@@ -4197,39 +3835,36 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\DoubleValue", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($number = null)
-      {
-          parent::__construct();
-          $this->number = $number;
-      }
+    public function __construct($number = null) {
+      parent::__construct();
+      $this->number = $number;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\LongValue", false)) {
-    /**
+if (!class_exists("Google\\Api\\Ads\\AdWords\\v201409\\LongValue", false)) {
+  /**
    * Number value type for constructing long valued ranges.
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class LongValue extends NumberValue
-  {
+  class LongValue extends NumberValue {
 
     const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const XSI_TYPE = "LongValue";
+    const XSI_TYPE = "LongValue";
 
     /**
      * @access public
@@ -4241,40 +3876,37 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\LongValue", false)) {
      * Gets the namesapce of this class
      * @return the namespace of this class
      */
-    public function getNamespace()
-    {
-        return self::WSDL_NAMESPACE;
+    public function getNamespace() {
+      return self::WSDL_NAMESPACE;
     }
 
     /**
      * Gets the xsi:type name of this class
      * @return the xsi:type name of this class
      */
-    public function getXsiTypeName()
-    {
-        return self::XSI_TYPE;
+    public function getXsiTypeName() {
+      return self::XSI_TYPE;
     }
 
-      public function __construct($number = null)
-      {
-          parent::__construct();
-          $this->number = $number;
-      }
+    public function __construct($number = null) {
+      parent::__construct();
+      $this->number = $number;
+    }
+
   }
 }
 
-if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetService", false)) {
-    /**
+if (!class_exists("BudgetService", false)) {
+  /**
    * BudgetService
-   * @package Google_Api_Ads_AdWords_v201409
+   * @package Google\Api\Ads\AdWords\v201409
    * @subpackage v201409
    */
-  class BudgetService extends AdWordsSoapClient
-  {
+  class BudgetService extends \Google\Api\Ads\AdWords\Lib\AdWordsSoapClient {
 
     const SERVICE_NAME = "BudgetService";
-      const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
-      const ENDPOINT = "https://adwords.google.com/api/adwords/cm/v201409/BudgetService";
+    const WSDL_NAMESPACE = "https://adwords.google.com/api/adwords/cm/v201409";
+    const ENDPOINT = "https://adwords.google.com/api/adwords/cm/v201409/BudgetService";
 
     /**
      * The endpoint of the service
@@ -4287,163 +3919,155 @@ if (!class_exists("\\Google\\Api\\Ads\\AdWords\\v201409\\BudgetService", false))
      * @var array
      */
     public static $classmap = array(
-      "AuthenticationError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationError",
-      "AuthorizationError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationError",
-      "BudgetError" => "BudgetError",
-      "ClientTermsError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsError",
-      "DateError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\DateError",
-      "DateRange" => "\\Google\\Api\\Ads\\AdWords\\v201409\\DateRange",
-      "DateRangeError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\DateRangeError",
-      "DistinctError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\DistinctError",
-      "DoubleValue" => "\\Google\\Api\\Ads\\AdWords\\v201409\\DoubleValue",
-      "EntityCountLimitExceeded" => "\\Google\\Api\\Ads\\AdWords\\v201409\\EntityCountLimitExceeded",
-      "EntityNotFound" => "\\Google\\Api\\Ads\\AdWords\\v201409\\EntityNotFound",
-      "IdError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\IdError",
-      "InternalApiError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\InternalApiError",
-      "LongValue" => "\\Google\\Api\\Ads\\AdWords\\v201409\\LongValue",
-      "Money" => "\\Google\\Api\\Ads\\AdWords\\v201409\\Money",
-      "NewEntityCreationError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\NewEntityCreationError",
-      "NotEmptyError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyError",
-      "NullError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\NullError",
-      "NumberValue" => "\\Google\\Api\\Ads\\AdWords\\v201409\\NumberValue",
-      "OperationAccessDenied" => "\\Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDenied",
-      "OrderBy" => "\\Google\\Api\\Ads\\AdWords\\v201409\\OrderBy",
-      "Paging" => "\\Google\\Api\\Ads\\AdWords\\v201409\\Paging",
-      "Predicate" => "\\Google\\Api\\Ads\\AdWords\\v201409\\Predicate",
-      "QueryError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\QueryError",
-      "QuotaCheckError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckError",
-      "RangeError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\RangeError",
-      "RateExceededError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\RateExceededError",
-      "ReadOnlyError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyError",
-      "RejectedError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\RejectedError",
-      "RequestError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\RequestError",
-      "RequiredError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\RequiredError",
-      "SelectorError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\SelectorError",
-      "SizeLimitError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitError",
-      "SoapHeader" => "SoapRequestHeader",
-      "SoapResponseHeader" => "SoapResponseHeader",
-      "StringLengthError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\StringLengthError",
-      "ComparableValue" => "\\Google\\Api\\Ads\\AdWords\\v201409\\ComparableValue",
-      "DatabaseError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseError",
-      "ApiError" => "\\Google\\Api\\Ads\\AdWords\\v201409\\ApiError",
-      "ApiException" => "\\Google\\Api\\Ads\\AdWords\\v201409\\ApiException",
-      "ApplicationException" => "\\Google\\Api\\Ads\\AdWords\\v201409\\ApplicationException",
-      "Selector" => "\\Google\\Api\\Ads\\AdWords\\v201409\\Selector",
-      "Budget" => "Budget",
-      "BudgetOperation" => "BudgetOperation",
-      "BudgetPage" => "BudgetPage",
-      "BudgetReturnValue" => "BudgetReturnValue",
-      "ListReturnValue" => "\\Google\\Api\\Ads\\AdWords\\v201409\\ListReturnValue",
-      "Operation" => "\\Google\\Api\\Ads\\AdWords\\v201409\\Operation",
-      "Page" => "\\Google\\Api\\Ads\\AdWords\\v201409\\Page",
-      "AuthenticationError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationErrorReason",
-      "AuthorizationError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationErrorReason",
-      "Budget.BudgetDeliveryMethod" => "BudgetBudgetDeliveryMethod",
-      "Budget.BudgetPeriod" => "BudgetBudgetPeriod",
-      "Budget.BudgetStatus" => "BudgetBudgetStatus",
-      "BudgetError.Reason" => "BudgetErrorReason",
-      "ClientTermsError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsErrorReason",
-      "DatabaseError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\DatabaseErrorReason",
-      "DateError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\DateErrorReason",
-      "DateRangeError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\DateRangeErrorReason",
-      "DistinctError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\DistinctErrorReason",
-      "EntityCountLimitExceeded.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\EntityCountLimitExceededReason",
-      "EntityNotFound.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\EntityNotFoundReason",
-      "IdError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\IdErrorReason",
-      "InternalApiError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\InternalApiErrorReason",
-      "NewEntityCreationError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\NewEntityCreationErrorReason",
-      "NotEmptyError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyErrorReason",
-      "NullError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\NullErrorReason",
-      "OperationAccessDenied.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDeniedReason",
-      "Operator" => "\\Google\\Api\\Ads\\AdWords\\v201409\\Operator",
-      "Predicate.Operator" => "\\Google\\Api\\Ads\\AdWords\\v201409\\PredicateOperator",
-      "QueryError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\QueryErrorReason",
-      "QuotaCheckError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckErrorReason",
-      "RangeError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\RangeErrorReason",
-      "RateExceededError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\RateExceededErrorReason",
-      "ReadOnlyError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyErrorReason",
-      "RejectedError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\RejectedErrorReason",
-      "RequestError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\RequestErrorReason",
-      "RequiredError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\RequiredErrorReason",
-      "SelectorError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\SelectorErrorReason",
-      "SizeLimitError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitErrorReason",
-      "SortOrder" => "\\Google\\Api\\Ads\\AdWords\\v201409\\SortOrder",
-      "StringLengthError.Reason" => "\\Google\\Api\\Ads\\AdWords\\v201409\\StringLengthErrorReason",
-      "get" => "BudgetServiceGet",
-      "getResponse" => "BudgetServiceGetResponse",
-      "mutate" => "BudgetServiceMutate",
-      "mutateResponse" => "BudgetServiceMutateResponse",
-      "query" => "Query",
-      "queryResponse" => "QueryResponse",
+      "AuthenticationError" => "Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationError",
+      "AuthorizationError" => "Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationError",
+      "BudgetError" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetError",
+      "ClientTermsError" => "Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsError",
+      "DateError" => "Google\\Api\\Ads\\AdWords\\v201409\\DateError",
+      "DateRange" => "Google\\Api\\Ads\\AdWords\\v201409\\DateRange",
+      "DistinctError" => "Google\\Api\\Ads\\AdWords\\v201409\\DistinctError",
+      "DoubleValue" => "Google\\Api\\Ads\\AdWords\\v201409\\DoubleValue",
+      "EntityCountLimitExceeded" => "Google\\Api\\Ads\\AdWords\\v201409\\EntityCountLimitExceeded",
+      "EntityNotFound" => "Google\\Api\\Ads\\AdWords\\v201409\\EntityNotFound",
+      "IdError" => "Google\\Api\\Ads\\AdWords\\v201409\\IdError",
+      "InternalApiError" => "Google\\Api\\Ads\\AdWords\\v201409\\InternalApiError",
+      "LongValue" => "Google\\Api\\Ads\\AdWords\\v201409\\LongValue",
+      "Money" => "Google\\Api\\Ads\\AdWords\\v201409\\Money",
+      "NewEntityCreationError" => "Google\\Api\\Ads\\AdWords\\v201409\\NewEntityCreationError",
+      "NotEmptyError" => "Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyError",
+      "NullError" => "Google\\Api\\Ads\\AdWords\\v201409\\NullError",
+      "NumberValue" => "Google\\Api\\Ads\\AdWords\\v201409\\NumberValue",
+      "OperationAccessDenied" => "Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDenied",
+      "OrderBy" => "Google\\Api\\Ads\\AdWords\\v201409\\OrderBy",
+      "Paging" => "Google\\Api\\Ads\\AdWords\\v201409\\Paging",
+      "Predicate" => "Google\\Api\\Ads\\AdWords\\v201409\\Predicate",
+      "QueryError" => "Google\\Api\\Ads\\AdWords\\v201409\\QueryError",
+      "QuotaCheckError" => "Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckError",
+      "RangeError" => "Google\\Api\\Ads\\AdWords\\v201409\\RangeError",
+      "RateExceededError" => "Google\\Api\\Ads\\AdWords\\v201409\\RateExceededError",
+      "ReadOnlyError" => "Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyError",
+      "RejectedError" => "Google\\Api\\Ads\\AdWords\\v201409\\RejectedError",
+      "RequestError" => "Google\\Api\\Ads\\AdWords\\v201409\\RequestError",
+      "RequiredError" => "Google\\Api\\Ads\\AdWords\\v201409\\RequiredError",
+      "SelectorError" => "Google\\Api\\Ads\\AdWords\\v201409\\SelectorError",
+      "SizeLimitError" => "Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitError",
+      "SoapHeader" => "Google\\Api\\Ads\\AdWords\\v201409\\SoapRequestHeader",
+      "SoapResponseHeader" => "Google\\Api\\Ads\\AdWords\\v201409\\SoapResponseHeader",
+      "StringLengthError" => "Google\\Api\\Ads\\AdWords\\v201409\\StringLengthError",
+      "ComparableValue" => "Google\\Api\\Ads\\AdWords\\v201409\\ComparableValue",
+      "DatabaseError" => "Google\\Api\\Ads\\AdWords\\v201409\\DatabaseError",
+      "ApiError" => "Google\\Api\\Ads\\AdWords\\v201409\\ApiError",
+      "ApiException" => "Google\\Api\\Ads\\AdWords\\v201409\\ApiException",
+      "ApplicationException" => "Google\\Api\\Ads\\AdWords\\v201409\\ApplicationException",
+      "Selector" => "Google\\Api\\Ads\\AdWords\\v201409\\Selector",
+      "Budget" => "Google\\Api\\Ads\\AdWords\\v201409\\Budget",
+      "BudgetOperation" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetOperation",
+      "BudgetPage" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetPage",
+      "BudgetReturnValue" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetReturnValue",
+      "ListReturnValue" => "Google\\Api\\Ads\\AdWords\\v201409\\ListReturnValue",
+      "Operation" => "Google\\Api\\Ads\\AdWords\\v201409\\Operation",
+      "Page" => "Google\\Api\\Ads\\AdWords\\v201409\\Page",
+      "AuthenticationError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\AuthenticationErrorReason",
+      "AuthorizationError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\AuthorizationErrorReason",
+      "Budget.BudgetDeliveryMethod" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetBudgetDeliveryMethod",
+      "Budget.BudgetPeriod" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetBudgetPeriod",
+      "Budget.BudgetStatus" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetBudgetStatus",
+      "BudgetError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetErrorReason",
+      "ClientTermsError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\ClientTermsErrorReason",
+      "DatabaseError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\DatabaseErrorReason",
+      "DateError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\DateErrorReason",
+      "DistinctError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\DistinctErrorReason",
+      "EntityCountLimitExceeded.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\EntityCountLimitExceededReason",
+      "EntityNotFound.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\EntityNotFoundReason",
+      "IdError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\IdErrorReason",
+      "InternalApiError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\InternalApiErrorReason",
+      "NewEntityCreationError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\NewEntityCreationErrorReason",
+      "NotEmptyError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\NotEmptyErrorReason",
+      "NullError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\NullErrorReason",
+      "OperationAccessDenied.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\OperationAccessDeniedReason",
+      "Operator" => "Google\\Api\\Ads\\AdWords\\v201409\\Operator",
+      "Predicate.Operator" => "Google\\Api\\Ads\\AdWords\\v201409\\PredicateOperator",
+      "QueryError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\QueryErrorReason",
+      "QuotaCheckError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\QuotaCheckErrorReason",
+      "RangeError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\RangeErrorReason",
+      "RateExceededError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\RateExceededErrorReason",
+      "ReadOnlyError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\ReadOnlyErrorReason",
+      "RejectedError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\RejectedErrorReason",
+      "RequestError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\RequestErrorReason",
+      "RequiredError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\RequiredErrorReason",
+      "SelectorError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\SelectorErrorReason",
+      "SizeLimitError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\SizeLimitErrorReason",
+      "SortOrder" => "Google\\Api\\Ads\\AdWords\\v201409\\SortOrder",
+      "StringLengthError.Reason" => "Google\\Api\\Ads\\AdWords\\v201409\\StringLengthErrorReason",
+      "get" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceGet",
+      "getResponse" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceGetResponse",
+      "mutate" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceMutate",
+      "mutateResponse" => "Google\\Api\\Ads\\AdWords\\v201409\\BudgetServiceMutateResponse",
+      "query" => "Google\\Api\\Ads\\AdWords\\v201409\\Query",
+      "queryResponse" => "Google\\Api\\Ads\\AdWords\\v201409\\QueryResponse",
     );
+
 
     /**
      * Constructor using wsdl location and options array
-     * @param string $wsdl    WSDL location for this service
-     * @param array  $options Options for the \SoapClient
+     * @param string $wsdl WSDL location for this service
+     * @param array $options Options for the SoapClient
      */
-    public function __construct($wsdl, $options, $user)
-    {
-        $options["classmap"] = self::$classmap;
-        parent::__construct($wsdl, $options, $user, self::SERVICE_NAME,
+    public function __construct($wsdl, $options, $user) {
+      $options["classmap"] = self::$classmap;
+      parent::__construct($wsdl, $options, $user, self::SERVICE_NAME,
           self::WSDL_NAMESPACE);
     }
     /**
      * <span class="constraint Required">This field is required and should not be {@code null}.</span>
-     *
-     *
-     *
+     * 
+     * 
+     * 
      * Returns a list of budgets that match the selector.
-     *
-     * @return List                                                  of budgets specified by the selector.
+     * 
+     * @return List of budgets specified by the selector.
      * @throws com.google.ads.api.services.common.error.ApiException if problems
-     *                                                               occurred while retrieving results.
+     * occurred while retrieving results.
      */
-    public function get($selector)
-    {
-        $args = new BudgetServiceGet($selector);
-        $result = $this->__soapCall("get", array($args));
-
-        return $result->rval;
+    public function get($selector) {
+      $args = new BudgetServiceGet($selector);
+      $result = $this->__soapCall("get", array($args));
+      return $result->rval;
     }
     /**
      * <span class="constraint ContentsNotNull">This field must not contain {@code null} elements.</span>
      * <span class="constraint DistinctIds">Elements in this field must have distinct IDs for following {@link Operator}s : SET, REMOVE.</span>
      * <span class="constraint NotEmpty">This field must contain at least one element.</span>
      * <span class="constraint Required">This field is required and should not be {@code null}.</span>
-     *
-     *
-     *
+     * 
+     * 
+     * 
      * Applies the list of mutate operations.
-     *
+     * 
      * @param operations The operations to apply.
-     * @return The          modified list of Budgets, returned in the same order as <code>operations</code>.
+     * @return The modified list of Budgets, returned in the same order as <code>operations</code>.
      * @throws ApiException
      */
-    public function mutate($operations)
-    {
-        $args = new BudgetServiceMutate($operations);
-        $result = $this->__soapCall("mutate", array($args));
-
-        return $result->rval;
+    public function mutate($operations) {
+      $args = new BudgetServiceMutate($operations);
+      $result = $this->__soapCall("mutate", array($args));
+      return $result->rval;
     }
     /**
      * <span class="constraint Required">This field is required and should not be {@code null}.</span>
-     *
-     *
-     *
+     * 
+     * 
+     * 
      * Returns the list of budgets that match the query.
-     *
+     * 
      * @param query The SQL-like AWQL query string
      * @returns A list of Budget
      * @throws ApiException when the query is invalid or there are errors processing the request.
      */
-    public function query($query)
-    {
-        $args = new Query($query);
-        $result = $this->__soapCall("query", array($args));
-
-        return $result->rval;
+    public function query($query) {
+      $args = new Query($query);
+      $result = $this->__soapCall("query", array($args));
+      return $result->rval;
     }
   }
 }
