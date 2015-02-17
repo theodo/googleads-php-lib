@@ -471,7 +471,7 @@ if (!class_exists("Google\\Api\\Ads\\AdWords\\Util\\ReportDefinition", FALSE)) {
      * @return the xsi:type name of this class
      */
     public function getXsiTypeName() {
-      return "ReportDefinition";
+      return "";
     }
 
     public function __construct($id = NULL, $selector = NULL, $reportName = NULL, $reportType = NULL, $hasAttachment = NULL, $dateRangeType = NULL, $downloadFormat = NULL, $creationTime = NULL, $includeZeroImpressions = NULL) {
@@ -538,7 +538,7 @@ if (!class_exists("Google\\Api\\Ads\\AdWords\\Util\\Selector", FALSE)) {
      * @return the xsi:type name of this class
      */
     public function getXsiTypeName() {
-      return "Selector";
+      return "";
     }
 
     public function __construct($fields = NULL, $predicates = NULL, $dateRange = NULL, $ordering = NULL, $paging = NULL) {
@@ -589,7 +589,7 @@ if (!class_exists("Google\\Api\\Ads\\AdWords\\Util\\Predicate", FALSE)) {
      * @return the xsi:type name of this class
      */
     public function getXsiTypeName() {
-      return "Predicate";
+      return "";
     }
 
     public function __construct($field = NULL, $operator = NULL, $values = NULL) {
@@ -620,7 +620,7 @@ if (!class_exists("Google\\Api\\Ads\\AdWords\\Util\\PredicateOperator", FALSE)) 
      * @return the xsi:type name of this class
      */
     public function getXsiTypeName() {
-      return "Predicate.Operator";
+      return "";
     }
 
     public function __construct() {}
@@ -660,7 +660,7 @@ class DateRange {
    * @return the xsi:type name of this class
    */
   public function getXsiTypeName() {
-    return "DateRange";
+    return "";
   }
 
   public function __construct($min = NULL, $max = NULL) {
@@ -701,7 +701,7 @@ class OrderBy {
    * @return the xsi:type name of this class
    */
   public function getXsiTypeName() {
-    return "OrderBy";
+    return "";
   }
 
   public function __construct($field = NULL, $sortOrder = NULL) {
@@ -744,7 +744,7 @@ class Paging {
    * @return the xsi:type name of this class
    */
   public function getXsiTypeName() {
-    return "Paging";
+    return "";
   }
 
   public function __construct($startIndex = NULL, $numberResults = NULL) {
@@ -773,7 +773,7 @@ class SortOrder {
    * @return the xsi:type name of this class
    */
   public function getXsiTypeName() {
-    return "SortOrder";
+    return "";
   }
 
   public function __construct() {}
@@ -799,7 +799,7 @@ class ReportDefinitionReportType {
    * @return the xsi:type name of this class
    */
   public function getXsiTypeName() {
-    return "ReportDefinition.ReportType";
+    return "";
   }
 
   public function __construct() {}
@@ -825,7 +825,7 @@ class ReportDefinitionDateRangeType {
    * @return the xsi:type name of this class
    */
   public function getXsiTypeName() {
-    return "ReportDefinition.DateRangeType";
+    return "";
   }
 
   public function __construct() {}
@@ -853,7 +853,7 @@ class DownloadFormat {
    * @return the xsi:type name of this class
    */
   public function getXsiTypeName() {
-    return "DownloadFormat";
+    return "";
   }
 
   public function __construct() {
